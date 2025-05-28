@@ -6,7 +6,12 @@ We recommend using a virtual environment to manage dependencies. However, you ma
 python -m venv .venv
 ```
 Once created, transfer the generated .whl file to the designated personal directory to proceed with the installation. In this instance, the target distribution is version 0.9.1, specifically pcp_api-0.9.1-py3-none-any.whl
-![image-20250523-093454](https://github.com/user-attachments/assets/90dfd937-cb25-48f1-8357-c74860082f26)
+
+
+
+![Package Installation](assets/images/screenshot001.png)
+
+
 Next, utilize Python’s package manager, pip, to install the package into the active environment. Begin by activating the appropriate virtual environment to ensure the package is installed in the correct context.
 
 
@@ -40,6 +45,6 @@ Now we install the package using pip:
 
 !!! note "IMPORTANT NOTE"
 
-    This command is installing the version 0.9.1, if you have a newer version modify the name of the file accordingly. 
+    This command is installing the version 0.9.1, if you have a newer version modify the name of the file accordingly.
 
 
