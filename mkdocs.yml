@@ -43,9 +43,11 @@ markdown_extensions:
   - admonition
   - pymdownx.details
 
-extra:
-  social:
-    - icon: material/Home
-      link: https://pulsarhri.com
+# extra:
+#   social:
+#     - icon: fontawesome/brands/github
+#       link: https://github.com/pulsarhri
+#     - icon: material/home
+#       link: https://pulsarhri.com
 
 copyright: Copyright &copy; 2025 Pulsar

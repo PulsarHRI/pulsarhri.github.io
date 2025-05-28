@@ -51,7 +51,10 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install dependencies
-        run: pip install mkdocs-material
+        run:
+          pip install mkdocs-material
+          pip install mkdocs-material-extensions
+          pip install pillow cairosvg
 
       - name: Validate MkDocs configuration
         run: mkdocs build --strict
