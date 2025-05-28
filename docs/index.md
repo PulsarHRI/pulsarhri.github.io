@@ -3,7 +3,7 @@ This repository provides all the necessary resources to install the Pulsar API, 
 ## Installing the Pulsar API into your own Environment
 We recommend using a virtual environment to manage dependencies. However, you may also install the package directly into your system’s Python environment if preferred. To create and activate your own virtual environment, follow these steps:
 ```bash
-python -m venv PulsarVenv
+python -m venv .venv
 ```
 Once created, transfer the generated .whl file to the designated personal directory to proceed with the installation. In this instance, the target distribution is version 0.9.1, specifically pcp_api-0.9.1-py3-none-any.whl
 ![image-20250523-093454](https://github.com/user-attachments/assets/90dfd937-cb25-48f1-8357-c74860082f26)
@@ -13,13 +13,13 @@ Next, utilize Python’s package manager, pip, to install the package into the a
 === "Linux"
 
     ```bash
-    source PulsarVenv/bin/activate
+    source .venv/bin/activate
     ```
 
 === "Windows"
 
     ```bash
-    .\PulsarVenv\Scripts\Activate.ps1
+    .\.venv\Scripts\Activate.ps1
     ```
 
 
