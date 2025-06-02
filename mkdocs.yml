@@ -8,19 +8,19 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Dark mode
-      primary: green
-      accent: deep purple
+      primary: black
+      accent: deep orange
 
     # Light Mode
     - scheme: default
       toggle:
         icon: material/weather-night
         name: Light mode
-      primary: blue
+      primary: grey
       accent: deep orange
 
   font:
-    text: Merriweather Sans
+    text: Montserrat medium
     code: Red Hat Mono
   # icon:
   #     logo: material/robot
