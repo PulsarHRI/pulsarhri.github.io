@@ -2,10 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/PulsarHRI/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <lastmod>2025-06-02</lastmod>
     </url>
     <url>
-         <loc>https://github.com/PulsarHRI/code-examples/</loc>
-         <lastmod>2025-05-28</lastmod>
+         <loc>https://github.com/PulsarHRI/01-Single-Actuator/</loc>
+         <lastmod>2025-06-02</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/PulsarHRI/02-Two-Actuators/</loc>
+         <lastmod>2025-06-02</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/PulsarHRI/03-Changing-Parameters/</loc>
+         <lastmod>2025-06-02</lastmod>
     </url>
 </urlset>
