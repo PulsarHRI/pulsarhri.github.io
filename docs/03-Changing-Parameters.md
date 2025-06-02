@@ -1,4 +1,4 @@
-# 03-Advanced Pulsar Control
+# 03. Advanced Features
 
 This notebook demonstrates advanced configuration and control of a Pulsar actuator using the pcp_api library. It builds upon the basic example, which covers:
 

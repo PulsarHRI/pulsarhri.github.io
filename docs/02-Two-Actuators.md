@@ -1,4 +1,4 @@
-# 02-Pulsar Actuator Control (Two Targets)
+# 02. Controlling Two Targets
 
 This notebook demonstrates how to control Pulsar actuators using the CANoverUSB interface. We will go through the steps of connecting to the USB-CAN adapter, initializing the actuators, configuring them, and finally running them.
 
