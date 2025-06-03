@@ -324,6 +324,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#import-necessary-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import necessary modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#define-constants-and-feedback-function" class="md-nav__link">
     <span class="md-ellipsis">
       Define Constants and Feedback Function
@@ -407,6 +416,28 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-Log-To-CSV/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Log Data to CSV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -432,6 +463,15 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#import-necessary-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Import necessary modules
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#define-constants-and-feedback-function" class="md-nav__link">
@@ -504,7 +544,8 @@
 
 
 <h1 id="02-controlling-two-targets">02. Controlling Two Targets</h1>
-<p>This notebook demonstrates how to control Pulsar actuators using the CANoverUSB interface. We will go through the steps of connecting to the USB-CAN adapter, initializing the actuators, configuring them, and finally running them.</p>
+<p>This notebook demonstrates how to control multiple Pulsar actuators using the CANoverUSB interface. We will walk through the steps of connecting to the USB-CAN adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.</p>
+<h2 id="import-necessary-modules">Import necessary modules</h2>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Import necessary modules</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api.PulsarActuator</span><span class="w"> </span><span class="kn">import</span> <span class="n">PulsarActuator</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api.can_over_usb</span><span class="w"> </span><span class="kn">import</span> <span class="n">CANoverUSB</span>
@@ -512,25 +553,34 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
 </span></code></pre></div>
 <h2 id="define-constants-and-feedback-function">Define Constants and Feedback Function</h2>
-<p>We define the CSP addresses for the actuators and a feedback function to handle actuator feedback.</p>
+<p>We define the CSP (CANopen Slave Protocol) addresses for the two actuators. These addresses are used to uniquely identify each actuator on the CAN bus.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Example CSP addresses for two actuators</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">CSP_ADDRESSES</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">]</span>
 </span></code></pre></div>
 <h2 id="define-a-feedback-callback-function">Define a feedback callback function</h2>
-<p>This function will be called automatically when feedback is received from the actuator.</p>
+<p>This function is called automatically whenever feedback is received from any actuator. It extracts the position feedback (in radians) and prints it along with the actuator's address.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">actuator_feedback</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">feedback</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">position</span> <span class="o">=</span> <span class="n">feedback</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">POSITION_FB</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actuator 0x</span><span class="si">{</span><span class="n">address</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2"> position: </span><span class="si">{</span><span class="n">position</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> rad/s&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="connect-to-usb-can-adapter">Connect to USB-CAN Adapter</h2>
-<p>We connect to the USB-CAN adapter. The port is auto-detected.</p>
+<p>We auto-detect the USB port to which the CAN adapter is connected and create an instance of the adapter. This step is essential to establish communication with the actuators.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Auto-detect the port</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">port</span> <span class="o">=</span> <span class="n">CANoverUSB</span><span class="o">.</span><span class="n">get_port</span><span class="p">()</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connecting to </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">adapter</span> <span class="o">=</span> <span class="n">CANoverUSB</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="initialize-and-configure-actuators">Initialize and Configure Actuators</h2>
-<p>We initialize the actuators, connect to them, and configure their feedback settings.</p>
+<p>For each actuator address, we:</p>
+<ul>
+<li>Create a PulsarActuator instance.</li>
+<li>Attempt to connect to the actuator.</li>
+<li>Configure high-frequency feedback to report position at 10 Hz.</li>
+<li>Disable low-frequency feedback.</li>
+<li>Set the actuator to SPEED mode.</li>
+<li>Register the feedback callback function.</li>
+</ul>
+<p>Each successfully initialized actuator is added to a list for later control.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">actuators</span> <span class="o">=</span> <span class="p">[]</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">CSP_ADDRESSES</span><span class="p">:</span>
@@ -553,7 +603,7 @@
 </span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    <span class="n">actuators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actuator</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="set-setpoints-and-start-actuators">Set Setpoints and Start Actuators</h2>
-<p>We set different speeds for each actuator and start them.</p>
+<p>We assign different speed setpoints to each actuator and start them. This allows both actuators to run simultaneously at different speeds.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Set different speeds for each actuator</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
@@ -563,7 +613,7 @@
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span></code></pre></div>
 <h2 id="run-and-cleanup">Run and Cleanup</h2>
-<p>We run the actuators for a short period and then clean up by disconnecting the actuators and closing the adapter.</p>
+<p>We let the actuators run briefly to allow feedback to be printed. When the program is interrupted (e.g., via Ctrl+C), we ensure all actuators are properly disconnected and the adapter is closed.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">try</span><span class="p">:</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Let feedback trigger</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>

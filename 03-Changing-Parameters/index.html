@@ -14,6 +14,8 @@
         <link rel="prev" href="../02-Two-Actuators/">
       
       
+        <link rel="next" href="../04-Log-To-CSV/">
+      
       
       <link rel="icon" href="../assets/icon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
@@ -379,10 +381,50 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#define-the-control-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define the control parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply-advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply Advanced Configuration
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-Log-To-CSV/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    04. Log Data to CSV
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -449,6 +491,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#define-the-control-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define the control parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply-advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apply Advanced Configuration
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -482,22 +542,25 @@
 </ul>
 <p>These features are useful for fine-tuning actuator behavior, multi-actuator setups, and persistent deployment scenarios.</p>
 <h2 id="import-required-modules">Import Required Modules</h2>
+<p>We begin by importing the necessary modules to interact with the actuator, manage the CAN interface, and handle timing and output formatting.
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Import necessary modules</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api.PulsarActuator</span><span class="w"> </span><span class="kn">import</span> <span class="n">PulsarActuator</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api.can_over_usb</span><span class="w"> </span><span class="kn">import</span> <span class="n">CANoverUSB</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
-</span></code></pre></div>
+</span></code></pre></div></p>
 <h2 id="detect-and-connect-to-the-can-adapter">Detect and Connect to the CAN Adapter</h2>
+<p>This section automatically detects the USB port where the CAN adapter is connected and initializes the adapter for communication.
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Automatically detect the CAN port</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">port</span> <span class="o">=</span> <span class="n">CANoverUSB</span><span class="o">.</span><span class="n">get_port</span><span class="p">()</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connecting to </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Initialize the adapter</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">adapter</span> <span class="o">=</span> <span class="n">CANoverUSB</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-</span></code></pre></div>
+</span></code></pre></div></p>
 <h2 id="initialize-the-actuator">Initialize the Actuator</h2>
-<p><div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Create actuator instance with ID 0</span>
+<p>We create an instance of the actuator using address 0 and attempt to establish a connection. If the connection fails, the program exits gracefully.
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Create actuator instance with ID 0</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">actuator</span> <span class="o">=</span> <span class="n">PulsarActuator</span><span class="p">(</span><span class="n">adapter</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Attempt to connect</span>
@@ -506,14 +569,26 @@
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">adapter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="s2">&quot;Exiting due to connection failure.&quot;</span><span class="p">)</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Connected to the actuator&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-Here we define the performance for Torque and Speed Loops:
-* In this case we want a BALANCED behavior for the torque performance. 
-* In thi case we want an AGRESSIVE mode for speed. </p>
-<p>Also it is possible to set some control parameters as the Damping Factor and The Stiffnes.</p>
+</span></code></pre></div></p>
+<h2 id="define-the-control-parameters">Define the control parameters</h2>
+<p>Here we define the performance profiles and control parameters:</p>
+<ul>
+<li>Torque performance is set to BALANCED for fast torque response.</li>
+<li>Speed performance is also set to BALANCED for quick speed adjustments.</li>
+<li>Control parameters like damping and stiffness are set to custom values to fine-tune the actuator's dynamic behavior.</li>
+</ul>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">K_DAMPING</span> <span class="o">=</span> <span class="mf">7.7</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">K_STIFFNESS</span> <span class="o">=</span> <span class="mf">8.8</span> 
 </span></code></pre></div>
+<h2 id="apply-advanced-configuration">Apply Advanced Configuration</h2>
+<p>This block performs several advanced configuration steps:</p>
+<ul>
+<li>Resets the encoder to define a new zero position.</li>
+<li>Changes the actuator's address (optional).</li>
+<li>Applies performance profiles for torque and speed.</li>
+<li>Sets custom control parameters.</li>
+<li>Optionally saves the configuration to persistent memory.</li>
+</ul>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">try</span><span class="p">:</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="c1"># Reset encoder to define zero position</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">reset_encoder_position</span><span class="p">()</span>
@@ -544,6 +619,7 @@ Here we define the performance for Torque and Speed Loops:
 </span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Disconnected and cleaned up.&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <h1 id="run-and-verify-that-the-motor-control-behaves-as-required">Run and Verify That the Motor Control Behaves as Required</h1>
+<p>This section reinitializes the actuator and sets it up for real-time feedback monitoring. It demonstrates how to verify that the actuator behaves as expected after applying the advanced configuration.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">actuator_feedback</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">feedback</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">feedback</span><span class="p">)</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">speed_fb</span> <span class="o">=</span> <span class="n">feedback</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">SPEED_FB</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -647,6 +723,22 @@ Here we define the performance for Torque and Speed Loops:
             </div>
           </a>
         
+        
+          
+          <a href="../04-Log-To-CSV/" class="md-footer__link md-footer__link--next" aria-label="Next: 04. Log Data to CSV">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                04. Log Data to CSV
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
