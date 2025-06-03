@@ -17,7 +17,7 @@ This notebook demonstrates advanced configuration and control of a Pulsar actuat
 These features are useful for fine-tuning actuator behavior, multi-actuator setups, and persistent deployment scenarios.
 
 ## Import Required Modules
-
+We begin by importing the necessary modules to interact with the actuator, manage the CAN interface, and handle timing and output formatting.
 ```py title="" 
 # Import necessary modules
 from pcp_api.PulsarActuator import PulsarActuator
@@ -25,8 +25,9 @@ from pcp_api.can_over_usb import CANoverUSB
 from pprint import pprint
 from time import sleep
 ```
-## Detect and Connect to the CAN Adapter
 
+## Detect and Connect to the CAN Adapter
+This section automatically detects the USB port where the CAN adapter is connected and initializes the adapter for communication.
 ```py title="" 
 # Automatically detect the CAN port
 port = CANoverUSB.get_port()
@@ -36,7 +37,7 @@ print(f"Connecting to {port}")
 adapter = CANoverUSB(port)
 ```
 ## Initialize the Actuator
-
+We create an instance of the actuator using address 0 and attempt to establish a connection. If the connection fails, the program exits gracefully.
 ```py title="" 
 # Create actuator instance with ID 0
 actuator = PulsarActuator(adapter, 0)
@@ -48,16 +49,25 @@ if not actuator.connect():
     raise SystemExit("Exiting due to connection failure.")
 print("Connected to the actuator")
 ```
-Here we define the performance for Torque and Speed Loops:
-* In this case we want a BALANCED behavior for the torque performance. 
-* In thi case we want an AGRESSIVE mode for speed. 
+## Define the control parameters
+Here we define the performance profiles and control parameters:
 
-Also it is possible to set some control parameters as the Damping Factor and The Stiffnes.
+* Torque performance is set to BALANCED for fast torque response.
+* Speed performance is also set to BALANCED for quick speed adjustments.
+* Control parameters like damping and stiffness are set to custom values to fine-tune the actuator's dynamic behavior.
 
 ```py title=""
 K_DAMPING = 7.7
 K_STIFFNESS = 8.8 
 ```
+## Apply Advanced Configuration
+This block performs several advanced configuration steps:
+
+* Resets the encoder to define a new zero position.
+* Changes the actuator's address (optional).
+* Applies performance profiles for torque and speed.
+* Sets custom control parameters.
+* Optionally saves the configuration to persistent memory.
 
 ```py title=""
 try:
@@ -90,6 +100,7 @@ finally:
     print("Disconnected and cleaned up.")
 ```
 # Run and Verify That the Motor Control Behaves as Required
+This section reinitializes the actuator and sets it up for real-time feedback monitoring. It demonstrates how to verify that the actuator behaves as expected after applying the advanced configuration.
 
 ```py title=""
 def actuator_feedback(address: int, feedback: dict):

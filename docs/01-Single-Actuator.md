@@ -1,6 +1,8 @@
 # 01. Controlling One Target
 
-This notebook demonstrates how to connect to a Pulsar actuator using the `pcp_api` library and `CANoverUSB`, configure feedback settings, and control one actuator in speed mode.
+This notebook demonstrates how to connect to a Pulsar actuator using the pcp_api library and CANoverUSB, configure feedback settings, and control one actuator in speed mode.
+
+## Import necessary modules
 
 ```py title="" 
 # Import necessary modules
@@ -11,14 +13,14 @@ from time import sleep
 ```
 ## Define the actuator address
 
-Use `0` for direct USB connection. If using a CAN adapter, specify the appropriate PCP address.
+Specify the address of the actuator. Use `0` if you're connecting directly via USB. If you're using a CAN adapter, replace it with the appropriate PCP address assigned to your actuator.
 
 ```py title="" 
 ACTUATOR_ADDRESS = 0
 ```
 ## Define a feedback callback function
 
-This function will be called automatically when feedback is received from the actuator.
+This function is automatically triggered whenever feedback is received from the actuator. It prints the full feedback dictionary and extracts the speed feedback (if available), displaying it in a readable format.
 
 ```py title="" 
 def actuator_feedback(address: int, feedback: dict):
@@ -29,7 +31,7 @@ def actuator_feedback(address: int, feedback: dict):
 ```
 ## Connect to the actuator
 
-Automatically detect the USB port and establish a connection to the actuator.
+Automatically detect the USB port, create the CAN adapter, and attempt to connect to the actuator. If the connection fails, the program exits gracefully.
 
 ```py title=""
 port = CANoverUSB.get_port()  # auto-detect
@@ -46,7 +48,13 @@ else:
 ```
 ## Configure feedback and control settings
 
-Set high-frequency and low-frequency feedback items, change the actuator mode to SPEED, and set a speed setpoint.
+Set up the feedback configuration and control mode:
+
+* High-frequency feedback includes speed, position, and torque.
+* Low-frequency feedback includes bus voltage and motor temperature.
+* The actuator is switched to SPEED mode and given a setpoint of 1 rad/s.
+* Parameters are retrieved and printed for inspection.
+* The actuator is started and feedback is monitored in a loop.
 
 ```py title=""
 try:
@@ -88,3 +96,5 @@ finally:
     sleep(0.1)
     adapter.close()
 ```
+## Shutdown
+Ensure the actuator is properly disconnected and the adapter is closed when the program is interrupted (e.g., via Ctrl+C or notebook stop).
