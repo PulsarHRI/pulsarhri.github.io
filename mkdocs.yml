@@ -50,4 +50,14 @@ extra:
     # - icon: material/home
     #   link: https://pulsarhri.com
 
+nav:
+  - Home: index.md
+  - Examples:
+      - "Controlling One Target": 01-Single-Actuator.md
+      - "Controlling Two Targets": 02_Two-Actuators.md
+      - "Changing Actuator Parameters": 03-Changing-Parameters.md 
+      - "Logging data and saving in .csv File": 04-Log-To-CSV.md
+  - Classes Definitions: classes.md
+
+
 copyright: Copyright &copy; 2025 Pulsar

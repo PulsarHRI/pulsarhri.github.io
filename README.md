@@ -1,1 +1,4 @@
-# [pulsarhri.github.io](https://pulsarhri.github.io)
+# Welcome to the Project
+
+For more information, please visit the [project website](https://pulsarhri.github.io).
+

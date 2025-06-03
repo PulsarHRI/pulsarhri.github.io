@@ -1,50 +1,66 @@
 # Getting started
-This repository provides all the necessary resources to install the Pulsar API, along with comprehensive documentation and examples to help you get started using the Pulsar Actuator or Motor. It includes detailed descriptions of available classes and methods.
+Welcome to the Pulsar API repository! This repository contains everything you need to begin working with the Pulsar Actuator or Pulsar Motor. Whether you're a researcher, developer, or engineer, this guide will walk you through setting up your environment, installing the API, and accessing the documentation and examples.
+
+The Pulsar API is designed to provide a robust and flexible interface for controlling and monitoring Pulsar hardware. It includes:
+
+* A well-documented Python package (pcp_api)
+* Example scripts for common use cases
+* Detailed descriptions of available classes, methods, and parameters
+* Best practices for integration and deployment
 ## Installing the Pulsar API into your own Environment
-We recommend using a virtual environment to manage dependencies. However, you may also install the package directly into your system’s Python environment if preferred. To create and activate your own virtual environment, follow these steps:
+To ensure a clean and manageable development setup, we strongly recommend using a virtual environment. This helps isolate your dependencies and avoid conflicts with other Python packages on your system.
+
+### Step 1: Create a Virtual Environment
+Open your terminal or command prompt and run:
+
 ```bash
 python -m venv .venv
 ```
-Once created, transfer the generated .whl file to the designated personal directory to proceed with the installation. In this instance, the target distribution is version 0.9.1, specifically pcp_api-0.9.1-py3-none-any.whl
+This will create a new virtual environment in a folder named .venv within your project directory.
+### Step 2: Activate the Virtual Environment
 
+Before installing the Pulsar API, activate the virtual environment. The activation command depends on your operating system:
 
-
-![Package Installation](assets/images/screenshot001.png)
-
-
-Next, utilize Python’s package manager, pip, to install the package into the active environment. Begin by activating the appropriate virtual environment to ensure the package is installed in the correct context.
-
-
-=== "Linux"
+=== "Linux/macOS"
 
     ```bash
     source .venv/bin/activate
     ```
 
-=== "Windows"
+=== "Windows (PowerShell)"
 
     ```bash
     .\.venv\Scripts\Activate.ps1
     ```
 
+Once activated, your terminal prompt should change to indicate that you're working inside the virtual environment.
 
-Now we install the package using pip:
+### Step 3: Install the Pulsar API
+With the virtual environment active, install the Pulsar API package using `pip`:
 
-=== "Linux"
-
-    ```bash
-    pip install pcp_api-0.9.1-py3-none-any.whl
-    ```
-
-=== "Windows"
-
-    ```bash
-    pip install pcp_api-0.9.1-py3-none-any.whl
-    ```
-
+```bash
+pip install pcp_api
+```
+This command will download and install the latest version of the pcp_api package from PyPI or your configured package index.
 
 !!! note "IMPORTANT NOTE"
 
-    This command is installing the version 0.9.1, if you have a newer version modify the name of the file accordingly.
+    Every time you want to use the Pulsar API or run the example scripts, make sure to activate your virtual environment first. If you close your terminal or restart your system, you’ll need to reactivate it.
 
+## Verifying the Installation
+To confirm that the installation was successful, you can run the following command:
 
+```bash
+python -c "import pcp_api; print(pcp_api.__version__)"
+```
+This should print the version number of the installed package, indicating that it's ready to use.
+
+## Next Steps
+
+Once the API is installed, you can:
+
+* Explore the documentation for detailed usage instructions.
+* Run example scripts provided in the examples/ directory.
+* Integrate the API into your own applications or research workflows.
+
+If you encounter any issues, please refer to the Troubleshooting section in the documentation or open an issue in this repository.
