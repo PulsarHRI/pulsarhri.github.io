@@ -57,7 +57,13 @@ nav:
       - "Controlling Two Targets": 02-Two-Actuators.md
       - "Changing Actuator Parameters": 03-Changing-Parameters.md 
       - "Logging data and saving in .csv File": 04-Log-To-CSV.md
-  - Classes Definitions: classes.md
-
+  - Classes Definitions:
+      - "Introduction": classes.md
+      - "Initialization and Constructor": classes-01-InitialisationContrustor.md
+      - "Connection and Adress Management": Classes-02-ConnectionAndAdress.md
+      - "Feedback Configuration from Pulsar Actuator": Classes-03-Feedback.md
+      - "Pulsar Actuator Parameters": Classes-04-PulsarActuator_Parameters.md
+      - "Predefined Performance Profiles": Classes-05-PerformanceProfiles.md
+      - "Actuator Operation: Startup, Shutdown, and Control Modes": Classes-06-ActuatorOperation.md
 
 copyright: Copyright &copy; 2025 Pulsar

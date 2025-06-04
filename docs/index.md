@@ -43,8 +43,7 @@ pip install pcp_api
 ```
 This command will download and install the latest version of the pcp_api package from PyPI or your configured package index.
 
-!!! note "IMPORTANT NOTE"
-
+!!! Important
     Every time you want to use the Pulsar API or run the example scripts, make sure to activate your virtual environment first. If you close your terminal or restart your system, you’ll need to reactivate it.
 
 ## Verifying the Installation
