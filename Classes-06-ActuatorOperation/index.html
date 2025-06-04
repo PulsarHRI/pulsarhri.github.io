@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://github.com/PulsarHRI/04-Log-To-CSV/">
+        <link rel="canonical" href="https://github.com/PulsarHRI/Classes-06-ActuatorOperation/">
       
       
-        <link rel="prev" href="../03-Changing-Parameters/">
+        <link rel="prev" href="../Classes-05-PerformanceProfiles/">
       
-      
-        <link rel="next" href="../classes/">
       
       
       <link rel="icon" href="../assets/icon.ico">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Logging data and saving in .csv File - Pulsar API Documentation</title>
+        <title>Actuator Operation: Startup, Shutdown, and Control Modes - Pulsar API Documentation</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#04-log-data-to-csv" class="md-skip">
+        <a href="#actuator-operation-startup-shutdown-and-control-modes" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Logging data and saving in .csv File
+              Actuator Operation: Startup, Shutdown, and Control Modes
             
           </span>
         </div>
@@ -249,20 +247,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -278,7 +274,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Examples
@@ -358,32 +354,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Logging data and saving in .csv File
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../04-Log-To-CSV/" class="md-nav__link">
         
   
   
@@ -394,44 +368,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#import-required-modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Import Required Modules
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#connect-to-the-can-adapter" class="md-nav__link">
-    <span class="md-ellipsis">
-      Connect to the CAN Adapter
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -448,18 +384,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -475,7 +413,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Classes Definitions
@@ -624,10 +562,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Classes-06-ActuatorOperation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Actuator Operation: Startup, Shutdown, and Control Modes
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -638,6 +598,155 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-operation-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview of Operation Modes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#startup-calibration-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Startup Calibration Mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-control-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Control Modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Control Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-electromagnetic-torque-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Electromagnetic Torque Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-speed-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Speed Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-position-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Position Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-impedance-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Impedance Control
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-purpose-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special-Purpose Modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special-Purpose Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-voltage-injection-fvi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed Voltage Injection (FVI)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-loop-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open-Loop Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-voltage-injection-dvi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct Voltage Injection (DVI)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-control-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing Control Modes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-6-mode-enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 6 – Mode (Enum)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -677,18 +786,129 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#import-required-modules" class="md-nav__link">
+  <a href="#overview-of-operation-modes" class="md-nav__link">
     <span class="md-ellipsis">
-      Import Required Modules
+      Overview of Operation Modes
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect-to-the-can-adapter" class="md-nav__link">
+  <a href="#startup-calibration-mode" class="md-nav__link">
     <span class="md-ellipsis">
-      Connect to the CAN Adapter
+      Startup Calibration Mode
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#standard-control-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Standard Control Modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Standard Control Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-electromagnetic-torque-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Electromagnetic Torque Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-speed-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Speed Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-position-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Position Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-impedance-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Impedance Control
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#special-purpose-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Special-Purpose Modes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Special-Purpose Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-voltage-injection-fvi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed Voltage Injection (FVI)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-loop-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open-Loop Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direct-voltage-injection-dvi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direct Voltage Injection (DVI)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-control-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing Control Modes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-6-mode-enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 6 – Mode (Enum)
     </span>
   </a>
   
@@ -710,81 +930,101 @@
 
 
 
-<h1 id="04-log-data-to-csv">04. Log Data to CSV</h1>
-<p>This script is designed to connect to a Pulsar actuator using a CAN-over-USB adapter. It logs high-frequency sensor data and saves it to a CSV file for later analysis.</p>
-<h2 id="import-required-modules">Import Required Modules</h2>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Import necessary modules</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api.PulsarActuator</span><span class="w"> </span><span class="kn">import</span> <span class="n">PulsarActuator</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api.can_over_usb</span><span class="w"> </span><span class="kn">import</span> <span class="n">CANoverUSB</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span><span class="p">,</span> <span class="n">time</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
-</span></code></pre></div>
-<h2 id="connect-to-the-can-adapter">Connect to the CAN Adapter</h2>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Automatically detect the CAN port</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">port</span> <span class="o">=</span> <span class="n">CANoverUSB</span><span class="o">.</span><span class="n">get_port</span><span class="p">()</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connecting to </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Initialize the adapter</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">adapter</span> <span class="o">=</span> <span class="n">CANoverUSB</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-</span></code></pre></div>
-<h1 id="initialize-the-actuator">Initialize the Actuator</h1>
-<p>This creates an actuator object at address 0
-<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">actuator</span> <span class="o">=</span> <span class="n">PulsarActuator</span><span class="p">(</span><span class="n">adapter</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</span></code></pre></div></p>
-<h2 id="specify-the-logging-variables">Specify the Logging Variables</h2>
-<p>Specifies which sensor data to log (e.g., torque sensor, PCB temperature)</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">if</span> <span class="ow">not</span> <span class="n">actuator</span><span class="o">.</span><span class="n">connect</span><span class="p">():</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not connect to the actuator </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">adapter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connected to the actuator </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="configuration-of-the-feedback-rates">Configuration of the Feedback Rates</h2>
+<h1 id="actuator-operation-startup-shutdown-and-control-modes">Actuator Operation: Startup, Shutdown, and Control Modes</h1>
+<h2 id="overview-of-operation-modes">Overview of Operation Modes</h2>
+<p>Before initiating any actuator movement, it is essential to configure the appropriate control mode. The selected mode determines how the actuator interprets and responds to setpoints. Once a control mode is active, the system will establish the corresponding setpoint based on the mode’s logic and parameters.</p>
+<h2 id="startup-calibration-mode">Startup Calibration Mode</h2>
+<p>When the actuator is powered on with the control mode set to <strong>Calibration</strong>, the system performs an automatic offset calibration. This process aligns the electrical position of the motor with the mechanical position of the encoder, ensuring accurate motion control.</p>
+<p>During this calibration:</p>
 <ul>
-<li>Sets up high-frequency feedback (1kHz) for selected items.</li>
-<li>Disables low-frequency feedback.</li>
+<li>The relative position (also known as the "turn count") is reset to zero.</li>
+<li><strong>Note:</strong> This does not affect the absolute position. To reset the absolute position, the <code>Set Zero Position</code> command must be used separately.</li>
 </ul>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">actuator</span><span class="o">.</span><span class="n">setHighFreqFeedbackItems</span><span class="p">(</span><span class="n">itemsToLog</span><span class="p">)</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">actuator</span><span class="o">.</span><span class="n">setHighFreqFeedbackRate</span><span class="p">(</span><span class="n">actuator</span><span class="o">.</span><span class="n">Rates</span><span class="o">.</span><span class="n">RATE_1KHZ</span><span class="p">)</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">actuator</span><span class="o">.</span><span class="n">setLowFreqFeedbackRate</span><span class="p">(</span><span class="n">actuator</span><span class="o">.</span><span class="n">Rates</span><span class="o">.</span><span class="n">DISABLED</span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="preaparig-csv-logging">Preaparig CSV Logging</h2>
-<p>This opens a CSV file for writing</p>
-<p><div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;log.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">lineterminator</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-</span></code></pre></div>
-Adding a header row with the timestamp and item names</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># add header</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="n">time</span><span class="p">()]</span>  <span class="c1"># timestamp</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">header</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">item</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">itemsToLog</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">)])</span>  <span class="c1"># sorted by name for consistent order</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="define-feedback-callback">Define Feedback Callback</h2>
-<p>This function is called whenever new feedback data is recieved</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># add header</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="n">time</span><span class="p">()]</span>  <span class="c1"># timestamp</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">header</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">item</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">itemsToLog</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">)])</span>  <span class="c1"># sorted by name for consistent order</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="start-actuator">Start Actuator</h2>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">actuator</span><span class="o">.</span><span class="n">change_mode</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">Mode</span><span class="o">.</span><span class="n">SPEED</span><span class="p">)</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">actuator</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">actuator</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">actuator</span><span class="o">.</span><span class="n">set_feedback_callback</span><span class="p">(</span><span class="n">actuator_feedback</span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="run-and-cleanup">Run and Cleanup</h2>
-<p>This runs for 3 seconds, then disconnects and closes everything</p>
-<p><div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">try</span><span class="p">:</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># actuator_feedback() should be triggered during this time</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="k">pass</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">finally</span><span class="p">:</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>  <span class="c1"># also stops the actuator</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">adapter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span></code></pre></div>
-The CSV is updated for postprocessing</p>
+<h2 id="standard-control-modes">Standard Control Modes</h2>
+<p>The actuator supports several core control strategies, each optimized for specific performance characteristics:</p>
+<h3 id="1-electromagnetic-torque-control">1. Electromagnetic Torque Control</h3>
+<p>This mode directly controls the torque output of the actuator by regulating the motor current. It includes three predefined profiles, each offering a different control bandwidth—from conservative to aggressive—tailored for various application needs.</p>
+<h3 id="2-speed-control">2. Speed Control</h3>
+<p>Speed control is implemented using a dual-loop architecture:</p>
+<ul>
+<li>The inner loop manages torque via current control.</li>
+<li>The outer loop regulates speed using a Proportional-Integral (PI) controller.</li>
+</ul>
+<p>Users can either manually tune the PI parameters or select from optimized preset profiles.</p>
+<h3 id="3-position-control">3. Position Control</h3>
+<p>Position control is achieved through a hierarchical control structure:</p>
+<ul>
+<li>A proportional controller governs the position loop.</li>
+<li>This loop operates over the speed and torque control layers, ensuring smooth and accurate positioning.</li>
+</ul>
+<h3 id="4-impedance-control">4. Impedance Control</h3>
+<p>This advanced mode simulates mechanical impedance (stiffness and damping) by manipulating motor currents at a low level. It is particularly useful for applications requiring compliant or human-interactive behavior.</p>
+<h2 id="special-purpose-modes">Special-Purpose Modes</h2>
+<p>In addition to the standard modes, the actuator includes several specialized modes designed for debugging, testing, and system integration. These are not intended for regular operation but are invaluable during development and troubleshooting:</p>
+<h3 id="fixed-voltage-injection-fvi">Fixed Voltage Injection (FVI)</h3>
+<p>Injects a constant DC voltage into the motor phases. Useful for basic motor testing and diagnostics.</p>
+<h3 id="open-loop-mode">Open-Loop Mode</h3>
+<p>Applies a rotating voltage vector to the motor using a V/f (voltage-to-frequency) control method. This mode typically runs at a constant speed or can be configured with user-defined parameters.</p>
+<h3 id="direct-voltage-injection-dvi">Direct Voltage Injection (DVI)</h3>
+<p>Allows manual control of the voltage vector applied to the motor phases. The internal encoder is used to orient the voltage field, enabling precise testing of motor response.</p>
+<h2 id="changing-control-modes">Changing Control Modes</h2>
+<p>To switch between control modes, use the following method:</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>mode (PulsarActuatorMode)</code>: The desired control mode to activate. Refer to <strong>Table 6</strong> for a complete list of available modes and their descriptions.</li>
+</ul>
+<h2 id="table-6-mode-enum">Table 6 – Mode (Enum)</h2>
+<table>
+<thead>
+<tr>
+<th>Mode Name</th>
+<th>Enum Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CALIBRATION</td>
+<td><code>0x01</code></td>
+<td>Calibration mode</td>
+</tr>
+<tr>
+<td>FVI</td>
+<td><code>0x02</code></td>
+<td>Fixed Voltage Injection</td>
+</tr>
+<tr>
+<td>OPEN_LOOP</td>
+<td><code>0x03</code></td>
+<td>Open-loop control</td>
+</tr>
+<tr>
+<td>DVI</td>
+<td><code>0x04</code></td>
+<td>Direct Voltage Injection (field-oriented)</td>
+</tr>
+<tr>
+<td>TORQUE</td>
+<td><code>0x05</code></td>
+<td>Electromagnetic Torque Control</td>
+</tr>
+<tr>
+<td>SPEED</td>
+<td><code>0x06</code></td>
+<td>Speed Control</td>
+</tr>
+<tr>
+<td>POSITION</td>
+<td><code>0x07</code></td>
+<td>Position Control</td>
+</tr>
+<tr>
+<td>IMPEDANCE</td>
+<td><code>0x08</code></td>
+<td>Impedance Control</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -814,7 +1054,7 @@ The CSV is updated for postprocessing</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../03-Changing-Parameters/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Changing Actuator Parameters">
+          <a href="../Classes-05-PerformanceProfiles/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Predefined Performance Profiles">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -824,27 +1064,11 @@ The CSV is updated for postprocessing</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                Changing Actuator Parameters
+                Predefined Performance Profiles
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../classes/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Introduction
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     

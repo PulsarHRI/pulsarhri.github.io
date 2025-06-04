@@ -2,26 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/PulsarHRI/</loc>
-         <lastmod>2025-06-03</lastmod>
+         <lastmod>2025-06-04</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/01-Single-Actuator/</loc>
-         <lastmod>2025-06-03</lastmod>
+         <lastmod>2025-06-04</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/02-Two-Actuators/</loc>
-         <lastmod>2025-06-03</lastmod>
+         <lastmod>2025-06-04</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/03-Changing-Parameters/</loc>
-         <lastmod>2025-06-03</lastmod>
+         <lastmod>2025-06-04</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/04-Log-To-CSV/</loc>
-         <lastmod>2025-06-03</lastmod>
+         <lastmod>2025-06-04</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/PulsarHRI/Classes-02-ConnectionAndAdress/</loc>
+         <lastmod>2025-06-04</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/PulsarHRI/Classes-03-Feedback/</loc>
+         <lastmod>2025-06-04</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/PulsarHRI/Classes-04-PulsarActuator_Parameters/</loc>
+         <lastmod>2025-06-04</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/PulsarHRI/Classes-05-PerformanceProfiles/</loc>
+         <lastmod>2025-06-04</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/PulsarHRI/Classes-06-ActuatorOperation/</loc>
+         <lastmod>2025-06-04</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/PulsarHRI/classes-01-InitialisationContrustor/</loc>
+         <lastmod>2025-06-04</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/classes/</loc>
-         <lastmod>2025-06-03</lastmod>
+         <lastmod>2025-06-04</lastmod>
     </url>
 </urlset>
