@@ -800,7 +800,7 @@
 <li>Best practices for integration and deployment</li>
 </ul>
 <h2 id="installing-the-pulsar-api-into-your-own-environment">Installing the Pulsar API into your own Environment</h2>
-<p>To ensure a clean and manageable development setup, we strongly recommend using a virtual environment. This helps isolate your dependencies and avoid conflicts with other Python packages on your system.</p>
+<p>To ensure a clean and manageable development setup, we strongly recommend using a virtual environment. This helps isolate your dependencies and avoid conflicts with other Python packages on your system. All examples and functionality have been tested on Windows 11 using Python 3.12.10.</p>
 <h3 id="step-1-create-a-virtual-environment">Step 1: Create a Virtual Environment</h3>
 <p>Open your terminal or command prompt and run:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
@@ -825,7 +825,7 @@ This will create a new virtual environment in a folder named .venv within your p
 <p>With the virtual environment active, install the Pulsar API package using <code>pip</code>:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pcp_api
 </span></code></pre></div>
-This command will download and install the latest version of the pcp_api package from PyPI or your configured package index.</p>
+This command will download and install the latest version of the pcp_api package from PyPI or your configured package index. </p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Every time you want to use the Pulsar API or run the example scripts, make sure to activate your virtual environment first. If you close your terminal or restart your system, you’ll need to reactivate it.</p>
@@ -834,7 +834,7 @@ This command will download and install the latest version of the pcp_api package
 <p>To confirm that the installation was successful, you can run the following command:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import pcp_api; print(pcp_api.__version__)&quot;</span>
 </span></code></pre></div>
-This should print the version number of the installed package, indicating that it's ready to use.</p>
+This should print the version number of the installed package, indicating that it's ready to use. For the present documentation the version is 0.9.1.</p>
 <h2 id="next-steps">Next Steps</h2>
 <p>Once the API is installed, you can:</p>
 <ul>
@@ -842,7 +842,7 @@ This should print the version number of the installed package, indicating that i
 <li>Run example scripts provided in the examples/ directory.</li>
 <li>Integrate the API into your own applications or research workflows.</li>
 </ul>
-<p>If you encounter any issues, please refer to the Troubleshooting section in the documentation or open an issue in this repository.</p>
+<p>If you encounter any issues, please open an issue in this repository <a href="https://github.com/PulsarHRI/pulsarhri.github.io">project repository</a>.</p>
 
 
 

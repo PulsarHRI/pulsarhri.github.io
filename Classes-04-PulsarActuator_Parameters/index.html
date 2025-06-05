@@ -849,32 +849,32 @@
 <tr>
 <td><code>TORQUE_FF</code></td>
 <td>0x03</td>
-<td>Torque of Feedforward Value (Nm)</td>
+<td>Feedforward Torque Value (Nm)</td>
 </tr>
 <tr>
 <td><code>LIM_TORQUE</code></td>
 <td>0x04</td>
-<td>Max. Torque Limit. Some limit value to positive or negative torques (Nm)</td>
+<td>Upper and lower bounds for how much torque can be applied in the positive and negative directions. (Nm)</td>
 </tr>
 <tr>
 <td><code>LIM_POSITION_MAX</code></td>
 <td>0x05</td>
-<td>Max. Position Limit (Rad)</td>
+<td>Max. Position Limit (rad)</td>
 </tr>
 <tr>
 <td><code>LIM_POSITION_MIN</code></td>
 <td>0x06</td>
-<td>Min. Position Limit (Rad)</td>
+<td>Min. Position Limit (rad)</td>
 </tr>
 <tr>
 <td><code>LIM_SPEED_MAX</code></td>
 <td>0x07</td>
-<td>Max. Speed Limit (Rad/s)</td>
+<td>Max. Speed Limit (rad/s)</td>
 </tr>
 <tr>
 <td><code>LIM_SPEED_MIN</code></td>
 <td>0x08</td>
-<td>Min. Position Limit (Rad)</td>
+<td>Min. Speed Limit (rad/s)</td>
 </tr>
 <tr>
 <td><code>PROFILE_POSITION_MAX</code></td>
@@ -919,7 +919,7 @@
 <tr>
 <td><code>SETPOINT</code></td>
 <td>0x31</td>
-<td>Setpoint</td>
+<td>Setpoint, Position (rad), Speed (rad/s), Torque (Nm)</td>
 </tr>
 <tr>
 <td><code>FIRMWARE_VERSION</code></td>
