@@ -934,6 +934,10 @@
 <h2 id="overview-of-operation-modes">Overview of Operation Modes</h2>
 <p>Before initiating any actuator movement, it is essential to configure the appropriate control mode. The selected mode determines how the actuator interprets and responds to setpoints. Once a control mode is active, the system will establish the corresponding setpoint based on the mode’s logic and parameters.</p>
 <h2 id="startup-calibration-mode">Startup Calibration Mode</h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>DO NOT USE THIS MODE UNLESS SPECIFIED BY PULSAR DEVELOPMENT TEAM</p>
+</div>
 <p>When the actuator is powered on with the control mode set to <strong>Calibration</strong>, the system performs an automatic offset calibration. This process aligns the electrical position of the motor with the mechanical position of the encoder, ensuring accurate motion control.</p>
 <p>During this calibration:</p>
 <ul>
@@ -964,6 +968,10 @@
 </div>
 <p>This advanced mode simulates mechanical impedance (stiffness and damping) by manipulating motor currents at a low level. It is particularly useful for applications requiring compliant or human-interactive behavior. </p>
 <h2 id="special-purpose-modes">Special-Purpose Modes</h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>DO NOT USE THESE MODES UNLESS SPECIFIED BY PULSAR DEVELOPMENT TEAM</p>
+</div>
 <p>In addition to the standard modes, the actuator includes several specialized modes designed for debugging, testing, and system integration. These are not intended for regular operation but are invaluable during development and troubleshooting:</p>
 <h3 id="fixed-voltage-injection-fvi">Fixed Voltage Injection (FVI)</h3>
 <p>Injects a constant DC voltage into the motor phases. Useful for basic motor testing and diagnostics.</p>
