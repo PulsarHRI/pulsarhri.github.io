@@ -37,9 +37,12 @@ Position control is achieved through a hierarchical control structure:
 - A proportional controller governs the position loop.
 - This loop operates over the speed and torque control layers, ensuring smooth and accurate positioning.
 
-### 4. Impedance Control
+### 4. Impedance Control (Under development)
 
-This advanced mode simulates mechanical impedance (stiffness and damping) by manipulating motor currents at a low level. It is particularly useful for applications requiring compliant or human-interactive behavior.
+!!! important
+    DO NOT USE THIS MODE AS IT IS UNDER DEVELOPMENT
+
+This advanced mode simulates mechanical impedance (stiffness and damping) by manipulating motor currents at a low level. It is particularly useful for applications requiring compliant or human-interactive behavior. 
 
 ## Special-Purpose Modes
 
