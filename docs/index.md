@@ -8,7 +8,7 @@ The Pulsar API is designed to provide a robust and flexible interface for contro
 * Detailed descriptions of available classes, methods, and parameters
 * Best practices for integration and deployment
 ## Installing the Pulsar API into your own Environment
-To ensure a clean and manageable development setup, we strongly recommend using a virtual environment. This helps isolate your dependencies and avoid conflicts with other Python packages on your system. All examples and functionality have been tested on Windows 11 using Python 3.12.10.
+To ensure a clean and manageable development setup, we strongly recommend using a virtual environment. This helps isolate your dependencies and avoid conflicts with other Python packages on your system. **All examples and functionality have been tested on Windows 11 using Python 3.12.10.**
 
 ### Step 1: Create a Virtual Environment
 Open your terminal or command prompt and run:
@@ -52,7 +52,7 @@ To confirm that the installation was successful, you can run the following comma
 ```bash
 python -c "import pcp_api; print(pcp_api.__version__)"
 ```
-This should print the version number of the installed package, indicating that it's ready to use. For the present documentation the version is 0.9.1.
+This should print the version number of the installed package, indicating that it's ready to use. **For the present documentation the version is 0.9.1.**
 
 ## Next Steps
 
