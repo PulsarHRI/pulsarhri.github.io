@@ -57,7 +57,20 @@ Modify specific parameters of the actuator.
 | `SETPOINT`               | 0x31   | Setpoint, Position (rad), Speed (rad/s), Torque (Nm) |
 | `FIRMWARE_VERSION`       | 0x80   | Firmware version |
 
----
-
 !!! important
     Ensure that the parameters you modify are within the valid range and do not conflict with other settings to avoid improper actuator behavior.
+
+---
+### Use of profiles and limits
+
+The use of position, speed or torque limits apply a saturation to the input reference of the corresponding control.
+
+The profile options provide the posibility of doing trapezoidal reference changes. Below there are some examples.
+
+- Setting the Max positive speed (rad/s) to 5 rad/s and using the position control.
+![Speed profile](docs\figs\Classes-04-PulsarActuator_Parameters\Speed_profile.png)
+**Speed (rad/s) =** \(\frac{0.5 \cdot 2 \cdot \pi}{0.630} \approx 5 \, \text{rad/s}\)
+
+- Setting the Max acceleration (rad/s2) to 100 rad/s2 and using the speed control.
+![Acceleration profile](docs\figs\Classes-04-PulsarActuator_Parameters\Acceleration_profile.png)
+**Acceleration (rad/s^2) =** \(\frac{2.33}{0.0234} \approx 100 \, \text{rad/s}^2\)
