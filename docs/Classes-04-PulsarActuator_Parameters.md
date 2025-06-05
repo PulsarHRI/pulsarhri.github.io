@@ -40,12 +40,12 @@ Modify specific parameters of the actuator.
 |--------------------------|--------|-------------|
 | `K_DAMPING`              | 0x01   | Damping coefficient (Nm·s/rad) for the virtual damper behavior (Impedance Control) |
 | `K_STIFFNESS`            | 0x02   | Stiffness coefficient (Nm/rad) for the virtual spring behavior (Impedance Control) |
-| `TORQUE_FF`              | 0x03   | Torque of Feedforward Value (Nm) |
-| `LIM_TORQUE`             | 0x04   | Max. Torque Limit. Some limit value to positive or negative torques (Nm) |
-| `LIM_POSITION_MAX`       | 0x05   | Max. Position Limit (Rad) |
-| `LIM_POSITION_MIN`       | 0x06   | Min. Position Limit (Rad) |
-| `LIM_SPEED_MAX`          | 0x07   | Max. Speed Limit (Rad/s) |
-| `LIM_SPEED_MIN`          | 0x08   | Min. Position Limit (Rad) |
+| `TORQUE_FF`              | 0x03   | Feedforward Torque Value (Nm) |
+| `LIM_TORQUE`             | 0x04   | Upper and lower bounds for how much torque can be applied in the positive and negative directions. (Nm) |
+| `LIM_POSITION_MAX`       | 0x05   | Max. Position Limit (rad) |
+| `LIM_POSITION_MIN`       | 0x06   | Min. Position Limit (rad) |
+| `LIM_SPEED_MAX`          | 0x07   | Max. Speed Limit (rad/s) |
+| `LIM_SPEED_MIN`          | 0x08   | Min. Speed Limit (rad/s) |
 | `PROFILE_POSITION_MAX`   | 0x09   | Max. Positive Speed (rad/s) in Position control configuration |
 | `PROFILE_POSITION_MIN`   | 0x0A   | Min. Negative Speed (rad/s) in Position control configuration |
 | `PROFILE_SPEED_MAX`      | 0x0B   | Max. Acceleration (rad/s^2) in Speed control configuration |
@@ -54,7 +54,7 @@ Modify specific parameters of the actuator.
 | `KI_SPEED`               | 0x0E   | Ki speed control constant I value |
 | `KP_POSITION`            | 0x0F   | Kp position control constant P value |
 | `MODE`                   | 0x30   | Operation Mode (read-only, must be set via `CHANGE_MODE`) |
-| `SETPOINT`               | 0x31   | Setpoint |
+| `SETPOINT`               | 0x31   | Setpoint, Position (rad), Speed (rad/s), Torque (Nm) |
 | `FIRMWARE_VERSION`       | 0x80   | Firmware version |
 
 ---
