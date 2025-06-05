@@ -6,6 +6,9 @@ Before initiating any actuator movement, it is essential to configure the approp
 
 ## Startup Calibration Mode
 
+!!! important
+    DO NOT USE THIS MODE UNLESS SPECIFIED BY PULSAR DEVELOPMENT TEAM
+
 When the actuator is powered on with the control mode set to **Calibration**, the system performs an automatic offset calibration. This process aligns the electrical position of the motor with the mechanical position of the encoder, ensuring accurate motion control.
 
 During this calibration:
@@ -45,6 +48,9 @@ Position control is achieved through a hierarchical control structure:
 This advanced mode simulates mechanical impedance (stiffness and damping) by manipulating motor currents at a low level. It is particularly useful for applications requiring compliant or human-interactive behavior. 
 
 ## Special-Purpose Modes
+
+!!! important
+    DO NOT USE THESE MODES UNLESS SPECIFIED BY PULSAR DEVELOPMENT TEAM
 
 In addition to the standard modes, the actuator includes several specialized modes designed for debugging, testing, and system integration. These are not intended for regular operation but are invaluable during development and troubleshooting:
 
