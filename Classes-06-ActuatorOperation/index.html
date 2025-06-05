@@ -743,6 +743,51 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#set-zero-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Zero Position
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actuator-control-start-and-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actuator Control: Start and Stop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actuator-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actuator calibration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-7-use-of-the-parameters-depending-on-the-control-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 7 – Use of the parameters depending on the control type
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -914,6 +959,51 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#set-zero-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set Zero Position
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actuator-control-start-and-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actuator Control: Start and Stop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actuator-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actuator calibration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-7-use-of-the-parameters-depending-on-the-control-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table 7 – Use of the parameters depending on the control type
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1034,6 +1124,231 @@
 <td>IMPEDANCE</td>
 <td><code>0x08</code></td>
 <td>Impedance Control</td>
+</tr>
+</tbody>
+</table>
+<h2 id="set-zero-position">Set Zero Position</h2>
+<p>The Set Zero Position command is used to redefine the actuator's current physical location as the new reference point, or "zero" position, for all subsequent position-based operations. For Position or Impedance Mode, defining a consistent starting point is critical. Therefore, before commanding absolute positions, you must perform a zero-positioning action to establish the actuator's current location as the reference zero. Failure to do so will result in unpredictable or incorrect absolute positioning.</p>
+<p><code>reset_encoder_position(self)</code>: Resets the encoder absolute position to 0.</p>
+<h2 id="actuator-control-start-and-stop">Actuator Control: Start and Stop</h2>
+<p>Once the actuator has been configured with the desired control mode and setpoint, these methods are used to initiate and cease its motion. </p>
+<p>To initiate the actuator's operation, causing it to reach and maintain its configured setpoint according to the active control mode, use the following command: </p>
+<p><code>start()</code>:  Starts the actuator. </p>
+<p>To halt the actuator's current motion and operation, use the following command: </p>
+<p><code>stop()</code>: Stops the actuator. </p>
+<h2 id="save-configuration">Save configuration</h2>
+<p>After configuring the actuator parameters (e.g., control mode, gains, limits), it is important to store the current settings to ensure they persist after a power cycle. The command that saves the current actuator configuration to non-volatile memory—making it the default startup configuration—is: </p>
+<p><code>save_config(self)</code>: Saves the current configuration of the actuator in the non-volatile memory.</p>
+<h2 id="actuator-calibration">Actuator calibration</h2>
+<p>The actuator includes an internal calibration routine that can be triggered directly. During calibration, the system performs offset calibration for both current sensing and position measurement—aligning the motor’s electrical position with the mechanical position of the encoder. As part of this process, the relative position (turn count) is reset to zero. This command should not be used.</p>
+<p>The command to perform the actuator calibration is: </p>
+<p><code>calibrate()</code>: Calibrates the actuator.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note that not all parameters apply to every control mode; refer to <strong>Table 7</strong> for specific usage information. </p>
+</div>
+<h2 id="table-7-use-of-the-parameters-depending-on-the-control-type">Table 7 – Use of the parameters depending on the control type</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Calibration (CtrlType = 1)</th>
+<th>FVI (CtrlType = 2)</th>
+<th>Open loop (CtrlType = 3)</th>
+<th>DVI (CtrlType = 4)</th>
+<th>Torque control (CtrlType = 5)</th>
+<th>Speed control (CtrlType = 6)</th>
+<th>Position control (CtrlType = 7)</th>
+<th>Impedance control (CtrlType = 8)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Torque loop performance</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Speed loop performance</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Kp position</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Kp speed</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes (if custom selected)</td>
+<td>Yes (if custom selected)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Ki speed</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes (if custom selected)</td>
+<td>Yes (if custom selected)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Stiffness gain</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Damping gain</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>FF torque</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Max positive speed (rad/s) (Profile)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Min negative speed (rad/s) (Profile)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Max acceleration (rad/s²) (Profile)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Max deceleration (rad/s²) (Profile)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Max speed (rad/s)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Min speed (rad/s)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Max position (rad)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Min position (rad)</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Max absolute torque (Nm)</td>
+<td>Yes (for the debug bus)</td>
+<td>Yes (for the debug bus)</td>
+<td>Yes (for the debug bus)</td>
+<td>Yes (for the debug bus)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
 </tr>
 </tbody>
 </table>
