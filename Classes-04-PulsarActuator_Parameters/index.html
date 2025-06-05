@@ -634,6 +634,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Table 3 – PCP_Parameters Enum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-of-profiles-and-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use of profiles and limits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -788,6 +803,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Table 3 – PCP_Parameters Enum">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-of-profiles-and-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use of profiles and limits
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -928,11 +958,24 @@
 </tr>
 </tbody>
 </table>
-<hr />
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Ensure that the parameters you modify are within the valid range and do not conflict with other settings to avoid improper actuator behavior.</p>
 </div>
+<hr />
+<h3 id="use-of-profiles-and-limits">Use of profiles and limits</h3>
+<p>The use of position, speed or torque limits apply a saturation to the input reference of the corresponding control.</p>
+<p>The profile options provide the posibility of doing trapezoidal reference changes. Below there are some examples.</p>
+<ul>
+<li>Setting the Max positive speed (rad/s) to 5 rad/s and using the position control.</li>
+</ul>
+<p><img alt="Speed profile" src="../figs/Classes-04-PulsarActuator_Parameters/Speed_profile.png" />
+$$ Speed (rad/s) = \frac{0.5 \cdot 2 \cdot \pi}{0.630} \approx 5 \, \text{rad/s}$$</p>
+<ul>
+<li>Setting the Max acceleration (rad/s2) to 100 rad/s2 and using the speed control.</li>
+</ul>
+<p><img alt="Acceleration profile" src="../figs/Classes-04-PulsarActuator_Parameters/Acceleration_profile.png" />
+$$ Acceleration (rad/s^2) =\frac{2.33}{0.0234} \approx 100 \, \text{rad/s}^2\ $$</p>
 
 
 
