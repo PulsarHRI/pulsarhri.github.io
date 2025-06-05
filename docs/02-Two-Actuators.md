@@ -82,7 +82,7 @@ for actuator in actuators:
     actuator.start()
 ```
 ## Run and Cleanup
-We let the actuators run briefly to allow feedback to be printed. When the program is interrupted (e.g., via Ctrl+C), we ensure all actuators are properly disconnected and the adapter is closed.
+We let the actuators run briefly to allow feedback to be printed. When the program is interrupted (e.g., via Ctrl+C if running from a Jupyter notebook), we ensure all actuators are properly disconnected and the adapter is closed.
 
 ```py title=""
 try:

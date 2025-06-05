@@ -97,4 +97,4 @@ finally:
     adapter.close()
 ```
 ## Shutdown
-Ensure the actuator is properly disconnected and the adapter is closed when the program is interrupted (e.g., via Ctrl+C or notebook stop).
+Ensure the actuator is properly disconnected and the adapter is closed when the program is interrupted (e.g., via Ctrl+C or notebook stop if running from a Jupyter notebook).
