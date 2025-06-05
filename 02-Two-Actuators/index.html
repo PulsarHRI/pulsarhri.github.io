@@ -870,7 +870,7 @@
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span></code></pre></div>
 <h2 id="run-and-cleanup">Run and Cleanup</h2>
-<p>We let the actuators run briefly to allow feedback to be printed. When the program is interrupted (e.g., via Ctrl+C), we ensure all actuators are properly disconnected and the adapter is closed.</p>
+<p>We let the actuators run briefly to allow feedback to be printed. When the program is interrupted (e.g., via Ctrl+C if running from a Jupyter notebook), we ensure all actuators are properly disconnected and the adapter is closed.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">try</span><span class="p">:</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Let feedback trigger</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
