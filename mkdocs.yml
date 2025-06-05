@@ -28,7 +28,10 @@ theme:
   favicon: assets/icon.ico
   features:
     - navigation.footer
-
+    - toggle
+    - search.highlight
+plugins:
+  - search
 markdown_extensions:
   - attr_list
   - pymdownx.highlight:
