@@ -70,9 +70,11 @@ The profile options provide the posibility of doing trapezoidal reference change
 - Setting the Max positive speed (rad/s) to 5 rad/s and using the position control.
 
 ![Speed profile](figs/Classes-04-PulsarActuator_Parameters/Speed_profile.png)
+
 $$ Speed (rad/s) = \frac{0.5 \cdot 2 \cdot \pi}{0.630} \approx 5 \, \text{rad/s}$$
 
 - Setting the Max acceleration (rad/s2) to 100 rad/s2 and using the speed control.
 
 ![Acceleration profile](figs/Classes-04-PulsarActuator_Parameters/Acceleration_profile.png)
+
 $$ Acceleration (rad/s^2) =\frac{2.33}{0.0234} \approx 100 \, \text{rad/s}^2\ $$
