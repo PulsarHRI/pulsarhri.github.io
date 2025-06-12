@@ -1,4 +1,4 @@
-# 01. Controlling One Target
+# Controlling One Target
 
 This notebook demonstrates how to connect to a Pulsar actuator using the pcp_api library and CANoverUSB, configure feedback settings, and control one actuator in speed mode.
 

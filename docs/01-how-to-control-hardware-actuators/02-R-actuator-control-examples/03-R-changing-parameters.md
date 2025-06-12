@@ -1,4 +1,4 @@
-# 03. Advanced Features
+# Advanced Features
 
 This notebook demonstrates advanced configuration and control of a Pulsar actuator using the pcp_api library. It builds upon the basic example, which covers:
 
@@ -99,7 +99,7 @@ finally:
     adapter.close()
     print("Disconnected and cleaned up.")
 ```
-# Run and Verify That the Motor Control Behaves as Required
+## Run and Verify That the Motor Control Behaves as Required
 This section reinitializes the actuator and sets it up for real-time feedback monitoring. It demonstrates how to verify that the actuator behaves as expected after applying the advanced configuration.
 
 ```py title=""

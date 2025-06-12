@@ -1,4 +1,4 @@
-# 04. Log Data to CSV
+# Log Data to CSV
 This script is designed to connect to a Pulsar actuator using a CAN-over-USB adapter. It logs high-frequency sensor data and saves it to a CSV file for later analysis.
 
 ## Import Required Modules
@@ -20,7 +20,7 @@ print(f"Connecting to {port}")
 # Initialize the adapter
 adapter = CANoverUSB(port)
 ```
-# Initialize the Actuator
+## Initialize the Actuator
 This creates an actuator object at address 0
 ```py title="" 
 actuator = PulsarActuator(adapter, 0)
