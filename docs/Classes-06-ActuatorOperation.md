@@ -42,14 +42,14 @@ Position control is achieved through a hierarchical control structure:
 
 ### 4. Impedance Control (Under development)
 
-!!! important
+!!! warning
     DO NOT USE THIS MODE AS IT IS UNDER DEVELOPMENT
 
 This advanced mode simulates mechanical impedance (stiffness and damping) by manipulating motor currents at a low level. It is particularly useful for applications requiring compliant or human-interactive behavior. 
 
 ## Special-Purpose Modes
 
-!!! important
+!!! warning
     DO NOT USE THESE MODES UNLESS SPECIFIED BY PULSAR DEVELOPMENT TEAM
 
 In addition to the standard modes, the actuator includes several specialized modes designed for debugging, testing, and system integration. These are not intended for regular operation but are invaluable during development and troubleshooting:
