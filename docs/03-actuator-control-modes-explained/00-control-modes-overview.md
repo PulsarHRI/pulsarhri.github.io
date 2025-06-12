@@ -9,13 +9,13 @@ Before initiating any actuator movement, it is essential to configure the approp
 
 The actuator supports several core control strategies, each optimized for specific performance characteristics:
 
-### 1. Electromagnetic Torque Control
+### Electromagnetic Torque Control
 
 This mode directly controls the torque output of the actuator by regulating the motor current. It includes three predefined profiles, each offering a different control bandwidth—from conservative to aggressive—tailored for various application needs.
 
 ![Te scheme](figs/Te_scheme.png)
 
-### 2. Speed Control
+### Speed Control
 
 Speed control is implemented using a dual-loop architecture:
 
@@ -26,7 +26,7 @@ Users can either manually tune the PI parameters or select from optimized preset
 
 ![Spd scheme](figs/Spd_scheme.png)
 
-### 3. Position Control
+### Position Control
 
 Position control is achieved through a hierarchical control structure:
 
@@ -35,7 +35,7 @@ Position control is achieved through a hierarchical control structure:
 
 ![Pos scheme](figs/Pos_scheme.png)
 
-### 4. Impedance Control (Under development)
+### Impedance Control (Under development)
 
 !!! warning
     DO NOT USE THIS MODE AS IT IS UNDER DEVELOPMENT

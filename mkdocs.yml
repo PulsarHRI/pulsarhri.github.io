@@ -1,4 +1,4 @@
-site_name: Pulsar API Documentation
+site_name: Pulsar Documentation
 site_url: https://github.com/PulsarHRI/
 theme:
   name: material
@@ -81,7 +81,7 @@ nav:
       - 03-actuator-control-modes-explained/00-control-modes-overview.md
       - 03-actuator-control-modes-explained/01-control-modes-parameters.md
   - 04-actuator-parameters/00-actuator-parameters-explained.md
-  - Functions explained:
+  - Callable functions:
       - 05-functions-explained/00-functions-overview.md
       - 05-functions-explained/01-pcp-api-functions.md
       - 05-functions-explained/02-DT-functions.md
@@ -90,6 +90,7 @@ nav:
   - Licensing & Support:
       - 07-licensing-and-support/00-licensing.md
       - 07-licensing-and-support/01-support.md
+  - 08-faq/00-faq.md
 
 #  - Classes Definitions:
 #      - "Introduction": classes.md

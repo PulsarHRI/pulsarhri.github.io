@@ -1,4 +1,4 @@
-# Functions overview
+# Actuator class overview
 
 The PulsarActuator class is the core of the Pulsar Control Protocol (PCP) communication interface. It provides a high-level API for interacting with and managing Pulsar motors or actuators via the CAN bus. Key capabilities include:
 
@@ -34,17 +34,20 @@ The actuator provides predefined performance profiles for both [torque](01-pcp-a
 This setting determines how quickly and aggressively the actuator responds to torque commands. The available profiles are:
 
 #### AGGRESSIVE
+
 - **Bandwidth**: ~1000 Hz  
 - **Behavior**: Maximizes responsiveness and torque application speed.  
 - **Use Case**: Ideal for dynamic tasks such as impedance control or joint torque control.  
 - **Trade-off**: May reduce steady-state precision.
 
 #### BALANCED
+
 - **Bandwidth**: ~500 Hz  
 - **Behavior**: Offers a compromise between responsiveness and stability.  
 - **Use Case**: Suitable for general-purpose applications.
 
 #### SOFT
+
 - **Bandwidth**: ~100 Hz  
 - **Behavior**: Prioritizes smoothness and precision over speed.  
 - **Use Case**: Best for tasks requiring high torque fidelity and low noise.  

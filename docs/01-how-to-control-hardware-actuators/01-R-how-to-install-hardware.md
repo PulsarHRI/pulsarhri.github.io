@@ -1,4 +1,4 @@
-# Installing the Pulsar API into your own Environment
+# Installing the Pulsar actuator API (pcp_api)
 To ensure a clean and manageable development setup, we strongly recommend using a virtual environment. This helps isolate your dependencies and avoid conflicts with other Python packages on your system. **All examples and functionality have been tested on Windows 11 using Python 3.12.10.**
 
 ## Installation
@@ -56,7 +56,7 @@ This should print the version number of the installed package, indicating that i
 Once the API is installed, you can:
 
 * Explore the documentation for detailed usage instructions.
-* Run example scripts provided in the examples/ directory.
+* Run example scripts provided in the [examples directory](02-R-actuator-control-examples/00-R-examples-overview.md).
 * Integrate the API into your own applications or research workflows.
 
 If you encounter any issues, please open an issue in this repository [project repository](https://github.com/PulsarHRI/pulsarhri.github.io).
