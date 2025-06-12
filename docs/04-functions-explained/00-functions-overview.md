@@ -17,14 +17,14 @@ PulsarActuator(canbus_handler, address: int, logger=None)
 
 ## Connection and Address Management
 
-* **Connecting to the Actuator**: Use the [connect()](01-pcp-api-functions.md/#connecttimeout10-bool) method to initiate communication.
-* **Disconnecting from the Actuator**: Use the [disconnect()](01-pcp-api-functions.md/#disconnect) method to safely terminate communication.
-* **Pinging the Actuator**: Use the [send_ping()](01-pcp-api-functions.md/#send_pingtimeout10-bool) method to check if a specific CAN address is active and responsive.
-* **Changing the Actuator's CAN Address**: Use the [changeAddress(new_address)](01-pcp-api-functions.md/#changeaddressnew_address) method to assign a specific address.
+* **Connecting to the Actuator**: Use the [connect()](02-pcp-api-functions.md/#connecttimeout10-bool) method to initiate communication.
+* **Disconnecting from the Actuator**: Use the [disconnect()](02-pcp-api-functions.md/#disconnect) method to safely terminate communication.
+* **Pinging the Actuator**: Use the [send_ping()](02-pcp-api-functions.md/#send_pingtimeout10-bool) method to check if a specific CAN address is active and responsive.
+* **Changing the Actuator's CAN Address**: Use the [changeAddress(new_address)](02-pcp-api-functions.md/#changeaddressnew_address) method to assign a specific address.
 
 
 ## Predefined Performance Profiles
-The actuator provides predefined performance profiles for both [torque](01-pcp-api-functions.md/#set_torque_performanceperformance-torqueperformance) and [speed](01-pcp-api-functions.md/#set_speed_performanceperformance-speedperformance) control loops:
+The actuator provides predefined performance profiles for both [torque](02-pcp-api-functions.md/#set_torque_performanceperformance-torqueperformance) and [speed](02-pcp-api-functions.md/#set_speed_performanceperformance-speedperformance) control loops:
 
 * **Torque Control Loop Performance**: Profiles include AGGRESSIVE, BALANCED, SOFT.
 * **Speed Loop Performance**: Profiles include AGGRESSIVE, BALANCED, SOFT, and CUSTOM. In this case all the profiles have a similar response time without load, making it more agressive implies a faster rejection time of a perturbation. The parameters are obtained for the no-load motor operation.
@@ -62,14 +62,14 @@ This setting determines how quickly and aggressively the actuator responds to to
 | SOFT       | 3     | ~100 Hz        | Stable and quiet, low responsiveness        |
 
 ## Changing Control Modes
-Use the [change_mode(mode)](01-pcp-api-functions.md/#change_modemode-mode) method to switch between control modes such as CALIBRATION, FVI, OPEN_LOOP, DVI, TORQUE, SPEED, POSITION, and IMPEDANCE.
+Use the [change_mode(mode)](02-pcp-api-functions.md/#change_modemode-mode) method to switch between control modes such as CALIBRATION, FVI, OPEN_LOOP, DVI, TORQUE, SPEED, POSITION, and IMPEDANCE.
 
 ## Actuator Control: Start and Stop
-* **Start**: Use the [start()](01-pcp-api-functions.md/#start) method to initiate the actuator's operation.
-* **Stop**: Use the [stop()](01-pcp-api-functions.md/#stop) method to halt the actuator's current motion.
+* **Start**: Use the [start()](02-pcp-api-functions.md/#start) method to initiate the actuator's operation.
+* **Stop**: Use the [stop()](02-pcp-api-functions.md/#stop) method to halt the actuator's current motion.
 
 ## Save Configuration
-Use the [save_config()](01-pcp-api-functions.md/#save_config) method to store the current settings in non-volatile memory.
+Use the [save_config()](02-pcp-api-functions.md/#save_config) method to store the current settings in non-volatile memory.
 
 ## Feedback Configuration
 
@@ -78,7 +78,7 @@ The PulsarActuator API supports two feedback channels with configurable update r
 * **Low-Frequency Feedback**: For slower or less critical signals (e.g., temperature, voltage).
 
 ## Actuator Calibration
-Use the [calibrate()](01-pcp-api-functions.md/#calibrate) method to perform internal calibration routines.
+Use the [calibrate()](02-pcp-api-functions.md/#calibrate) method to perform internal calibration routines.
 
 !!! warning
     DO NOT USE THIS UNLESS SPECIFIED BY PULSAR TEAM

@@ -64,7 +64,7 @@ Args: setpoint (float): The setpoint to be set. The units of all the setpoints a
     Sets the torque performance.
 Args: performance (PulsarActuator.TorquePerformance): The torque performance to be set.
 
-**Torque performance options**:
+[**Torque performance options**](00-functions-overview.md/#torque-control-loop-performance):
 
 * PulsarActuator.TorquePerformance.AGRESSIVE
 * PulsarActuator.TorquePerformance.BALANCED
@@ -76,7 +76,7 @@ Args: performance (PulsarActuator.TorquePerformance): The torque performance to 
     Sets the speed performance.
 Args: performance (PulsarActuator.SpeedPerformance): The speed performance to be set.
 
-**Speed performance options**:
+[**Speed performance options**](00-functions-overview.md/#predefined-performance-profiles):
 
 * PulsarActuator.SpeedPerformance.AGRESSIVE
 * PulsarActuator.SpeedPerformance.BALANCED
@@ -146,17 +146,17 @@ Args: rate (Rates): The rate in Hz.
 
 ## Read and set parameters
 
-### [set_parameters(parameters)](../04-actuator-parameters/00-actuator-parameters-explained.md/#set_parametersparameters)
+### [set_parameters(parameters)](01-actuator-parameters-explained.md/#set_parametersparameters)
 
 !!! info
     Set parameters.
 
-### [get_parameters(parameters, timeout=1.0)](../04-actuator-parameters/00-actuator-parameters-explained.md/#get_parametersparameters-timeout10)
+### [get_parameters(parameters, timeout=1.0)](01-actuator-parameters-explained.md/#get_parametersparameters-timeout10)
 
 !!! info
     Get parameters.
 
-### [get_parameters_all()](../04-actuator-parameters/00-actuator-parameters-explained.md/#get_parameters_all)
+### [get_parameters_all()](01-actuator-parameters-explained.md/#get_parameters_all)
 
 !!! info
     Get all parameters.

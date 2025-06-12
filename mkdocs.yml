@@ -77,20 +77,22 @@ nav:
           - 02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/01-DT-raw-telemetry-plotting.md
           - 02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/02-DT-mujoco-integration-pendulum.md
           - 02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/03-DT-mujoco-integration-arm.md
+  
   - Actuator control modes explained:
       - 03-actuator-control-modes-explained/00-control-modes-overview.md
       - 03-actuator-control-modes-explained/01-control-modes-parameters.md
-  - 04-actuator-parameters/00-actuator-parameters-explained.md
-  - Callable functions:
-      - 05-functions-explained/00-functions-overview.md
-      - 05-functions-explained/01-pcp-api-functions.md
-      - 05-functions-explained/02-DT-functions.md
+
+  - Actuator class:
+      - 04-functions-explained/00-functions-overview.md
+      - 04-functions-explained/01-actuator-parameters-explained.md
+      - 04-functions-explained/02-pcp-api-functions.md
+      - 04-functions-explained/03-DT-functions.md
   - Actuator Digital Twin download:
-      - 06-actuator-digital-twin-download/00-DT-download.md
+      - 05-actuator-digital-twin-download/00-DT-download.md
   - Licensing & Support:
-      - 07-licensing-and-support/00-licensing.md
-      - 07-licensing-and-support/01-support.md
-  - 08-faq/00-faq.md
+      - 06-licensing-and-support/00-licensing.md
+      - 06-licensing-and-support/01-support.md
+  - 07-faq/00-faq.md
 
 #  - Classes Definitions:
 #      - "Introduction": classes.md
