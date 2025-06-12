@@ -10,3 +10,7 @@ The Pulsar API is designed to provide a robust and flexible interface for contro
 * Best practices for integration and deployment
 
 ## Overview of the Pulsar ecosystem
+
+PULSAR HRI develops best-in-class actuation systems to enable future robotic capabilities. Our goal is to providing the absolute best performance in motors and actuators, defining performance with novel metrics including agility, torque and efficiency. Our design principle is fully model driven, that is why we are able to provide high perfromance actuators together with high fidelity digital twins (AUGUR) of them. In this wiki you will find all the necessary material to set up either a simulation or a real setup with our motors.
+
+![High level ecosystem diagram](figs/high_level_diagram.png)
