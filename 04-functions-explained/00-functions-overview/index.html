@@ -8,24 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://github.com/PulsarHRI/classes-01-InitialisationContrustor/">
+        <link rel="canonical" href="https://github.com/PulsarHRI/04-functions-explained/00-functions-overview/">
       
       
+        <link rel="prev" href="../../03-actuator-control-modes-explained/01-control-modes-parameters/">
       
       
-      <link rel="icon" href="../assets/icon.ico">
+        <link rel="next" href="../01-actuator-parameters-explained/">
+      
+      
+      <link rel="icon" href="../../assets/icon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Initialization and Constructor - Pulsar Documentation</title>
+        <title>Actuator class overview - Pulsar Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#initialization-and-constructor" class="md-skip">
+        <a href="#actuator-class-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -86,9 +90,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Pulsar Documentation" class="md-header__button md-logo" aria-label="Pulsar Documentation" data-md-component="logo">
+    <a href="../.." title="Pulsar Documentation" class="md-header__button md-logo" aria-label="Pulsar Documentation" data-md-component="logo">
       
-  <img src="../assets/P_Logo_white_svg.png" alt="logo">
+  <img src="../../assets/P_Logo_white_svg.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Initialization and Constructor
+              Actuator class overview
             
           </span>
         </div>
@@ -209,9 +213,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Pulsar Documentation" class="md-nav__button md-logo" aria-label="Pulsar Documentation" data-md-component="logo">
+    <a href="../.." title="Pulsar Documentation" class="md-nav__button md-logo" aria-label="Pulsar Documentation" data-md-component="logo">
       
-  <img src="../assets/P_Logo_white_svg.png" alt="logo">
+  <img src="../../assets/P_Logo_white_svg.png" alt="logo">
 
     </a>
     Pulsar Documentation
@@ -226,7 +230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../00-home/00-home/" class="md-nav__link">
+      <a href="../../00-home/00-home/" class="md-nav__link">
         
   
   
@@ -286,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-how-to-control-hardware-actuators/00-R-pulsar-hardware-context/" class="md-nav__link">
+      <a href="../../01-how-to-control-hardware-actuators/00-R-pulsar-hardware-context/" class="md-nav__link">
         
   
   
@@ -309,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-how-to-control-hardware-actuators/01-R-how-to-install-hardware/" class="md-nav__link">
+      <a href="../../01-how-to-control-hardware-actuators/01-R-how-to-install-hardware/" class="md-nav__link">
         
   
   
@@ -370,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/00-R-examples-overview/" class="md-nav__link">
+      <a href="../../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/00-R-examples-overview/" class="md-nav__link">
         
   
   
@@ -393,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/01-R-single-actuator/" class="md-nav__link">
+      <a href="../../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/01-R-single-actuator/" class="md-nav__link">
         
   
   
@@ -416,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/02-R-two-actuators/" class="md-nav__link">
+      <a href="../../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/02-R-two-actuators/" class="md-nav__link">
         
   
   
@@ -439,7 +443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/03-R-changing-parameters/" class="md-nav__link">
+      <a href="../../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/03-R-changing-parameters/" class="md-nav__link">
         
   
   
@@ -462,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/04-R-log-to-csv/" class="md-nav__link">
+      <a href="../../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/04-R-log-to-csv/" class="md-nav__link">
         
   
   
@@ -538,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-how-to-simulate-actuators-with-digital-twin/00-DT-pulsar-digital-twin-context/" class="md-nav__link">
+      <a href="../../02-how-to-simulate-actuators-with-digital-twin/00-DT-pulsar-digital-twin-context/" class="md-nav__link">
         
   
   
@@ -561,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-how-to-simulate-actuators-with-digital-twin/01-DT-how-to-install-digital-twin/" class="md-nav__link">
+      <a href="../../02-how-to-simulate-actuators-with-digital-twin/01-DT-how-to-install-digital-twin/" class="md-nav__link">
         
   
   
@@ -622,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/00-DT-examples-overview/" class="md-nav__link">
+      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/00-DT-examples-overview/" class="md-nav__link">
         
   
   
@@ -645,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/01-DT-raw-telemetry-plotting/" class="md-nav__link">
+      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/01-DT-raw-telemetry-plotting/" class="md-nav__link">
         
   
   
@@ -668,7 +672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/02-DT-mujoco-integration-pendulum/" class="md-nav__link">
+      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/02-DT-mujoco-integration-pendulum/" class="md-nav__link">
         
   
   
@@ -691,7 +695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/03-DT-mujoco-integration-arm/" class="md-nav__link">
+      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/03-DT-mujoco-integration-arm/" class="md-nav__link">
         
   
   
@@ -767,7 +771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-actuator-control-modes-explained/00-control-modes-overview/" class="md-nav__link">
+      <a href="../../03-actuator-control-modes-explained/00-control-modes-overview/" class="md-nav__link">
         
   
   
@@ -790,7 +794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-actuator-control-modes-explained/01-control-modes-parameters/" class="md-nav__link">
+      <a href="../../03-actuator-control-modes-explained/01-control-modes-parameters/" class="md-nav__link">
         
   
   
@@ -817,18 +821,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -844,7 +850,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Actuator class
@@ -855,10 +861,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../04-functions-explained/00-functions-overview/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Actuator class overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -869,6 +897,146 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initialization-and-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialization and Constructor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-and-address-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connection and Address Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predefined-performance-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predefined Performance Profiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Predefined Performance Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#torque-control-loop-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Torque Control Loop Performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Torque Control Loop Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggressive" class="md-nav__link">
+    <span class="md-ellipsis">
+      AGGRESSIVE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      BALANCED
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soft" class="md-nav__link">
+    <span class="md-ellipsis">
+      SOFT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-control-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing Control Modes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actuator-control-start-and-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actuator Control: Start and Stop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feedback-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actuator-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actuator Calibration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -881,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-functions-explained/01-actuator-parameters-explained/" class="md-nav__link">
+      <a href="../01-actuator-parameters-explained/" class="md-nav__link">
         
   
   
@@ -904,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-functions-explained/02-pcp-api-functions/" class="md-nav__link">
+      <a href="../02-pcp-api-functions/" class="md-nav__link">
         
   
   
@@ -927,7 +1095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-functions-explained/03-DT-functions/" class="md-nav__link">
+      <a href="../03-DT-functions/" class="md-nav__link">
         
   
   
@@ -995,7 +1163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-actuator-digital-twin-download/00-DT-download/" class="md-nav__link">
+      <a href="../../05-actuator-digital-twin-download/00-DT-download/" class="md-nav__link">
         
   
   
@@ -1063,7 +1231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-licensing-and-support/00-licensing/" class="md-nav__link">
+      <a href="../../06-licensing-and-support/00-licensing/" class="md-nav__link">
         
   
   
@@ -1086,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-licensing-and-support/01-support/" class="md-nav__link">
+      <a href="../../06-licensing-and-support/01-support/" class="md-nav__link">
         
   
   
@@ -1116,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-faq/00-faq/" class="md-nav__link">
+      <a href="../../07-faq/00-faq/" class="md-nav__link">
         
   
   
@@ -1158,18 +1326,120 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#python-usage" class="md-nav__link">
+  <a href="#initialization-and-constructor" class="md-nav__link">
     <span class="md-ellipsis">
-      Python Usage
+      Initialization and Constructor
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameters" class="md-nav__link">
+  <a href="#connection-and-address-management" class="md-nav__link">
     <span class="md-ellipsis">
-      Parameters
+      Connection and Address Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predefined-performance-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Predefined Performance Profiles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Predefined Performance Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#torque-control-loop-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Torque Control Loop Performance
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Torque Control Loop Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aggressive" class="md-nav__link">
+    <span class="md-ellipsis">
+      AGGRESSIVE
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#balanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      BALANCED
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#soft" class="md-nav__link">
+    <span class="md-ellipsis">
+      SOFT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-control-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing Control Modes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actuator-control-start-and-stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actuator Control: Start and Stop
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#save-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feedback-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Feedback Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actuator-calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actuator Calibration
     </span>
   </a>
   
@@ -1191,22 +1461,104 @@
 
 
 
-<h1 id="initialization-and-constructor">Initialization and Constructor</h1>
-<p>To create an instance of the <code>PulsarActuator</code> class, you must provide a CAN bus handler (commonly referred to as an adapter) and the actuator’s CAN address. Optionally, you may also supply a custom logger for debugging and monitoring purposes.</p>
-<h2 id="python-usage">Python Usage</h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>PulsarActuator<span class="o">(</span>canbus_handler,<span class="w"> </span>address:<span class="w"> </span>int,<span class="w"> </span><span class="nv">logger</span><span class="o">=</span>None<span class="o">)</span>
-</span></code></pre></div>
-<h2 id="parameters">Parameters</h2>
+<h1 id="actuator-class-overview">Actuator class overview</h1>
+<p>The PulsarActuator class is the core of the Pulsar Control Protocol (PCP) communication interface. It provides a high-level API for interacting with and managing Pulsar motors or actuators via the CAN bus. Key capabilities include:</p>
 <ul>
-<li>canbus_handler (object):An object responsible for managing communication over the CAN bus. This handler must implement the method:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>setCallback<span class="o">(</span>address,<span class="w"> </span>callback_fn<span class="o">)</span>
-</span></code></pre></div>
-This method is used to register a callback function that processes incoming CAN messages for the specified actuator address.</li>
-<li>address(int):
-The unique CAN address assigned to the actuator. This address is used to identify and communicate with the specific device on the CAN network.</li>
-<li>logger(Logger,optional):
-A Python Logger instance used for logging internal events, warnings, and errors. If not provided, the class defaults to using Python’s root logger.</li>
+<li><strong>Real-Time Command and Control</strong>: Send precise control commands to the actuator in real time.</li>
+<li><strong>Mode Switching</strong>: Seamlessly transition between various control modes such as torque, velocity, position, and impedance.</li>
+<li><strong>Live Feedback Monitoring</strong>: Continuously receive and process real-time feedback from the actuator via CAN messages.</li>
+<li><strong>Parameter Configuration and Management</strong>: Set, retrieve, and persist actuator parameters for fine-tuned performance.</li>
+<li><strong>Diagnostics and Health Monitoring</strong>: Access diagnostic data to evaluate actuator status and detect potential issues.</li>
 </ul>
+<h2 id="initialization-and-constructor">Initialization and Constructor</h2>
+<p>To create an instance of the PulsarActuator class, you need to provide a CAN bus handler and the actuator’s CAN address. Optionally, you can supply a custom logger for debugging and monitoring purposes.
+<div class="language-py highlight"><span class="filename">Create an instance of the PulsarActuator class</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">PulsarActuator</span><span class="p">(</span><span class="n">canbus_handler</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div></p>
+<h2 id="connection-and-address-management">Connection and Address Management</h2>
+<ul>
+<li><strong>Connecting to the Actuator</strong>: Use the <a href="../02-pcp-api-functions/#connecttimeout10-bool">connect()</a> method to initiate communication.</li>
+<li><strong>Disconnecting from the Actuator</strong>: Use the <a href="../02-pcp-api-functions/#disconnect">disconnect()</a> method to safely terminate communication.</li>
+<li><strong>Pinging the Actuator</strong>: Use the <a href="../02-pcp-api-functions/#send_pingtimeout10-bool">send_ping()</a> method to check if a specific CAN address is active and responsive.</li>
+<li><strong>Changing the Actuator's CAN Address</strong>: Use the <a href="../02-pcp-api-functions/#changeaddressnew_address">changeAddress(new_address)</a> method to assign a specific address.</li>
+</ul>
+<h2 id="predefined-performance-profiles">Predefined Performance Profiles</h2>
+<p>The actuator provides predefined performance profiles for both <a href="../02-pcp-api-functions/#set_torque_performanceperformance-torqueperformance">torque</a> and <a href="../02-pcp-api-functions/#set_speed_performanceperformance-speedperformance">speed</a> control loops:</p>
+<ul>
+<li><strong>Torque Control Loop Performance</strong>: Profiles include AGGRESSIVE, BALANCED, SOFT.</li>
+<li><strong>Speed Loop Performance</strong>: Profiles include AGGRESSIVE, BALANCED, SOFT, and CUSTOM. In this case all the profiles have a similar response time without load, making it more agressive implies a faster rejection time of a perturbation. The parameters are obtained for the no-load motor operation.</li>
+</ul>
+<h3 id="torque-control-loop-performance">Torque Control Loop Performance</h3>
+<p>This setting determines how quickly and aggressively the actuator responds to torque commands. The available profiles are:</p>
+<h4 id="aggressive">AGGRESSIVE</h4>
+<ul>
+<li><strong>Bandwidth</strong>: ~1000 Hz  </li>
+<li><strong>Behavior</strong>: Maximizes responsiveness and torque application speed.  </li>
+<li><strong>Use Case</strong>: Ideal for dynamic tasks such as impedance control or joint torque control.  </li>
+<li><strong>Trade-off</strong>: May reduce steady-state precision.</li>
+</ul>
+<h4 id="balanced">BALANCED</h4>
+<ul>
+<li><strong>Bandwidth</strong>: ~500 Hz  </li>
+<li><strong>Behavior</strong>: Offers a compromise between responsiveness and stability.  </li>
+<li><strong>Use Case</strong>: Suitable for general-purpose applications.</li>
+</ul>
+<h4 id="soft">SOFT</h4>
+<ul>
+<li><strong>Bandwidth</strong>: ~100 Hz  </li>
+<li><strong>Behavior</strong>: Prioritizes smoothness and precision over speed.  </li>
+<li><strong>Use Case</strong>: Best for tasks requiring high torque fidelity and low noise.  </li>
+<li><strong>Trade-off</strong>: Lower responsiveness.</li>
+</ul>
+<p><strong>Table – TorquePerformance</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Bandwidth (Hz)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AGGRESSIVE</td>
+<td>1</td>
+<td>~1000 Hz</td>
+<td>Fast response, less precision in steady state</td>
+</tr>
+<tr>
+<td>BALANCED</td>
+<td>2</td>
+<td>~500 Hz</td>
+<td>Balanced between response and stability</td>
+</tr>
+<tr>
+<td>SOFT</td>
+<td>3</td>
+<td>~100 Hz</td>
+<td>Stable and quiet, low responsiveness</td>
+</tr>
+</tbody>
+</table>
+<h2 id="changing-control-modes">Changing Control Modes</h2>
+<p>Use the <a href="../02-pcp-api-functions/#change_modemode-mode">change_mode(mode)</a> method to switch between control modes such as CALIBRATION, FVI, OPEN_LOOP, DVI, TORQUE, SPEED, POSITION, and IMPEDANCE.</p>
+<h2 id="actuator-control-start-and-stop">Actuator Control: Start and Stop</h2>
+<ul>
+<li><strong>Start</strong>: Use the <a href="../02-pcp-api-functions/#start">start()</a> method to initiate the actuator's operation.</li>
+<li><strong>Stop</strong>: Use the <a href="../02-pcp-api-functions/#stop">stop()</a> method to halt the actuator's current motion.</li>
+</ul>
+<h2 id="save-configuration">Save Configuration</h2>
+<p>Use the <a href="../02-pcp-api-functions/#save_config">save_config()</a> method to store the current settings in non-volatile memory.</p>
+<h2 id="feedback-configuration">Feedback Configuration</h2>
+<p>The PulsarActuator API supports two feedback channels with configurable update rates:
+* <strong>High-Frequency Feedback</strong>: For fast-changing signals (e.g., torque, speed).
+* <strong>Low-Frequency Feedback</strong>: For slower or less critical signals (e.g., temperature, voltage).</p>
+<h2 id="actuator-calibration">Actuator Calibration</h2>
+<p>Use the <a href="../02-pcp-api-functions/#calibrate">calibrate()</a> method to perform internal calibration routines.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>DO NOT USE THIS UNLESS SPECIFIED BY PULSAR TEAM</p>
+</div>
 
 
 
@@ -1231,6 +1583,44 @@ A Python Logger instance used for logging internal events, warnings, and errors.
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../03-actuator-control-modes-explained/01-control-modes-parameters/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Which control parameters can be used in each mode?">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Which control parameters can be used in each mode?
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../01-actuator-parameters-explained/" class="md-footer__link md-footer__link--next" aria-label="Next: Actuator parameters">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Actuator parameters
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1276,10 +1666,10 @@ A Python Logger instance used for logging internal events, warnings, and errors.
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "toggle", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "toggle", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
