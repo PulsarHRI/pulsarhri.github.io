@@ -1,4 +1,4 @@
-site_name: Pulsar API Documentation
+site_name: Pulsar Documentation
 site_url: https://github.com/PulsarHRI/
 theme:
   name: material
@@ -30,6 +30,7 @@ theme:
     - navigation.footer
     - toggle
     - search.highlight
+    - content.code.copy
 plugins:
   - search
 markdown_extensions:
@@ -45,7 +46,11 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
-
+  - pymdownx.arithmatex:
+      generic: true
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -54,19 +59,48 @@ extra:
     #   link: https://pulsarhri.com
 
 nav:
-  - Home: index.md
-  - Examples:
-      - "Controlling One Target": 01-Single-Actuator.md
-      - "Controlling Two Targets": 02-Two-Actuators.md
-      - "Changing Actuator Parameters": 03-Changing-Parameters.md 
-      - "Logging data and saving in .csv File": 04-Log-To-CSV.md
-  - Classes Definitions:
-      - "Introduction": classes.md
-      - "Initialization and Constructor": classes-01-InitialisationContrustor.md
-      - "Connection and Adress Management": Classes-02-ConnectionAndAdress.md
-      - "Feedback Configuration from Pulsar Actuator": Classes-03-Feedback.md
-      - "Pulsar Actuator Parameters": Classes-04-PulsarActuator_Parameters.md
-      - "Predefined Performance Profiles": Classes-05-PerformanceProfiles.md
-      - "Actuator Operation: Startup, Shutdown, and Control Modes": Classes-06-ActuatorOperation.md
+  - 00-home/00-home.md
+  - How to control hardware actuators: 
+      - 01-how-to-control-hardware-actuators/00-R-pulsar-hardware-context.md
+      - 01-how-to-control-hardware-actuators/01-R-how-to-install-hardware.md
+      - "Actuator control examples":
+          - 01-how-to-control-hardware-actuators/02-R-actuator-control-examples/00-R-examples-overview.md
+          - 01-how-to-control-hardware-actuators/02-R-actuator-control-examples/01-R-single-actuator.md
+          - 01-how-to-control-hardware-actuators/02-R-actuator-control-examples/02-R-two-actuators.md
+          - 01-how-to-control-hardware-actuators/02-R-actuator-control-examples/03-R-changing-parameters.md
+          - 01-how-to-control-hardware-actuators/02-R-actuator-control-examples/04-R-log-to-csv.md
+  - How to simulate actuators with Digital Twin:
+      - 02-how-to-simulate-actuators-with-digital-twin/00-DT-pulsar-digital-twin-context.md
+      - 02-how-to-simulate-actuators-with-digital-twin/01-DT-how-to-install-digital-twin.md
+      - "Actuator Digital Twin simulation examples":
+          - 02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/00-DT-examples-overview.md
+          - 02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/01-DT-raw-telemetry-plotting.md
+          - 02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/02-DT-mujoco-integration-pendulum.md
+          - 02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/03-DT-mujoco-integration-arm.md
+  
+  - Actuator control modes explained:
+      - 03-actuator-control-modes-explained/00-control-modes-overview.md
+      - 03-actuator-control-modes-explained/01-control-modes-parameters.md
+
+  - Actuator class:
+      - 04-functions-explained/00-functions-overview.md
+      - 04-functions-explained/01-actuator-parameters-explained.md
+      - 04-functions-explained/02-pcp-api-functions.md
+      - 04-functions-explained/03-DT-functions.md
+  - Actuator Digital Twin download:
+      - 05-actuator-digital-twin-download/00-DT-download.md
+  - Licensing & Support:
+      - 06-licensing-and-support/00-licensing.md
+      - 06-licensing-and-support/01-support.md
+  - 07-faq/00-faq.md
+
+#  - Classes Definitions:
+#      - "Introduction": classes.md
+#      - "Initialization and Constructor": classes-01-InitialisationContrustor.md
+#      - "Connection and Adress Management": Classes-02-ConnectionAndAdress.md
+#      - "Feedback Configuration from Pulsar Actuator": Classes-03-Feedback.md
+#      - "Pulsar Actuator Parameters": Classes-04-PulsarActuator_Parameters.md
+#      - "Predefined Performance Profiles": Classes-05-PerformanceProfiles.md
+#      - "Actuator Operation: Startup, Shutdown, and Control Modes": Classes-06-ActuatorOperation.md
 
 copyright: Copyright &copy; 2025 Pulsar
