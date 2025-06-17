@@ -1,6 +1,6 @@
 # Advanced Features
 
-This notebook demonstrates advanced configuration and control of a Pulsar actuator using the pcp_api library. It builds upon the basic example, which covers:
+This notebook demonstrates advanced configuration and control of a PULSAR HRI actuator using the pcp_api library. It builds upon the basic example, which covers:
 
 * Connecting to the actuator
 * Setting feedback items and rates

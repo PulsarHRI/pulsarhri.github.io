@@ -1,5 +1,5 @@
 # Log Data to CSV
-This script is designed to connect to a Pulsar actuator using a CAN-over-USB adapter. It logs high-frequency sensor data and saves it to a CSV file for later analysis.
+This script is designed to connect to a PULSAR HRI actuator using a CAN-over-USB adapter. It logs high-frequency sensor data and saves it to a CSV file for later analysis.
 
 ## Import Required Modules
 

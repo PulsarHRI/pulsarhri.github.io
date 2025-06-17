@@ -1,4 +1,4 @@
-# Welcome to the Pulsar documentation
+# Welcome to the PULSAR HRI documentation
 
 At PULSAR HRI, we are dedicated to enabling physical interaction between humans and robots through the development of next-generation actuation systems. Our goal is to provide the best performance in motors and actuators, setting new standards in agility, torque, and efficiency.
 

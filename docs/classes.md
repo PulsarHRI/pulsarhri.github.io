@@ -1,6 +1,6 @@
 # Class Definitions
 ## Overview of the PulsarActuator Communication Interface
-At the core of PCP (Pulsar Control Protocol) communication lies the PulsarActuator class. This class serves as the primary high-level interface for interacting with and managing a Pulsar motor or actuator controller via the CAN (Controller Area Network) bus. It abstracts the complexities of low-level communication, providing developers with a streamlined and intuitive API for real-time control and monitoring.
+At the core of PCP (Pulsar Control Protocol) communication lies the PulsarActuator class. This class serves as the primary high-level interface for interacting with and managing a PULSAR HRI motor or actuator controller via the CAN (Controller Area Network) bus. It abstracts the complexities of low-level communication, providing developers with a streamlined and intuitive API for real-time control and monitoring.
 
 ## Key Capabilities of the PulsarActuator API
 The PulsarActuator class offers a comprehensive suite of features designed to facilitate robust and flexible actuator control. These include:

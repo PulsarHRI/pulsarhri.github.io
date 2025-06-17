@@ -1,8 +1,8 @@
 name: Request support
-description: File to request support from Pulsar HRI.
+description: File to request support from PULSAR HRI.
 title: "[Provide a title]"
 assignees:
-  - Pulsar HRI
+  - PULSAR HRI
 body:
   - type: markdown
     attributes:
