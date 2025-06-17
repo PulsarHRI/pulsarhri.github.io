@@ -2,130 +2,130 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/PulsarHRI/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/Classes-02-ConnectionAndAdress/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/Classes-03-Feedback/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/Classes-04-PulsarActuator_Parameters/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/Classes-05-PerformanceProfiles/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/Classes-06-ActuatorOperation/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/classes-01-InitialisationContrustor/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/classes/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/00-home/00-home/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/01-how-to-control-hardware-actuators/00-R-pulsar-hardware-context/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/01-how-to-control-hardware-actuators/01-R-how-to-install-hardware/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/01-how-to-control-hardware-actuators/02-R-actuator-control-examples/00-R-examples-overview/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/01-how-to-control-hardware-actuators/02-R-actuator-control-examples/01-R-single-actuator/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/01-how-to-control-hardware-actuators/02-R-actuator-control-examples/02-R-two-actuators/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/01-how-to-control-hardware-actuators/02-R-actuator-control-examples/03-R-changing-parameters/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/01-how-to-control-hardware-actuators/02-R-actuator-control-examples/04-R-log-to-csv/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/02-how-to-simulate-actuators-with-digital-twin/00-DT-pulsar-digital-twin-context/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/02-how-to-simulate-actuators-with-digital-twin/01-DT-how-to-install-digital-twin/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/00-DT-examples-overview/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/01-DT-raw-telemetry-plotting/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/02-DT-mujoco-integration-pendulum/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/03-DT-mujoco-integration-arm/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/03-actuator-control-modes-explained/00-control-modes-overview/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/03-actuator-control-modes-explained/01-control-modes-parameters/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/04-functions-explained/00-functions-overview/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/04-functions-explained/01-actuator-parameters-explained/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/04-functions-explained/02-pcp-api-functions/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/04-functions-explained/03-DT-functions/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/05-actuator-digital-twin-download/00-DT-download/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/06-licensing-and-support/00-licensing/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/06-licensing-and-support/01-support/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
     <url>
          <loc>https://github.com/PulsarHRI/07-faq/00-faq/</loc>
-         <lastmod>2025-06-13</lastmod>
+         <lastmod>2025-06-17</lastmod>
     </url>
 </urlset>
