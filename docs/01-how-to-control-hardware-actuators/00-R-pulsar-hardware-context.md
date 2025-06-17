@@ -1,8 +1,4 @@
-# How are Pulsar motors and actuators different from the others?
-
-!!! note
-    * When we refer to motors we refer to direct drive motors without transmission
-    * When we refer to actuators we refer to motors with a transmission
+# How are PULSAR HRI motors and actuators different from the others?
 
 Robotic applications require motors and actuators which can produce high torques at low speeds, while being able to change speed and torque in a reliable and agile manner. A key performance indicator often overlooked is dynamic efficiency, a critical requirement for mobile robots. 
 

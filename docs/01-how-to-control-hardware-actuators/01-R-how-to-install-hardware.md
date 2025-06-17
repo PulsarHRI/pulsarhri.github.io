@@ -1,4 +1,4 @@
-# Installing the Pulsar actuator API (pcp_api)
+# Installing the PULSAR HRI actuator API (pcp_api)
 To ensure a clean and manageable development setup, we strongly recommend using a virtual environment. This helps isolate your dependencies and avoid conflicts with other Python packages on your system. **All examples and functionality have been tested on Windows 11 using Python 3.12.10.**
 
 ## Installation
@@ -16,7 +16,7 @@ This will create a new virtual environment in a folder named .venv within your p
 
 ### Step 2: Activate the Virtual Environment
 
-Before installing the Pulsar API, activate the virtual environment. The activation command depends on your operating system:
+Before installing the PULSAR HRI API, activate the virtual environment. The activation command depends on your operating system:
 
 === "Linux/macOS"
 
@@ -32,8 +32,8 @@ Before installing the Pulsar API, activate the virtual environment. The activati
 
 Once activated, your terminal prompt should change to indicate that you're working inside the virtual environment.
 
-### Step 3: Install the Pulsar API
-With the virtual environment active, install the Pulsar API package using `pip`:
+### Step 3: Install the PULSAR HRI API
+With the virtual environment active, install the PULSAR HRI API package using `pip`:
 
 ```bash
 pip install pcp_api
@@ -41,7 +41,7 @@ pip install pcp_api
 This command will download and install the latest version of the pcp_api package from PyPI or your configured package index. 
 
 !!! tip
-    Every time you want to use the Pulsar API or run the example scripts, make sure to activate your virtual environment first. If you close your terminal or restart your system, you’ll need to reactivate it.
+    Every time you want to use the PULSAR HRI API or run the example scripts, make sure to activate your virtual environment first. If you close your terminal or restart your system, you’ll need to reactivate it.
 
 ## Verifying the Installation
 To confirm that the installation was successful, you can run the following command:

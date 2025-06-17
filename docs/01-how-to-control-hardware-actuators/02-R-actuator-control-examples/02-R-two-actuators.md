@@ -1,6 +1,6 @@
 # Controlling Two Targets
 
-This notebook demonstrates how to control multiple Pulsar actuators using the CANoverUSB interface. We will walk through the steps of connecting to the USB-CAN adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.
+This notebook demonstrates how to control multiple PULSAR HRI actuators using the CANoverUSB interface. We will walk through the steps of connecting to the USB-CAN adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.
 
 ## Import necessary modules
 

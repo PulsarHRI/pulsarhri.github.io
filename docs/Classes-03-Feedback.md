@@ -1,4 +1,4 @@
-# Feedback Configuration from the Pulsar Actuator
+# Feedback Configuration from the PULSAR HRI Actuator
 To efficiently manage data flow and avoid saturating the CAN bus, the PulsarActuator API supports two feedback channels with configurable update rates:
 
 * High-Frequency Feedback: For fast-changing signals (e.g., torque, speed).

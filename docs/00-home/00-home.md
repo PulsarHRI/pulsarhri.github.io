@@ -1,7 +1,7 @@
 # Home
-Welcome to the Pulsar documentation wiki! This wiki contains everything you need to begin working with the Pulsar Actuators or Pulsar Motors. Whether you're a researcher, developer, or engineer, this guide will walk you through setting up your environment, installing the packages, and accessing the documentation and examples.
+Welcome to the PULSAR HRI documentation wiki! This wiki contains everything you need to begin working with the PULSAR HRI Actuators or PULSAR HRI Motors. Whether you're a researcher, developer, or engineer, this guide will walk you through setting up your environment, installing the packages, and accessing the documentation and examples.
 
-The Pulsar packages is designed to provide a robust and flexible interface for controlling and monitoring Pulsar hardware. It includes:
+The PULSAR HRI packages is designed to provide a robust and flexible interface for controlling and monitoring PULSAR HRI hardware. It includes:
 
 * A Python package for controlling the real hardware
 * A Python package for controlling the digital twin (AUGUR)
@@ -9,8 +9,12 @@ The Pulsar packages is designed to provide a robust and flexible interface for c
 * Detailed descriptions of available classes, methods, and parameters
 * Best practices for integration and deployment
 
-## Overview of the Pulsar ecosystem
+## Overview of the PULSAR HRI ecosystem
 
-PULSAR HRI develops best-in-class actuation systems to enable future robotic capabilities. Our goal is to providing the absolute best performance in motors and actuators, defining performance with novel metrics including agility, torque and efficiency. Our design principle is fully model driven, that is why we are able to provide high perfromance actuators together with high fidelity digital twins (AUGUR) of them. In this wiki you will find all the necessary material to set up either a simulation or a real setup with our motors.
+!!! note
+    * When we refer to motors we refer to direct drive motors without transmission
+    * When we refer to actuators we refer to motors with a transmission
+
+PULSAR HRI develops best-in-class actuation systems to enable the next generation of robotic capabilities. Our aim is to provide the highest possible performance in motors and actuators, defining excellence through novel metrics involving agility, torque-density, and efficiency. Our model-based design approach enables us to deliver high-performance actuators alongside high-fidelity digital twins (AUGUR). This wiki contains all the necessary resources to set up either a simulation or a physical configuration using our products.
 
 ![High level ecosystem diagram](figs/high_level_diagram.png)

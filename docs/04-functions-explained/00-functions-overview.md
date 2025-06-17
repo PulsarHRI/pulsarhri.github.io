@@ -1,6 +1,6 @@
 # Actuator class overview
 
-The PulsarActuator class is the core of the Pulsar Control Protocol (PCP) communication interface. It provides a high-level API for interacting with and managing Pulsar motors or actuators via the CAN bus. Key capabilities include:
+The PulsarActuator class is the core of the Pulsar Control Protocol (PCP) communication interface. It provides a high-level API for interacting with and managing PULSAR HRI motors or actuators via the CAN bus. Key capabilities include:
 
 * **Real-Time Command and Control**: Send precise control commands to the actuator in real time.
 * **Mode Switching**: Seamlessly transition between various control modes such as torque, velocity, position, and impedance.
