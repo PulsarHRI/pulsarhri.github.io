@@ -24,7 +24,7 @@ adapter = PCP_over_USB(port)
 
 ## Instantiate the actuator
 
-You can instantiate as many actuators as you want with the same adapter. In this example we are going to control only one actuator, connected directly via USB. If you are using a CAN adapter, you need to specify the PCP address of the actuator. The PCP address is a unique identifier for each actuator on the CAN bus. You can find this address with the  [CLI scan command](cli.md#scan-for-devices). If you are connecting directly via USB, you can use `0` as the address.
+You can instantiate as many actuators as you want with the same adapter. In this example we are going to control only one actuator, connected directly via USB. If you are using a CAN adapter, you need to specify the PCP address of the actuator. The PCP address is a unique identifier for each actuator on the CAN bus. You can find this address with the  [CLI scan command](../../cli.md#scan-for-devices). If you are connecting directly via USB, you can use `0` as the address.
 
 ```py
 ACTUATOR_ADDRESS = 0  # 0 for direct USB connection, or use the actuator address if using CAN adapter
@@ -33,8 +33,68 @@ actuator.connect()
 print(f"Connected to the actuator {actuator.address} (model: {actuator.model}, firmware: {actuator.firmware_version})")
 ```
 
-## Define the feedback data
+## Configure feedback
 
+first define in the top a function to handle the feedback from the actuator. This function will be called whenever new feedback is received from the actuator.
+
+```py
+def actuator_feedback(address: int, feedback: dict):
+    print(feedback)
+```
+
+Set up the feedback configuration and control mode:
+
+* High-frequency feedback for data like speed, position, torque, ...
+* Low-frequency feedback for data like bus voltage, temperatures....
+
+```py title="Configure feedback and control settings"
+actuator.setHighFreqFeedbackItems([
+    PulsarActuator.PCP_Items.SPEED_FB,
+    PulsarActuator.PCP_Items.POSITION_FB,
+    PulsarActuator.PCP_Items.TORQUE_FB,
+    # You can add more items as needed
+])
+actuator.setHighFreqFeedbackRate(actuator.Rates.RATE_10HZ)
+
+# Low-frequency feedback includes bus voltage and motor temperature.
+actuator.setLowFreqFeedbackItems([
+    PulsarActuator.PCP_Items.VBUS,
+    PulsarActuator.PCP_Items.TEMP_MOTOR,
+])
+actuator.setLowFreqFeedbackRate(actuator.Rates.RATE_1HZ)
+
+actuator.set_feedback_callback(actuator_feedback)
+```
+
+## Configure control settings
+
+
+```py title="Configure control settings"
+    actuator.change_mode(PulsarActuator.Mode.SPEED)
+    actuator.change_setpoint(1.0)  # rad/s
+    actuator.start()
+    # The actuator is started and feedback is monitored in a loop.
+    # The loop will keep running until interrupted (e.g., by pressing `Stop` in the notebook).
+    while True:
+        sleep(0.1)  # actuator_feedback() should be triggered
+```
+
+
+## Shutdown
+Ensure the actuator is properly disconnected and the adapter is closed when the program is interrupted (e.g., via Ctrl+C or notebook stop if running from a Jupyter notebook).
+
+```py title="Shutdown"
+try:
+    # Put the configuration and control code here
+    while True:
+        sleep(0.1)
+except KeyboardInterrupt:
+    pass
+finally:
+    actuator.disconnect()  # will also stop the actuator
+    sleep(0.1)
+    adapter.close()
+```
 
 ## Full Example
 
