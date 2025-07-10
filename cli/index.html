@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://github.com/PulsarHRI/04-functions-explained/01-actuator-parameters-explained/">
+        <link rel="canonical" href="https://github.com/PulsarHRI/cli/">
       
       
-        <link rel="prev" href="../00-functions-overview/">
+        <link rel="prev" href="../01-how-to-control-hardware-actuators/01-R-how-to-install-hardware/">
       
       
-        <link rel="next" href="../02-pcp-api-functions/">
+        <link rel="next" href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/00-R-examples-overview/">
       
       
-      <link rel="icon" href="../../assets/icon.ico">
+      <link rel="icon" href="../assets/icon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Actuator parameters - PULSAR HRI Documentation</title>
+        <title>CLI - PULSAR HRI Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#actuator-parameters" class="md-skip">
+        <a href="#cli" class="md-skip">
           Skip to content
         </a>
       
@@ -90,9 +90,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="PULSAR HRI Documentation" class="md-header__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
+    <a href=".." title="PULSAR HRI Documentation" class="md-header__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
       
-  <img src="../../assets/P_Logo_white_svg.png" alt="logo">
+  <img src="../assets/P_Logo_white_svg.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Actuator parameters
+              CLI
             
           </span>
         </div>
@@ -213,9 +213,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="PULSAR HRI Documentation" class="md-nav__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
+    <a href=".." title="PULSAR HRI Documentation" class="md-nav__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
       
-  <img src="../../assets/P_Logo_white_svg.png" alt="logo">
+  <img src="../assets/P_Logo_white_svg.png" alt="logo">
 
     </a>
     PULSAR HRI Documentation
@@ -230,7 +230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00-home/00-home/" class="md-nav__link">
+      <a href="../00-home/00-home/" class="md-nav__link">
         
   
   
@@ -249,18 +249,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -276,7 +278,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             How to Use PULSAR HRI Hardware
@@ -290,7 +292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-how-to-control-hardware-actuators/00-R-pulsar-hardware-context/" class="md-nav__link">
+      <a href="../01-how-to-control-hardware-actuators/00-R-pulsar-hardware-context/" class="md-nav__link">
         
   
   
@@ -313,7 +315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-how-to-control-hardware-actuators/01-R-how-to-install-hardware/" class="md-nav__link">
+      <a href="../01-how-to-control-hardware-actuators/01-R-how-to-install-hardware/" class="md-nav__link">
         
   
   
@@ -333,10 +335,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../cli/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CLI
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -347,6 +371,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying the Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the CLI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scan-for-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scan for Devices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-device-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Device parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -397,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/00-R-examples-overview/" class="md-nav__link">
+      <a href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/00-R-examples-overview/" class="md-nav__link">
         
   
   
@@ -420,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/01-R-single-actuator/" class="md-nav__link">
+      <a href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/01-R-single-actuator/" class="md-nav__link">
         
   
   
@@ -443,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/02-R-two-actuators/" class="md-nav__link">
+      <a href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/02-R-two-actuators/" class="md-nav__link">
         
   
   
@@ -466,7 +552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/03-R-changing-parameters/" class="md-nav__link">
+      <a href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/03-R-changing-parameters/" class="md-nav__link">
         
   
   
@@ -489,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/04-R-log-to-csv/" class="md-nav__link">
+      <a href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/04-R-log-to-csv/" class="md-nav__link">
         
   
   
@@ -565,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/00-DT-pulsar-digital-twin-context/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/00-DT-pulsar-digital-twin-context/" class="md-nav__link">
         
   
   
@@ -588,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/01-DT-how-to-install-digital-twin/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/01-DT-how-to-install-digital-twin/" class="md-nav__link">
         
   
   
@@ -649,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/00-DT-examples-overview/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/00-DT-examples-overview/" class="md-nav__link">
         
   
   
@@ -672,7 +758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/01-DT-raw-telemetry-plotting/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/01-DT-raw-telemetry-plotting/" class="md-nav__link">
         
   
   
@@ -695,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/02-DT-mujoco-integration-pendulum/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/02-DT-mujoco-integration-pendulum/" class="md-nav__link">
         
   
   
@@ -718,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/03-DT-mujoco-integration-arm/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/03-DT-mujoco-integration-arm/" class="md-nav__link">
         
   
   
@@ -794,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-actuator-control-modes-explained/00-control-modes-overview/" class="md-nav__link">
+      <a href="../03-actuator-control-modes-explained/00-control-modes-overview/" class="md-nav__link">
         
   
   
@@ -817,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-actuator-control-modes-explained/01-control-modes-parameters/" class="md-nav__link">
+      <a href="../03-actuator-control-modes-explained/01-control-modes-parameters/" class="md-nav__link">
         
   
   
@@ -844,20 +930,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -873,7 +957,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Actuator Class
@@ -887,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../00-functions-overview/" class="md-nav__link">
+      <a href="../04-functions-explained/00-functions-overview/" class="md-nav__link">
         
   
   
@@ -907,32 +991,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Actuator parameters
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../04-functions-explained/01-actuator-parameters-explained/" class="md-nav__link">
         
   
   
@@ -943,101 +1005,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#table-pcp_parameters-enum" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table – PCP_Parameters Enum
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reading-actuator-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reading Actuator Parameters
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reading Actuator Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#get_parameters_all" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_parameters_all()
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#get_parametersparameters-timeout10" class="md-nav__link">
-    <span class="md-ellipsis">
-      get_parameters(parameters, timeout=1.0)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modifying-actuator-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modifying Actuator Parameters
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Modifying Actuator Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#set_parametersparameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      set_parameters(parameters)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-of-profiles-and-limits" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use of profiles and limits
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1050,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-pcp-api-functions/" class="md-nav__link">
+      <a href="../04-functions-explained/02-pcp-api-functions/" class="md-nav__link">
         
   
   
@@ -1073,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-DT-functions/" class="md-nav__link">
+      <a href="../04-functions-explained/03-DT-functions/" class="md-nav__link">
         
   
   
@@ -1141,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-actuator-digital-twin-download/00-DT-download/" class="md-nav__link">
+      <a href="../05-actuator-digital-twin-download/00-DT-download/" class="md-nav__link">
         
   
   
@@ -1209,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-licensing-and-support/00-licensing/" class="md-nav__link">
+      <a href="../06-licensing-and-support/00-licensing/" class="md-nav__link">
         
   
   
@@ -1232,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-licensing-and-support/01-support/" class="md-nav__link">
+      <a href="../06-licensing-and-support/01-support/" class="md-nav__link">
         
   
   
@@ -1262,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07-faq/00-faq/" class="md-nav__link">
+      <a href="../07-faq/00-faq/" class="md-nav__link">
         
   
   
@@ -1304,37 +1271,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#table-pcp_parameters-enum" class="md-nav__link">
+  <a href="#verifying-the-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Table – PCP_Parameters Enum
+      Verifying the Installation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reading-actuator-parameters" class="md-nav__link">
+  <a href="#using-the-cli" class="md-nav__link">
     <span class="md-ellipsis">
-      Reading Actuator Parameters
+      Using the CLI
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Reading Actuator Parameters">
+    <nav class="md-nav" aria-label="Using the CLI">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#get_parameters_all" class="md-nav__link">
+  <a href="#scan-for-devices" class="md-nav__link">
     <span class="md-ellipsis">
-      get_parameters_all()
+      Scan for Devices
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#get_parametersparameters-timeout10" class="md-nav__link">
+  <a href="#get-device-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      get_parameters(parameters, timeout=1.0)
+      Get Device parameters
     </span>
   </a>
   
@@ -1342,39 +1309,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modifying-actuator-parameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modifying Actuator Parameters
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Modifying Actuator Parameters">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#set_parametersparameters" class="md-nav__link">
-    <span class="md-ellipsis">
-      set_parameters(parameters)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-of-profiles-and-limits" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use of profiles and limits
-    </span>
-  </a>
   
 </li>
       
@@ -1394,151 +1328,24 @@
 
 
 
-<h1 id="actuator-parameters">Actuator parameters</h1>
-<p>In this section we will show the different parameters that are available in an actuator and their description, see <a href="#table-pcp_parameters-enum">Table – PCP_Parameters Enum</a>. Moreover, the functions to <a href="#reading-actuator-parameters">read</a> and <a href="#modifying-actuator-parameters">change</a> them will be presented. The use of <a href="#use-of-profiles-and-limits">setpoint profiles and how to set limits to the actuator</a> is also included here.</p>
-<h2 id="table-pcp_parameters-enum">Table – PCP_Parameters Enum</h2>
-<table>
-<thead>
-<tr>
-<th>Enum Name</th>
-<th>Code</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>K_DAMPING</code></td>
-<td>0x01</td>
-<td>Damping coefficient (Nm·s/rad) for the virtual damper behavior (Impedance Control)</td>
-</tr>
-<tr>
-<td><code>K_STIFFNESS</code></td>
-<td>0x02</td>
-<td>Stiffness coefficient (Nm/rad) for the virtual spring behavior (Impedance Control)</td>
-</tr>
-<tr>
-<td><code>TORQUE_FF</code></td>
-<td>0x03</td>
-<td>Feedforward Torque Value (Nm)</td>
-</tr>
-<tr>
-<td><code>LIM_TORQUE</code></td>
-<td>0x04</td>
-<td>Upper and lower bounds for how much torque can be applied in the positive and negative directions. (Nm)</td>
-</tr>
-<tr>
-<td><code>LIM_POSITION_MAX</code></td>
-<td>0x05</td>
-<td>Max. Position Limit (rad)</td>
-</tr>
-<tr>
-<td><code>LIM_POSITION_MIN</code></td>
-<td>0x06</td>
-<td>Min. Position Limit (rad)</td>
-</tr>
-<tr>
-<td><code>LIM_SPEED_MAX</code></td>
-<td>0x07</td>
-<td>Max. Speed Limit (rad/s)</td>
-</tr>
-<tr>
-<td><code>LIM_SPEED_MIN</code></td>
-<td>0x08</td>
-<td>Min. Speed Limit (rad/s)</td>
-</tr>
-<tr>
-<td><code>PROFILE_POSITION_MAX</code></td>
-<td>0x09</td>
-<td>Max. Positive Speed (rad/s) in Position control configuration</td>
-</tr>
-<tr>
-<td><code>PROFILE_POSITION_MIN</code></td>
-<td>0x0A</td>
-<td>Min. Negative Speed (rad/s) in Position control configuration</td>
-</tr>
-<tr>
-<td><code>PROFILE_SPEED_MAX</code></td>
-<td>0x0B</td>
-<td>Max. Acceleration (rad/s^2) in Speed control configuration</td>
-</tr>
-<tr>
-<td><code>PROFILE_SPEED_MIN</code></td>
-<td>0x0C</td>
-<td>Max. Deceleration (rad/s^2) in Speed control configuration</td>
-</tr>
-<tr>
-<td><code>KP_SPEED</code></td>
-<td>0x0D</td>
-<td>Kp speed control constant P value</td>
-</tr>
-<tr>
-<td><code>KI_SPEED</code></td>
-<td>0x0E</td>
-<td>Ki speed control constant I value</td>
-</tr>
-<tr>
-<td><code>KP_POSITION</code></td>
-<td>0x0F</td>
-<td>Kp position control constant P value</td>
-</tr>
-<tr>
-<td><code>MODE</code></td>
-<td>0x30</td>
-<td>Operation Mode (read-only, must be set via <code>CHANGE_MODE</code>)</td>
-</tr>
-<tr>
-<td><code>SETPOINT</code></td>
-<td>0x31</td>
-<td>Setpoint, Position (rad), Speed (rad/s), Torque (Nm)</td>
-</tr>
-<tr>
-<td><code>FIRMWARE_VERSION</code></td>
-<td>0x80</td>
-<td>Firmware version</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="reading-actuator-parameters">Reading Actuator Parameters</h2>
-<h3 id="get_parameters_all"><code>get_parameters_all()</code></h3>
-<p>Retrieve all configuration parameters of the actuator at once.</p>
-<p><strong>Returns</strong>:
-- <code>dict</code>: A dictionary containing all parameters and their values.</p>
-<h3 id="get_parametersparameters-timeout10"><code>get_parameters(parameters, timeout=1.0)</code></h3>
-<p>Retrieve specific parameters from the actuator.</p>
-<p><strong>Parameters</strong>:
-- <code>parameters</code> (list): A list of parameters to request (see <a href="#table-pcp_parameters-enum">Table – PCP_Parameters Enum</a>).
-- <code>timeout</code> (float, optional): Maximum time to wait for a response, in seconds. Default is <code>1.0</code>.</p>
-<p><strong>Returns</strong>:
-- <code>dict</code>: A dictionary containing the requested parameters and their values.</p>
-<hr />
-<h2 id="modifying-actuator-parameters">Modifying Actuator Parameters</h2>
-<h3 id="set_parametersparameters"><code>set_parameters(parameters)</code></h3>
-<p>Modify specific parameters of the actuator.</p>
-<p><strong>Parameters</strong>:
-- <code>parameters</code> (dict): A dictionary with <code>PCP_Parameters</code> enums as keys and their corresponding values.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Ensure that the parameters you modify are within the valid range and do not conflict with other settings to avoid improper actuator behavior.</p>
-</div>
-<hr />
-<h2 id="use-of-profiles-and-limits">Use of profiles and limits</h2>
-<p>The use of position, speed or torque limits apply a saturation to the input reference of the corresponding control.</p>
-<p>The profile options provide the posibility of doing trapezoidal reference changes. Below there are some examples.</p>
-<ul>
-<li>Setting the Max positive speed <span class="arithmatex">\((rad/s)\)</span> to 5 <span class="arithmatex">\(rad/s\)</span> and using the position control.</li>
-</ul>
-<p><img alt="Speed profile" src="../figs/Speed_profile.png" /></p>
-<div class="arithmatex">\[
-\text{Speed (rad/s)} = \frac{0.5 \cdot 2 \cdot \pi}{0.630} = 5 \, \text{(rad/s)}
-\]</div>
-<ul>
-<li>Setting the Max acceleration <span class="arithmatex">\((rad/s^2)\)</span> to 100 <span class="arithmatex">\(rad/s^2\)</span> and using the speed control.</li>
-</ul>
-<p><img alt="Acceleration profile" src="../figs/Acceleration_profile.png" /></p>
-<div class="arithmatex">\[
-\text{Acceleration }(rad/s^2) = \frac{2.33}{0.0234} = 100 \, (rad/s^2)
-\]</div>
+<h1 id="cli">CLI</h1>
+<p>The Command Line Interface (CLI) for the Pulsar API provides a convenient way to interact with the actuator directly from a terminal. This is particularly useful for quick communication test and for scanning devices on a CAN bus.</p>
+<h2 id="verifying-the-installation">Verifying the Installation</h2>
+<p>The CLI is installed along the python package. To confirm that the CLI is working correctly, you can run the following command:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pulsar-cli<span class="w"> </span>-h
+</span></code></pre></div>
+This should print the help message.</p>
+<h2 id="using-the-cli">Using the CLI</h2>
+<p>The CLI provides several commands to interact with the Pulsar actuator. Here are some common commands:</p>
+<h3 id="scan-for-devices">Scan for Devices</h3>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pulsar-cli<span class="w"> </span>scan<span class="w"> </span>-p<span class="w"> </span>&lt;port&gt;
+</span></code></pre></div>
+This command scans the CAN bus for connected Pulsar devices and lists their IDs and statuses. Replace <code>&lt;port&gt;</code> with the appropriate serial port of the CAN adapter (e.g., <code>/dev/ttyUSB0</code> on Linux or <code>COM3</code> on Windows).
+Use the <code>-h</code> flag to see more options</p>
+<h3 id="get-device-parameters">Get Device parameters</h3>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pulsar-cli<span class="w"> </span>params<span class="w"> </span>-p<span class="w"> </span>&lt;port&gt;
+</span></code></pre></div>
+Then connected to a device via USB, you can retrieve all the parameters of the device. This command will display the current configuration and status of the actuator. Replace <code>&lt;port&gt;</code> with the appropriate serial port of the actuator (e.g., <code>/dev/ttyUSB0</code> on Linux or <code>COM3</code> on Windows).</p>
 
 
 
@@ -1568,7 +1375,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../00-functions-overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Actuator class overview">
+          <a href="../01-how-to-control-hardware-actuators/01-R-how-to-install-hardware/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installing the PULSAR HRI actuator API (pcp_api)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1578,20 +1385,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Actuator class overview
+                Installing the PULSAR HRI actuator API (pcp_api)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../02-pcp-api-functions/" class="md-footer__link md-footer__link--next" aria-label="Next: Real hardware functions explained">
+          <a href="../01-how-to-control-hardware-actuators/02-R-actuator-control-examples/00-R-examples-overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Examples overview to control real hardware">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Real hardware functions explained
+                Examples overview to control real hardware
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1646,10 +1453,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "toggle", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "toggle", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
