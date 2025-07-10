@@ -5,8 +5,7 @@ This script is designed to connect to a PULSAR HRI actuator using a CAN-over-USB
 
 ```py title="Import Required Modules" 
 # Import necessary modules
-from pcp_api.PulsarActuator import PulsarActuator
-from pcp_api.can_over_usb import CANoverUSB
+from pcp_api import  PCP_over_USB, PulsarActuator
 from time import sleep, time
 import csv
 ```
@@ -14,11 +13,11 @@ import csv
 
 ```py title="Connect to the CAN Adapter" 
 # Automatically detect the CAN port
-port = CANoverUSB.get_port()
+port = PCP_over_USB.get_port()
 print(f"Connecting to {port}")
 
 # Initialize the adapter
-adapter = CANoverUSB(port)
+adapter = PCP_over_USB(port)
 ```
 ## Initialize the Actuator
 This creates an actuator object at address 0
@@ -98,17 +97,16 @@ The Jupyter notebook can be downloaded [here](04-R-log-to-csv.ipynb).
 
 ```py title="Full code" linenums="1"
 # Import necessary modules
-from pcp_api.PulsarActuator import PulsarActuator
-from pcp_api.can_over_usb import CANoverUSB
+from pcp_api import  PCP_over_USB, PulsarActuator
 from time import sleep, time
 import csv
 
 # Automatically detect the CAN port
-port = CANoverUSB.get_port()
+port = PCP_over_USB.get_port()
 print(f"Connecting to {port}")
 
 # Initialize the adapter
-adapter = CANoverUSB(port)
+adapter = PCP_over_USB(port)
 
 actuator = PulsarActuator(adapter, 0)
 

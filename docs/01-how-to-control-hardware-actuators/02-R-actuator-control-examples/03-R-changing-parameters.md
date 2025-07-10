@@ -20,8 +20,7 @@ These features are useful for fine-tuning actuator behavior, multi-actuator setu
 We begin by importing the necessary modules to interact with the actuator, manage the CAN interface, and handle timing and output formatting.
 ```py title="Import Required Modules" 
 # Import necessary modules
-from pcp_api.PulsarActuator import PulsarActuator
-from pcp_api.can_over_usb import CANoverUSB
+from pcp_api import  PCP_over_USB, PulsarActuator
 from pprint import pprint
 from time import sleep
 ```
@@ -30,11 +29,11 @@ from time import sleep
 This section automatically detects the USB port where the CAN adapter is connected and initializes the adapter for communication.
 ```py title="Detect and Connect to the CAN Adapter" 
 # Automatically detect the CAN port
-port = CANoverUSB.get_port()
+port = PCP_over_USB.get_port()
 print(f"Connecting to {port}")
 
 # Initialize the adapter
-adapter = CANoverUSB(port)
+adapter = PCP_over_USB(port)
 ```
 ## Initialize the Actuator
 We create an instance of the actuator using address 0 and attempt to establish a connection. If the connection fails, the program exits gracefully.
@@ -111,9 +110,9 @@ def actuator_feedback(address: int, feedback: dict):
         
 ACTUATOR_ADDRESS = 0
        
-port = CANoverUSB.get_port()  # auto-detect
+port = PCP_over_USB.get_port()  # auto-detect
 print(f"Connecting to {port}")
-adapter = CANoverUSB(port)
+adapter = PCP_over_USB(port)
 actuator = PulsarActuator(adapter, ACTUATOR_ADDRESS)
 
 if not actuator.connect():
@@ -169,17 +168,16 @@ The Jupyter notebook can be downloaded [here](03-R-changing-parameters.ipynb).
 
 ```py title="Full code" linenums="1"
 # Import necessary modules
-from pcp_api.PulsarActuator import PulsarActuator
-from pcp_api.can_over_usb import CANoverUSB
+from pcp_api import  PCP_over_USB, PulsarActuator
 from pprint import pprint
 from time import sleep
 
 # Automatically detect the CAN port
-port = CANoverUSB.get_port()
+port = PCP_over_USB.get_port()
 print(f"Connecting to {port}")
 
 # Initialize the adapter
-adapter = CANoverUSB(port)
+adapter = PCP_over_USB(port)
 
 # Create actuator instance with ID 0
 actuator = PulsarActuator(adapter, 0)
@@ -231,9 +229,9 @@ def actuator_feedback(address: int, feedback: dict):
         
 ACTUATOR_ADDRESS = 0
        
-port = CANoverUSB.get_port()  # auto-detect
+port = PCP_over_USB.get_port()  # auto-detect
 print(f"Connecting to {port}")
-adapter = CANoverUSB(port)
+adapter = PCP_over_USB(port)
 actuator = PulsarActuator(adapter, ACTUATOR_ADDRESS)
 
 if not actuator.connect():

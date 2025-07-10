@@ -26,7 +26,7 @@ Before installing the PULSAR HRI API, activate the virtual environment. The acti
 
 === "Windows (PowerShell)"
 
-    ```bash
+    ```bat
     .\.venv\Scripts\Activate.ps1
     ```
 
@@ -47,16 +47,17 @@ This command will download and install the latest version of the pcp_api package
 To confirm that the installation was successful, you can run the following command:
 
 ```bash
-python -c "import pcp_api; print(pcp_api.__version__)"
+pip show pcp_api
 ```
-This should print the version number of the installed package, indicating that it's ready to use. **For the present documentation the version is 0.9.1.**
+This should provide information about the installed package, including its version and location. If you see this information, the installation was successful.
 
 ## Next Steps
 
 Once the API is installed, you can:
 
-* Explore the documentation for detailed usage instructions.
+* Use the CLI (command line interface) to quickly interact with the PULSAR hardware.
 * Run example scripts provided in the [examples directory](02-R-actuator-control-examples/00-R-examples-overview.md).
+* Explore the documentation for detailed usage instructions.
 * Integrate the API into your own applications or research workflows.
 
 If you encounter any issues, please open an issue in this repository [project repository](https://github.com/PulsarHRI/pulsarhri.github.io).

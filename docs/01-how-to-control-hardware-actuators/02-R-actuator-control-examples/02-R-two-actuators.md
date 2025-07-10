@@ -1,14 +1,13 @@
-# Controlling Two Targets
+# Controlling Two Devices
 
-This notebook demonstrates how to control multiple PULSAR HRI actuators using the CANoverUSB interface. We will walk through the steps of connecting to the USB-CAN adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.
+This notebook demonstrates how to control multiple PULSAR HRI actuators using the PCP_over_USB interface. We will walk through the steps of connecting to the USB-CAN adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.
 
 ## Import necessary modules
 
 We import the necessay modules.
 ```py title="Import" 
 # Import necessary modules
-from pcp_api.PulsarActuator import PulsarActuator
-from pcp_api.can_over_usb import CANoverUSB
+from pcp_api import  PCP_over_USB, PulsarActuator
 from pprint import pprint
 from time import sleep
 ```
@@ -32,9 +31,9 @@ We auto-detect the USB port to which the CAN adapter is connected and create an 
 
 ```py title="Connect to USB-CAN Adapter"
 # Auto-detect the port
-port = CANoverUSB.get_port()
+port = PCP_over_USB.get_port()
 print(f"Connecting to {port}")
-adapter = CANoverUSB(port)
+adapter = PCP_over_USB(port)
 ```
 ## Initialize and Configure Actuators
 For each actuator address, we:
@@ -113,8 +112,7 @@ The Jupyter notebook can be downloaded [here](02-R-two-actuators.ipynb).
 
 ```py title="Full code" linenums="1"
 # Import necessary modules
-from pcp_api.PulsarActuator import PulsarActuator
-from pcp_api.can_over_usb import CANoverUSB
+from pcp_api import  PCP_over_USB, PulsarActuator
 from pprint import pprint
 from time import sleep
 
@@ -126,9 +124,9 @@ def actuator_feedback(address: int, feedback: dict):
     print(f"Actuator 0x{address:X} position: {position:.2f} rad/s")
 
 # Auto-detect the port
-port = CANoverUSB.get_port()
+port = PCP_over_USB.get_port()
 print(f"Connecting to {port}")
-adapter = CANoverUSB(port)
+adapter = PCP_over_USB(port)
 
 actuators = []
 
