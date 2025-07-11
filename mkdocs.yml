@@ -63,8 +63,8 @@ extra:
 
 nav:
   - 00-home/00-home.md
+  - 01-how-to-control-hardware-actuators/00-R-pulsar-hardware-context.md
   - How to Use PULSAR HRI Hardware: 
-      - 01-how-to-control-hardware-actuators/00-R-pulsar-hardware-context.md
       - 01-how-to-control-hardware-actuators/01-R-how-to-install-hardware.md
       - cli.md
       - "Actuator control examples":
@@ -91,8 +91,9 @@ nav:
       - 04-functions-explained/01-actuator-parameters-explained.md
       - 04-functions-explained/02-pcp-api-functions.md
       - 04-functions-explained/03-DT-functions.md
-  - Download AUGUR Digital Twin:
-      - 05-actuator-digital-twin-download/00-DT-download.md
+  # This is already in How to Use AUGUR Digital Twin
+  # - Download AUGUR Digital Twin:
+  #     - 05-actuator-digital-twin-download/00-DT-download.md
   - Licensing & Support:
       - 06-licensing-and-support/00-licensing.md
       - 06-licensing-and-support/01-support.md
