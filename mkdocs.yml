@@ -99,6 +99,7 @@ nav:
       - 06-licensing-and-support/01-support.md
   - 07-faq/00-faq.md
 
+# unused documents were renamed to .txt so they will not appear in searches
 #  - Classes Definitions:
 #      - "Introduction": classes.md
 #      - "Initialization and Constructor": classes-01-InitialisationContrustor.md
