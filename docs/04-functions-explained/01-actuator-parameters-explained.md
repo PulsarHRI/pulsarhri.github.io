@@ -71,7 +71,7 @@ The profile options provide the posibility of doing trapezoidal reference change
 
 - Setting the Max positive speed $(rad/s)$ to 5 $rad/s$ and using the position control.
 
-![Speed profile](figs/Speed_profile.png)
+![Speed profile](../assets/images/Speed_profile.png)
 
 $$
 \text{Speed (rad/s)} = \frac{0.5 \cdot 2 \cdot \pi}{0.630} = 5 \, \text{(rad/s)}
@@ -79,7 +79,7 @@ $$
 
 - Setting the Max acceleration $(rad/s^2)$ to 100 $rad/s^2$ and using the speed control.
 
-![Acceleration profile](figs/Acceleration_profile.png)
+![Acceleration profile](../assets/images/Acceleration_profile.png)
 
 $$
 \text{Acceleration }(rad/s^2) = \frac{2.33}{0.0234} = 100 \, (rad/s^2)

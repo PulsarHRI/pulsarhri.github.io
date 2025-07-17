@@ -1,4 +1,4 @@
-# CLI
+# Command line interface (CLI)
 
 The Command Line Interface (CLI) for the Pulsar API provides a convenient way to interact with the actuator directly from a terminal. This is particularly useful for quick communication test and for scanning devices on a CAN bus.
 

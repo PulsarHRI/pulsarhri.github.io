@@ -6,7 +6,7 @@ The full example is at the [bottom of the page](#full-example).
 
 ## Common code
 
-Most of the code is common to all examples, so we will not repeat it here. You can find the common code in the [first example](01-R-single-actuator.md).
+Most of the code is common to all examples, so we will not repeat it here. You can find the common code in the [first example](single-actuator.md).
 
 
 ## Select the items to log

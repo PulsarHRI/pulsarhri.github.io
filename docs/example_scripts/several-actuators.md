@@ -15,7 +15,7 @@ from time import sleep
 
 ## Define Constants and Feedback Function
 
-We define the addresses for the two actuators. These addresses are used to uniquely identify each actuator on the CAN bus. You can discover the addresses of your actuators using the [CLI scan command](../../cli.md#scan-for-devices)
+We define the addresses for the two actuators. These addresses are used to uniquely identify each actuator on the CAN bus. You can discover the addresses of your actuators using the [CLI scan command](../cli.md#scan-for-devices)
 
 ```py
 # Example PCP addresses for two actuators
@@ -120,8 +120,7 @@ finally:
 
 
 ## Full code
-
-The Jupyter notebook can be downloaded [here](02-R-several-actuators.ipynb).
+The Jupyter notebook can be downloaded [here](../assets/jnotebooks/several-actuators.ipynb).
 
 ```py title="Full code" linenums="1"
 from pcp_api import  PCP_over_USB, PulsarActuator

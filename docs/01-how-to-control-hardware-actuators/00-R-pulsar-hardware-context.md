@@ -12,4 +12,4 @@ We design Quasi-Direct Drive (QDD) actuators offer a well-balanced alternative t
 
 Design specifics also matter. Therefore, we decided to design our transmissions with a very low gear ratio to increase the total bandwidth, boost backdrivability, improve proprioceptiveness and better respond to highly-dynamic intermittent operations.
 
-![Transmission graph](figs/Graph-TAETBNm.png)
+![Transmission graph](../assets/images/Graph-TAETBNm.png)

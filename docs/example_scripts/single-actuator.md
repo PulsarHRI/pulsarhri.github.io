@@ -22,7 +22,7 @@ adapter = PCP_over_USB(port)
 
 ## Instantiate the actuator
 
-You can instantiate as many actuators as you want with the same CAN adapter. In this example we are going to control only one actuator, connected directly via USB. If you are using a CAN adapter, you need to specify the PCP address of the actuator. The PCP address is a unique identifier for each actuator. You can find this address with the  [CLI scan command](../../cli.md#scan-for-devices). If you are connecting directly via USB, use `0` as the address.
+You can instantiate as many actuators as you want with the same CAN adapter. In this example we are going to control only one actuator, connected directly via USB. If you are using a CAN adapter, you need to specify the PCP address of the actuator. The PCP address is a unique identifier for each actuator. You can find this address with the  [CLI scan command](../cli.md#scan-for-devices). If you are connecting directly via USB, use `0` as the address.
 
 ```py
 ACTUATOR_ADDRESS = 0  # 0 for direct USB connection, or use the actuator address if using CAN adapter
