@@ -532,18 +532,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialize-and-configure-actuators" class="md-nav__link">
+  <a href="#initialize-actuators-and-set-common-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Initialize and Configure Actuators
+      Initialize Actuators and set common configuration
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-setpoints-and-start-actuators" class="md-nav__link">
+  <a href="#individual-actuator-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Set Setpoints and Start Actuators
+      Individual Actuator Configuration
     </span>
   </a>
   
@@ -1270,18 +1270,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#initialize-and-configure-actuators" class="md-nav__link">
+  <a href="#initialize-actuators-and-set-common-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Initialize and Configure Actuators
+      Initialize Actuators and set common configuration
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#set-setpoints-and-start-actuators" class="md-nav__link">
+  <a href="#individual-actuator-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Set Setpoints and Start Actuators
+      Individual Actuator Configuration
     </span>
   </a>
   
@@ -1322,46 +1322,36 @@
 
 
 <h1 id="controlling-several-devices">Controlling Several Devices</h1>
-<p>This notebook demonstrates how to control multiple PULSAR HRI actuators using the PCP_over_USB interface. We will walk through the steps of connecting to the USB-CAN adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.</p>
+<p>This notebook demonstrates how to control multiple PULSAR HRI actuators. We will walk through the steps of connecting to the USB-CAN adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.</p>
 <h2 id="import-necessary-modules">Import necessary modules</h2>
 <p>We import the necessary modules.</p>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Import necessary modules</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api</span><span class="w"> </span><span class="kn">import</span>  <span class="n">PCP_over_USB</span><span class="p">,</span> <span class="n">PulsarActuator</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api</span><span class="w"> </span><span class="kn">import</span>  <span class="n">PCP_over_USB</span><span class="p">,</span> <span class="n">PulsarActuator</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
 </span></code></pre></div>
 <h2 id="define-constants-and-feedback-function">Define Constants and Feedback Function</h2>
-<p>We define the CSP (CANopen Slave Protocol) addresses for the two actuators. These addresses are used to uniquely identify each actuator on the CAN bus.</p>
-<div class="language-py highlight"><span class="filename">Define Constants and Feedback Function</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Example CSP addresses for two actuators</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">CSP_ADDRESSES</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">]</span>
+<p>We define the addresses for the two actuators. These addresses are used to uniquely identify each actuator on the CAN bus. You can discover the addresses of your actuators using the <a href="../../../cli/#scan-for-devices">CLI scan command</a></p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Example PCP addresses for two actuators</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">ACTUATOR_ADDRESSES</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">]</span>
 </span></code></pre></div>
 <h2 id="define-a-feedback-callback-function">Define a feedback callback function</h2>
-<p>This function is called automatically whenever feedback is received from any actuator. It extracts the position feedback (in radians) and prints it along with the actuator's address.</p>
-<div class="language-py highlight"><span class="filename">Define a feedback callback function</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">actuator_feedback</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">feedback</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<p>This function is called automatically whenever feedback is received from any actuator. You can define individual functions for each actuator, or use a single function for all actuators. In this example, we are going to extract the position from the feedback dict, and prints it along with the actuator's address.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">actuator_feedback</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">feedback</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">position</span> <span class="o">=</span> <span class="n">feedback</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">POSITION_FB</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actuator 0x</span><span class="si">{</span><span class="n">address</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2"> position: </span><span class="si">{</span><span class="n">position</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> rad/s&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="connect-to-usb-can-adapter">Connect to USB-CAN Adapter</h2>
 <p>We auto-detect the USB port to which the CAN adapter is connected and create an instance of the adapter. This step is essential to establish communication with the actuators.</p>
-<div class="language-py highlight"><span class="filename">Connect to USB-CAN Adapter</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Auto-detect the port</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Auto-detect CAN adapter port</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">port</span> <span class="o">=</span> <span class="n">PCP_over_USB</span><span class="o">.</span><span class="n">get_port</span><span class="p">()</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connecting to </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">adapter</span> <span class="o">=</span> <span class="n">PCP_over_USB</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># port = &quot;COM1&quot;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connecting to </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">adapter</span> <span class="o">=</span> <span class="n">PCP_over_USB</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="initialize-and-configure-actuators">Initialize and Configure Actuators</h2>
-<p>For each actuator address, we:</p>
-<ul>
-<li>Create a PulsarActuator instance.</li>
-<li>Attempt to connect to the actuator.</li>
-<li>Configure high-frequency feedback to report position at 10 Hz.</li>
-<li>Disable low-frequency feedback.</li>
-<li>Set the actuator to SPEED mode.</li>
-<li>Register the feedback callback function.</li>
-</ul>
-<p>Each successfully initialized actuator is added to a list for later control.</p>
-<div class="language-py highlight"><span class="filename">Initialize and Configure Actuators</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">actuators</span> <span class="o">=</span> <span class="p">[]</span>
+<h2 id="initialize-actuators-and-set-common-configuration">Initialize Actuators and set common configuration</h2>
+<p>We create a loop to initialize each actuator using its address. Each actuator is connected, configured for high-frequency feedback, and set to SPEED mode. The feedback callback function is registered to handle incoming feedback from the actuators.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">actuators</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># list to hold actuator instances</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">CSP_ADDRESSES</span><span class="p">:</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">ACTUATOR_ADDRESSES</span><span class="p">:</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="c1"># Create a PulsarActuator instance.</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">actuator</span> <span class="o">=</span> <span class="n">PulsarActuator</span><span class="p">(</span><span class="n">adapter</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
@@ -1371,7 +1361,7 @@
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="n">adapter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connected to the actuator </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connected to the actuator </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2"> (model: </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">, firmware: </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">firmware_version</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 </span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
 </span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="c1"># Configure high-frequency feedback to report position at 10 Hz.</span>
 </span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">setHighFreqFeedbackItems</span><span class="p">([</span>
@@ -1390,27 +1380,28 @@
 </span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
 </span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>    <span class="n">actuators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actuator</span><span class="p">)</span>
 </span></code></pre></div>
-<h2 id="set-setpoints-and-start-actuators">Set Setpoints and Start Actuators</h2>
-<p>We assign different speed setpoints to each actuator and start them. This allows both actuators to run simultaneously at different speeds.</p>
-<div class="language-py highlight"><span class="filename">Set Setpoints and Start Actuators</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Set different speeds for each actuator</span>
+<h2 id="individual-actuator-configuration">Individual Actuator Configuration</h2>
+<p>We assign different configuration to each actuator.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Set different speeds for each actuator</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Start all actuators</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">for</span> <span class="n">actuator</span> <span class="ow">in</span> <span class="n">actuators</span><span class="p">:</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 </span></code></pre></div>
 <h2 id="run-and-cleanup">Run and Cleanup</h2>
-<p>We let the actuators run briefly to allow feedback to be printed. When the program is interrupted (e.g., via Ctrl+C if running from a Jupyter notebook), we ensure all actuators are properly disconnected and the adapter is closed.</p>
-<div class="language-py highlight"><span class="filename">Run and Cleanup</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">try</span><span class="p">:</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Let feedback trigger</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">pass</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="k">finally</span><span class="p">:</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="k">for</span> <span class="n">actuator</span> <span class="ow">in</span> <span class="n">actuators</span><span class="p">:</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="n">actuator</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">adapter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<p>We start all actuators and let them run briefly to allow feedback to be printed. When the program is interrupted (e.g., via Ctrl+C ), we ensure all actuators are properly disconnected and the adapter is closed.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Start all actuators</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">for</span> <span class="n">actuator</span> <span class="ow">in</span> <span class="n">actuators</span><span class="p">:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Actuators started. Press Ctrl+C to stop.&quot;</span><span class="p">)</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Let feedback trigger</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="k">pass</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="k">finally</span><span class="p">:</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="k">for</span> <span class="n">actuator</span> <span class="ow">in</span> <span class="n">actuators</span><span class="p">:</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        <span class="n">actuator</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>    <span class="n">adapter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div>
 <h2 id="full-code">Full code</h2>
 <p>The Jupyter notebook can be downloaded <a href="../02-R-several-actuators.ipynb">here</a>.</p>
@@ -1478,62 +1469,62 @@
 <span class="normal"><a href="#__codelineno-7-62">62</a></span>
 <span class="normal"><a href="#__codelineno-7-63">63</a></span>
 <span class="normal"><a href="#__codelineno-7-64">64</a></span>
-<span class="normal"><a href="#__codelineno-7-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Import necessary modules</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api</span><span class="w"> </span><span class="kn">import</span>  <span class="n">PCP_over_USB</span><span class="p">,</span> <span class="n">PulsarActuator</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="c1"># Example CSP addresses for two actuators</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="n">CSP_ADDRESSES</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">]</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="k">def</span><span class="w"> </span><span class="nf">actuator_feedback</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">feedback</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a>    <span class="n">position</span> <span class="o">=</span> <span class="n">feedback</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">POSITION_FB</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actuator 0x</span><span class="si">{</span><span class="n">address</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2"> position: </span><span class="si">{</span><span class="n">position</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> rad/s&quot;</span><span class="p">)</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="c1"># Auto-detect the port</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="n">port</span> <span class="o">=</span> <span class="n">PCP_over_USB</span><span class="o">.</span><span class="n">get_port</span><span class="p">()</span>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connecting to </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="n">adapter</span> <span class="o">=</span> <span class="n">PCP_over_USB</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
-</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a>
-</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="n">actuators</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19"></a>
-</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">CSP_ADDRESSES</span><span class="p">:</span>
-</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21"></a>    <span class="c1"># Create a PulsarActuator instance.</span>
-</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22"></a>    <span class="n">actuator</span> <span class="o">=</span> <span class="n">PulsarActuator</span><span class="p">(</span><span class="n">adapter</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span>
-</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a>
-</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24"></a>    <span class="c1"># Attempt to connect to the actuator.</span>
-</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">actuator</span><span class="o">.</span><span class="n">connect</span><span class="p">():</span>
-</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not connect to the actuator </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27"></a>        <span class="n">adapter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28"></a>        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29"></a>
-</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connected to the actuator </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31"></a>
-</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32"></a>    <span class="c1"># Configure high-frequency feedback to report position at 10 Hz.</span>
-</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">setHighFreqFeedbackItems</span><span class="p">([</span>
-</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34"></a>        <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">POSITION_FB</span><span class="p">,</span>
-</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35"></a>    <span class="p">])</span>
-</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">setHighFreqFeedbackRate</span><span class="p">(</span><span class="n">actuator</span><span class="o">.</span><span class="n">Rates</span><span class="o">.</span><span class="n">RATE_10HZ</span><span class="p">)</span>
-</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37"></a>
-</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38"></a>    <span class="c1"># Disable low-frequency feedback.</span>
-</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">setLowFreqFeedbackRate</span><span class="p">(</span><span class="n">actuator</span><span class="o">.</span><span class="n">Rates</span><span class="o">.</span><span class="n">DISABLED</span><span class="p">)</span>
-</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40"></a>
-</span><span id="__span-7-41"><a id="__codelineno-7-41" name="__codelineno-7-41"></a>    <span class="c1"># Set the actuator to SPEED mode.</span>
-</span><span id="__span-7-42"><a id="__codelineno-7-42" name="__codelineno-7-42"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">change_mode</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">Mode</span><span class="o">.</span><span class="n">SPEED</span><span class="p">)</span>
-</span><span id="__span-7-43"><a id="__codelineno-7-43" name="__codelineno-7-43"></a>
-</span><span id="__span-7-44"><a id="__codelineno-7-44" name="__codelineno-7-44"></a>    <span class="c1"># Register the feedback callback function.</span>
-</span><span id="__span-7-45"><a id="__codelineno-7-45" name="__codelineno-7-45"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">set_feedback_callback</span><span class="p">(</span><span class="n">actuator_feedback</span><span class="p">)</span>
-</span><span id="__span-7-46"><a id="__codelineno-7-46" name="__codelineno-7-46"></a>
-</span><span id="__span-7-47"><a id="__codelineno-7-47" name="__codelineno-7-47"></a>    <span class="n">actuators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actuator</span><span class="p">)</span>
-</span><span id="__span-7-48"><a id="__codelineno-7-48" name="__codelineno-7-48"></a>
-</span><span id="__span-7-49"><a id="__codelineno-7-49" name="__codelineno-7-49"></a><span class="c1"># Set different speeds for each actuator</span>
-</span><span id="__span-7-50"><a id="__codelineno-7-50" name="__codelineno-7-50"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-</span><span id="__span-7-51"><a id="__codelineno-7-51" name="__codelineno-7-51"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
-</span><span id="__span-7-52"><a id="__codelineno-7-52" name="__codelineno-7-52"></a>
-</span><span id="__span-7-53"><a id="__codelineno-7-53" name="__codelineno-7-53"></a><span class="c1"># Start all actuators</span>
-</span><span id="__span-7-54"><a id="__codelineno-7-54" name="__codelineno-7-54"></a><span class="k">for</span> <span class="n">actuator</span> <span class="ow">in</span> <span class="n">actuators</span><span class="p">:</span>
-</span><span id="__span-7-55"><a id="__codelineno-7-55" name="__codelineno-7-55"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-</span><span id="__span-7-56"><a id="__codelineno-7-56" name="__codelineno-7-56"></a>
+<span class="normal"><a href="#__codelineno-7-65">65</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api</span><span class="w"> </span><span class="kn">import</span>  <span class="n">PCP_over_USB</span><span class="p">,</span> <span class="n">PulsarActuator</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="c1"># Example PCP addresses for two actuators</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="n">ACTUATOR_ADDRESSES</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">]</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">actuator_feedback</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">feedback</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a>    <span class="n">position</span> <span class="o">=</span> <span class="n">feedback</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">POSITION_FB</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actuator 0x</span><span class="si">{</span><span class="n">address</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2"> position: </span><span class="si">{</span><span class="n">position</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> rad/s&quot;</span><span class="p">)</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="c1"># Auto-detect CAN adapter port</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="n">port</span> <span class="o">=</span> <span class="n">PCP_over_USB</span><span class="o">.</span><span class="n">get_port</span><span class="p">()</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="c1"># port = &quot;COM1&quot;</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connecting to </span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="n">adapter</span> <span class="o">=</span> <span class="n">PCP_over_USB</span><span class="p">(</span><span class="n">port</span><span class="p">)</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="n">actuators</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># list to hold actuator instances</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18"></a>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">ACTUATOR_ADDRESSES</span><span class="p">:</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20"></a>    <span class="c1"># Create a PulsarActuator instance.</span>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21"></a>    <span class="n">actuator</span> <span class="o">=</span> <span class="n">PulsarActuator</span><span class="p">(</span><span class="n">adapter</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22"></a>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23"></a>    <span class="c1"># Attempt to connect to the actuator.</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">actuator</span><span class="o">.</span><span class="n">connect</span><span class="p">():</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not connect to the actuator </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26"></a>        <span class="n">adapter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27"></a>        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28"></a>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Connected to the actuator </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2"> (model: </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">, firmware: </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">firmware_version</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30"></a>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31"></a>    <span class="c1"># Configure high-frequency feedback to report position at 10 Hz.</span>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">setHighFreqFeedbackItems</span><span class="p">([</span>
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33"></a>        <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">POSITION_FB</span><span class="p">,</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34"></a>    <span class="p">])</span>
+</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">setHighFreqFeedbackRate</span><span class="p">(</span><span class="n">actuator</span><span class="o">.</span><span class="n">Rates</span><span class="o">.</span><span class="n">RATE_10HZ</span><span class="p">)</span>
+</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36"></a>
+</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37"></a>    <span class="c1"># Disable low-frequency feedback.</span>
+</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">setLowFreqFeedbackRate</span><span class="p">(</span><span class="n">actuator</span><span class="o">.</span><span class="n">Rates</span><span class="o">.</span><span class="n">DISABLED</span><span class="p">)</span>
+</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39"></a>
+</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40"></a>    <span class="c1"># Set the actuator to SPEED mode.</span>
+</span><span id="__span-7-41"><a id="__codelineno-7-41" name="__codelineno-7-41"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">change_mode</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">Mode</span><span class="o">.</span><span class="n">SPEED</span><span class="p">)</span>
+</span><span id="__span-7-42"><a id="__codelineno-7-42" name="__codelineno-7-42"></a>
+</span><span id="__span-7-43"><a id="__codelineno-7-43" name="__codelineno-7-43"></a>    <span class="c1"># Register the feedback callback function.</span>
+</span><span id="__span-7-44"><a id="__codelineno-7-44" name="__codelineno-7-44"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">set_feedback_callback</span><span class="p">(</span><span class="n">actuator_feedback</span><span class="p">)</span>
+</span><span id="__span-7-45"><a id="__codelineno-7-45" name="__codelineno-7-45"></a>
+</span><span id="__span-7-46"><a id="__codelineno-7-46" name="__codelineno-7-46"></a>    <span class="n">actuators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actuator</span><span class="p">)</span>
+</span><span id="__span-7-47"><a id="__codelineno-7-47" name="__codelineno-7-47"></a>
+</span><span id="__span-7-48"><a id="__codelineno-7-48" name="__codelineno-7-48"></a><span class="c1"># Set different speeds for each actuator</span>
+</span><span id="__span-7-49"><a id="__codelineno-7-49" name="__codelineno-7-49"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+</span><span id="__span-7-50"><a id="__codelineno-7-50" name="__codelineno-7-50"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</span><span id="__span-7-51"><a id="__codelineno-7-51" name="__codelineno-7-51"></a>
+</span><span id="__span-7-52"><a id="__codelineno-7-52" name="__codelineno-7-52"></a><span class="c1"># Start all actuators</span>
+</span><span id="__span-7-53"><a id="__codelineno-7-53" name="__codelineno-7-53"></a><span class="k">for</span> <span class="n">actuator</span> <span class="ow">in</span> <span class="n">actuators</span><span class="p">:</span>
+</span><span id="__span-7-54"><a id="__codelineno-7-54" name="__codelineno-7-54"></a>    <span class="n">actuator</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span><span id="__span-7-55"><a id="__codelineno-7-55" name="__codelineno-7-55"></a>
+</span><span id="__span-7-56"><a id="__codelineno-7-56" name="__codelineno-7-56"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Actuators started. Press Ctrl+C to stop.&quot;</span><span class="p">)</span>
 </span><span id="__span-7-57"><a id="__codelineno-7-57" name="__codelineno-7-57"></a><span class="k">try</span><span class="p">:</span>
 </span><span id="__span-7-58"><a id="__codelineno-7-58" name="__codelineno-7-58"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># Let feedback trigger</span>
 </span><span id="__span-7-59"><a id="__codelineno-7-59" name="__codelineno-7-59"></a><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
