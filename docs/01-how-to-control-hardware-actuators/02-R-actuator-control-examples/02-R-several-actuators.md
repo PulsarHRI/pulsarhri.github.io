@@ -1,11 +1,12 @@
-# Controlling Two Devices
+# Controlling Several Devices
 
 This notebook demonstrates how to control multiple PULSAR HRI actuators using the PCP_over_USB interface. We will walk through the steps of connecting to the USB-CAN adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.
 
 ## Import necessary modules
 
-We import the necessay modules.
-```py title="Import" 
+We import the necessary modules.
+
+```py
 # Import necessary modules
 from pcp_api import  PCP_over_USB, PulsarActuator
 from pprint import pprint
@@ -108,7 +109,7 @@ finally:
 
 ## Full code
 
-The Jupyter notebook can be downloaded [here](02-R-two-actuators.ipynb).
+The Jupyter notebook can be downloaded [here](02-R-several-actuators.ipynb).
 
 ```py title="Full code" linenums="1"
 # Import necessary modules

@@ -70,7 +70,7 @@ nav:
       - "Actuator control examples":
           - 01-how-to-control-hardware-actuators/02-R-actuator-control-examples/00-R-examples-overview.md
           - 01-how-to-control-hardware-actuators/02-R-actuator-control-examples/01-R-single-actuator.md
-          - 01-how-to-control-hardware-actuators/02-R-actuator-control-examples/02-R-two-actuators.md
+          - 01-how-to-control-hardware-actuators/02-R-actuator-control-examples/02-R-several-actuators.md
           - 01-how-to-control-hardware-actuators/02-R-actuator-control-examples/03-R-changing-parameters.md
           - 01-how-to-control-hardware-actuators/02-R-actuator-control-examples/04-R-log-to-csv.md
   - How to Use AUGUR Digital Twin:
