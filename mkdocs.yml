@@ -60,7 +60,7 @@ extra:
 
 nav:
   - index.md
-  - 01-how-to-control-hardware-actuators/00-R-pulsar-hardware-context.md
+  - why_pulsar.md
   - How to Use PULSAR HRI Hardware: 
       - mechanical_connection.md
       - electrical_connection.md
@@ -96,9 +96,9 @@ nav:
   # - Download AUGUR Digital Twin:
   #     - 05-actuator-digital-twin-download/00-DT-download.md
   - Licensing & Support:
-      - 06-licensing-and-support/00-licensing.md
-      - 06-licensing-and-support/01-support.md
-  - 07-faq/00-faq.md
+      - licensing.md
+      - support.md
+  - faq.md
 
 # unused documents were renamed to .txt so they will not appear in searches
 #  - Classes Definitions:

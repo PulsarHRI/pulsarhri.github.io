@@ -9,4 +9,4 @@ If you encounter any issues or have any questions regarding the use of any produ
 For additional resources and troubleshooting tips, please contact our support team.
 Thank you for choosing our product. We are committed to providing you with the best possible experience.
 
-You can also create an [issue in the repository](https://github.com/PulsarHRI/pulsarhri.github.io/issues/new/choose) reporting a bug or requesting a new feature.
+You can also create an [issue](https://github.com/PulsarHRI/pulsarhri.github.io/issues) reporting a bug or requesting a new feature.
