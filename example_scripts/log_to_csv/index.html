@@ -8,10 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://github.com/PulsarHRI/example_scripts/log-to-csv/">
+        <link rel="canonical" href="https://github.com/PulsarHRI/example_scripts/log_to_csv/">
       
       
-        <link rel="prev" href="../changing-parameters/">
+        <link rel="prev" href="../advanced_features/">
       
       
         <link rel="next" href="../../04-functions-explained/00-functions-overview/">
@@ -509,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples-overview/" class="md-nav__link">
+      <a href="../examples_overview/" class="md-nav__link">
         
   
   
@@ -532,7 +532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../single-actuator/" class="md-nav__link">
+      <a href="../single_actuator/" class="md-nav__link">
         
   
   
@@ -555,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../several-actuators/" class="md-nav__link">
+      <a href="../several_actuators/" class="md-nav__link">
         
   
   
@@ -578,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../changing-parameters/" class="md-nav__link">
+      <a href="../advanced_features/" class="md-nav__link">
         
   
   
@@ -1461,7 +1461,7 @@
 <p>This script is an example of how to log data from a PULSAR HRI actuator. It doesn't show live data, but instead logs it to a CSV file for later analysis.
 The full example is at the <a href="#full-example">bottom of the page</a>.</p>
 <h2 id="common-code">Common code</h2>
-<p>Most of the code is common to all examples, so we will not repeat it here. You can find the common code in the <a href="../single-actuator/">first example</a>.</p>
+<p>Most of the code is common to all examples, so we will not repeat it here. You can find the common code in the <a href="../single_actuator/">first example</a>.</p>
 <h2 id="select-the-items-to-log">Select the items to log</h2>
 <p>You can put the items to log from the actuator, in a list. The items are defined in <code>PulsarActuator.PCP_Items</code>. You can choose from items like <code>POSITION_FB</code>, <code>TORQUE_SENS</code>, <code>SPEED_FB</code>, ... In this example, we will log the current in the three phases of the motor, which are <code>IA</code>, <code>IB</code>, and <code>IC</code>. </p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">itemsToLog</span> <span class="o">=</span> <span class="p">[</span>
@@ -1683,7 +1683,7 @@ The full example is at the <a href="#full-example">bottom of the page</a>.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../changing-parameters/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Advanced Features">
+          <a href="../advanced_features/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Advanced Features">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
