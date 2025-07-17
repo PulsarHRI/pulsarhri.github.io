@@ -62,8 +62,9 @@ nav:
   - index.md
   - why_pulsar.md
   - How to Use PULSAR HRI Hardware: 
-      - mechanical_connection.md
-      - electrical_connection.md
+      - mechanical_interfaces.md
+      - electrical_interfaces.md
+      - led.md
       - gui.md
       - "Python API":
           - install_python_api.md
