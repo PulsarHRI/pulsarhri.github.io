@@ -120,7 +120,7 @@ finally:
 
 
 ## Full code
-The Jupyter notebook can be downloaded [here](../assets/jnotebooks/several-actuators.ipynb).
+The Jupyter notebook can be downloaded [here](../assets/jnotebooks/several_actuators.ipynb).
 
 ```py title="Full code" linenums="1"
 from pcp_api import  PCP_over_USB, PulsarActuator

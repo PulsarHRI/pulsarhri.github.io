@@ -27,7 +27,7 @@ This should provide information about the installed package, including its versi
 Once the API is installed, you can:
 
 * Use the [Command line interface](cli.md) to quickly interact with the PULSAR hardware.
-* Run the [example scripts](example_scripts/examples-overview.md)
+* Run the [example scripts](example_scripts/examples_overview.md)
 * Explore the documentation for detailed usage instructions.
 * Integrate the API into your own applications or research workflows.
 

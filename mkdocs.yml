@@ -69,11 +69,11 @@ nav:
           - install_python_api.md
           - cli.md
           - Example scripts:
-            - example_scripts/examples-overview.md
-            - example_scripts/single-actuator.md
-            - example_scripts/several-actuators.md
-            - example_scripts/changing-parameters.md
-            - example_scripts/log-to-csv.md
+            - example_scripts/examples_overview.md
+            - example_scripts/single_actuator.md
+            - example_scripts/several_actuators.md
+            - example_scripts/advanced_features.md
+            - example_scripts/log_to_csv.md
           - Actuator Class:
             - 04-functions-explained/00-functions-overview.md
             - 04-functions-explained/01-actuator-parameters-explained.md

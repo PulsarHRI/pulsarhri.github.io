@@ -3,10 +3,10 @@
 Welcome to the Examples Overview section, where we guide you through practical applications of controlling real hardware using the PULSAR HRI API. Whether you're a beginner or an experienced developer, these examples will help you harness the full potential of our advanced actuation systems.
 
 ## What You'll Learn
-* [**Controlling One Device**](single-actuator.md): Start with the basics by learning how to control a single actuator in close loop speed control. This example will introduce you to fundamental commands and setup procedures.
-* [**Controlling Several Devices**](several-actuators.md): Learn how to manage two actuators simultaneously. Understand synchronization and coordination between multiple hardware components.
-* [**Advanced Features**](changing-parameters.md): Explore the advanced functionalities of our actuators, including different control modes and real-time control.
-* [**Log Data to CSV**](log-to-csv.md): Learn how to log actuator data to CSV files for analysis and troubleshooting. This example will show you how to capture and utilize performance data effectively.
+* [**Controlling One Device**](single_actuator.md): Start with the basics by learning how to control a single actuator in close loop speed control. This example will introduce you to fundamental commands and setup procedures.
+* [**Controlling Several Devices**](several_actuators.md): Learn how to manage two actuators simultaneously. Understand synchronization and coordination between multiple hardware components.
+* [**Advanced Features**](advanced_features.md): Explore the advanced functionalities of our actuators, including different control modes and real-time control.
+* [**Log Data to CSV**](log_to_csv.md): Learn how to log actuator data to CSV files for analysis and troubleshooting. This example will show you how to capture and utilize performance data effectively.
 
 ## Why These Examples Matter
 These examples are designed to provide you with hands-on experience and a deeper understanding of how to control real hardware using the PULSAR HRI API. By following these guides, you'll be able to:

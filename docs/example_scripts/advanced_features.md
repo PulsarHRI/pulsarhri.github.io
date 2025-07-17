@@ -80,7 +80,7 @@ pprint(params)
 
 ## Full code
 
-The Jupyter notebook can be downloaded [here](../assets/jnotebooks/changing-parameters.ipynb).
+The Jupyter notebook can be downloaded [here](../assets/jnotebooks/advanced_features.ipynb).
 
 ```py title="Full code" linenums="1"
 from pcp_api import  PCP_over_USB, PulsarActuator
