@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/PulsarHRI/01-how-to-control-hardware-actuators/02-R-actuator-control-examples/02-R-two-actuators/">
+        <link rel="canonical" href="https://github.com/PulsarHRI/01-how-to-control-hardware-actuators/02-R-actuator-control-examples/02-R-several-actuators/">
       
       
         <link rel="prev" href="../01-R-single-actuator/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Controlling Two Devices - PULSAR HRI Documentation</title>
+        <title>Controlling Several Devices - PULSAR HRI Documentation</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#controlling-two-devices" class="md-skip">
+        <a href="#controlling-several-devices" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Controlling Two Devices
+              Controlling Several Devices
             
           </span>
         </div>
@@ -460,7 +460,7 @@
   
   
   <span class="md-ellipsis">
-    Controlling Two Devices
+    Controlling Several Devices
     
   </span>
   
@@ -473,7 +473,7 @@
   
   
   <span class="md-ellipsis">
-    Controlling Two Devices
+    Controlling Several Devices
     
   </span>
   
@@ -1321,15 +1321,15 @@
 
 
 
-<h1 id="controlling-two-devices">Controlling Two Devices</h1>
+<h1 id="controlling-several-devices">Controlling Several Devices</h1>
 <p>This notebook demonstrates how to control multiple PULSAR HRI actuators using the PCP_over_USB interface. We will walk through the steps of connecting to the USB-CAN adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.</p>
 <h2 id="import-necessary-modules">Import necessary modules</h2>
-<p>We import the necessay modules.
-<div class="language-py highlight"><span class="filename">Import</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Import necessary modules</span>
+<p>We import the necessary modules.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Import necessary modules</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api</span><span class="w"> </span><span class="kn">import</span>  <span class="n">PCP_over_USB</span><span class="p">,</span> <span class="n">PulsarActuator</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
-</span></code></pre></div></p>
+</span></code></pre></div>
 <h2 id="define-constants-and-feedback-function">Define Constants and Feedback Function</h2>
 <p>We define the CSP (CANopen Slave Protocol) addresses for the two actuators. These addresses are used to uniquely identify each actuator on the CAN bus.</p>
 <div class="language-py highlight"><span class="filename">Define Constants and Feedback Function</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Example CSP addresses for two actuators</span>
@@ -1413,7 +1413,7 @@
 </span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">adapter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div>
 <h2 id="full-code">Full code</h2>
-<p>The Jupyter notebook can be downloaded <a href="../02-R-two-actuators.ipynb">here</a>.</p>
+<p>The Jupyter notebook can be downloaded <a href="../02-R-several-actuators.ipynb">here</a>.</p>
 <div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Full code</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
