@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://github.com/PulsarHRI/01-how-to-control-hardware-actuators/01-R-how-to-install-hardware/">
+        <link rel="canonical" href="https://github.com/PulsarHRI/install_python_api/">
       
       
-        <link rel="prev" href="../00-R-pulsar-hardware-context/">
+        <link rel="prev" href="../gui/">
       
       
-        <link rel="next" href="../../cli/">
+        <link rel="next" href="../cli/">
       
       
-      <link rel="icon" href="../../assets/icon.ico">
+      <link rel="icon" href="../assets/icons/icon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>Installing the PULSAR HRI actuator API (pcp_api) - PULSAR HRI Documentation</title>
+        <title>Install Python API - PULSAR HRI Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installing-the-pulsar-hri-actuator-api-pcp_api" class="md-skip">
+        <a href="#install-python-api" class="md-skip">
           Skip to content
         </a>
       
@@ -90,9 +90,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="PULSAR HRI Documentation" class="md-header__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
+    <a href=".." title="PULSAR HRI Documentation" class="md-header__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
       
-  <img src="../../assets/P_Logo_white_svg.png" alt="logo">
+  <img src="../assets/icons/P_Logo_white_svg.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installing the PULSAR HRI actuator API (pcp_api)
+              Install Python API
             
           </span>
         </div>
@@ -213,9 +213,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="PULSAR HRI Documentation" class="md-nav__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
+    <a href=".." title="PULSAR HRI Documentation" class="md-nav__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
       
-  <img src="../../assets/P_Logo_white_svg.png" alt="logo">
+  <img src="../assets/icons/P_Logo_white_svg.png" alt="logo">
 
     </a>
     PULSAR HRI Documentation
@@ -230,7 +230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../00-home/00-home/" class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -252,7 +252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../00-R-pulsar-hardware-context/" class="md-nav__link">
+      <a href="../01-how-to-control-hardware-actuators/00-R-pulsar-hardware-context/" class="md-nav__link">
         
   
   
@@ -311,6 +311,115 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../mechanical_connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Mechanical Connection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../electrical_connection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Electrical Connection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gui/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Graphical User Interface (GUI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
     
   
   
@@ -328,7 +437,7 @@
   
   
   <span class="md-ellipsis">
-    Installing the PULSAR HRI actuator API (pcp_api)
+    Install Python API
     
   </span>
   
@@ -341,7 +450,7 @@
   
   
   <span class="md-ellipsis">
-    Installing the PULSAR HRI actuator API (pcp_api)
+    Install Python API
     
   </span>
   
@@ -439,12 +548,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cli/" class="md-nav__link">
+      <a href="../cli/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    CLI
+    Command line interface (CLI)
     
   </span>
   
@@ -470,15 +579,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Actuator control examples
+    Example scripts
     
   </span>
   
@@ -486,10 +595,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
             <span class="md-nav__icon md-icon"></span>
-            Actuator control examples
+            Example scripts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -500,7 +609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-R-actuator-control-examples/00-R-examples-overview/" class="md-nav__link">
+      <a href="../example_scripts/examples-overview/" class="md-nav__link">
         
   
   
@@ -523,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-R-actuator-control-examples/01-R-single-actuator/" class="md-nav__link">
+      <a href="../example_scripts/single-actuator/" class="md-nav__link">
         
   
   
@@ -546,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-R-actuator-control-examples/02-R-several-actuators/" class="md-nav__link">
+      <a href="../example_scripts/several-actuators/" class="md-nav__link">
         
   
   
@@ -569,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-R-actuator-control-examples/03-R-changing-parameters/" class="md-nav__link">
+      <a href="../example_scripts/changing-parameters/" class="md-nav__link">
         
   
   
@@ -592,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-R-actuator-control-examples/04-R-log-to-csv/" class="md-nav__link">
+      <a href="../example_scripts/log-to-csv/" class="md-nav__link">
         
   
   
@@ -603,6 +712,152 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_4" id="__nav_3_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Actuator Class
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Actuator Class
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-functions-explained/00-functions-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actuator class overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-functions-explained/01-actuator-parameters-explained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Actuator parameters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-functions-explained/02-pcp-api-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Real hardware functions explained
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-functions-explained/03-DT-functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Digital twin functions explained
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -668,7 +923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/00-DT-pulsar-digital-twin-context/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/00-DT-pulsar-digital-twin-context/" class="md-nav__link">
         
   
   
@@ -691,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/01-DT-how-to-install-digital-twin/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/01-DT-how-to-install-digital-twin/" class="md-nav__link">
         
   
   
@@ -752,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/00-DT-examples-overview/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/00-DT-examples-overview/" class="md-nav__link">
         
   
   
@@ -775,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/01-DT-raw-telemetry-plotting/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/01-DT-raw-telemetry-plotting/" class="md-nav__link">
         
   
   
@@ -798,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/02-DT-mujoco-integration-pendulum/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/02-DT-mujoco-integration-pendulum/" class="md-nav__link">
         
   
   
@@ -821,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/03-DT-mujoco-integration-arm/" class="md-nav__link">
+      <a href="../02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/03-DT-mujoco-integration-arm/" class="md-nav__link">
         
   
   
@@ -897,7 +1152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-actuator-control-modes-explained/00-control-modes-overview/" class="md-nav__link">
+      <a href="../03-actuator-control-modes-explained/00-control-modes-overview/" class="md-nav__link">
         
   
   
@@ -920,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-actuator-control-modes-explained/01-control-modes-parameters/" class="md-nav__link">
+      <a href="../03-actuator-control-modes-explained/01-control-modes-parameters/" class="md-nav__link">
         
   
   
@@ -966,7 +1221,7 @@
   
   
   <span class="md-ellipsis">
-    Actuator Class
+    Licensing & Support
     
   </span>
   
@@ -976,143 +1231,6 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            Actuator Class
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../04-functions-explained/00-functions-overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Actuator class overview
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../04-functions-explained/01-actuator-parameters-explained/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Actuator parameters
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../04-functions-explained/02-pcp-api-functions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Real hardware functions explained
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../04-functions-explained/03-DT-functions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Digital twin functions explained
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Licensing & Support
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Licensing & Support
           </label>
@@ -1125,7 +1243,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-licensing-and-support/00-licensing/" class="md-nav__link">
+      <a href="../06-licensing-and-support/00-licensing/" class="md-nav__link">
         
   
   
@@ -1148,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../06-licensing-and-support/01-support/" class="md-nav__link">
+      <a href="../06-licensing-and-support/01-support/" class="md-nav__link">
         
   
   
@@ -1178,7 +1296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../07-faq/00-faq/" class="md-nav__link">
+      <a href="../07-faq/00-faq/" class="md-nav__link">
         
   
   
@@ -1295,7 +1413,7 @@
 
 
 
-<h1 id="installing-the-pulsar-hri-actuator-api-pcp_api">Installing the PULSAR HRI actuator API (pcp_api)</h1>
+<h1 id="install-python-api">Install Python API</h1>
 <p>To ensure a clean and manageable development setup, we strongly recommend using a virtual environment. This helps isolate your dependencies and avoid conflicts with other Python packages on your system. <strong>All examples and functionality have been tested on Windows 11 using Python 3.12.10.</strong></p>
 <h2 id="installation">Installation</h2>
 <h3 id="step-1-create-a-virtual-environment">Step 1: Create a Virtual Environment</h3>
@@ -1340,7 +1458,7 @@ This should provide information about the installed package, including its versi
 <p>Once the API is installed, you can:</p>
 <ul>
 <li>Use the CLI (command line interface) to quickly interact with the PULSAR hardware.</li>
-<li>Run example scripts provided in the <a href="../02-R-actuator-control-examples/00-R-examples-overview/">examples directory</a>.</li>
+<li>Run example scripts provided in the <a href="../example_scripts/examples-overview/">examples directory</a>.</li>
 <li>Explore the documentation for detailed usage instructions.</li>
 <li>Integrate the API into your own applications or research workflows.</li>
 </ul>
@@ -1374,7 +1492,7 @@ This should provide information about the installed package, including its versi
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../00-R-pulsar-hardware-context/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How are PULSAR HRI motors and actuators different from the others?">
+          <a href="../gui/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Graphical User Interface (GUI)">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1384,20 +1502,20 @@ This should provide information about the installed package, including its versi
                 Previous
               </span>
               <div class="md-ellipsis">
-                How are PULSAR HRI motors and actuators different from the others?
+                Graphical User Interface (GUI)
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../cli/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI">
+          <a href="../cli/" class="md-footer__link md-footer__link--next" aria-label="Next: Command line interface (CLI)">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                CLI
+                Command line interface (CLI)
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1452,10 +1570,10 @@ This should provide information about the installed package, including its versi
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "toggle", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "toggle", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
