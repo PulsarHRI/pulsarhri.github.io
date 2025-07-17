@@ -252,12 +252,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-how-to-control-hardware-actuators/00-R-pulsar-hardware-context/" class="md-nav__link">
+      <a href="../why_pulsar/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    How are PULSAR HRI motors and actuators different from the others?
+    Why PULSAR HRI motors and actuators?
     
   </span>
   
@@ -478,39 +478,6 @@
       Installation
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-create-a-virtual-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Create a Virtual Environment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-activate-the-virtual-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Activate the Virtual Environment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-install-the-pulsar-hri-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Install the PULSAR HRI API
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1243,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-licensing-and-support/00-licensing/" class="md-nav__link">
+      <a href="../licensing/" class="md-nav__link">
         
   
   
@@ -1266,7 +1233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-licensing-and-support/01-support/" class="md-nav__link">
+      <a href="../support/" class="md-nav__link">
         
   
   
@@ -1296,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-faq/00-faq/" class="md-nav__link">
+      <a href="../faq/" class="md-nav__link">
         
   
   
@@ -1344,39 +1311,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-create-a-virtual-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Create a Virtual Environment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-activate-the-virtual-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 2: Activate the Virtual Environment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-install-the-pulsar-hri-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Install the PULSAR HRI API
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1414,55 +1348,25 @@
 
 
 <h1 id="install-python-api">Install Python API</h1>
-<p>To ensure a clean and manageable development setup, we strongly recommend using a virtual environment. This helps isolate your dependencies and avoid conflicts with other Python packages on your system. <strong>All examples and functionality have been tested on Windows 11 using Python 3.12.10.</strong></p>
+<p>In this document we will guide you through the installation of the PULSAR HRI Python API, which allows you to programmatically control and interact with PULSAR actuators.</p>
 <h2 id="installation">Installation</h2>
-<h3 id="step-1-create-a-virtual-environment">Step 1: Create a Virtual Environment</h3>
-<p>Open your terminal or command prompt and run:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<p>You can use a virtual environment to install this and other packages for your project. There are several ways to create a virtual environments. In this guide, we will skip the virtual environment and install the PULSAR HRI Python API globally.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pcp_api
 </span></code></pre></div>
-This will create a new virtual environment in a folder named .venv within your project directory.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The installation can be done in the root environment but we do not recommend it.</p>
-</div>
-<h3 id="step-2-activate-the-virtual-environment">Step 2: Activate the Virtual Environment</h3>
-<p>Before installing the PULSAR HRI API, activate the virtual environment. The activation command depends on your operating system:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Linux/macOS</label><label for="__tabbed_1_2">Windows (PowerShell)</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-bat highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.\.venv\Scripts\Activate.ps1
-</span></code></pre></div>
-</div>
-</div>
-</div>
-<p>Once activated, your terminal prompt should change to indicate that you're working inside the virtual environment.</p>
-<h3 id="step-3-install-the-pulsar-hri-api">Step 3: Install the PULSAR HRI API</h3>
-<p>With the virtual environment active, install the PULSAR HRI API package using <code>pip</code>:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>pcp_api
-</span></code></pre></div>
-This command will download and install the latest version of the pcp_api package from PyPI or your configured package index. </p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Every time you want to use the PULSAR HRI API or run the example scripts, make sure to activate your virtual environment first. If you close your terminal or restart your system, you’ll need to reactivate it.</p>
-</div>
 <h2 id="verifying-the-installation">Verifying the Installation</h2>
 <p>To confirm that the installation was successful, you can run the following command:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>show<span class="w"> </span>pcp_api
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>show<span class="w"> </span>pcp_api
 </span></code></pre></div>
 This should provide information about the installed package, including its version and location. If you see this information, the installation was successful.</p>
 <h2 id="next-steps">Next Steps</h2>
 <p>Once the API is installed, you can:</p>
 <ul>
-<li>Use the CLI (command line interface) to quickly interact with the PULSAR hardware.</li>
-<li>Run example scripts provided in the <a href="../example_scripts/examples-overview/">examples directory</a>.</li>
+<li>Use the <a href="../cli/">Command line interface</a> to quickly interact with the PULSAR hardware.</li>
+<li>Run the <a href="../example_scripts/examples-overview/">example scripts</a></li>
 <li>Explore the documentation for detailed usage instructions.</li>
 <li>Integrate the API into your own applications or research workflows.</li>
 </ul>
-<p>If you encounter any issues, please open an issue in this repository <a href="https://github.com/PulsarHRI/pulsarhri.github.io">project repository</a>.</p>
+<p>If you encounter any issues, please open an issue <a href="https://github.com/PulsarHRI/pulsarhri.github.io/issues">issue</a>.</p>
 
 
 
