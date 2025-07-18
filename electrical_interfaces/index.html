@@ -1376,13 +1376,13 @@
 <li>Current: up to 30A</li>
 </ul>
 <p>Keep in mind that the actuators usually draw much less current (less than 1A without load), but you should still ensure that your power supply can provide the maximum current, or limit the current if the device is demanding more than the power supply can provide.</p>
-<p>The device has a XT60 male connector for power input. The pinout is as follows:</p>
-<p><img alt="XT60 Pinout" src="../assets/images/XT60_01.png" /></p>
+<p>The device has a XT30 male connector for power input. The pinout is as follows:</p>
+<p><img alt="XT30 Pinout" src="../assets/images/XT30_01.png" /></p>
 <h2 id="can-bus">CAN bus</h2>
-<p>Pulsar devices are compatible with CAN-FD 1Mbit/s|5Mbit/s. We also provide a CAN to USB adapter. CAN specifications require termination resistors (usually 120 Ohm) at both ends of the bus. This is particularly important for high-speed communication. All Pulsar devices have dual CAN connectors, so you can daisy-chain them easily. Ensure to connect the provided termination resistors at both the ends of the bus. 
-This is an example of a CAN bus connection between two Pulsar devices and a USB adapter:</p>
+<p>Pulsar devices are compatible with CAN-FD 1Mbit/s|5Mbit/s. We also provide a CAN to USB adapter. CAN specifications require termination resistors (usually 120 Ohm) at both ends of the bus. This is particularly important for high-speed communication. All Pulsar devices have dual CAN connectors, so you can daisy-chain them easily. Ensure to connect the provided termination resistors at both ends of the bus.</p>
+<p>This is an example of a CAN bus connection between two Pulsar actuators and a Pulsar CAN to USB adapter:</p>
 <p><img alt="CAN example" src="../assets/images/can_02.png" /></p>
-<p>The connectors are 3-pin PicoBlade connectors from Molex, and the pinout is as follows:</p>
+<p>The connectors are 3-pin PicoBlade from Molex, and the pinout is as follows:</p>
 <p><img alt="CAN Bus Pinout" src="../assets/images/can_01.png" /></p>
 <h2 id="usb">USB</h2>
 <p>Pulsar devices also include a USB connector. The USB interface is intended for configuration and firmware updates.</p>
