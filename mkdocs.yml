@@ -34,6 +34,7 @@ theme:
 plugins:
   - search
 markdown_extensions:
+  - tables
   - attr_list
   - pymdownx.highlight:
       anchor_linenums: true
