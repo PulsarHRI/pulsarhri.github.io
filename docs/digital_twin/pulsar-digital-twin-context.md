@@ -1,0 +1,3 @@
+# What is the digital twin (AUGUR)?
+
+The Digital Twin (Augur) is an advanced simulation technology developed by PULSAR HRI. It allows users to create a virtual replica of their actuators and motors, enabling them to simulate and test their performance in a digital environment before deploying them in real-world scenarios. This technology helps in refining control strategies, optimizing performance, and troubleshooting potential issues without the need for physical hardware.

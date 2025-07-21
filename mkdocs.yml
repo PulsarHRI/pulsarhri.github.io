@@ -57,8 +57,8 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/pulsarhri
-    # - icon: material/home
-    #   link: https://pulsarhri.com
+    - icon: material/home
+      link: https://pulsarhri.com
 
 nav:
   - index.md
@@ -79,26 +79,20 @@ nav:
           - Code Documentation:
             - python_api/class_PulsarActuator.md
             - python_api/class_PCP_over_USB.md
-  - digital_twin/digital_twin.md
+  - How to Use AUGUR Digital Twin:
+    - digital_twin\pulsar-digital-twin-context.md
+    - digital_twin\how-to-install-digital-twin.md
+    - Examples:
+      - digital_twin\example_overview.md
+      - digital_twin\download.md
+      - digital_twin\example_mujoco-integration-arm.md
+      - digital_twin\example_mujoco-integration-pendulum.md
+      - digital_twin\example_raw-telemetry-plotting.md
   - Control Modes Explained:
       - control/00-control-modes-overview.md
       - control/01-control-modes-parameters.md
-  # This is already in How to Use AUGUR Digital Twin
-  # - Download AUGUR Digital Twin:
-  #     - 05-actuator-digital-twin-download/00-DT-download.md
-  # - Licensing & Support:
-  #     - licensing.md
   - support.md
   - faq.md
 
-# unused documents were renamed to .txt so they will not appear in searches
-#  - Classes Definitions:
-#      - "Introduction": classes.md
-#      - "Initialization and Constructor": classes-01-InitialisationContrustor.md
-#      - "Connection and Adress Management": Classes-02-ConnectionAndAdress.md
-#      - "Feedback Configuration from Pulsar Actuator": Classes-03-Feedback.md
-#      - "Pulsar Actuator Parameters": Classes-04-PulsarActuator_Parameters.md
-#      - "Predefined Performance Profiles": Classes-05-PerformanceProfiles.md
-#      - "Actuator Operation: Startup, Shutdown, and Control Modes": Classes-06-ActuatorOperation.md
 
 copyright: Copyright &copy; 2025 PULSAR HRI
