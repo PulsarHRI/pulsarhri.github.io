@@ -1,3 +1,0 @@
-# Raw telemetry and plotting
-
-Coming soon ...

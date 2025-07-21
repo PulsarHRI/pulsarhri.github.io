@@ -33,6 +33,7 @@ theme:
     - content.code.copy
 plugins:
   - search
+  - mkdocstrings
 markdown_extensions:
   - tables
   - attr_list
@@ -68,38 +69,26 @@ nav:
       - led.md
       - gui.md
       - "Python API":
-          - install_python_api.md
-          - cli.md
+          - python_api/install_python_api.md
+          - python_api/cli.md
           - Example scripts:
-            - example_scripts/examples_overview.md
-            - example_scripts/single_actuator.md
-            - example_scripts/several_actuators.md
-            - example_scripts/advanced_features.md
-            - example_scripts/log_to_csv.md
-          - Actuator Class:
-            - 04-functions-explained/00-functions-overview.md
-            - 04-functions-explained/01-actuator-parameters-explained.md
-            - 04-functions-explained/02-pcp-api-functions.md
-            - 04-functions-explained/03-DT-functions.md
-  - How to Use AUGUR Digital Twin:
-      - 02-how-to-simulate-actuators-with-digital-twin/00-DT-pulsar-digital-twin-context.md
-      - 02-how-to-simulate-actuators-with-digital-twin/01-DT-how-to-install-digital-twin.md
-      - "Actuator Digital Twin simulation examples":
-          - 02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/00-DT-examples-overview.md
-          - 02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/01-DT-raw-telemetry-plotting.md
-          - 02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/02-DT-mujoco-integration-pendulum.md
-          - 02-how-to-simulate-actuators-with-digital-twin/02-actuator-digital-twin-examples/03-DT-mujoco-integration-arm.md
-  
+            - python_api/example_single_actuator.md
+            - python_api/example_several_actuators.md
+            - python_api/example_advanced_features.md
+            - python_api/example_log_to_csv.md
+          - Code Documentation:
+            - python_api/class_PulsarActuator.md
+            - python_api/class_PCP_over_USB.md
+  - digital_twin/digital_twin.md
   - Control Modes Explained:
-      - 03-actuator-control-modes-explained/00-control-modes-overview.md
-      - 03-actuator-control-modes-explained/01-control-modes-parameters.md
-
+      - control/00-control-modes-overview.md
+      - control/01-control-modes-parameters.md
   # This is already in How to Use AUGUR Digital Twin
   # - Download AUGUR Digital Twin:
   #     - 05-actuator-digital-twin-download/00-DT-download.md
-  - Licensing & Support:
-      - licensing.md
-      - support.md
+  # - Licensing & Support:
+  #     - licensing.md
+  - support.md
   - faq.md
 
 # unused documents were renamed to .txt so they will not appear in searches

@@ -9,7 +9,7 @@ The physical connection for this example (two actuators and the CAN to USB adapt
 !!! warning
     Do not forget the termination resistors (TR) at the ends of the CAN bus.
 
-The schema shows actuators with addresses 0x10 and 0x11, but you need to find out the actual addresses of your devices. For that you can either use the [CLI scan command](../cli.md#scan-for-devices) or use the Desktop App to change their address.
+The schema shows actuators with addresses 0x10 and 0x11, but you need to find out the actual addresses of your devices. For that you can either use the [CLI scan command](cli.md#scan-for-devices) or use the Desktop App to change their address.
 
 
 
