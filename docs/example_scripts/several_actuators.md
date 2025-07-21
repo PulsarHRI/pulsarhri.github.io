@@ -1,6 +1,16 @@
 # Controlling Several Devices
 
-This notebook demonstrates how to control multiple PULSAR HRI actuators. We will walk through the steps of connecting to the USB-CAN adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.
+This example demonstrates how to control multiple PULSAR HRI actuators. We will walk through the steps of connecting to the CAN to USB adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.
+
+The physical connection for this example (two actuators and the CAN to USB adapter) is shown in the image below. The actuators are connected to the CAN bus via an adapter, which is connected to the host computer via USB.
+
+![CAN example](../assets/images/can_02.png)
+
+!!! warning
+    Do not forget the termination resistors (TR) at the ends of the CAN bus.
+
+The schema shows actuators with addresses 0x10 and 0x11, but you need to find out the actual addresses of your devices. For that you can either use the [CLI scan command](../cli.md#scan-for-devices) or use the Desktop App to change their address.
+
 
 
 ## Import necessary modules
@@ -13,13 +23,19 @@ from time import sleep
 ```
 
 
-## Define Constants and Feedback Function
+## Instantiate the adapter
 
-We define the addresses for the two actuators. These addresses are used to uniquely identify each actuator on the CAN bus. You can discover the addresses of your actuators using the [CLI scan command](../cli.md#scan-for-devices)
+We auto-detect the USB port to which the CAN to USB adapter is connected and create an instance of the adapter. This step is essential to establish communication with the actuators.
+
 
 ```py
-# Example PCP addresses for two actuators
-ACTUATOR_ADDRESSES = [0x10, 0x11]
+ACTUATOR_ADDRESSES = [0x10, 0x11]  # Use the actual addresses of your actuators
+
+# Auto-detect CAN to USB adapter port
+port = PCP_over_USB.get_port()
+# port = "COM1"
+print(f"Connecting to {port}")
+adapter = PCP_over_USB(port)
 ```
 
 
@@ -33,23 +49,9 @@ def actuator_feedback(address: int, feedback: dict):
 ```
 
 
-## Connect to USB-CAN Adapter
-
-We auto-detect the USB port to which the CAN adapter is connected and create an instance of the adapter. This step is essential to establish communication with the actuators.
-
-
-```py
-# Auto-detect CAN adapter port
-port = PCP_over_USB.get_port()
-# port = "COM1"
-print(f"Connecting to {port}")
-adapter = PCP_over_USB(port)
-```
-
-
 ## Initialize Actuators and set common configuration
 
-We create a loop to initialize each actuator using its address. Each actuator is connected, configured for high-frequency feedback, and set to SPEED mode. The feedback callback function is registered to handle incoming feedback from the actuators.
+We create a loop to initialize each actuator using its address. Each actuator is connected, configured for high-frequency feedback, and set to SPEED mode. The same feedback callback function is registered to handle incoming feedback from the actuators. (Individual callback functions is also possible)
 
 
 ```py
@@ -70,6 +72,7 @@ for address in ACTUATOR_ADDRESSES:
     # Configure high-frequency feedback to report position at 10 Hz.
     actuator.setHighFreqFeedbackItems([
         PulsarActuator.PCP_Items.POSITION_FB,
+        # Add other items if needed
     ])
     actuator.setHighFreqFeedbackRate(actuator.Rates.RATE_10HZ)
 
@@ -82,13 +85,14 @@ for address in ACTUATOR_ADDRESSES:
     # Register the feedback callback function.
     actuator.set_feedback_callback(actuator_feedback)
 
+    # Add the actuator to the list
     actuators.append(actuator)
 ```
 
 
 ## Individual Actuator Configuration
 
-We assign different configuration to each actuator.
+We assign different configuration to each actuator. In this case, only the speed.
 
 ```py
 # Set different speeds for each actuator
@@ -99,7 +103,7 @@ actuators[1].change_setpoint(0.3)
 
 ## Run and Cleanup
 
-We start all actuators and let them run briefly to allow feedback to be printed. When the program is interrupted (e.g., via Ctrl+C ), we ensure all actuators are properly disconnected and the adapter is closed.
+We start all actuators and let them run. The feedback will be printed in the console. When the program is interrupted (e.g., via Ctrl+C ), we ensure all actuators are properly disconnected and the adapter is closed.
 
 ```py
 # Start all actuators
@@ -108,7 +112,8 @@ for actuator in actuators:
 
 print("Actuators started. Press Ctrl+C to stop.")
 try:
-    sleep(0.1)  # Let feedback trigger
+    while True:
+        sleep(0.1)  # Let feedback trigger
 except KeyboardInterrupt:
     pass
 finally:
@@ -133,7 +138,7 @@ def actuator_feedback(address: int, feedback: dict):
     position = feedback.get(PulsarActuator.PCP_Items.POSITION_FB, None)
     print(f"Actuator 0x{address:X} position: {position:.2f} rad/s")
 
-# Auto-detect CAN adapter port
+# Auto-detect CAN to USB adapter port
 port = PCP_over_USB.get_port()
 # port = "COM1"
 print(f"Connecting to {port}")
@@ -180,7 +185,8 @@ for actuator in actuators:
 
 print("Actuators started. Press Ctrl+C to stop.")
 try:
-    sleep(0.1)  # Let feedback trigger
+    while True:
+        sleep(0.1)  # Let feedback trigger
 except KeyboardInterrupt:
     pass
 finally:

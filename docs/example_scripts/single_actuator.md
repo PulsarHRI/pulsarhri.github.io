@@ -11,10 +11,10 @@ from time import sleep
 ```
 ## Instantiate the adapter
 
-Pulsar devices understand the PCP protocol, which can be communicated over USB or CAN. The devices has a built-in USB interface, so you can connect directly to the actuator via USB. Alternatively, you can use a CAN adapter to connect to the actuator over a CAN bus. This can adapter is connected to the host computer via USB, so in both cases, you will use the `PCP_over_USB` class to create the adapter.
+Pulsar devices understand the PCP protocol, which can be transmitted over USB or CAN. The devices have a built-in USB interface, so you can connect directly to the actuator via USB. Alternatively, you can use a CAN to USB adapter to connect to the actuator over a CAN bus. This adapter is connected to the host computer via USB, so in both cases, you will use the `PCP_over_USB` class to create the adapter.
 
 ```py
-port = "COM1"  # you need to specify the port of the device or the CAN adapter
+port = "COM1"  # you need to specify the port of the device or the CAN to USB adapter
 # port = PCP_over_USB.get_port()  # there is also an auto-detect system that will find the first available port
 print(f"Connecting to {port}")
 adapter = PCP_over_USB(port)
@@ -44,6 +44,7 @@ Set up the feedback configuration:
 
 * High-frequency feedback for data like speed, position, torque, ...
 * Low-frequency feedback for data like bus voltage, temperatures....
+
 You can set the feedback items you want to receive. The items are defined in `PulsarActuator.PCP_Items`. You can choose from items like `SPEED_FB`, `POSITION_FB`, `TORQUE_FB`, `VBUS`, `TEMP_MOTOR`, etc.
 
 You can set the feedback rate for each type of feedback. The rates are defined in `PulsarActuator.Rates`, and you can choose from `RATE_1HZ`, `RATE_10HZ`, `RATE_100HZ`, `RATE_1KHZ`, or `DISABLED` to disable the feedback.

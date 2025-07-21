@@ -1,6 +1,6 @@
 # Advanced Features
 
-This notebook demonstrates advanced configuration and control of a PULSAR HRI actuator. It builds upon the basic example.
+This example demonstrates advanced configuration and control of a PULSAR HRI actuator. It builds upon the basic example.
 
 In this document you will learn how to:
 
