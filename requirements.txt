@@ -1,5 +1,3 @@
 mkdocs-material
 mkdocs-redirects
 mkdocstrings[python]
-mkdocs-material-extensions
-pillow cairosvg
