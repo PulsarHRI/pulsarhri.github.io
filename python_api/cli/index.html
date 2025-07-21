@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://github.com/PulsarHRI/">
+        <link rel="canonical" href="https://github.com/PulsarHRI/python_api/cli/">
       
       
+        <link rel="prev" href="../install_python_api/">
       
-        <link rel="next" href="why_pulsar/">
+      
+        <link rel="next" href="../example_single_actuator/">
       
       
-      <link rel="icon" href="assets/icons/icon.ico">
+      <link rel="icon" href="../../assets/icons/icon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
-        <title>PULSAR HRI Documentation</title>
+        <title>Command line interface (CLI) - PULSAR HRI Documentation</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#home" class="md-skip">
+        <a href="#command-line-interface-cli" class="md-skip">
           Skip to content
         </a>
       
@@ -90,9 +92,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="PULSAR HRI Documentation" class="md-header__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
+    <a href="../.." title="PULSAR HRI Documentation" class="md-header__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
       
-  <img src="assets/icons/P_Logo_white_svg.png" alt="logo">
+  <img src="../../assets/icons/P_Logo_white_svg.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Command line interface (CLI)
             
           </span>
         </div>
@@ -213,9 +215,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="PULSAR HRI Documentation" class="md-nav__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
+    <a href="../.." title="PULSAR HRI Documentation" class="md-nav__button md-logo" aria-label="PULSAR HRI Documentation" data-md-component="logo">
       
-  <img src="assets/icons/P_Logo_white_svg.png" alt="logo">
+  <img src="../../assets/icons/P_Logo_white_svg.png" alt="logo">
 
     </a>
     PULSAR HRI Documentation
@@ -227,32 +229,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Home
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -263,35 +243,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview-of-the-pulsar-hri-ecosystem" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview of the PULSAR HRI ecosystem
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -303,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="why_pulsar/" class="md-nav__link">
+      <a href="../../why_pulsar/" class="md-nav__link">
         
   
   
@@ -322,18 +273,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -349,7 +302,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             How to Use PULSAR HRI Hardware
@@ -363,7 +316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="mechanical_interfaces/" class="md-nav__link">
+      <a href="../../mechanical_interfaces/" class="md-nav__link">
         
   
   
@@ -386,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="electrical_interfaces/" class="md-nav__link">
+      <a href="../../electrical_interfaces/" class="md-nav__link">
         
   
   
@@ -409,7 +362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="led/" class="md-nav__link">
+      <a href="../../led/" class="md-nav__link">
         
   
   
@@ -432,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="gui/" class="md-nav__link">
+      <a href="../../gui/" class="md-nav__link">
         
   
   
@@ -452,18 +405,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
         
           
           <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
@@ -479,7 +434,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             Python API
@@ -493,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="python_api/install_python_api/" class="md-nav__link">
+      <a href="../install_python_api/" class="md-nav__link">
         
   
   
@@ -513,10 +468,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="python_api/cli/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Command line interface (CLI)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -527,6 +504,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verifying the Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the CLI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scan-for-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scan for Devices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-device-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Device parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -577,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="python_api/example_single_actuator/" class="md-nav__link">
+      <a href="../example_single_actuator/" class="md-nav__link">
         
   
   
@@ -600,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="python_api/example_several_actuators/" class="md-nav__link">
+      <a href="../example_several_actuators/" class="md-nav__link">
         
   
   
@@ -623,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="python_api/example_advanced_features/" class="md-nav__link">
+      <a href="../example_advanced_features/" class="md-nav__link">
         
   
   
@@ -646,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="python_api/example_log_to_csv/" class="md-nav__link">
+      <a href="../example_log_to_csv/" class="md-nav__link">
         
   
   
@@ -715,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="python_api/class_PulsarActuator/" class="md-nav__link">
+      <a href="../class_PulsarActuator/" class="md-nav__link">
         
   
   
@@ -738,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="python_api/class_PCP_over_USB/" class="md-nav__link">
+      <a href="../class_PCP_over_USB/" class="md-nav__link">
         
   
   
@@ -784,7 +823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="digital_twin/digital_twin/" class="md-nav__link">
+      <a href="../../digital_twin/digital_twin/" class="md-nav__link">
         
   
   
@@ -844,7 +883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="control/00-control-modes-overview/" class="md-nav__link">
+      <a href="../../control/00-control-modes-overview/" class="md-nav__link">
         
   
   
@@ -867,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="control/01-control-modes-parameters/" class="md-nav__link">
+      <a href="../../control/01-control-modes-parameters/" class="md-nav__link">
         
   
   
@@ -897,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="support/" class="md-nav__link">
+      <a href="../../support/" class="md-nav__link">
         
   
   
@@ -919,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   
@@ -961,11 +1000,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview-of-the-pulsar-hri-ecosystem" class="md-nav__link">
+  <a href="#verifying-the-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview of the PULSAR HRI ecosystem
+      Verifying the Installation
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using the CLI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scan-for-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scan for Devices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-device-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Device parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -985,27 +1057,24 @@
 
 
 
-<h1 id="home">Home</h1>
-<p><img alt="Pulsar" loading="lazy" src="assets/images/P98_01.jpg" /></p>
-<p>Welcome to the PULSAR HRI documentation! This documentation contains everything you need to begin working with the PULSAR HRI Actuators or PULSAR HRI Motors. Whether you're a researcher, developer, or engineer, this guide will walk you through setting up your environment, installing the packages, and accessing the documentation and examples.</p>
-<p>The PULSAR HRI packages is designed to provide a robust and flexible interface for controlling and monitoring PULSAR HRI hardware. It includes:</p>
-<ul>
-<li>A Python package for controlling the real hardware</li>
-<li>A Python package for controlling the digital twin (AUGUR)</li>
-<li>Example scripts for common use cases</li>
-<li>Detailed descriptions of available classes, methods, and parameters</li>
-<li>Best practices for integration and deployment</li>
-</ul>
-<h2 id="overview-of-the-pulsar-hri-ecosystem">Overview of the PULSAR HRI ecosystem</h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>When we refer to motors we refer to direct drive motors without transmission</li>
-<li>When we refer to actuators we refer to motors with a transmission</li>
-</ul>
-</div>
-<p>PULSAR HRI develops best-in-class actuation systems to enable the next generation of robotic capabilities. Our aim is to provide the highest possible performance in motors and actuators, defining excellence through novel metrics involving agility, torque-density, and efficiency. Our model-based design approach enables us to deliver high-performance actuators alongside high-fidelity digital twins (AUGUR). This documentation contains all the necessary resources to set up either a simulation or a physical configuration using our products.</p>
-<p><img alt="High level ecosystem diagram" src="assets/images/high_level_diagram.png" /></p>
+<h1 id="command-line-interface-cli">Command line interface (CLI)</h1>
+<p>The Command Line Interface (CLI) is included in the python package. It provides a convenient way to interact with the actuator directly from a terminal. This is particularly useful for quick communication test and for scanning devices on a CAN bus.</p>
+<h2 id="verifying-the-installation">Verifying the Installation</h2>
+<p>The CLI is installed along the python package. To confirm that the CLI is working correctly, you can run the following command:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pulsar-cli<span class="w"> </span>-h
+</span></code></pre></div>
+This should print the help message.</p>
+<h2 id="using-the-cli">Using the CLI</h2>
+<p>The CLI provides several commands to interact with the Pulsar actuator. Here are some common commands:</p>
+<h3 id="scan-for-devices">Scan for Devices</h3>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pulsar-cli<span class="w"> </span>scan<span class="w"> </span>-p<span class="w"> </span>&lt;port&gt;
+</span></code></pre></div>
+This command scans the CAN bus for connected Pulsar devices and lists their IDs and statuses. Replace <code>&lt;port&gt;</code> with the appropriate serial port of the CAN to USB adapter (e.g., <code>/dev/ttyUSB0</code> on Linux or <code>COM3</code> on Windows).
+Use the <code>-h</code> flag to see more options</p>
+<h3 id="get-device-parameters">Get Device parameters</h3>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pulsar-cli<span class="w"> </span>params<span class="w"> </span>-p<span class="w"> </span>&lt;port&gt;
+</span></code></pre></div>
+When connected to a device via USB, you can retrieve all the parameters of the device. This command will display the current configuration of the actuator. Replace <code>&lt;port&gt;</code> with the appropriate serial port of the actuator (e.g., <code>/dev/ttyUSB0</code> on Linux or <code>COM3</code> on Windows).</p>
 
 
 
@@ -1034,15 +1103,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
+          
+          <a href="../install_python_api/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install Python API">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Install Python API
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="why_pulsar/" class="md-footer__link md-footer__link--next" aria-label="Next: Why PULSAR HRI motors and actuators?">
+          <a href="../example_single_actuator/" class="md-footer__link md-footer__link--next" aria-label="Next: Controlling One Device">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Why PULSAR HRI motors and actuators?
+                Controlling One Device
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1097,10 +1182,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer", "toggle", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "toggle", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.56ea9cef.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
