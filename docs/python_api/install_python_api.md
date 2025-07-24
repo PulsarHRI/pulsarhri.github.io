@@ -8,7 +8,7 @@ In this document we will guide you through the installation of the PULSAR HRI Py
 You can use a virtual environment to install this and other packages for your project. There are several ways to create a virtual environments. In this guide, we will skip the virtual environment and install the PULSAR HRI Python API globally.
 
 ```bash
-pip install pcp_api
+pip install --upgrade pcp_api
 ```
 
 

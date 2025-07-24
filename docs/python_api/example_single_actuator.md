@@ -97,8 +97,8 @@ You can choose from different control modes, such as `SPEED`, `POSITION`, or `TO
 
     ``` py title="Configure control position"
     actuator.change_mode(PulsarActuator.Mode.POSITION)
-    actuator.reset_encoder_position()  # current position will be treated as 0
-    actuator.change_setpoint(3.1416)  # rad
+    actuator.set_home_position()  # Sets the current position as the zero reference
+    actuator.change_setpoint(3.1416)  # (rad) target position at about 180 degrees from home 
     ```
 
 
@@ -289,8 +289,8 @@ finally:
         ])
 
         actuator.change_mode(PulsarActuator.Mode.POSITION)
-        actuator.reset_encoder_position()  # current position will be treated as 0
-        actuator.change_setpoint(3.1416)  # rad
+        actuator.set_home_position()  # Sets the current position as the zero reference
+        actuator.change_setpoint(3.1416)  # (rad) target position at about 180 degrees from home 
 
         actuator.start()
         print("Actuator started. Press Ctrl+C to stop.")

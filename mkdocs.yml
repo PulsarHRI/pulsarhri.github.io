@@ -76,7 +76,7 @@ nav:
             - python_api/example_several_actuators.md
             - python_api/example_advanced_features.md
             - python_api/example_log_to_csv.md
-          - Code Documentation:
+          - API Reference:
             - python_api/class_PulsarActuator.md
             - python_api/class_PCP_over_USB.md
   - digital_twin/digital_twin.md

@@ -241,8 +241,8 @@ class PulsarActuator:
         """
         ...
 
-    def reset_encoder_position(self) -> None:
-        """Reset the encoder position to zero."""
+    def set_home_position(self) -> None:
+        """Sets the current position as the home position (zero reference)."""
         ...
 
     def set_parameters(self, parameters: Dict['PulsarActuator.PCP_Parameters', float]) -> None:

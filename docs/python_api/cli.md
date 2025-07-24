@@ -21,15 +21,14 @@ The CLI provides several commands to interact with the Pulsar actuator. Here are
 ### Scan for Devices
 
 ```bash
-pulsar-cli scan -p <port>
+pulsar-cli scan
 ```
-This command scans the CAN bus for connected Pulsar devices and lists their IDs and statuses. Replace `<port>` with the appropriate serial port of the CAN to USB adapter (e.g., `/dev/ttyUSB0` on Linux or `COM3` on Windows).
-Use the `-h` flag to see more options
+This command scans the CAN bus for connected Pulsar devices and lists their addresses. You need a CAN adapter connected and a [correctly wired CAN bus](../electrical_interfaces.md#can-bus). Use the `-h` flag to see more options.
 
 
 ### Get Device parameters
 
 ```bash
-pulsar-cli params -p <port>
+pulsar-cli params
 ```
-When connected to a device via USB, you can retrieve all the parameters of the device. This command will display the current configuration of the actuator. Replace `<port>` with the appropriate serial port of the actuator (e.g., `/dev/ttyUSB0` on Linux or `COM3` on Windows).
+You can retrieve all the parameters of the connected device.  Use the `-h` flag to see more options.
