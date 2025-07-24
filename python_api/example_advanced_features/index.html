@@ -640,18 +640,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#resets-the-encoder-to-define-a-new-zero-position" class="md-nav__link">
+  <a href="#changes-the-actuators-address" class="md-nav__link">
     <span class="md-ellipsis">
-      Resets the encoder to define a new zero position
+      Changes the actuator's address
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#changes-the-actuators-address" class="md-nav__link">
+  <a href="#resets-the-encoder-to-define-a-new-zero-position" class="md-nav__link">
     <span class="md-ellipsis">
-      Changes the actuator's address
+      Resets the encoder to define a new zero position
     </span>
   </a>
   
@@ -1048,18 +1048,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#resets-the-encoder-to-define-a-new-zero-position" class="md-nav__link">
+  <a href="#changes-the-actuators-address" class="md-nav__link">
     <span class="md-ellipsis">
-      Resets the encoder to define a new zero position
+      Changes the actuator's address
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#changes-the-actuators-address" class="md-nav__link">
+  <a href="#resets-the-encoder-to-define-a-new-zero-position" class="md-nav__link">
     <span class="md-ellipsis">
-      Changes the actuator's address
+      Resets the encoder to define a new zero position
     </span>
   </a>
   
@@ -1144,16 +1144,17 @@
 <p>These features are useful for fine-tuning actuator behavior, multi-actuator setups, and persistent deployment scenarios.</p>
 <h2 id="apply-advanced-configuration">Apply Advanced Configuration</h2>
 <p>The code shows several features of the PULSAR HRI actuator:</p>
-<h3 id="resets-the-encoder-to-define-a-new-zero-position">Resets the encoder to define a new zero position</h3>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">actuator</span><span class="o">.</span><span class="n">reset_encoder_position</span><span class="p">()</span>
-</span></code></pre></div>
 <h3 id="changes-the-actuators-address">Changes the actuator's address</h3>
-<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">actuator</span><span class="o">.</span><span class="n">changeAddress</span><span class="p">(</span><span class="mh">0x15</span><span class="p">)</span>
+<p>Sets a new address. This gets stored in the actuator's persistent memory, so it will be retained across power cycles. For actuators we recommend to use addresses from 0x10 (16) Lower addresses are reserved for adapters and special purposes.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">actuator</span><span class="o">.</span><span class="n">changeAddress</span><span class="p">(</span><span class="mh">0x15</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="resets-the-encoder-to-define-a-new-zero-position">Resets the encoder to define a new zero position</h3>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">actuator</span><span class="o">.</span><span class="n">reset_encoder_position</span><span class="p">()</span>
 </span></code></pre></div>
 <h3 id="applies-performance-profiles-for-torque-and-speed">Applies performance profiles for torque and speed</h3>
 <p>The available performance profiles are defined in the <code>PulsarActuator.TorquePerformance</code> and <code>PulsarActuator.SpeedPerformance</code></p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">actuator</span><span class="o">.</span><span class="n">set_torque_performance</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">TorquePerformance</span><span class="o">.</span><span class="n">AGGRESSIVE</span><span class="p">)</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">actuator</span><span class="o">.</span><span class="n">set_speed_performance</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">SpeedPerformance</span><span class="o">.</span><span class="n">AGGRESSIVE</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">actuator</span><span class="o">.</span><span class="n">set_speed_performance</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">SpeedPerformance</span><span class="o">.</span><span class="n">BALANCED</span><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="sets-custom-control-parameters">Sets custom control parameters</h3>
 <p>The available parameters are defined in the <code>PulsarActuator.PCP_Parameters</code></p>
