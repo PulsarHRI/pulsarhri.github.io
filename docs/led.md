@@ -12,7 +12,7 @@ The following colors indicate different device states:
 
 <span style="color: purple; font-size: 18px;">●</span> **Purple**: USB connection established, device is waiting for commands via USB interface.
 
-<span style="color: green; font-size: 18px;">●</span> **Green**: Device is actively processing commands and operating normally.
+<span style="color: green; font-size: 18px;">●</span> **Green**: Device is active. It's following the setpoint and operating normally.
 
 <span style="color: red; font-size: 18px;">●</span> **Red**: Device has encountered an error and requires attention.
 
