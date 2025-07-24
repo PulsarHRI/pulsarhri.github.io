@@ -650,7 +650,7 @@
   
   
   <span class="md-ellipsis">
-    Code Documentation
+    API Reference
     
   </span>
   
@@ -661,7 +661,7 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5_4">
             <span class="md-nav__icon md-icon"></span>
-            Code Documentation
+            API Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -866,15 +866,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pcp_api.pulsar_actuator.PulsarActuator.reset_encoder_position" class="md-nav__link">
-    <span class="md-ellipsis">
-      reset_encoder_position
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pcp_api.pulsar_actuator.PulsarActuator.save_config" class="md-nav__link">
     <span class="md-ellipsis">
       save_config
@@ -932,6 +923,15 @@
   <a href="#pcp_api.pulsar_actuator.PulsarActuator.set_feedback_callback" class="md-nav__link">
     <span class="md-ellipsis">
       set_feedback_callback
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcp_api.pulsar_actuator.PulsarActuator.set_home_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_home_position
     </span>
   </a>
   
@@ -1365,15 +1365,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pcp_api.pulsar_actuator.PulsarActuator.reset_encoder_position" class="md-nav__link">
-    <span class="md-ellipsis">
-      reset_encoder_position
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#pcp_api.pulsar_actuator.PulsarActuator.save_config" class="md-nav__link">
     <span class="md-ellipsis">
       save_config
@@ -1431,6 +1422,15 @@
   <a href="#pcp_api.pulsar_actuator.PulsarActuator.set_feedback_callback" class="md-nav__link">
     <span class="md-ellipsis">
       set_feedback_callback
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcp_api.pulsar_actuator.PulsarActuator.set_home_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_home_position
     </span>
   </a>
   
@@ -2047,8 +2047,8 @@ feedback configuration, and parameter management.</p>
 </span><span id="__span-0-241"><a id="__codelineno-0-241" name="__codelineno-0-241"></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="__span-0-242"><a id="__codelineno-0-242" name="__codelineno-0-242"></a>        <span class="o">...</span>
 </span><span id="__span-0-243"><a id="__codelineno-0-243" name="__codelineno-0-243"></a>
-</span><span id="__span-0-244"><a id="__codelineno-0-244" name="__codelineno-0-244"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">reset_encoder_position</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-245"><a id="__codelineno-0-245" name="__codelineno-0-245"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Reset the encoder position to zero.&quot;&quot;&quot;</span>
+</span><span id="__span-0-244"><a id="__codelineno-0-244" name="__codelineno-0-244"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_home_position</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-0-245"><a id="__codelineno-0-245" name="__codelineno-0-245"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Sets the current position as the home position (zero reference).&quot;&quot;&quot;</span>
 </span><span id="__span-0-246"><a id="__codelineno-0-246" name="__codelineno-0-246"></a>        <span class="o">...</span>
 </span><span id="__span-0-247"><a id="__codelineno-0-247" name="__codelineno-0-247"></a>
 </span><span id="__span-0-248"><a id="__codelineno-0-248" name="__codelineno-0-248"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parameters</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="s1">&#39;PulsarActuator.PCP_Parameters&#39;</span><span class="p">,</span> <span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -3260,33 +3260,6 @@ feedback configuration, and parameter management.</p>
 <div class="doc doc-object doc-function">
 
 
-<h2 id="pcp_api.pulsar_actuator.PulsarActuator.reset_encoder_position" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">reset_encoder_position</span><span class="p">()</span></code>
-
-</h2>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Reset the encoder position to zero.</p>
-
-
-            <details class="quote">
-              <summary>Source code in <code>pcp_api/pulsar_actuator.pyi</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-244">244</a></span>
-<span class="normal"><a href="#__codelineno-0-245">245</a></span>
-<span class="normal"><a href="#__codelineno-0-246">246</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-244"><a id="__codelineno-0-244" name="__codelineno-0-244"></a><span class="k">def</span><span class="w"> </span><span class="nf">reset_encoder_position</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-245"><a id="__codelineno-0-245" name="__codelineno-0-245"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Reset the encoder position to zero.&quot;&quot;&quot;</span>
-</span><span id="__span-0-246"><a id="__codelineno-0-246" name="__codelineno-0-246"></a>    <span class="o">...</span>
-</span></code></pre></div></td></tr></table></div>
-            </details>
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
 <h2 id="pcp_api.pulsar_actuator.PulsarActuator.save_config" class="doc doc-heading">
             <code class="highlight language-python"><span class="n">save_config</span><span class="p">()</span></code>
 
@@ -3742,6 +3715,33 @@ feedback configuration, and parameter management.</p>
 </span><span id="__span-0-136"><a id="__codelineno-0-136" name="__codelineno-0-136"></a><span class="sd">        callback: Function to call when feedback data is received</span>
 </span><span id="__span-0-137"><a id="__codelineno-0-137" name="__codelineno-0-137"></a><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="__span-0-138"><a id="__codelineno-0-138" name="__codelineno-0-138"></a>    <span class="o">...</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h2 id="pcp_api.pulsar_actuator.PulsarActuator.set_home_position" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_home_position</span><span class="p">()</span></code>
+
+</h2>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Sets the current position as the home position (zero reference).</p>
+
+
+            <details class="quote">
+              <summary>Source code in <code>pcp_api/pulsar_actuator.pyi</code></summary>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-244">244</a></span>
+<span class="normal"><a href="#__codelineno-0-245">245</a></span>
+<span class="normal"><a href="#__codelineno-0-246">246</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-244"><a id="__codelineno-0-244" name="__codelineno-0-244"></a><span class="k">def</span><span class="w"> </span><span class="nf">set_home_position</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-0-245"><a id="__codelineno-0-245" name="__codelineno-0-245"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets the current position as the home position (zero reference).&quot;&quot;&quot;</span>
+</span><span id="__span-0-246"><a id="__codelineno-0-246" name="__codelineno-0-246"></a>    <span class="o">...</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>

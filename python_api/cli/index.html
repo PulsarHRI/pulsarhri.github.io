@@ -732,7 +732,7 @@
   
   
   <span class="md-ellipsis">
-    Code Documentation
+    API Reference
     
   </span>
   
@@ -743,7 +743,7 @@
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5_4">
             <span class="md-nav__icon md-icon"></span>
-            Code Documentation
+            API Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1067,14 +1067,13 @@ This should print the help message.</p>
 <h2 id="using-the-cli">Using the CLI</h2>
 <p>The CLI provides several commands to interact with the Pulsar actuator. Here are some common commands:</p>
 <h3 id="scan-for-devices">Scan for Devices</h3>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pulsar-cli<span class="w"> </span>scan<span class="w"> </span>-p<span class="w"> </span>&lt;port&gt;
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pulsar-cli<span class="w"> </span>scan
 </span></code></pre></div>
-This command scans the CAN bus for connected Pulsar devices and lists their IDs and statuses. Replace <code>&lt;port&gt;</code> with the appropriate serial port of the CAN to USB adapter (e.g., <code>/dev/ttyUSB0</code> on Linux or <code>COM3</code> on Windows).
-Use the <code>-h</code> flag to see more options</p>
+This command scans the CAN bus for connected Pulsar devices and lists their addresses. You need a CAN adapter connected and a <a href="../../electrical_interfaces/#can-bus">correctly wired CAN bus</a>. Use the <code>-h</code> flag to see more options.</p>
 <h3 id="get-device-parameters">Get Device parameters</h3>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pulsar-cli<span class="w"> </span>params<span class="w"> </span>-p<span class="w"> </span>&lt;port&gt;
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pulsar-cli<span class="w"> </span>params
 </span></code></pre></div>
-When connected to a device via USB, you can retrieve all the parameters of the device. This command will display the current configuration of the actuator. Replace <code>&lt;port&gt;</code> with the appropriate serial port of the actuator (e.g., <code>/dev/ttyUSB0</code> on Linux or <code>COM3</code> on Windows).</p>
+You can retrieve all the parameters of the connected device.  Use the <code>-h</code> flag to see more options.</p>
 
 
 
