@@ -18,17 +18,19 @@ These features are useful for fine-tuning actuator behavior, multi-actuator setu
 The code shows several features of the PULSAR HRI actuator:
 
 
+### Changes the actuator's address
+
+Sets a new address. This gets stored in the actuator's persistent memory, so it will be retained across power cycles. For actuators we recommend to use addresses from 0x10 (16) Lower addresses are reserved for adapters and special purposes.
+
+```py
+actuator.changeAddress(0x15)
+```
+
+
 ### Resets the encoder to define a new zero position
 
 ```py
 actuator.reset_encoder_position()
-```
-
-
-### Changes the actuator's address
-
-```py
-actuator.changeAddress(0x15)
 ```
 
 
@@ -38,7 +40,7 @@ The available performance profiles are defined in the `PulsarActuator.TorquePerf
 
 ```py
 actuator.set_torque_performance(PulsarActuator.TorquePerformance.AGGRESSIVE)
-actuator.set_speed_performance(PulsarActuator.SpeedPerformance.AGGRESSIVE)
+actuator.set_speed_performance(PulsarActuator.SpeedPerformance.BALANCED)
 ```
 
 
