@@ -79,10 +79,27 @@ As an alternative, do not set a callback function or call `actuator.set_feedback
 
 You can choose from different control modes, such as `SPEED`, `POSITION`, or `TORQUE`. These are defined in `PulsarActuator.Mode` In this example, we will use the speed mode. You can now set the setpoint for the actuator, which is the target speed in this case. The units are in SI (International System of Units), so the speed is in radians per second (rad/s), position in radians, and torque in Newton-meters (Nm).
 
-```py title="Configure control settings"
+=== "Speed"
+
+    ``` py title="Configure control speed"
     actuator.change_mode(PulsarActuator.Mode.SPEED)
     actuator.change_setpoint(1.0)  # rad/s
-```
+    ```
+
+=== "Torque"
+
+    ``` py title="Configure control torque"
+    actuator.change_mode(PulsarActuator.Mode.TORQUE)
+    actuator.change_setpoint(2.0)  # Nm
+    ```
+
+=== "Position"
+
+    ``` py title="Configure control position"
+    actuator.change_mode(PulsarActuator.Mode.POSITION)
+    actuator.reset_encoder_position()  # current position will be treated as 0
+    actuator.change_setpoint(3.1416)  # rad
+    ```
 
 
 ## Start the actuator
@@ -107,59 +124,182 @@ finally:
 
 ## Full Example
 
-```py title="Full code" linenums="1"
-from pcp_api import PCP_over_USB, PulsarActuator
-from time import sleep
+=== "Speed"
+
+    ```py title="Full code Speed" linenums="1"
+    from pcp_api import PCP_over_USB, PulsarActuator
+    from time import sleep
 
 
-ACTUATOR_ADDRESS = 0  # 0 to indicate direct USB connection, or use the PCP address if using CAN adapter
+    ACTUATOR_ADDRESS = 0  # 0 to indicate direct USB connection, or use the PCP address if using CAN adapter
 
 
-def actuator_feedback(address: int, feedback: dict):
-    print(feedback)
-    speed_fb = feedback.get(PulsarActuator.PCP_Items.SPEED_FB, None)
-    if speed_fb is not None:
-        print(f"Actuator 0x{address:X} Speed feedback: {speed_fb:.2f} rad/s")
+    def actuator_feedback(address: int, feedback: dict):
+        print(feedback)
+        speed_fb = feedback.get(PulsarActuator.PCP_Items.SPEED_FB, None)
+        if speed_fb is not None:
+            print(f"Actuator 0x{address:X} Speed feedback: {speed_fb:.2f} rad/s")
 
 
-port = PCP_over_USB.get_port()  # auto-detect
-# port = "COM1"
-print(f"Connecting to {port}")
-adapter = PCP_over_USB(port)
-actuator = PulsarActuator(adapter, ACTUATOR_ADDRESS)
+    port = PCP_over_USB.get_port()  # auto-detect
+    # port = "COM1"
+    print(f"Connecting to {port}")
+    adapter = PCP_over_USB(port)
+    actuator = PulsarActuator(adapter, ACTUATOR_ADDRESS)
 
-if not actuator.connect():
-    print(f"Could not connect to the actuator {actuator.address}")
-    adapter.close()
-    exit(1)
-print(f"Connected to the actuator {actuator.address} (model: {actuator.model}, firmware: {actuator.firmware_version})")
-try:
-    actuator.setHighFreqFeedbackItems([
-        PulsarActuator.PCP_Items.SPEED_FB,
-        PulsarActuator.PCP_Items.POSITION_FB,
-        PulsarActuator.PCP_Items.TORQUE_FB,
-    ])
-    actuator.setHighFreqFeedbackRate(actuator.Rates.RATE_10HZ)
-    actuator.set_feedback_callback(actuator_feedback)
-    # feedback_callback can be set to None to disable it
-    # and read the feedback manually with actuator.get_feedback()
+    if not actuator.connect():
+        print(f"Could not connect to the actuator {actuator.address}")
+        adapter.close()
+        exit(1)
+    print(f"Connected to the actuator {actuator.address} (model: {actuator.model}, firmware: {actuator.firmware_version})")
+    try:
+        actuator.setHighFreqFeedbackItems([
+            PulsarActuator.PCP_Items.SPEED_FB,
+            PulsarActuator.PCP_Items.POSITION_FB,
+            PulsarActuator.PCP_Items.TORQUE_FB,
+        ])
+        actuator.setHighFreqFeedbackRate(actuator.Rates.RATE_10HZ)
+        actuator.set_feedback_callback(actuator_feedback)
+        # feedback_callback can be set to None to disable it
+        # and read the feedback manually with actuator.get_feedback()
 
-    actuator.setLowFreqFeedbackItems([
-        PulsarActuator.PCP_Items.VBUS,
-        PulsarActuator.PCP_Items.TEMP_MOTOR,
-    ])
-    actuator.setLowFreqFeedbackRate(actuator.Rates.DISABLED)
-    actuator.change_mode(PulsarActuator.Mode.SPEED)
-    actuator.change_setpoint(1.0)  # rad/s because mode is SPEED
+        actuator.setLowFreqFeedbackItems([
+            PulsarActuator.PCP_Items.VBUS,
+            PulsarActuator.PCP_Items.TEMP_MOTOR,
+        ])
+        actuator.setLowFreqFeedbackRate(actuator.Rates.DISABLED)
 
-    actuator.start()
-    print("Actuator started. Press Ctrl+C to stop.")
-    while True:
-        sleep(0.1)  # actuator_feedback() should be triggered
-except KeyboardInterrupt:
-    pass
-finally:
-    actuator.disconnect()  # also stops the actuator
-    sleep(0.1)
-    adapter.close()
-```
+        actuator.change_mode(PulsarActuator.Mode.SPEED)
+        actuator.change_setpoint(1.0)  # rad/s
+
+        actuator.start()
+        print("Actuator started. Press Ctrl+C to stop.")
+        while True:
+            sleep(0.1)  # actuator_feedback() should be triggered
+    except KeyboardInterrupt:
+        pass
+    finally:
+        actuator.disconnect()  # also stops the actuator
+        sleep(0.1)
+        adapter.close()
+    ```
+
+=== "Torque"
+
+    ```py title="Full code Torque" linenums="1"
+    from pcp_api import PCP_over_USB, PulsarActuator
+    from time import sleep
+
+
+    ACTUATOR_ADDRESS = 0  # 0 to indicate direct USB connection, or use the PCP address if using CAN adapter
+
+
+    def actuator_feedback(address: int, feedback: dict):
+        print(feedback)
+        speed_fb = feedback.get(PulsarActuator.PCP_Items.SPEED_FB, None)
+        if speed_fb is not None:
+            print(f"Actuator 0x{address:X} Speed feedback: {speed_fb:.2f} rad/s")
+
+
+    port = PCP_over_USB.get_port()  # auto-detect
+    # port = "COM1"
+    print(f"Connecting to {port}")
+    adapter = PCP_over_USB(port)
+    actuator = PulsarActuator(adapter, ACTUATOR_ADDRESS)
+
+    if not actuator.connect():
+        print(f"Could not connect to the actuator {actuator.address}")
+        adapter.close()
+        exit(1)
+    print(f"Connected to the actuator {actuator.address} (model: {actuator.model}, firmware: {actuator.firmware_version})")
+    try:
+        actuator.setHighFreqFeedbackItems([
+            PulsarActuator.PCP_Items.SPEED_FB,
+            PulsarActuator.PCP_Items.POSITION_FB,
+            PulsarActuator.PCP_Items.TORQUE_FB,
+        ])
+        actuator.setHighFreqFeedbackRate(actuator.Rates.RATE_10HZ)
+        actuator.set_feedback_callback(actuator_feedback)
+        # feedback_callback can be set to None to disable it
+        # and read the feedback manually with actuator.get_feedback()
+
+        actuator.setLowFreqFeedbackItems([
+            PulsarActuator.PCP_Items.VBUS,
+            PulsarActuator.PCP_Items.TEMP_MOTOR,
+        ])
+        actuator.setLowFreqFeedbackRate(actuator.Rates.DISABLED)
+
+        actuator.change_mode(PulsarActuator.Mode.TORQUE)
+        actuator.change_setpoint(2.0)  # Nm
+
+        actuator.start()
+        print("Actuator started. Press Ctrl+C to stop.")
+        while True:
+            sleep(0.1)  # actuator_feedback() should be triggered
+    except KeyboardInterrupt:
+        pass
+    finally:
+        actuator.disconnect()  # also stops the actuator
+        sleep(0.1)
+        adapter.close()
+    ```
+
+=== "Position"
+
+    ```py title="Full code Position" linenums="1"
+    from pcp_api import PCP_over_USB, PulsarActuator
+    from time import sleep
+
+
+    ACTUATOR_ADDRESS = 0  # 0 to indicate direct USB connection, or use the PCP address if using CAN adapter
+
+
+    def actuator_feedback(address: int, feedback: dict):
+        print(feedback)
+        speed_fb = feedback.get(PulsarActuator.PCP_Items.SPEED_FB, None)
+        if speed_fb is not None:
+            print(f"Actuator 0x{address:X} Speed feedback: {speed_fb:.2f} rad/s")
+
+
+    port = PCP_over_USB.get_port()  # auto-detect
+    # port = "COM1"
+    print(f"Connecting to {port}")
+    adapter = PCP_over_USB(port)
+    actuator = PulsarActuator(adapter, ACTUATOR_ADDRESS)
+
+    if not actuator.connect():
+        print(f"Could not connect to the actuator {actuator.address}")
+        adapter.close()
+        exit(1)
+    print(f"Connected to the actuator {actuator.address} (model: {actuator.model}, firmware: {actuator.firmware_version})")
+    try:
+        actuator.setHighFreqFeedbackItems([
+            PulsarActuator.PCP_Items.SPEED_FB,
+            PulsarActuator.PCP_Items.POSITION_FB,
+            PulsarActuator.PCP_Items.TORQUE_FB,
+        ])
+        actuator.setHighFreqFeedbackRate(actuator.Rates.RATE_10HZ)
+        actuator.set_feedback_callback(actuator_feedback)
+        # feedback_callback can be set to None to disable it
+        # and read the feedback manually with actuator.get_feedback()
+
+        actuator.setLowFreqFeedbackItems([
+            PulsarActuator.PCP_Items.VBUS,
+            PulsarActuator.PCP_Items.TEMP_MOTOR,
+        ])
+
+        actuator.change_mode(PulsarActuator.Mode.POSITION)
+        actuator.reset_encoder_position()  # current position will be treated as 0
+        actuator.change_setpoint(3.1416)  # rad
+
+        actuator.start()
+        print("Actuator started. Press Ctrl+C to stop.")
+        while True:
+            sleep(0.1)  # actuator_feedback() should be triggered
+    except KeyboardInterrupt:
+        pass
+    finally:
+        actuator.disconnect()  # also stops the actuator
+        sleep(0.1)
+        adapter.close()
+    ```
