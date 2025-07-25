@@ -645,10 +645,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Change performance profiles for torque and speed">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sets-custom-control-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Sets custom control parameters
@@ -656,27 +655,22 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#reads-back-parameters" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#read-back-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Reads back parameters
+      Read back parameters
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#saves-the-configuration-to-persistent-memory" class="md-nav__link">
     <span class="md-ellipsis">
       Saves the configuration to persistent memory
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1026,10 +1020,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Change performance profiles for torque and speed">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sets-custom-control-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Sets custom control parameters
@@ -1037,27 +1030,22 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#reads-back-parameters" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#read-back-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Reads back parameters
+      Read back parameters
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#saves-the-configuration-to-persistent-memory" class="md-nav__link">
     <span class="md-ellipsis">
       Saves the configuration to persistent memory
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1078,7 +1066,7 @@
 
 
 <h1 id="advanced-features">Advanced Features</h1>
-<p>These code snippets demonstrates more advanced configuration and control of a PULSAR HRI actuator. It builds upon the basic example so you can upgrade it by adding these features.</p>
+<p>These code snippets demonstrate more advanced configuration and control of a PULSAR HRI actuator. It builds upon the basic example so you can upgrade it by adding these features.</p>
 <p>In this document you will learn how to:</p>
 <ul>
 <li>🆔 Change the actuator's PCP address</li>
@@ -1095,15 +1083,15 @@
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">actuator</span><span class="o">.</span><span class="n">set_torque_performance</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">TorquePerformance</span><span class="o">.</span><span class="n">AGGRESSIVE</span><span class="p">)</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">actuator</span><span class="o">.</span><span class="n">set_speed_performance</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">SpeedPerformance</span><span class="o">.</span><span class="n">BALANCED</span><span class="p">)</span>
 </span></code></pre></div>
-<h3 id="sets-custom-control-parameters">Sets custom control parameters</h3>
-<p>The available parameters are defined in the <a href="../class_PulsarActuator/#pcp_api.pulsar_actuator.PulsarActuator.PCP_Parameters"><code>PulsarActuator.PCP_Parameters</code></a>. Note that the set_parameters method takes a dictionary, where the keys are the parameter names and the values are the desired settings.</p>
+<h2 id="sets-custom-control-parameters">Sets custom control parameters</h2>
+<p>The available parameters are defined in the <a href="../class_PulsarActuator/#pcp_api.pulsar_actuator.PulsarActuator.PCP_Parameters"><code>PulsarActuator.PCP_Parameters</code></a>. Note that the <code>set_parameters</code> method takes a dictionary, where the keys are the parameter names and the values are the desired settings.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">actuator</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">({</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Parameters</span><span class="o">.</span><span class="n">K_DAMPING</span><span class="p">:</span> <span class="mf">7.7</span><span class="p">,</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Parameters</span><span class="o">.</span><span class="n">K_STIFFNESS</span><span class="p">:</span> <span class="mf">8.8</span><span class="p">,</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">})</span>
 </span></code></pre></div>
-<h3 id="reads-back-parameters">Reads back parameters</h3>
-<p>This will read back the current configuration from the actuator. In this case, the get_parameters method takes a list of parameters instead of a dictionary. You can also use <code>get_parameters_all()</code> to read all parameters at once.</p>
+<h2 id="read-back-parameters">Read back parameters</h2>
+<p>This will read back the current configuration from the actuator. In this case, the <code>get_parameters</code> method takes a list of parameters instead of a dictionary. You can also use <code>get_parameters_all()</code> to read all parameters at once.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">params</span> <span class="o">=</span> <span class="n">actuator</span><span class="o">.</span><span class="n">get_parameters</span><span class="p">([</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Parameters</span><span class="o">.</span><span class="n">MODE</span><span class="p">,</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Parameters</span><span class="o">.</span><span class="n">SETPOINT</span><span class="p">,</span>
@@ -1113,8 +1101,8 @@
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Parameters</span><span class="o">.</span><span class="n">K_STIFFNESS</span><span class="p">])</span>
 </span></code></pre></div>
-<h3 id="saves-the-configuration-to-persistent-memory">Saves the configuration to persistent memory</h3>
-<p>This will save the current configuration to the actuator's persistent memory, so it will be retained across power cycles.</p>
+<h2 id="saves-the-configuration-to-persistent-memory">Saves the configuration to persistent memory</h2>
+<p>This will save the current parameters to the actuator's persistent memory, so it will be retained across power cycles.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">actuator</span><span class="o">.</span><span class="n">save_config</span><span class="p">()</span>
 </span></code></pre></div>
 

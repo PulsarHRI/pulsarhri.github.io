@@ -1116,7 +1116,7 @@
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
 </span></code></pre></div>
 <h2 id="instantiate-the-adapter">Instantiate the adapter</h2>
-<p>We auto-detect the USB port to which the CAN to USB adapter is connected and create an instance of the adapter. This step is essential to establish communication with the actuators.</p>
+<p>We are going to create a list with all the actuators we want to control, and instantiate a single adapter for all of them. If only one adapter is connected to the computer, you can use the <code>get_port()</code> method to automatically detect the USB port. You can also specify the port manually (e.g., "COM1" on Windows or "/dev/ttyACM0" on Linux).</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">ACTUATOR_ADDRESSES</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x10</span><span class="p">,</span> <span class="mh">0x11</span><span class="p">]</span>  <span class="c1"># Use the actual addresses of your actuators</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Auto-detect CAN to USB adapter port</span>
@@ -1132,7 +1132,7 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Actuator 0x</span><span class="si">{</span><span class="n">address</span><span class="si">:</span><span class="s2">X</span><span class="si">}</span><span class="s2"> position: </span><span class="si">{</span><span class="n">position</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> rad/s&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="initialize-actuators-and-set-common-configuration">Initialize Actuators and set common configuration</h2>
-<p>We create a loop to initialize each actuator using its address. Each actuator is connected, configured for high-frequency feedback, and set to SPEED mode. The same feedback callback function is registered to handle incoming feedback from the actuators. (Individual callback functions is also possible)</p>
+<p>We create a loop to initialize each actuator using its address. Each actuator is connected, configured for high-frequency feedback, and set to SPEED mode. The same feedback callback function is registered to handle incoming feedback from the actuators. (Individual callback functions are also possible)</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">actuators</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># list to hold actuator instances</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">ACTUATOR_ADDRESSES</span><span class="p">:</span>
@@ -1167,10 +1167,10 @@
 </span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>    <span class="n">actuators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actuator</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="individual-actuator-configuration">Individual Actuator Configuration</h2>
-<p>We assign different configuration to each actuator. In this case, only the speed.</p>
+<p>We assign different configuration to each actuator. In this case, only the speed setpoint.</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Set different speeds for each actuator</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># rad/s</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>  <span class="c1"># rad/s</span>
 </span></code></pre></div>
 <h2 id="run-and-cleanup">Run and Cleanup</h2>
 <p>We start all actuators and let them run. The feedback will be printed in the console. When the program is interrupted (e.g., via Ctrl+C ), we ensure all actuators are properly disconnected and the adapter is closed.</p>
@@ -1191,7 +1191,6 @@
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">adapter</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div>
 <h2 id="full-code">Full code</h2>
-<p>The Jupyter notebook can be downloaded <a href="../../assets/jnotebooks/several_actuators.ipynb">here</a>.</p>
 <div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Full code</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1305,8 +1304,8 @@
 </span><span id="__span-6-46"><a id="__codelineno-6-46" name="__codelineno-6-46"></a>    <span class="n">actuators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actuator</span><span class="p">)</span>
 </span><span id="__span-6-47"><a id="__codelineno-6-47" name="__codelineno-6-47"></a>
 </span><span id="__span-6-48"><a id="__codelineno-6-48" name="__codelineno-6-48"></a><span class="c1"># Set different speeds for each actuator</span>
-</span><span id="__span-6-49"><a id="__codelineno-6-49" name="__codelineno-6-49"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
-</span><span id="__span-6-50"><a id="__codelineno-6-50" name="__codelineno-6-50"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</span><span id="__span-6-49"><a id="__codelineno-6-49" name="__codelineno-6-49"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>  <span class="c1"># rad/s</span>
+</span><span id="__span-6-50"><a id="__codelineno-6-50" name="__codelineno-6-50"></a><span class="n">actuators</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">change_setpoint</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>  <span class="c1"># rad/s</span>
 </span><span id="__span-6-51"><a id="__codelineno-6-51" name="__codelineno-6-51"></a>
 </span><span id="__span-6-52"><a id="__codelineno-6-52" name="__codelineno-6-52"></a><span class="c1"># Start all actuators</span>
 </span><span id="__span-6-53"><a id="__codelineno-6-53" name="__codelineno-6-53"></a><span class="k">for</span> <span class="n">actuator</span> <span class="ow">in</span> <span class="n">actuators</span><span class="p">:</span>
