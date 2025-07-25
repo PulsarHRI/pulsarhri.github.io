@@ -25,8 +25,7 @@ from time import sleep
 
 ## Instantiate the adapter
 
-We auto-detect the USB port to which the CAN to USB adapter is connected and create an instance of the adapter. This step is essential to establish communication with the actuators.
-
+We are going to create a list with all the actuators we want to control, and instantiate a single adapter for all of them. If only one adapter is connected to the computer, you can use the `get_port()` method to automatically detect the USB port. You can also specify the port manually (e.g., "COM1" on Windows or "/dev/ttyACM0" on Linux).
 
 ```py
 ACTUATOR_ADDRESSES = [0x10, 0x11]  # Use the actual addresses of your actuators
@@ -40,6 +39,7 @@ adapter = PCP_over_USB(port)
 
 
 ## Define a feedback callback function
+
 This function is called automatically whenever feedback is received from any actuator. You can define individual functions for each actuator, or use a single function for all actuators. In this example, we are going to extract the position from the feedback dict, and prints it along with the actuator's address.
 
 ```py
@@ -51,7 +51,7 @@ def actuator_feedback(address: int, feedback: dict):
 
 ## Initialize Actuators and set common configuration
 
-We create a loop to initialize each actuator using its address. Each actuator is connected, configured for high-frequency feedback, and set to SPEED mode. The same feedback callback function is registered to handle incoming feedback from the actuators. (Individual callback functions is also possible)
+We create a loop to initialize each actuator using its address. Each actuator is connected, configured for high-frequency feedback, and set to SPEED mode. The same feedback callback function is registered to handle incoming feedback from the actuators. (Individual callback functions are also possible)
 
 
 ```py
@@ -92,12 +92,12 @@ for address in ACTUATOR_ADDRESSES:
 
 ## Individual Actuator Configuration
 
-We assign different configuration to each actuator. In this case, only the speed.
+We assign different configuration to each actuator. In this case, only the speed setpoint.
 
 ```py
 # Set different speeds for each actuator
-actuators[0].change_setpoint(0.2)
-actuators[1].change_setpoint(0.3)
+actuators[0].change_setpoint(0.2)  # rad/s
+actuators[1].change_setpoint(0.3)  # rad/s
 ```
 
 
@@ -125,7 +125,6 @@ finally:
 
 
 ## Full code
-The Jupyter notebook can be downloaded [here](../assets/jnotebooks/several_actuators.ipynb).
 
 ```py title="Full code" linenums="1"
 from pcp_api import  PCP_over_USB, PulsarActuator
@@ -176,8 +175,8 @@ for address in ACTUATOR_ADDRESSES:
     actuators.append(actuator)
 
 # Set different speeds for each actuator
-actuators[0].change_setpoint(0.2)
-actuators[1].change_setpoint(0.3)
+actuators[0].change_setpoint(0.2)  # rad/s
+actuators[1].change_setpoint(0.3)  # rad/s
 
 # Start all actuators
 for actuator in actuators:

@@ -6,11 +6,11 @@ The full example is at the [bottom of the page](#full-example).
 
 ## Common code
 
-Most of the code is common to all examples, so we will not repeat it here. You can find the common code in the [first example](example_single_actuator.md).
+Most of the code is common to all examples, so we will not explain it here. You can find the common code in the [first example](example_single_actuator.md).
 
 
 ## Select the items to log
-You can put the items to log from the actuator, in a list. The items are defined in `PulsarActuator.PCP_Items`. You can choose from items like `POSITION_FB`, `TORQUE_SENS`, `SPEED_FB`, ... In this example, we will log the current in the three phases of the motor, which are `IA`, `IB`, and `IC`. 
+You can put the items to log from the actuator in a list. The items are defined in [`PulsarActuator.PCP_Items`](class_PulsarActuator.md#pcp_api.pulsar_actuator.PulsarActuator.PCP_Items). You can choose from items like `POSITION_FB`, `TORQUE_SENS`, `SPEED_FB`, ... In this example, we will log the current in the three phases of the motor, which are `IA`, `IB`, and `IC`. 
 
 ```py
 itemsToLog = [
@@ -24,14 +24,14 @@ itemsToLog = [
 
 ## Preparing CSV Logging
 
-This opens a CSV file for writing. The key thing is to order the items in the same way they are logged. As the items are defined in an enum, you can sort them by name to ensure a consistent order.
+This opens a CSV file for writing. The key thing is to order the items in the same way they will be logged. As the items are defined in an enum, you can sort them by name to ensure a consistent order.
 
 ```py
 file = open("log.csv", "w")
 csv_writer = csv.writer(file, lineterminator='\n')
 # add header
 header = ["Timestamp"]
-header.extend([item.name for item in sorted(itemsToLog, key=lambda x: x.name)])  # sorted by name for consistent order
+header.extend(sorted([item.name for item in itemsToLog]))  # sorted by name for consistent order
 csv_writer.writerow(header)
 ```
 
@@ -61,11 +61,11 @@ actuator.setLowFreqFeedbackRate(actuator.Rates.DISABLED)
 
 ## Start Actuator
 
-Like in the other examples, we can choose the control mode, setpoint, other parameters (not shown here) and start the actuator. In this example, we are going the let it run for 3 seconds.
+Like in the other examples, we can choose the control mode, setpoint, other parameters (not shown here) and start the actuator. In this example, we are going to let it spin in SPEED mode for 3 seconds.
 
 ```py
 actuator.change_mode(PulsarActuator.Mode.SPEED)
-actuator.change_setpoint(1.0)
+actuator.change_setpoint(1.0)  # rad/s
 actuator.start()
 actuator.set_feedback_callback(actuator_feedback)
 sleep(3)  # actuator_feedback() should be triggered during this time
@@ -132,7 +132,7 @@ csv_writer = csv.writer(file, lineterminator='\n')
 
 # add header
 header = ["Timestamp"]
-header.extend([item.name for item in sorted(itemsToLog, key=lambda x: x.name)])  # sorted by name for consistent order
+header.extend(sorted([item.name for item in itemsToLog])) # sorted by name for consistent order
 csv_writer.writerow(header)
 
 
@@ -142,11 +142,11 @@ def actuator_feedback(address: int, feedback: dict):
     csv_writer.writerow(line)
 
 
-actuator.change_mode(PulsarActuator.Mode.SPEED)
-actuator.change_setpoint(1.0)
-actuator.start()
-actuator.set_feedback_callback(actuator_feedback)
 try:
+    actuator.change_mode(PulsarActuator.Mode.SPEED)
+    actuator.change_setpoint(1.0)  # rad/s
+    actuator.start()
+    actuator.set_feedback_callback(actuator_feedback)    
     sleep(3)  # actuator_feedback() should be triggered during this time
 except KeyboardInterrupt:
     pass

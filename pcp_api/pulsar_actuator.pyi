@@ -164,10 +164,10 @@ class PulsarActuator:
 
     def changeAddress(self, new_address: int) -> None:
         """
-        Change the PCP network address of the actuator.
+        Change the PCP address of the actuator.
         
         Args:
-            new_address: New PCP address (1-16382)
+            new_address: New PCP address (0x10 - 0x3FFE)
         """
         ...
 
@@ -184,7 +184,7 @@ class PulsarActuator:
         Change the actuator control mode.
         
         Args:
-            mode: Desired control mode (TORQUE, SPEED, POSITION, or IMPEDANCE)
+            mode (PulsarActuator.Mode): The mode to be set.  (TORQUE, SPEED, POSITION, ...)
         """
         ...
 
@@ -195,7 +195,7 @@ class PulsarActuator:
         Args:
             setpoint: Target value (units depend on current mode)
                      - Torque mode: Nm
-                     - Speed mode: rad/s  
+                     - Speed mode: rad/s
                      - Position mode: rad
                      - Impedance mode: rad
         """
@@ -312,14 +312,14 @@ class PulsarActuatorScanner(PulsarActuator):
         """
         ...
 
-    def scan(self, begin: int = 0x0001, end: int = 0x3FFE) -> List[int]:
+    def scan(self, begin: int = 0x10, end: int = 0x3FFE) -> List[int]:
         """
         Scan for actuators within the specified address range.
         
         Args:
-            begin: Starting address for scan (default: 1)
-            end: Ending address for scan (default: 16382)
-            
+            begin: Starting address for scan (default: 0x10)
+            end: Ending address for scan (default: 0x3FFE)
+
         Returns:
             List of discovered actuator addresses
         """

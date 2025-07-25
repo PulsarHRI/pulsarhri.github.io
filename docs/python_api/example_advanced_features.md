@@ -1,6 +1,6 @@
 # Advanced Features
 
-These code snippets demonstrates more advanced configuration and control of a PULSAR HRI actuator. It builds upon the basic example so you can upgrade it by adding these features.
+These code snippets demonstrate more advanced configuration and control of a PULSAR HRI actuator. It builds upon the basic example so you can upgrade it by adding these features.
 
 In this document you will learn how to:
 
@@ -29,9 +29,9 @@ actuator.set_speed_performance(PulsarActuator.SpeedPerformance.BALANCED)
 ```
 
 
-### Sets custom control parameters
+## Sets custom control parameters
 
-The available parameters are defined in the [`PulsarActuator.PCP_Parameters`](class_PulsarActuator.md#pcp_api.pulsar_actuator.PulsarActuator.PCP_Parameters). Note that the set_parameters method takes a dictionary, where the keys are the parameter names and the values are the desired settings.
+The available parameters are defined in the [`PulsarActuator.PCP_Parameters`](class_PulsarActuator.md#pcp_api.pulsar_actuator.PulsarActuator.PCP_Parameters). Note that the `set_parameters` method takes a dictionary, where the keys are the parameter names and the values are the desired settings.
 
 ```py
 actuator.set_parameters({
@@ -41,9 +41,9 @@ actuator.set_parameters({
 ```
 
 
-### Reads back parameters
+## Read back parameters
 
-This will read back the current configuration from the actuator. In this case, the get_parameters method takes a list of parameters instead of a dictionary. You can also use `get_parameters_all()` to read all parameters at once.
+This will read back the current configuration from the actuator. In this case, the `get_parameters` method takes a list of parameters instead of a dictionary. You can also use `get_parameters_all()` to read all parameters at once.
 
 ```py
 params = actuator.get_parameters([
@@ -57,9 +57,9 @@ print(params[PulsarActuator.PCP_Parameters.K_STIFFNESS])
 ```
 
 
-### Saves the configuration to persistent memory
+## Saves the configuration to persistent memory
 
-This will save the current configuration to the actuator's persistent memory, so it will be retained across power cycles.
+This will save the current parameters to the actuator's persistent memory, so it will be retained across power cycles.
 
 ```py
 actuator.save_config()
