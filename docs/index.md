@@ -2,22 +2,51 @@
 
 ![Pulsar](assets/images/P98_01.jpg){ loading=lazy }
 
-Welcome to the PULSAR HRI documentation! This documentation contains everything you need to begin working with the PULSAR HRI Actuators or PULSAR HRI Motors. Whether you're a researcher, developer, or engineer, this guide will walk you through setting up your environment, installing the packages, and accessing the documentation and examples.
+Welcome to the **PULSAR HRI Ecosystem Documentation**!
 
-The PULSAR HRI packages is designed to provide a robust and flexible interface for controlling and monitoring PULSAR HRI hardware. It includes:
+This site contains everything you need to get started with PULSAR HRI actuators, motors, and digital twin tools. Whether you're a researcher, developer, or engineer, this guide will walk you through:
 
-* A Python package for controlling the real hardware
-* A Python package for controlling the digital twin (AUGUR)
-* Example scripts for common use cases
-* Detailed descriptions of available classes, methods, and parameters
-* Best practices for integration and deployment
+- Connecting and powering on your hardware  
+- Controlling actuators via GUI or code  
+- Running simulations with our digital twin  
+- Understanding supported control modes  
+- Integrating with your own systems  
 
-## Overview of the PULSAR HRI ecosystem
+---
 
-!!! note
-    * When we refer to motors we refer to direct drive motors without transmission
-    * When we refer to actuators we refer to motors with a transmission
+## 🚀 First Time Here?
 
-PULSAR HRI develops best-in-class actuation systems to enable the next generation of robotic capabilities. Our aim is to provide the highest possible performance in motors and actuators, defining excellence through novel metrics involving agility, torque-density, and efficiency. Our model-based design approach enables us to deliver high-performance actuators alongside high-fidelity digital twins (AUGUR). This documentation contains all the necessary resources to set up either a simulation or a physical configuration using our products.
+Start with the [Quickstart guide](quickstart.md) to power on your actuator and get moving in minutes!
 
-![High level ecosystem diagram](assets/images/high_level_diagram.png)
+Curious what makes our motors and actuators unique?  
+Check out [Why PULSAR HRI motors and actuators?](why_pulsar.md)
+
+---
+
+## 🧰 What’s Included
+
+- 🛠️ [Setup and Run instructions](quickstart.md) for PULSAR HRI actuators and motors  
+- 🖥️ [GUI control via the Desktop App](gui.md)  
+- 🐍 [Scripting with the Python API](python_api/install_python_api.md)  
+- 🧠 [Simulation with the AUGUR Digital Twin](digital_twin/digital_twin.md)  
+- 🎛️ [Overview of supported actuator control modes](control/00-control-modes-overview.md)  
+
+Need help? Visit our [Support page](support.md) or check the [FAQ](faq.md).
+
+---
+
+## 🗺️ Ecosystem Overview
+
+!!! note on naming
+    - **Motors** = Direct-drive units without transmission  
+    - **Actuators** = Motors with integrated transmission
+
+PULSAR HRI develops best-in-class actuation systems to enable next-generation robotics. Our mission is to push the frontier of performance with:
+
+- ⚡ High **agility**, **torque-density**, and **efficiency**  
+- 🧩 Seamless **simulation-to-real** correspondence  
+- 🛠️ Full-stack in-house development: motors, transmissions, electronics, and models
+
+To explore our simulation tools, visit the [AUGUR Digital Twin section](digital_twin/digital_twin.md).
+
+![High-level ecosystem diagram](assets/images/high_level_diagram.png)

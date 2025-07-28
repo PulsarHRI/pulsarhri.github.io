@@ -1,4 +1,5 @@
-site_name: PULSAR HRI Documentation
+site_name: PULSAR HRI Ecosystem Documentation
+site_description: How to use PULSAR HRI hardware and software, including actuators APIs and AUGUR digital twin.
 site_url: https://github.com/PulsarHRI/
 theme:
   name: material
@@ -62,6 +63,7 @@ extra:
 
 nav:
   - index.md
+  - Quickstart: quickstart.md
   - why_pulsar.md
   - How to Use PULSAR HRI Hardware: 
       - mechanical_interfaces.md
