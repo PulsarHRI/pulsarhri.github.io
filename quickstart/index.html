@@ -315,9 +315,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-time-setup" class="md-nav__link">
+  <a href="#first-time-setup-and-run" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 First-Time Setup
+      🚀 First-Time Setup and Run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ What's Next?
     </span>
   </a>
   
@@ -1005,9 +1014,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#first-time-setup" class="md-nav__link">
+  <a href="#first-time-setup-and-run" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 First-Time Setup
+      🚀 First-Time Setup and Run
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ What's Next?
     </span>
   </a>
   
@@ -1030,36 +1048,119 @@
 
 
 <h1 id="quickstart-guide-wip">Quickstart Guide (WIP!!)</h1>
-<p>This page walks you through the fastest way to get a PULSAR actuator out of the box and running.</p>
+<p>This page walks you through the fastest way to get a PULSAR actuator out of the box and running, with direct USB connection.</p>
 <h2 id="what-youll-need">🧰 What You’ll Need</h2>
+<p>Usually provided by PULSAR HRI:</p>
 <ul>
-<li>A PULSAR actuator </li>
-<li>A mechanical support and screws to secure the actuator (<a href="../mechanical_interfaces/">more details here</a>)</li>
-<li>A USB-A to USB-C cable</li>
-<li>1x Power supply unit (<a href="../electrical_interfaces/#Power-Bus">more details here</a>)</li>
-<li>1x Power Bus Cable (<a href="../electrical_interfaces/#Power-Bus-Cable">more details here</a>)</li>
-<li>
-<p>The <a href="../gui/">PULSAR Desktop App</a></p>
-</li>
-<li>
-<p>1x Laptop</p>
-</li>
+<li>1x PULSAR HRI <strong>actuator</strong> </li>
+<li>1x <strong>Power Bus Cable</strong> (<a href="../electrical_interfaces/#Power-Bus-Cable">more details here</a>)</li>
+<li>1x standard USB-A to <strong>USB-C cable</strong></li>
+<li>The <a href="../gui/">PULSAR Desktop App</a></li>
+</ul>
+<p>Usually NOT provided by PULSAR HRI:</p>
+<ul>
+<li>A <strong>mechanical support</strong> and <strong>screws</strong> to secure the actuator (<a href="../mechanical_interfaces/">more details and some designs you can 3D-print here</a>)</li>
+<li>A 48V <strong>Power Supply Unit</strong> (<a href="../electrical_interfaces/#Power-Bus">more details here</a>)</li>
+<li>A <strong>Computer</strong>  </li>
 </ul>
 <div class="admonition operating-system-compatibility">
 <p class="admonition-title">Operating-system-compatibility</p>
 <p>Currently the ecosystem is mainly compatible with, and tested on Windows and Linux Ubuntu operaing systems</p>
 </div>
-<h2 id="first-time-setup">🚀 First-Time Setup</h2>
-<p>TODO TODO TODO</p>
+<h2 id="first-time-setup-and-run">🚀 First-Time Setup and Run</h2>
 <ol>
-<li>Connect the actuator via USB</li>
-<li>Power it on &gt;&gt; LEDs</li>
-<li>Launch the PULSAR Desktop App</li>
-<li>check connectivity, check telem switched off on plot etc... run in speed, tehn position etc etc</li>
-<li></li>
+<li>Connect the the Power Bus Cable to the Power Supply Unit, plug it into the actuator.</li>
+<li>Activate the Power Supply Unit to power the actuator on, see the <a href="../led/">actuator status led</a> switch on</li>
+<li>
+<p>Plug the USB-C cable into your computer, and then into the actuator USB connector, the <a href="../led/">actuator status led</a> will change colour
+<img alt="PWR_USB_connection" src="../assets/images/PWR_USB_connection.png" /></p>
+</li>
+<li>
+<p>Launch the PULSAR Desktop App: you should be able to see the actuator connected via USB in the "Devices" dropdown. Upon selecting it, a popup will inform you of the successful connection and the actuator's address will be shown </p>
+<blockquote>
+<p><em>the Actuator Address is useful for example to connect via CAN Bus instead of USB, but this will be covered in another guide</em></p>
+</blockquote>
+<p><img alt="GUI to connect" src="../assets/images/GUI_to_connect.png" />
+<img alt="GUI connected" src="../assets/images/GUI_connected.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You successfully connected to the actuator, which is now ready to move, that's great!!
+But, as they say, with great power come great responsibilities: 
+<strong>be mindful to keep the actuator's operating area clear of any object</strong> that might get caught or collide with any moving parts.</p>
+</div>
+</li>
+<li>
+<p>As a first example, we'll run the actuator in <strong>Speed Control</strong> mode: </p>
+<ul>
+<li>select <strong>Speed Control</strong> mode under <strong>Control Type</strong></li>
+<li>check that the setpoint in rad/s is currently zero</li>
+<li>hit the <strong>play button</strong>: the actuator won't move as you're telling it to move at zero speed. 
+==<strong>CROP IMAGE!!</strong>==
+<img alt="Speed Ctrl Zero" src="../assets/images/GUI_speed_zero.png" /></li>
+<li>you can now change the setpoint speed either by typing the desired rad/s value in the textbox, or by moving the slider</li>
+<li>you'll see the actuator moving and the live plot of the position at the bottom of the GUI being updated accordingly</li>
+</ul>
+</li>
+<li>
+<p>We can now move to try <strong>Position Control</strong> mode:</p>
+<ul>
+<li>select <strong>Positon Control</strong> mode under <strong>Control Type</strong></li>
+<li>click on the <strong>SET 0 POSITION</strong> button, this will store the current position (output angle) of the actuator as the zero. <ul>
+<li>If you skip setting the zero position, it will use the latest zero position that was set and written to memory 
+==<strong>CROP IMAGE!!</strong>==
+<img alt="Position Ctrl Zero" src="../assets/images/GUI_position_control_zero.png" /></li>
+</ul>
+</li>
+<li>hit the <strong>play button</strong>: the actuator won't move as you're telling it to hold the zero position you just set.
+<img alt="Position Ctrl Move" src="../assets/images/GUI_position_control_move.png" /></li>
+<li>you can now <strong>change the setpoint position</strong> either by typing the desired rad value in the textbox, or by moving the slider</li>
+<li>you'll see the actuator moving and the live plot of the position at the bottom of the GUI being updated accordingly</li>
+</ul>
+</li>
+<li>
+<p>You can now try changing the values of <strong>actuator limits</strong> and of the <strong>control parameters</strong> associated to different <a href="../control/00-control-modes-overview/">available Actuator Control Modes</a></p>
+<ul>
+<li>Continuing from teh previous point we can try changing the control parameter associated to Position control, <strong>Position Kp</strong><ul>
+<li>increasing this parameter essentially makes the actuator more responsive but, if set too high, it will at some point lead to overshooting setpoints and eventually instable behaviour</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When changing control parameters such as Kp Position, introduce small gradual changes at a time to avoid unexpected and potentially unsafe behaviour of the actuator. For example you can try going from 0.5 to 1 and see how the change impact the behaviour of the actuator, don't go e.g. from 0.5 to 5</p>
+</div>
+<ul>
+<li>Upon changing the value of Position Kp, for it to take effect you will need to click the <strong>Apply</strong> button</li>
+<li>This same process can be applied when selecting other modes, changing their respective control parameters.<ul>
+<li>The <strong>Torque</strong> and the <strong>Speed</strong> control loops also have some preset control parameters that can be simply sleected form the respective dropdown menus</li>
+</ul>
+</li>
+<li>You can then try to set some position and torque limts from <strong>Set Limits</strong> and see how that impacts teh behaviour of the actuator.</li>
+</ul>
+</li>
+<li>
+<p>If you have a mechanical shaft that you can attach to the output shaft of the actuator (such as those printable from <a href="../mechanical_interfaces/">here</a>)</p>
+<ul>
+<li>you could try fastening a shaft to the output of the actuator and try interacting with it in different contorl modes, for example:<ul>
+<li>get the actuator to hold a position setpoint in <strong>Position Control</strong> mode and try to move the output shaft manually: you will feel the actuator opposing your force, the highest the Position Kp, the stronger it will oppose you</li>
+<li>starting with a low value, e.g. 2Nm, set a torque setpoint in <strong>Torque Control</strong>: the actuator will start spinnging producing such torque at the output: if you grab the output shaft, this will stop as soon as you exert a countertorque of the same amount. You can try changing teh torque setpoint from there or the torque loop control parameters.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
-<p>...</p>
-<p>Need help? Visit the <a href="../support/">Support page</a></p>
+<h2 id="whats-next">✅ What's Next?</h2>
+<p>Well done! You’ve successfully powered on a PULSAR actuator, switched control modes, and observed how it responds. You’ve already covered a lot 🚀</p>
+<p>Where can you go from here?</p>
+<ul>
+<li>
+<p>🐍 If you’re comfortable with Python and want <strong>deeper control or multi-actuator setups</strong>, continue with <a href="../python_api/install_python_api/">installing the Python API</a> and try running a few <a href="../python_api/example_single_actuator/">example scripts</a>.</p>
+</li>
+<li>
+<p>🧠 If you're interested in <strong>simulating PULSAR actuators</strong> without needing hardware, explore <a href="../digital_twin/digital_twin/">the AUGUR Digital Twin</a>. It mirrors actuator behavior in simulation using the same API.</p>
+</li>
+</ul>
+<p>Need help or something doesn’t work? Head over to the <a href="../support/">Support page</a>: we’ve got your back.</p>
 
 
 
