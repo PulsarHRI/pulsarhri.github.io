@@ -16,7 +16,7 @@ This site contains everything you need to get started with PULSAR HRI actuators,
 
 ## 🚀 First Time Here?
 
-Start with the [Quickstart guide](quickstart.md) to power on your actuator and get moving in minutes!
+⏩Start with the [**Quickstart guide**](quickstart.md) to power on your actuator and get moving in minutes!⏪
 
 Curious what makes our motors and actuators unique?  
 Check out [Why PULSAR HRI motors and actuators?](why_pulsar.md)

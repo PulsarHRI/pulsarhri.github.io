@@ -22,6 +22,23 @@ To request an installer, please [contact our team](support.md) and include:
 - Your operating system
 - Your intended use case (optional)
 
+### 🚀 Key Features
+
+- Browse and connect to available actuators via USB
+- Switch between control modes: Speed, Position, Torque, and Impedance
+- Change control parameters (e.g., position Kp, torque limits)
+- View real-time plots of actuator feedback
+- Run basic motion sequences interactively
+
+### 🔍 Learn by Doing
+
+To walk through your first experience with the app, check out the [Quickstart Guide](quickstart.md).  
+It covers:
+- Powering and connecting your actuator  
+- Using the GUI to change control modes and parameters  
+- Safety tips for live testing  
+- Interacting with the actuator in real-time  
+
 ### 🖼 Interface Preview
 
 ![Pulsar Desktop GUI](assets/images/GUI_01.png)
