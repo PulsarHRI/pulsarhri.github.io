@@ -63,8 +63,7 @@ extra:
 
 nav:
   - index.md
-  - Quickstart: quickstart.md
-  - why_pulsar.md
+  - Quickstart No-Code: quickstart.md
   - How to Use PULSAR HRI Hardware: 
       - mechanical_interfaces.md
       - electrical_interfaces.md
@@ -90,6 +89,9 @@ nav:
   #     - 05-actuator-digital-twin-download/00-DT-download.md
   # - Licensing & Support:
   #     - licensing.md
+  - Downloads:
+      - download_app.md
+      - download_dtwin.md
   - support.md
   - faq.md
 

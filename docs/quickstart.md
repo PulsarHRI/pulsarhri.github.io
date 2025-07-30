@@ -1,4 +1,4 @@
-# Quickstart Guide (WIP!!)
+# Quickstart Guide
 
 This page walks you through the fastest way to get a PULSAR actuator out of the box and running, with direct USB connection.
 
@@ -59,19 +59,19 @@ Usually NOT provided by PULSAR HRI:
     - you'll see the actuator moving and the live plot of the position at the bottom of the GUI being updated accordingly
 
 7. You can now try changing the values of **actuator limits** and of the **control parameters** associated to different [available Actuator Control Modes](control/00-control-modes-overview.md)
-    - Continuing from teh previous point we can try changing the control parameter associated to Position control, **Position Kp**
+    - Continuing from the previous point we can try changing the control parameter associated to Position control, **Position Kp**
         - increasing this parameter essentially makes the actuator more responsive but, if set too high, it will at some point lead to overshooting setpoints and eventually instable behaviour
     !!! warning
         When changing control parameters such as Kp Position, introduce small gradual changes at a time to avoid unexpected and potentially unsafe behaviour of the actuator. For example you can try going from 0.5 to 1 and see how the change impact the behaviour of the actuator, don't go e.g. from 0.5 to 5
     - Upon changing the value of Position Kp, for it to take effect you will need to click the **Apply** button
     - This same process can be applied when selecting other modes, changing their respective control parameters.
         - The **Torque** and the **Speed** control loops also have some preset control parameters that can be simply sleected form the respective dropdown menus
-    - You can then try to set some position and torque limts from **Set Limits** and see how that impacts teh behaviour of the actuator.
+    - You can then try to set some position and torque limts from **Set Limits** and see how that impacts the behaviour of the actuator.
 
 8. If you have a mechanical shaft that you can attach to the output shaft of the actuator (such as those printable from [here](mechanical_interfaces.md))
     - you could try fastening a shaft to the output of the actuator and try interacting with it in different contorl modes, for example:
         - get the actuator to hold a position setpoint in **Position Control** mode and try to move the output shaft manually: you will feel the actuator opposing your force, the highest the Position Kp, the stronger it will oppose you
-        - starting with a low value, e.g. 2Nm, set a torque setpoint in **Torque Control**: the actuator will start spinnging producing such torque at the output: if you grab the output shaft, this will stop as soon as you exert a countertorque of the same amount. You can try changing teh torque setpoint from there or the torque loop control parameters.
+        - starting with a low value, e.g. 2Nm, set a torque setpoint in **Torque Control**: the actuator will start spinnging producing such torque at the output: if you grab the output shaft, this will stop as soon as you exert a countertorque of the same amount. You can try changing the torque setpoint from there or the torque loop control parameters.
 
 ## ✅ What's Next?
 
