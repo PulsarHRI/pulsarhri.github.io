@@ -5,30 +5,35 @@ Welcome to the **PULSAR HRI Ecosystem Documentation**!
 Whether you're a researcher, developer, or engineer, the content of this website will help you get up and running with PULSAR products: 
 PULSAR HRI develops best-in-class actuation systems and surrounding Ecosystem, to enable next-generation robotics.
 
-I can hear you asking: 
+A question we often hear is 
 >*"How are you different from the other actuator companies?"*
 
-Well I'm glad you asked: check out our [company website](https://pulsarhri.com/technology/) for answers!
-
-Continue reading to get hands-on! 🚀
-
----
-## 🗺️ Ecosystem Overview
-
-At a high-level glance, this are the main items of the ecosystem:
-
-![High-level ecosystem diagram](assets/images/high_level_diagram.png)
+Glad you asked: check out [PULSAR HRI's website](https://pulsarhri.com/technology/) for answers!
 
 ### ⚡ First Time Here?
 
-Start with the [**Quickstart No-Code Guide**](quickstart.md) to power on your actuator and get moving in minutes!
+If you can't wait to get ands-on, just go straight to the [**Quickstart No-Code Guide**](quickstart.md) to power on your actuator and get moving in minutes!
 
+---
+## 🧭 Ecosystem Overview
 
-### 🧰 What Else Can I Find?
+At a glance, these are the main elements of the ecosystem:
 
-- 🐍 [Scripting with the Python API](python_api/install_python_api.md)  
-- 🧠 [Simulation with the AUGUR Digital Twin](digital_twin/digital_twin.md)  
-- 🎛️ [Overview of supported actuator control modes](control/00-control-modes-overview.md)  
+![High-level ecosystem diagram](assets/images/high_level_diagram_ecosystem.png)
+
+- **REAL** ACTUATORS, which offer the following hardware communication interfaces: 
+    - Direct **USB** connection
+    - **CAN** communication 
+<br><br>
+- **VIRTUAL** ACTUATORS, closely matching their Real counterparts behaviour thanks to:
+    - 🚧 **AUGUR Digital Twin**, UNDER DEVELOPMENT - modeling the physics of the real actuator and running the same control alogrithms
+<br><br>
+- **CONTROL INTERFACES** of different kinds and for different needs, to control *both Real and Virtual Actuators*:
+    - **Desktop Application**, no-code GUI for single actuator testing, for [quickstart](quickstart.md) and to get familiar with the actuators and its control
+    - [**Python API**](python_api/install_python_api.md), simple but powerful scripting to control multiple actuators for robotics prototypes and to leverage Python libraries such as for **ML, AI**
+        - 🚧 **ROS2 Python Node**, UNDER DEVELOPMENT
+    - 🚧 **C++ API**, UNDER DEVELOPMENT - to control multiple actuators in demanding applications with strict real-time requirements, where latency is a blocker
+        - 🚧 **ROS2 C++ Node**, UNDER DEVELOPMENT
 
 !!! note
     A quick alignment on naming we use:
