@@ -282,16 +282,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ecosystem-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      🗺️ Ecosystem Overview
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🗺️ Ecosystem Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#first-time-here" class="md-nav__link">
     <span class="md-ellipsis">
       ⚡ First Time Here?
@@ -299,15 +289,16 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#what-else-can-i-find" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#ecosystem-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      🧰 What Else Can I Find?
+      🧭 Ecosystem Overview
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="🧭 Ecosystem Overview">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#need-help" class="md-nav__link">
@@ -1087,16 +1078,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ecosystem-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      🗺️ Ecosystem Overview
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🗺️ Ecosystem Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#first-time-here" class="md-nav__link">
     <span class="md-ellipsis">
       ⚡ First Time Here?
@@ -1104,15 +1085,16 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#what-else-can-i-find" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#ecosystem-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      🧰 What Else Can I Find?
+      🧭 Ecosystem Overview
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="🧭 Ecosystem Overview">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#need-help" class="md-nav__link">
@@ -1148,23 +1130,41 @@
 <p>Welcome to the <strong>PULSAR HRI Ecosystem Documentation</strong>!</p>
 <p>Whether you're a researcher, developer, or engineer, the content of this website will help you get up and running with PULSAR products: 
 PULSAR HRI develops best-in-class actuation systems and surrounding Ecosystem, to enable next-generation robotics.</p>
-<p>I can hear you asking: </p>
+<p>A question we often hear is </p>
 <blockquote>
 <p><em>"How are you different from the other actuator companies?"</em></p>
 </blockquote>
-<p>Well I'm glad you asked: check out our <a href="https://pulsarhri.com/technology/">company website</a> for answers!</p>
-<p>Continue reading to get hands-on! 🚀</p>
-<hr />
-<h2 id="ecosystem-overview">🗺️ Ecosystem Overview</h2>
-<p>At a high-level glance, this are the main items of the ecosystem:</p>
-<p><img alt="High-level ecosystem diagram" src="assets/images/high_level_diagram.png" /></p>
+<p>Glad you asked: check out <a href="https://pulsarhri.com/technology/">PULSAR HRI's website</a> for answers!</p>
 <h3 id="first-time-here">⚡ First Time Here?</h3>
-<p>Start with the <a href="quickstart/"><strong>Quickstart No-Code Guide</strong></a> to power on your actuator and get moving in minutes!</p>
-<h3 id="what-else-can-i-find">🧰 What Else Can I Find?</h3>
+<p>If you can't wait to get ands-on, just go straight to the <a href="quickstart/"><strong>Quickstart No-Code Guide</strong></a> to power on your actuator and get moving in minutes!</p>
+<hr />
+<h2 id="ecosystem-overview">🧭 Ecosystem Overview</h2>
+<p>At a glance, these are the main elements of the ecosystem:</p>
+<p><img alt="High-level ecosystem diagram" src="assets/images/high_level_diagram_ecosystem.png" /></p>
 <ul>
-<li>🐍 <a href="python_api/install_python_api/">Scripting with the Python API</a>  </li>
-<li>🧠 <a href="digital_twin/digital_twin/">Simulation with the AUGUR Digital Twin</a>  </li>
-<li>🎛️ <a href="control/00-control-modes-overview/">Overview of supported actuator control modes</a>  </li>
+<li><strong>REAL</strong> ACTUATORS, which offer the following hardware communication interfaces: <ul>
+<li>Direct <strong>USB</strong> connection</li>
+<li><strong>CAN</strong> communication 
+<br><br></li>
+</ul>
+</li>
+<li><strong>VIRTUAL</strong> ACTUATORS, closely matching their Real counterparts behaviour thanks to:<ul>
+<li>🚧 <strong>AUGUR Digital Twin</strong>, UNDER DEVELOPMENT - modeling the physics of the real actuator and running the same control alogrithms
+<br><br></li>
+</ul>
+</li>
+<li><strong>CONTROL INTERFACES</strong> of different kinds and for different needs, to control <em>both Real and Virtual Actuators</em>:<ul>
+<li><strong>Desktop Application</strong>, no-code GUI for single actuator testing, for <a href="quickstart/">quickstart</a> and to get familiar with the actuators and its control</li>
+<li><a href="python_api/install_python_api/"><strong>Python API</strong></a>, simple but powerful scripting to control multiple actuators for robotics prototypes and to leverage Python libraries such as for <strong>ML, AI</strong><ul>
+<li>🚧 <strong>ROS2 Python Node</strong>, UNDER DEVELOPMENT</li>
+</ul>
+</li>
+<li>🚧 <strong>C++ API</strong>, UNDER DEVELOPMENT - to control multiple actuators in demanding applications with strict real-time requirements, where latency is a blocker<ul>
+<li>🚧 <strong>ROS2 C++ Node</strong>, UNDER DEVELOPMENT</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
