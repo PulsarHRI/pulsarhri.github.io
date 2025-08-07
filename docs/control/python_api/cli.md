@@ -23,7 +23,7 @@ The CLI provides several commands to interact with the Pulsar actuator. Here are
 ```bash
 pulsar-cli scan
 ```
-This command scans the CAN bus for connected Pulsar devices and lists their addresses. You need a CAN adapter connected and a [correctly wired CAN bus](../electrical_interfaces.md#can-bus). Use the `-h` flag to see more options.
+This command scans the CAN bus for connected Pulsar devices and lists their addresses. You need a CAN adapter connected and a [correctly wired CAN bus](../../set_up/hardware_interfaces/electrical_interfaces.md#can-bus). Use the `-h` flag to see more options.
 
 
 ### Get Device parameters

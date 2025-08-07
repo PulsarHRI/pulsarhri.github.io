@@ -1,6 +1,9 @@
 site_name: PULSAR HRI Ecosystem Documentation
 site_description: How to use PULSAR HRI hardware and software, including actuators APIs and AUGUR digital twin.
-site_url: https://github.com/PulsarHRI/
+
+site_url: https://pulsarhri.github.io/
+use_directory_urls: true
+
 theme:
   name: material
   palette:
@@ -63,35 +66,47 @@ extra:
 
 nav:
   - index.md
-  - Quickstart No-Code: quickstart.md
-  - How to Use PULSAR HRI Hardware: 
-      - mechanical_interfaces.md
-      - electrical_interfaces.md
-      - led.md
-      - gui.md
-      - "Python API":
-          - python_api/install_python_api.md
-          - python_api/cli.md
-          - Example scripts:
-            - python_api/example_single_actuator.md
-            - python_api/example_several_actuators.md
-            - python_api/example_advanced_features.md
-            - python_api/example_log_to_csv.md
-          - API Reference:
-            - python_api/class_PulsarActuator.md
-            - python_api/class_PCP_over_USB.md
-  - digital_twin/digital_twin.md
-  - Control Modes Explained:
-      - control/00-control-modes-overview.md
-      - control/01-control-modes-parameters.md
+  - Quickstart Tutorials: 
+    - "Set up Real Actuator and connect via USB": quickstarts/quickstart_set_up_usb.md
+    - "No-Code Desktop App for Real Actuator": quickstarts/quickstart_desktop_app.md
+    - "Python API for Real Actuator": quickstarts/quickstart_python_api.md
+  - "Set Up & Communication": 
+    - "with Real Actuators":
+      - set_up/set_up_real.md
+      - communicate/communicate_real.md
+      - "More Details on Hardware Interfaces":
+        - set_up/hardware_interfaces/mechanical_interfaces.md
+        - set_up/hardware_interfaces/electrical_interfaces.md
+        - set_up/hardware_interfaces/led.md
+    - "with Virtual Actuators":
+      - set_up/set_up_virtual.md
+      - communicate/communicate_virtual.md
+  - "Control Actuators":
+    - "Desktop App": control/desktop_app/desktop_app.md
+    - "Python API":
+        - control/python_api/install_python_api.md
+        - control/python_api/cli.md
+        - Example scripts:
+          - control/python_api/example_single_actuator.md
+          - control/python_api/example_several_actuators.md
+          - control/python_api/example_advanced_features.md
+          - control/python_api/example_log_to_csv.md
+        - API Code Reference:
+          - control/python_api/class_PulsarActuator.md
+          - control/python_api/class_PCP_over_USB.md
+    - Control Modes Explained:
+      - control/control_modes_explained/control_modes_overview.md
+      - control/control_modes_explained/control_modes_parameters.md
+
+
   # This is already in How to Use AUGUR Digital Twin
   # - Download AUGUR Digital Twin:
   #     - 05-actuator-digital-twin-download/00-DT-download.md
   # - Licensing & Support:
   #     - licensing.md
   - Downloads:
-      - download_app.md
-      - download_dtwin.md
+      - download/download_app.md
+      - download/download_dtwin.md
   - support.md
   - faq.md
 

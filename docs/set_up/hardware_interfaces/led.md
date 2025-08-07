@@ -1,11 +1,12 @@
 # LED Status Indicators
+PULSAR HRI devices features a simple RGB LED that provides visual feedback about their current operational state. This LED helps users quickly identify a device's status without needing to connect to a computer.
 
-The device features an RGB LED that provides visual feedback about its current operational state. This LED helps users quickly identify the device status without needing to connect to a computer.
+Below is a simple reference of what the led colours mean on each device 
 
-## Color Codes
+## CAN Adapter Led Color Codes
+<span style="color: white; background-color: #333; padding: 2px 6px; border-radius: 50%; font-size: 18px;">●</span> **White**: Device is powered up and working.
 
-The following colors indicate different device states:
-
+## Actuator Led Color Codes
 <span style="color: white; background-color: #333; padding: 2px 6px; border-radius: 50%; font-size: 18px;">●</span> **White**: Device is powering up and initializing systems.
 
 <span style="color: blue; font-size: 18px;">●</span> **Blue**: Device is idle and ready, waiting for PCP commands over CAN bus.

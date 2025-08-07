@@ -1,10 +1,10 @@
-# Controlling Several Devices
+# Controlling Several Real Actuators
 
 This example demonstrates how to control multiple PULSAR HRI actuators. We will walk through the steps of connecting to the CAN to USB adapter, initializing two actuators, configuring their feedback settings, assigning different speed setpoints, and running them simultaneously.
 
 The physical connection for this example (two actuators and the CAN to USB adapter) is shown in the image below. The actuators are connected to the CAN bus via an adapter, which is connected to the host computer via USB.
 
-![CAN example](../assets/images/can_02.png)
+![CAN example](../../assets/images/can_02.png)
 
 !!! warning
     Do not forget the termination resistors (TR) at the ends of the CAN bus.

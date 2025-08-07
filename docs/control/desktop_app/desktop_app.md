@@ -1,5 +1,8 @@
 # Pulsar Desktop App
 
+!!! note
+    Currently the Desktop App works only for Real Actuators, not for Virtual ones
+
 The **Pulsar Desktop App** provides the simplest way to get started with a Pulsar Actuator. It offers a graphical interface (GUI) to configure, control, and monitor the actuator without writing any code.
 
 This tool is ideal for:
@@ -18,7 +21,7 @@ At this stage, the app supports controlling **one actuator at a time**.
 ### 📦 How to Get the App
 
 The app is not yet available as a public download.  
-To request an installer, please [contact our team](support.md) and include:
+To request an installer, please [contact our team](../../support.md) and include:
 - Your operating system
 - Your intended use case (optional)
 
@@ -32,7 +35,7 @@ To request an installer, please [contact our team](support.md) and include:
 
 ### 🔍 Learn by Doing
 
-To walk through your first experience with the app, check out the [Quickstart Guide](quickstart.md).  
+To walk through your first experience with the app, check out the [Quickstart Guide](../../quickstarts/quickstart_desktop_app.md).  
 It covers:
 - Powering and connecting your actuator  
 - Using the GUI to change control modes and parameters  
@@ -41,4 +44,4 @@ It covers:
 
 ### 🖼 Interface Preview
 
-![Pulsar Desktop GUI](assets/images/GUI_01.png)
+![Pulsar Desktop GUI](../../assets/images/GUI_01.png)

@@ -1,3 +1,0 @@
-# How to Use AUGUR Digital Twin
-
-Coming soon ...

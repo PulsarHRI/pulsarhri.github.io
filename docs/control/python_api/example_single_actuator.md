@@ -1,4 +1,4 @@
-# Controlling One Device
+# Controlling One Real Actuator
 
 Learn how to control a Pulsar actuator through a step-by-step walkthrough covering connection setup, configuration, and basic motion control.
 The full example is at the [bottom of the page](#full-example).
