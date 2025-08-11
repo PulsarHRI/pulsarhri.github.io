@@ -2,110 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://pulsarhri.github.io/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/faq/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/support/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/why_pulsar/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/communicate/communicate_real/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/communicate/communicate_virtual/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/control/control_modes_explained/control_modes_overview/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/control/control_modes_explained/control_modes_parameters/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/control/desktop_app/desktop_app/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/control/python_api/class_PCP_over_USB/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/control/python_api/class_PulsarActuator/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/control/python_api/cli/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/control/python_api/example_advanced_features/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/control/python_api/example_log_to_csv/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/control/python_api/example_several_actuators/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/control/python_api/example_single_actuator/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/control/python_api/install_python_api/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/download/download_app/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/download/download_dtwin/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/quickstarts/quickstart_desktop_app/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/quickstarts/quickstart_python_api/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/quickstarts/quickstart_set_up_usb/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/set_up/set_up_real/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/set_up/set_up_virtual/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/set_up/hardware_interfaces/electrical_interfaces/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/set_up/hardware_interfaces/led/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://pulsarhri.github.io/set_up/hardware_interfaces/mechanical_interfaces/</loc>
-         <lastmod>2025-08-07</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
 </urlset>
