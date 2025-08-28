@@ -20,7 +20,8 @@ At this stage, the app supports controlling **one actuator at a time**.
 
 ### 📦 How to Get the App
 
-The app can be downloaded from [HERE](../download/download_app.md)
+The app can be downloaded from [HERE](../../download/download_app.md)
+
 
 ### 🚀 Key Features
 

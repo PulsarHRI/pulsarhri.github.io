@@ -11,4 +11,4 @@ Here you can download the latest version of the [PULSAR HRI Desktop App](../cont
     [Download PulsarApp-0.9.1.deb](../assets/desktopApp/PulsarApp-0.9.1.deb)
 
 
-If you have any questions, please [contact our team](../../support.md).
+If you have any questions, please [contact our team](../support.md).
