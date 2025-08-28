@@ -1,11 +1,11 @@
 # Quickstart Tutorial: No-Code Desktop App for Real Actuator
 
-This page walks you through running a Real Actuator connected via USB without needing to do any coding, using the [PULSAR HRI Desktop App](../control/desktop_app/desktop_app.md).
+This page walks you through running a Real Actuator connected via USB without needing to do any coding, using the [PULSAR HRI Desktop App](../control/desktop_app/desktop_app.md), which can be downloaded from [HERE](../download/download_app.md).
 
 ## 👣 Step-By-Step Guide
 1. Make sure your actuator is set up and connected via USB, as per the [Quickstart Tutorial: Set up Real Actuator and connect via USB](../quickstarts/quickstart_set_up_usb.md) 
 
-2. Launch the PULSAR Desktop App: you should be able to see the actuator connected via USB in the "Devices" dropdown. Upon selecting it, a popup will inform you of the successful connection and the actuator's address will be shown 
+2. Launch the [PULSAR HRI Desktop App](../control/desktop_app/desktop_app.md): you should be able to see the actuator connected via USB in the "Devices" dropdown. Upon selecting it, a popup will inform you of the successful connection and the actuator's address will be shown 
 > *the Actuator Address is useful for example to connect via CAN Bus instead of USB, but this will be covered in another guide*
 
     ![GUI to connect](../assets/images/GUI_to_connect.png)
