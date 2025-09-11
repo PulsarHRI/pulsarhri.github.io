@@ -12,7 +12,7 @@ To preview and edit the PULSAR documentation locally in your browser:
 
 You can install the Python dependencies globally, but it is **highly recommended** to use a virtual environment to avoid polluting your system Python.
 
-If you choose to install globally:
+If you choose to install globally (NOT recommended):
 
 ```bash
 pip install -r requirements.txt

@@ -1,4 +1,4 @@
-# Quickstart Tutorial: No-Code Desktop App for Real Actuator
+# Quickstart Tutorial: No-Code Desktop App for Real Actuator via USB
 
 This page walks you through running a Real Actuator connected via USB without needing to do any coding, using the [PULSAR HRI Desktop App](../control/desktop_app/desktop_app.md), which can be downloaded from [HERE](../download/download_app.md).
 

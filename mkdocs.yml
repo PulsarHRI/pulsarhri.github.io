@@ -68,8 +68,8 @@ nav:
   - index.md
   - Quickstart Tutorials: 
     - "Set up Real Actuator and connect via USB": quickstarts/quickstart_set_up_usb.md
-    - "No-Code Desktop App for Real Actuator": quickstarts/quickstart_desktop_app.md
-    - "Python API for Real Actuator": quickstarts/quickstart_python_api.md
+    - "No-Code Desktop App for Real Actuator via USB": quickstarts/quickstart_desktop_app.md
+    - "Python API for Real Actuator via USB": quickstarts/quickstart_python_api.md
   - "Set Up & Communication": 
     - "with Real Actuators":
       - set_up/set_up_real.md

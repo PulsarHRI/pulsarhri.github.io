@@ -1,4 +1,4 @@
-# Quickstart Tutorial: Python API for Real Actuator
+# Quickstart Tutorial: Python API for Real Actuator via USB
 
 This page walks you through running a Real Actuator connected via USB, and controlling it via Python scripting using [PULSAR HRI's Python API](../control/python_api/install_python_api.md) 
 
@@ -52,7 +52,9 @@ adapter.close()
     You’ve just sent your first command via the PULSAR Python API!
     Now you can explore doing much more by:
 
-    - checkin out more [example scripts starting with this one](../control/python_api/example_single_actuator.md) and trying other communication methods beyond usb such as CAN
+    - checking out more [example scripts starting with this one](../control/python_api/example_single_actuator.md) 
+    
+    - trying other communication methods beyond direct USB enabling the control of multiple actuators, [such as CAN](../communicate/communicate_real.md#3-connect-via-can)
 
     - get intimate with the Python API code reference [starting from understanding the actuator classes and methods](../control/python_api/class_PulsarActuator.md) 
 
