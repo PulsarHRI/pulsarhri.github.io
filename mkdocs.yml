@@ -107,6 +107,7 @@ nav:
   - Downloads:
       - download/download_app.md
       - download/download_dtwin.md
+      - set_up/hardware_interfaces/3d_models.md
   - support.md
   - faq.md
 

@@ -25,7 +25,8 @@ class PulsarActuator:
     class Rates(Enum):
         """Feedback update rates for high/low frequency data streams."""
         DISABLED = 0       # Feedback disabled
-        RATE_1KHZ = 10     # 1kHz update rate (1000 Hz)
+        RATE_2KHZ = 5      # 2kHz update rate (2000 Hz)
+        RATE_1KHZ = 10
         RATE_100HZ = 100
         RATE_50HZ = 200
         RATE_10HZ = 1_000
@@ -98,6 +99,15 @@ class PulsarActuator:
         VQ_REF = 0x54                 # Q-axis voltage reference
         TORQUE_REF = 0x55             # Torque reference/command
         TORQUE_FB = 0x56              # Torque feedback
+        REFERENCE_A_VOLTAGE = 0x57    # Reference phase A voltage
+        REFERENCE_B_VOLTAGE = 0x58    # Reference phase B voltage
+        REFERENCE_C_VOLTAGE = 0x59    # Reference phase C voltage
+        BUS_POWER = 0x5A              # Bus power
+        BUS_CURRENT = 0x5B            # Bus current
+        THREE_PHASE_POWER = 0x5C      # Three-phase power
+        MECHANICAL_POWER = 0x5D       # Mechanical power
+        INVERTER_EFFICIENCY = 0x5E    # Inverter efficiency
+        MOTOR_EFFICIENCY = 0x5F       # Motor efficiency
         ERRORS_ENCODER_INT = 0x60     # Internal encoder error flags
         ERRORS_ENCODER_EXT = 0x61     # External encoder error flags
         ERRORS_OVERRUN = 0x62         # Control loop overrun errors
@@ -111,7 +121,7 @@ class PulsarActuator:
         
         Args:
             adapter_handler: Communication adapter for PCP protocol
-            address: PCP network address of the actuator (1-16382)
+            address: PCP network address of the actuator (0x0001-0x3FFE)
             logger: Optional logger for debugging messages
         """
         ...
@@ -134,6 +144,15 @@ class PulsarActuator:
         
         Args:
             callback: Function to call when feedback data is received
+        """
+        ...
+
+    def set_low_freq_feedback_callback(self, callback: Callable[[Any], None]) -> None:
+        """
+        Set callback function to receive low frequency feedback data.
+        
+        Args:
+            callback: Function to call when low frequency feedback data is received
         """
         ...
 

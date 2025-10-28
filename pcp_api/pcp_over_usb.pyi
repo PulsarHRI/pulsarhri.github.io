@@ -54,9 +54,18 @@ class PCP_over_USB:
         Register a callback function for messages from a specific PCP address.
         
         Args:
-            address: PCP address to listen for (1-16382)
+            address: PCP address to listen for (0x0001-0x3FFE)
             callback: Function to call when messages are received from this address.
                      Callback signature: callback(address: int, data: List[int])
+        """
+        ...
+
+    def removeCallback(self, address: int) -> None:
+        """
+        Unregister the callback function for a specific PCP address.
+
+        Args:
+            address: PCP address to stop listening for (0x0001-0x3FFE)
         """
         ...
 
@@ -65,7 +74,7 @@ class PCP_over_USB:
         Send a PCP message to the specified address.
         
         Args:
-            address: Target PCP address (1-16382)
+            address: Target PCP address (0x0001-0x3FFE)
             data: List of bytes to send as message payload
             
         Returns:
