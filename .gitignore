@@ -1,3 +1,4 @@
 .venv/
+.cache/
 git_exclude/
 site/

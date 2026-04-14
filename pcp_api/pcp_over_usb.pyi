@@ -13,7 +13,7 @@ class PCP_over_USB:
     def __init__(self, port: Optional[str] = None, connect_on_init: bool = True, logger: Optional[logging.Logger] = None) -> None:
         """
         Initialize PCP over USB communication adapter.
-        
+
         Args:
             port: Serial port name (e.g., 'COM3', '/dev/ttyACM0'). If None, auto-discovery is attempted.
             connect_on_init: Whether to automatically connect during initialization
@@ -27,7 +27,7 @@ class PCP_over_USB:
 
         Args:
             port (str, optional): Serial port name. If None, uses previously set port or auto-discovery.
-            
+
         Returns:
             bool: True if connection successful, False otherwise
         """
@@ -36,7 +36,7 @@ class PCP_over_USB:
     def disconnect(self) -> None:
         """
         Disconnect from the USB serial port and stop background threads.
-        
+
         Cleanly shuts down the polling thread and closes the serial connection.
         """
         ...
@@ -44,7 +44,7 @@ class PCP_over_USB:
     def close(self) -> None:
         """
         Alias for disconnect() method.
-        
+
         Provided for compatibility and explicit resource cleanup.
         """
         ...
@@ -52,7 +52,7 @@ class PCP_over_USB:
     def setCallback(self, address: int, callback: Callable[[int, List[int]], None]) -> None:
         """
         Register a callback function for messages from a specific PCP address.
-        
+
         Args:
             address: PCP address to listen for (0x0001-0x3FFE)
             callback: Function to call when messages are received from this address.
@@ -69,14 +69,16 @@ class PCP_over_USB:
         """
         ...
 
-    def send_PCP(self, address: int, data: List[int]) -> bool:
+    def send_PCP(self, address: int, data: list, priority: bool = True, can_high_speed: bool = False) -> bool:
         """
         Send a PCP message to the specified address.
-        
+
         Args:
             address: Target PCP address (0x0001-0x3FFE)
             data: List of bytes to send as message payload
-            
+            priority: If True, send as a high-priority message
+            can_high_speed: If True, allow using a higher-speed CAN/transport mode when supported
+
         Returns:
             True if message was sent successfully, False otherwise
         """
@@ -89,7 +91,7 @@ class PCP_over_USB:
 
         Automatically filters serial ports to only include those manufactured
         by Pulsar HRI, which are compatible with PCP over USB.
-        
+
         Returns:
             List of serial port names/paths (e.g., ['COM3', 'COM5'] on Windows
             or ['/dev/ttyACM0', '/dev/ttyACM1'] on Linux)
@@ -100,10 +102,10 @@ class PCP_over_USB:
     def get_port() -> str:
         """
         Auto-discover a single USB serial port for PCP communication.
-        
+
         Attempts to automatically find a suitable serial port. If exactly one
         Pulsar HRI port is found, returns it. Otherwise, returns empty string.
-        
+
         Returns:
             Serial port name if exactly one suitable port is found, empty string otherwise
         """
@@ -113,7 +115,7 @@ class PCP_over_USB:
     def is_connected(self) -> bool:
         """
         Check if the USB connection is active.
-        
+
         Returns:
             True if connected, False otherwise
         """

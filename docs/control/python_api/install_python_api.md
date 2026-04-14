@@ -27,7 +27,7 @@ This should provide information about the installed package, including its versi
 Once the API is installed, you can:
 
 * Use the [Command line interface](cli.md) to quickly interact with the PULSAR hardware.
-* Run the [example scripts](example_single_actuator.md)
+* Run the [example scripts](example_single_actuator_nb.ipynb)
 * Explore the [code documentation](class_PulsarActuator.md) for detailed usage instructions.
 * Integrate the API into your own applications or research workflows.
 

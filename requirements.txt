@@ -1,3 +1,4 @@
 mkdocs-material
 mkdocs-redirects
 mkdocstrings[python]
+mkdocs-jupyter

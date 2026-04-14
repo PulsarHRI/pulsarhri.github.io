@@ -1,12 +1,13 @@
 from enum import Enum
 import logging
-from typing import Any, Callable, Dict, List, Optional
+from typing import Any, Callable, Dict, List, Optional, Union
+from math import nan
 
 
 class PulsarActuator:
     """
     Main class for controlling Pulsar actuators via PCP (Pulsar Control Protocol).
-    
+
     This class provides high-level methods to control actuator modes, setpoints,
     feedback configuration, and parameter management.
     """
@@ -27,8 +28,11 @@ class PulsarActuator:
         DISABLED = 0       # Feedback disabled
         RATE_2KHZ = 5      # 2kHz update rate (2000 Hz)
         RATE_1KHZ = 10
+        RATE_500HZ = 20
+        RATE_200HZ = 50
         RATE_100HZ = 100
         RATE_50HZ = 200
+        RATE_20HZ = 500
         RATE_10HZ = 1_000
         RATE_5HZ = 2_000
         RATE_2HZ = 5_000
@@ -70,11 +74,16 @@ class PulsarActuator:
         SPEED_PERFORMANCE = 0x41      # Speed performance setting
         PROFILE_SPEED_MAX_RAD_S = 0x42    # Maximum profile speed in rad/s
         PROFILE_TORQUE_MAX_NM = 0x43      # Maximum profile torque in Nm
+        FF_GAIN = 0x45                # Feedforward gain for friction/inertia compensation (0-1, where 1 means full compensation)
+        PCP_PARAM_SPEED_CUTOFF = 0x46  # Speed cutoff frequency of the speed IIR filter
+        PCP_PARAM_CURRENT_CUTOFF = 0x47  # Current cutoff frequency of the dq current IIR filter
+        INVERT_FLAG = 0x44            # Invert direction of motion (boolean flag, 0 or 1)
         FIRMWARE_VERSION = 0x80       # Firmware version (read-only)
         PCP_ADDRESS = 0x81            # device PCP address
         SERIAL_NUMBER = 0x82          # Device serial number (read-only)
         DEVICE_MODEL = 0x83           # Device model identifier (read-only)
         CONTROL_VERSION = 0x84        # Control software version (read-only)
+        CAN_HIGH_SPEED = 0x85         # CAN high speed mode enabled/disabled
 
     class PCP_Items(Enum):
         """Feedback items available for monitoring actuator state."""
@@ -90,6 +99,7 @@ class PulsarActuator:
         TORQUE_SENS_RAW = 0x4A        # Raw torque sensor reading
         POSITION_REF = 0x4B           # Position reference/command
         POSITION_FB = 0x4C            # Position feedback
+        POSITION_FB_INTERNAL = 0x73   # Position feedback (Internal encoder)
         SPEED_REF = 0x4D              # Speed reference/command
         ID_REF = 0x4F                 # D-axis current reference
         ID_FB = 0x50                  # D-axis current feedback
@@ -118,7 +128,7 @@ class PulsarActuator:
     def __init__(self, adapter_handler: Any, address: int, logger: Optional[logging.Logger] = None) -> None:
         """
         Initialize a PulsarActuator instance.
-        
+
         Args:
             adapter_handler: Communication adapter for PCP protocol
             address: PCP network address of the actuator (0x0001-0x3FFE)
@@ -129,30 +139,30 @@ class PulsarActuator:
     def connect(self, timeout: float = 1.0) -> bool:
         """
         Establish connection to the actuator.
-        
+
         Args:
             timeout: Connection timeout in seconds
-            
+
         Returns:
             True if connection successful, False otherwise
         """
         ...
 
-    def set_feedback_callback(self, callback: Callable[[Any], None]) -> None:
+    def set_feedback_callback(self, callback: Callable[[int, dict], None]) -> None:
         """
         Set callback function to receive feedback data.
-        
+
         Args:
             callback: Function to call when feedback data is received
         """
         ...
 
-    def set_low_freq_feedback_callback(self, callback: Callable[[Any], None]) -> None:
+    def set_error_callback(self, callback: Callable[[int, dict], None]) -> None:
         """
-        Set callback function to receive low frequency feedback data.
-        
-        Args:
-            callback: Function to call when low frequency feedback data is received
+        Sets the callback function for errors.
+
+        Parameters:
+            callback (function): The callback function to be set. It should accept two parameters: address (int) and errors (dict).
         """
         ...
 
@@ -163,7 +173,7 @@ class PulsarActuator:
     def get_feedback(self) -> Dict[Any, Any]:
         """
         Get the latest feedback data.
-        
+
         Returns:
             Dictionary containing latest feedback values
         """
@@ -172,10 +182,10 @@ class PulsarActuator:
     def send_ping(self, timeout: float = 1.0) -> bool:
         """
         Send ping to verify actuator connectivity.
-        
+
         Args:
             timeout: Response timeout in seconds
-            
+
         Returns:
             True if ping successful, False otherwise
         """
@@ -184,7 +194,7 @@ class PulsarActuator:
     def changeAddress(self, new_address: int) -> None:
         """
         Change the PCP address of the actuator.
-        
+
         Args:
             new_address: New PCP address (0x10 - 0x3FFE)
         """
@@ -201,7 +211,7 @@ class PulsarActuator:
     def change_mode(self, mode: 'PulsarActuator.Mode') -> None:
         """
         Change the actuator control mode.
-        
+
         Args:
             mode (PulsarActuator.Mode): The mode to be set.  (TORQUE, SPEED, POSITION, ...)
         """
@@ -209,14 +219,66 @@ class PulsarActuator:
 
     def change_setpoint(self, setpoint: float) -> None:
         """
-        Set the control setpoint for the current mode.
-        
+        Changes the setpoint of the actuator (for the current control mode).
+
         Args:
-            setpoint: Target value (units depend on current mode)
-                     - Torque mode: Nm
-                     - Speed mode: rad/s
-                     - Position mode: rad
-                     - Impedance mode: rad
+            setpoint (float): The setpoint to be set.
+        """
+        ...
+
+    def change_torque_setpoint(self, setpoint: float, id_Kp: float = nan, id_Ki: float = nan, iq_Kp: float = nan, iq_Ki: float = nan) -> None:
+        """
+        Changes the setpoint and additional parameters for torque control.
+
+        Args:
+            setpoint (float): setpoint in Nm.
+            id_Kp (float, optional): The proportional gain for the d-axis current controller.
+            id_Ki (float, optional): The integral gain for the d-axis current controller.
+            iq_Ki (float, optional): The integral gain for the q-axis current controller.
+            iq_Kp (float, optional): The proportional gain for the q-axis current controller.
+        """
+        ...
+
+    def change_speed_setpoint(self, setpoint: float, FF_gain: float = nan, spd_Ki: float = nan, spd_Kp: float = nan, ref_ff_torque: float = nan) -> None:
+        """
+        Changes the setpoint and additional parameters for speed control.
+
+        Args:
+            setpoint (float): setpoint in rad/s.
+            FF_gain (float, optional): The feedforward gain to control friction and inertia compensation. (In general should be 0 or 1)
+            spd_Ki (float, optional): The integral gain for the speed controller.
+            spd_Kp (float, optional): The proportional gain for the speed controller.
+            ref_ff_torque (float, optional): The reference feedforward torque in Nm.
+        """
+        ...
+
+    def change_position_setpoint(self, setpoint: float, FF_gain: float = nan, spd_Ki: float = nan, spd_Kp: float = nan, pos_Kp: float = nan, ref_ff_torque: float = nan) -> None:
+        """
+        Changes the setpoint and additional parameters for position control.
+
+        Args:
+            setpoint (float): setpoint in rad.
+            FF_gain (float, optional): The feedforward gain to control friction and inertia compensation. (In general should be 0 or 1)
+            spd_Ki (float, optional): The integral gain for the speed controller.
+            spd_Kp (float, optional): The proportional gain for the speed controller.
+            pos_Kp (float, optional): The proportional gain for the position controller.
+            ref_ff_torque (float, optional): The reference feedforward torque in Nm.
+        """
+        ...
+
+    def change_impedance_setpoint(self, setpoint: float, FF_gain: float = nan, K_stiff: float = nan, K_damp: float = nan, J_imp: float = nan, ref_ff_torque: float = nan, ref_impedance_spd: float = nan, ref_impedance_acel: float = nan) -> None:
+        """
+        Changes the setpoint and additional parameters for impedance control.
+
+        Args:
+            setpoint (float): setpoint in rad.
+            FF_gain (float, optional): The feedforward gain to control friction and inertia compensation. (In general should be 0 or 1)
+            K_stiff (float, optional): The stiffness parameter for impedance control.
+            K_damp (float, optional): The damping parameter for impedance control.
+            J_imp (float, optional): The inertia parameter for impedance control.
+            ref_ff_torque (float, optional): The reference feedforward torque in Nm.
+            ref_impedance_spd (float, optional): The reference impedance speed in rad/s.
+            ref_impedance_acel (float, optional): The reference impedance acceleration in rad/s^2.
         """
         ...
 
@@ -224,39 +286,43 @@ class PulsarActuator:
         """Save current configuration to non-volatile memory."""
         ...
 
-    def setHighFreqFeedbackItems(self, items: List['PulsarActuator.PCP_Items']) -> None:
+    def blink(self) -> None:
+        """
+        Blinks the actuator's LED. Useful for identifying the device.
+        """
+        ...
+
+    def setFeedbackItems(self, items: List['PulsarActuator.PCP_Items']) -> None:
         """
         Configure which items to include in high frequency feedback stream.
-        
+
         Args:
             items: List of PCP_Items to monitor at high frequency
         """
         ...
 
-    def setHighFreqFeedbackRate(self, rate: 'PulsarActuator.Rates') -> None:
+    def setFeedbackRate(self, rate: Union['PulsarActuator.Rates', int]) -> None:
         """
         Set the update rate for high frequency feedback.
-        
+
         Args:
-            rate: Desired update rate from Rates enum
+            rate: Either a PulsarActuator.Rates enum value, or an integer representing
+                  the desired feedback rate in Hz. The divider is rounded to the nearest
+                  integer, so the actual rate may differ slightly from the requested rate.
+                  To disable feedback, use Rates.DISABLED or pass 0.
         """
         ...
 
-    def setLowFreqFeedbackItems(self, items: List['PulsarActuator.PCP_Items']) -> None:
+    def getItemsBlocking(self, items: List['PulsarActuator.PCP_Items'], timeout: float = 1.0) -> Dict['PulsarActuator.PCP_Items', float]:
         """
-        Configure which items to include in low frequency feedback stream.
-        
-        Args:
-            items: List of PCP_Items to monitor at low frequency
-        """
-        ...
+        Requests specific feedback items and waits for their response.
 
-    def setLowFreqFeedbackRate(self, rate: 'PulsarActuator.Rates') -> None:
-        """
-        Set the update rate for low frequency feedback.
-        
         Args:
-            rate: Desired update rate from Rates enum
+            items (list): The list of PulsarActuator.PCP_Items to be requested.
+            timeout (float): The maximum time to wait for the response, in seconds. Default is 1.0 second.
+
+        Returns:
+            dict: A dictionary with the requested items and their values.
         """
         ...
 
@@ -267,7 +333,7 @@ class PulsarActuator:
     def set_parameters(self, parameters: Dict['PulsarActuator.PCP_Parameters', float]) -> None:
         """
         Set multiple actuator parameters.
-        
+
         Args:
             parameters: Dictionary mapping PCP_Parameters to their values
         """
@@ -276,11 +342,11 @@ class PulsarActuator:
     def get_parameters(self, parameters: List['PulsarActuator.PCP_Parameters'], timeout: float = 1.0) -> Dict['PulsarActuator.PCP_Parameters', float]:
         """
         Read multiple actuator parameters.
-        
+
         Args:
             parameters: List of parameters to read
             timeout: Response timeout in seconds
-            
+
         Returns:
             Dictionary mapping parameters to their current values
         """
@@ -289,16 +355,25 @@ class PulsarActuator:
     def get_parameters_all(self) -> Dict['PulsarActuator.PCP_Parameters', float]:
         """
         Read all available actuator parameters.
-        
+
         Returns:
             Dictionary containing all parameter values
+        """
+        ...
+
+    def set_can_high_speed(self, high_speed: bool) -> None:
+        """
+        Enable or disable CAN high speed mode.
+
+        Args:
+            high_speed (bool): True to enable high speed mode, False to disable.
         """
         ...
 
     def set_torque_performance(self, performance: 'PulsarActuator.TorquePerformance') -> None:
         """
         Set torque control performance level.
-        
+
         Args:
             performance: Desired performance setting (AGGRESSIVE, BALANCED, or SOFT)
         """
@@ -307,9 +382,39 @@ class PulsarActuator:
     def set_speed_performance(self, performance: 'PulsarActuator.SpeedPerformance') -> None:
         """
         Set speed control performance level.
-        
+
         Args:
             performance: Desired performance setting (AGGRESSIVE, BALANCED, SOFT, or CUSTOM)
+        """
+        ...
+
+    @property
+    def address(self) -> int:
+        """
+        Returns the actuator's CAN address (read-only).
+
+        Returns:
+            int: The CAN address of the actuator.
+        """
+        ...
+
+    @property
+    def model(self) -> str:
+        """
+        Returns the actuator's model name (read-only).
+
+        Returns:
+            str: The model name of the actuator.
+        """
+        ...
+
+    @property
+    def firmware_version(self) -> str:
+        """
+        Returns the actuator's firmware version (read-only).
+
+        Returns:
+            str: The firmware version of the actuator.
         """
         ...
 
@@ -317,14 +422,14 @@ class PulsarActuator:
 class PulsarActuatorScanner(PulsarActuator):
     """
     Scanner class for discovering Pulsar actuators on the PCP network.
-    
+
     Inherits from PulsarActuator but uses broadcast address for scanning operations.
     """
 
     def __init__(self, adapter_handler: Any, logger: Optional[logging.Logger] = None) -> None:
         """
         Initialize a PulsarActuatorScanner instance.
-        
+
         Args:
             adapter_handler: Communication adapter for PCP protocol
             logger: Optional logger for debugging messages
@@ -334,7 +439,7 @@ class PulsarActuatorScanner(PulsarActuator):
     def scan(self, begin: int = 0x10, end: int = 0x3FFE) -> List[int]:
         """
         Scan for actuators within the specified address range.
-        
+
         Args:
             begin: Starting address for scan (default: 0x10)
             end: Ending address for scan (default: 0x3FFE)

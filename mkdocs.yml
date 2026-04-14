@@ -38,6 +38,7 @@ theme:
 plugins:
   - search
   - mkdocstrings
+  - mkdocs-jupyter
 markdown_extensions:
   - tables
   - attr_list
@@ -86,11 +87,11 @@ nav:
     - "Python API":
         - control/python_api/install_python_api.md
         - control/python_api/cli.md
-        - Example scripts:
-          - control/python_api/example_single_actuator.md
-          - control/python_api/example_several_actuators.md
-          - control/python_api/example_advanced_features.md
-          - control/python_api/example_log_to_csv.md
+        - Jupyter Notebooks:
+          - Notebook:  control/python_api/example_single_actuator_nb.ipynb
+          - Notebook:  control/python_api/example_several_actuators_nb.ipynb
+          - Notebook:  control/python_api/example_advanced_features_nb.ipynb
+          - Notebook:  control/python_api/example_log_to_csv_nb.ipynb
         - API Code Reference:
           - control/python_api/class_PulsarActuator.md
           - control/python_api/class_PCP_over_USB.md
@@ -121,4 +122,4 @@ nav:
 #      - "Predefined Performance Profiles": Classes-05-PerformanceProfiles.md
 #      - "Actuator Operation: Startup, Shutdown, and Control Modes": Classes-06-ActuatorOperation.md
 
-copyright: Copyright &copy; 2025 PULSAR HRI
+copyright: Copyright &copy; 2026 PULSAR HRI

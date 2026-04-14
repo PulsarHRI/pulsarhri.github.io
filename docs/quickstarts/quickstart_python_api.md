@@ -52,7 +52,7 @@ adapter.close()
     You’ve just sent your first command via the PULSAR Python API!
     Now you can explore doing much more by:
 
-    - checking out more [example scripts starting with this one](../control/python_api/example_single_actuator.md) 
+    - checking out more [example scripts starting with this one](../control/python_api/example_single_actuator_nb.ipynb) 
     
     - trying other communication methods beyond direct USB enabling the control of multiple actuators, [such as CAN](../communicate/communicate_real.md#3-connect-via-can)
 

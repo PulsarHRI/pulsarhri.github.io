@@ -4,12 +4,12 @@ Here you can download the latest version of the [PULSAR HRI Desktop App](../cont
 
 === "Linux"
 
-    [Download PulsarApp-0.9.1.deb](../assets/desktopApp/PulsarApp-0.9.1.deb)
+    Not available at the moment
 
     To install the `.deb` package, run:
 
     ```bash
-    sudo apt install ./PulsarApp-0.9.1.deb
+    sudo apt install ./PulsarApp-1.0.0.deb
     ```
 
     This will automatically install the app and resolve dependencies.  
@@ -18,7 +18,7 @@ Here you can download the latest version of the [PULSAR HRI Desktop App](../cont
 
 === "Windows"
 
-    [Download PulsarApp-0.9.1.zip](../assets/desktopApp/PulsarApp-0.9.1.zip)
+    [Download PulsarApp-1.0.0.zip](../assets/desktopApp/PulsarApp-1.0.0.zip)
 
 ---
 
