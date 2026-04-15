@@ -2718,11 +2718,11 @@ adapter = PCP_over_USB(port)
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Connected to the actuator </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="s2"> (model: </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">model</span><span class="si">}</span><span class="s2">, firmware: </span><span class="si">{</span><span class="n">actuator</span><span class="o">.</span><span class="n">firmware_version</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 
     <span class="c1"># Configure high-frequency feedback to report position at 10 Hz.</span>
-    <span class="n">actuator</span><span class="o">.</span><span class="n">setFeedbackItems</span><span class="p">([</span>
+    <span class="n">actuator</span><span class="o">.</span><span class="n">set_feedback_items</span><span class="p">([</span>
         <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">POSITION_FB</span><span class="p">,</span>
         <span class="c1"># Add other items if needed</span>
     <span class="p">])</span>
-    <span class="n">actuator</span><span class="o">.</span><span class="n">setFeedbackRate</span><span class="p">(</span><span class="n">actuator</span><span class="o">.</span><span class="n">Rates</span><span class="o">.</span><span class="n">RATE_10HZ</span><span class="p">)</span>
+    <span class="n">actuator</span><span class="o">.</span><span class="n">set_feedback_rate</span><span class="p">(</span><span class="n">actuator</span><span class="o">.</span><span class="n">Rates</span><span class="o">.</span><span class="n">RATE_10HZ</span><span class="p">)</span>
 
     <span class="c1"># Set the actuator to SPEED mode.</span>
     <span class="n">actuator</span><span class="o">.</span><span class="n">change_mode</span><span class="p">(</span><span class="n">PulsarActuator</span><span class="o">.</span><span class="n">Mode</span><span class="o">.</span><span class="n">SPEED</span><span class="p">)</span>
@@ -2748,11 +2748,11 @@ for address in ACTUATOR_ADDRESSES:
     print(f"Connected to the actuator {actuator.address} (model: {actuator.model}, firmware: {actuator.firmware_version})")
 
     # Configure high-frequency feedback to report position at 10 Hz.
-    actuator.setFeedbackItems([
+    actuator.set_feedback_items([
         PulsarActuator.PCP_Items.POSITION_FB,
         # Add other items if needed
     ])
-    actuator.setFeedbackRate(actuator.Rates.RATE_10HZ)
+    actuator.set_feedback_rate(actuator.Rates.RATE_10HZ)
 
     # Set the actuator to SPEED mode.
     actuator.change_mode(PulsarActuator.Mode.SPEED)

@@ -2734,25 +2734,25 @@ You can set the feedback items you want to receive. The items are defined in <co
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">actuator</span><span class="o">.</span><span class="n">setFeedbackItems</span><span class="p">([</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">actuator</span><span class="o">.</span><span class="n">set_feedback_items</span><span class="p">([</span>
     <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">SPEED_FB</span><span class="p">,</span>
     <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">POSITION_FB</span><span class="p">,</span>
     <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">TORQUE_FB</span><span class="p">,</span>
     <span class="c1"># You can add more items as needed</span>
 <span class="p">])</span>
-<span class="n">actuator</span><span class="o">.</span><span class="n">setFeedbackRate</span><span class="p">(</span><span class="n">actuator</span><span class="o">.</span><span class="n">Rates</span><span class="o">.</span><span class="n">RATE_10HZ</span><span class="p">)</span>
+<span class="n">actuator</span><span class="o">.</span><span class="n">set_feedback_rate</span><span class="p">(</span><span class="n">actuator</span><span class="o">.</span><span class="n">Rates</span><span class="o">.</span><span class="n">RATE_10HZ</span><span class="p">)</span>
 <span class="c1"># Set the feedback callback function to handle the feedback data</span>
 <span class="n">actuator</span><span class="o">.</span><span class="n">set_feedback_callback</span><span class="p">(</span><span class="n">actuator_feedback</span><span class="p">)</span>
 <span class="c1"># feedback_callback can be set to None to disable it</span>
 <span class="c1"># and read the feedback manually with actuator.get_feedback()</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-5">actuator.setFeedbackItems([
+<div class="clipboard-copy-txt" id="cell-5">actuator.set_feedback_items([
     PulsarActuator.PCP_Items.SPEED_FB,
     PulsarActuator.PCP_Items.POSITION_FB,
     PulsarActuator.PCP_Items.TORQUE_FB,
     # You can add more items as needed
 ])
-actuator.setFeedbackRate(actuator.Rates.RATE_10HZ)
+actuator.set_feedback_rate(actuator.Rates.RATE_10HZ)
 # Set the feedback callback function to handle the feedback data
 actuator.set_feedback_callback(actuator_feedback)
 # feedback_callback can be set to None to disable it
@@ -2793,14 +2793,14 @@ actuator.set_feedback_callback(actuator_feedback)
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">other_feedback</span> <span class="o">=</span> <span class="n">actuator</span><span class="o">.</span><span class="n">getItemsBlocking</span><span class="p">([</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">other_feedback</span> <span class="o">=</span> <span class="n">actuator</span><span class="o">.</span><span class="n">get_items_blocking</span><span class="p">([</span>
     <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">VBUS</span><span class="p">,</span>
     <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">TEMP_PCB</span><span class="p">,</span>
     <span class="n">PulsarActuator</span><span class="o">.</span><span class="n">PCP_Items</span><span class="o">.</span><span class="n">TEMP_MOTOR</span><span class="p">,</span>
 <span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">other_feedback</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">other_feedback = actuator.getItemsBlocking([
+<div class="clipboard-copy-txt" id="cell-6">other_feedback = actuator.get_items_blocking([
     PulsarActuator.PCP_Items.VBUS,
     PulsarActuator.PCP_Items.TEMP_PCB,
     PulsarActuator.PCP_Items.TEMP_MOTOR,
