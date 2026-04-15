@@ -1053,6 +1053,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#general-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scan-for-devices" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1068,6 +1079,28 @@
     <span class="md-ellipsis">
       
         Get Device parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blink-device-led" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blink Device LED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-home-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set Home Position
       
     </span>
   </a>
@@ -1734,6 +1767,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#general-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scan-for-devices" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1749,6 +1793,28 @@
     <span class="md-ellipsis">
       
         Get Device parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blink-device-led" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blink Device LED
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-home-position" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Set Home Position
       
     </span>
   </a>
@@ -1778,22 +1844,43 @@
 
 
 <h1 id="command-line-interface-cli">Command line interface (CLI)</h1>
-<p>The Command Line Interface (CLI) is included in the python package. It provides a convenient way to interact with the actuator directly from a terminal. This is particularly useful for quick communication test and for scanning devices on a CAN bus.</p>
+<p>The Command Line Interface (CLI) is included in the Python package. It provides a convenient way to interact with the actuator directly from a terminal. This is particularly useful for quick communication tests and for scanning devices on a CAN bus.</p>
 <h2 id="verifying-the-installation">Verifying the Installation</h2>
-<p>The CLI is installed along the python package. To confirm that the CLI is working correctly, you can run the following command:</p>
+<p>The CLI is installed alongside the Python package. To confirm that the CLI is working correctly, you can run the following command:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pulsar-cli<span class="w"> </span>-h
 </span></code></pre></div>
 This should print the help message.</p>
+<p>You can also check the installed package version:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pulsar-cli<span class="w"> </span>--version
+</span></code></pre></div>
 <h2 id="using-the-cli">Using the CLI</h2>
 <p>The CLI provides several commands to interact with the Pulsar actuator. Here are some common commands:</p>
+<h3 id="general-notes">General notes</h3>
+<ul>
+<li>If <code>--port</code> is omitted, the CLI tries to auto-detect the USB serial port.</li>
+<li>When using CAN,  <code>--address</code> is needed. It accepts both hexadecimal and decimal notation, for example <code>0x10</code> or <code>16</code>.</li>
+</ul>
 <h3 id="scan-for-devices">Scan for Devices</h3>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pulsar-cli<span class="w"> </span>scan
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pulsar-cli<span class="w"> </span>scan
 </span></code></pre></div>
 This command scans the CAN bus for connected Pulsar devices and lists their addresses. You need a CAN adapter connected and a <a href="../../../set_up/hardware_interfaces/electrical_interfaces/#can-bus">correctly wired CAN bus</a>. Use the <code>-h</code> flag to see more options.</p>
 <h3 id="get-device-parameters">Get Device parameters</h3>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pulsar-cli<span class="w"> </span>params
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pulsar-cli<span class="w"> </span>params
 </span></code></pre></div>
 You can retrieve all the parameters of the connected device.  Use the <code>-h</code> flag to see more options.</p>
+<p>Examples:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pulsar-cli<span class="w"> </span>params<span class="w">  </span><span class="c1"># Connects directly over USB</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pulsar-cli<span class="w"> </span>params<span class="w"> </span>--port<span class="w"> </span>COM3<span class="w"> </span>--address<span class="w"> </span>0x10
+</span></code></pre></div>
+<h3 id="blink-device-led">Blink Device LED</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pulsar-cli<span class="w"> </span>blink<span class="w"> </span>--address<span class="w"> </span>0x10
+</span></code></pre></div>
+<p>This command blinks the actuator LED so you can identify a device on the CAN bus. An address is required for this command.</p>
+<h3 id="set-home-position">Set Home Position</h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pulsar-cli<span class="w"> </span>home
+</span></code></pre></div>
+<p>This command stores the actuator's current position as the home position (zero reference). This position is stored in the device's non-volatile memory and is retained even after power cycling. Use the <code>-h</code> flag to see more options.</p>
 
 
 
