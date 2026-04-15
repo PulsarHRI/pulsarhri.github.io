@@ -49,7 +49,7 @@ class PCP_over_USB:
         """
         ...
 
-    def setCallback(self, address: int, callback: Callable[[int, List[int]], None]) -> None:
+    def set_callback(self, address: int, callback: Callable[[int, List[int]], None]) -> None:
         """
         Register a callback function for messages from a specific PCP address.
 
@@ -60,7 +60,7 @@ class PCP_over_USB:
         """
         ...
 
-    def removeCallback(self, address: int) -> None:
+    def remove_callback(self, address: int) -> None:
         """
         Unregister the callback function for a specific PCP address.
 

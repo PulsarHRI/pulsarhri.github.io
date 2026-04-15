@@ -191,7 +191,7 @@ class PulsarActuator:
         """
         ...
 
-    def changeAddress(self, new_address: int) -> None:
+    def change_address(self, new_address: int) -> None:
         """
         Change the PCP address of the actuator.
 
@@ -214,6 +214,15 @@ class PulsarActuator:
 
         Args:
             mode (PulsarActuator.Mode): The mode to be set.  (TORQUE, SPEED, POSITION, ...)
+        """
+        ...
+
+    def get_mode(self) -> 'PulsarActuator.Mode':
+        """
+        Returns the current control mode of the actuator.
+
+        Returns:
+            PulsarActuator.Mode: The current mode.
         """
         ...
 
@@ -292,7 +301,7 @@ class PulsarActuator:
         """
         ...
 
-    def setFeedbackItems(self, items: List['PulsarActuator.PCP_Items']) -> None:
+    def set_feedback_items(self, items: List['PulsarActuator.PCP_Items']) -> None:
         """
         Configure which items to include in high frequency feedback stream.
 
@@ -301,7 +310,7 @@ class PulsarActuator:
         """
         ...
 
-    def setFeedbackRate(self, rate: Union['PulsarActuator.Rates', int]) -> None:
+    def set_feedback_rate(self, rate: Union['PulsarActuator.Rates', int]) -> None:
         """
         Set the update rate for high frequency feedback.
 
@@ -313,7 +322,7 @@ class PulsarActuator:
         """
         ...
 
-    def getItemsBlocking(self, items: List['PulsarActuator.PCP_Items'], timeout: float = 1.0) -> Dict['PulsarActuator.PCP_Items', float]:
+    def get_items_blocking(self, items: List['PulsarActuator.PCP_Items'], timeout: float = 1.0) -> Dict['PulsarActuator.PCP_Items', float]:
         """
         Requests specific feedback items and waits for their response.
 
