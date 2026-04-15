@@ -9,8 +9,4 @@
 
 ## 3D Models
 
-Before running a Pulsar Actuator, we recommend attaching it to a generic bracket.
-
-In this way you can get some hands-on understanding on how to best integrate them mechanically and [electrically](electrical_interfaces.md) in your robotics system, and perform some tests safely starting for example with following the steps in the [no-code quickstart tutorial](../../quickstarts/quickstart_desktop_app.md). 
-
 [we provide some 3D printable files](./3d_models.md)

@@ -159,10 +159,11 @@ class PulsarActuator:
 
     def set_error_callback(self, callback: Callable[[int, dict], None]) -> None:
         """
-        Sets the callback function for errors.
+        Set the callback function for errors.
 
-        Parameters:
-            callback (function): The callback function to be set. It should accept two parameters: address (int) and errors (dict).
+        Args:
+            callback (Callable[[int, dict], None]): Function called with the
+                actuator address and an error dictionary.
         """
         ...
 
@@ -344,7 +345,8 @@ class PulsarActuator:
         Set multiple actuator parameters.
 
         Args:
-            parameters: Dictionary mapping PCP_Parameters to their values
+            parameters (Dict[PulsarActuator.PCP_Parameters, float]): Mapping of
+                parameters to the values to write.
         """
         ...
 
@@ -353,11 +355,13 @@ class PulsarActuator:
         Read multiple actuator parameters.
 
         Args:
-            parameters: List of parameters to read
-            timeout: Response timeout in seconds
+            parameters (List[PulsarActuator.PCP_Parameters]): Parameters to
+                request from the actuator.
+            timeout (float): Response timeout in seconds.
 
         Returns:
-            Dictionary mapping parameters to their current values
+            Dict[PulsarActuator.PCP_Parameters, float]: Current values for the
+                requested parameters.
         """
         ...
 
