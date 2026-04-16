@@ -25,7 +25,7 @@ Usually **not** provided by PULSAR HRI:
 3. Plug the USB-C cable into your computer, then connect it to the actuator USB connector. The [actuator status LED](../set_up/hardware_interfaces/led.md) will change color.
 
 <p align="center">
-  <img src="/assets/images/PWR_USB_connection.png" alt="PWR_USB_connection" width="350">
+  <img src="/assets/images/PWR_USB_connection.png" alt="PWR_USB_connection" width="60%">
 </p>
 
 !!! success

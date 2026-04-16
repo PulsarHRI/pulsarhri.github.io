@@ -19,13 +19,14 @@ To confirm that the installation was successful, run the following command:
 ```bash
 pip show pcp_api
 ```
+
 This command should display information about the installed package, including its version and location. If you see this information, the installation was successful.
 
 ## Next Steps
 
 Once the API is installed, you can:
 
-* Use the [Command line interface](cli.md) to quickly interact with PULSAR hardware.
+* Use the [command-line interface](cli.md) to quickly interact with PULSAR hardware.
 * Run the [example scripts](example_single_actuator_nb.ipynb).
 * Explore the [code documentation](class_PulsarActuator.md) for detailed usage instructions.
 * Integrate the API into your own applications or research workflows.

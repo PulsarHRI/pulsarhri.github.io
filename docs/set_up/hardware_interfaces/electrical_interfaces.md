@@ -20,7 +20,7 @@ To power an actuator you will need a power cable with an XT30 female connector a
 
 ## USB
 
-Pulsar devices also include a USB connector. 
+PULSAR devices also include a USB connector. 
 
 This allows to connect one actuator directly to a computer via a standard USB-A to USB-C cable.
 
@@ -28,10 +28,10 @@ Such USB interface is intended for configuration, single actuator testing and fi
 
 ## CAN bus
 
-Pulsar devices are compatible with CAN-FD 1Mbit/s|5Mbit/s. 
+PULSAR devices are compatible with CAN-FD 1Mbit/s|5Mbit/s. 
 This is the communication mode currently available to connect and control multiple actuators within a robotic system: all PULSAR HRI devices have dual CAN connectors, so you can daisy-chain them easily. 
 
-An example of CAN bus is depicted in the diagram below, showing CAN bus connection between two daisy-chained Pulsar actuators and a Pulsar CAN to USB adapter, with Termination Resistors (TR) at the two ends of the bus.
+An example of CAN bus is depicted in the diagram below, showing CAN bus connection between two daisy-chained PULSAR actuators and a PULSAR CAN to USB adapter, with Termination Resistors (TR) at the two ends of the bus.
 
 ![CAN example](../../assets/images/can_02.png)
 

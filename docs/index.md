@@ -49,5 +49,5 @@ Glad you asked: check out [PULSAR HRI's website](https://pulsarhri.com/technolog
 Visit our [Support page](support.md) or check the [FAQ](faq.md).
 
 ---
-![Pulsar](assets/images/P98_01.jpg){ loading=lazy }
+![PULSAR](assets/images/P98_01.jpg){ loading=lazy }
 
