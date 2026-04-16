@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quickstart-tutorial-python-api-for-real-actuator-via-usb" class="md-skip">
+        <a href="#quickstart-tutorial-python-api-for-a-real-actuator-via-usb" class="md-skip">
           Skip to content
         </a>
       
@@ -431,7 +431,7 @@
   <a href="#step-by-step-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        👣 Step-By-Step Guide
+        👣 Step-by-Step Guide
       
     </span>
   </a>
@@ -1033,7 +1033,7 @@
   <span class="md-ellipsis">
     
   
-    Command line interface (CLI)
+    Command-Line Interface (CLI)
   
 
     
@@ -1673,7 +1673,7 @@
   <a href="#step-by-step-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        👣 Step-By-Step Guide
+        👣 Step-by-Step Guide
       
     </span>
   </a>
@@ -1697,38 +1697,38 @@
 
 
 
-<h1 id="quickstart-tutorial-python-api-for-real-actuator-via-usb">Quickstart Tutorial: Python API for Real Actuator via USB</h1>
-<p>This page walks you through running a Real Actuator connected via USB, and controlling it via Python scripting using <a href="../../control/python_api/install_python_api/">PULSAR HRI's Python API</a> </p>
-<h2 id="step-by-step-guide">👣 Step-By-Step Guide</h2>
+<h1 id="quickstart-tutorial-python-api-for-a-real-actuator-via-usb">Quickstart Tutorial: Python API for a Real Actuator via USB</h1>
+<p>This page walks you through running a real actuator connected via USB and controlling it with Python using <a href="../../control/python_api/install_python_api/">PULSAR HRI's Python API</a>.</p>
+<h2 id="step-by-step-guide">👣 Step-by-Step Guide</h2>
 <ol>
-<li>Make sure your actuator is set up and connected via USB, as per the <a href="../quickstart_set_up_usb/">Quickstart Tutorial: Set up Real Actuator and connect via USB</a> </li>
+<li>Make sure your actuator is set up and connected via USB, as described in the <a href="../quickstart_set_up_usb/">Quickstart Tutorial: Set Up a Real Actuator and Connect via USB</a>. </li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>You are of course free to run this straight from the terminal and installing libraries globally, but for a better experience we do recommend to: </p>
+<p>You can run this directly from the terminal and install libraries globally, but for a better experience we recommend the following:</p>
 <ul>
 <li>
-<p>use an IDE such as <a href="https://code.visualstudio.com/download">Visual Studio Code</a></p>
+<p>Use an IDE such as <a href="https://code.visualstudio.com/download">Visual Studio Code</a></p>
 </li>
 <li>
-<p>up a virtual environment using tools such as <a href="https://docs.python.org/3/library/venv.html">venv</a> or <a href="https://pipenv.pypa.io/en/latest/quick_start.html">pipenv</a> or <a href="https://python-poetry.org/docs/">poetry</a> or <a href="https://docs.astral.sh/uv/getting-started/installation/#shell-autocompletion">uv</a></p>
+<p>Set up a virtual environment using tools such as <a href="https://docs.python.org/3/library/venv.html">venv</a> or <a href="https://pipenv.pypa.io/en/latest/quick_start.html">pipenv</a> or <a href="https://python-poetry.org/docs/">poetry</a> or <a href="https://docs.astral.sh/uv/getting-started/installation/#shell-autocompletion">uv</a></p>
 </li>
 </ul>
 </div>
 <ol>
 <li>
-<p>Install the PULSAR HRI Python API (<a href="../../control/python_api/install_python_api/">more details about it here</a>)
+<p>Install the <a href="../../control/python_api/install_python_api/">PULSAR HRI Python API</a>:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pcp_api
 </span></code></pre></div></p>
 </li>
 <li>
-<p>Check USB communication via the CLI tool (<a href="../../control/python_api/cli/">more details about it here</a>):
+<p>Check USB communication using the <a href="../../control/python_api/cli/">CLI tool</a>:
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pulsar-cli<span class="w"> </span>scan
 </span></code></pre></div>
-You should see your actuator's ID and connection info.</p>
+You should see your actuator's ID and connection information.</p>
 </li>
 <li>
-<p>Run the following script, the actuator should rotate at a constant speed for 5 seconds
+<p>Run the following script. The actuator should rotate at a constant speed for 5 seconds:
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pcp_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCP_over_USB</span><span class="p">,</span> <span class="n">PulsarActuator</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
@@ -1754,20 +1754,20 @@ You should see your actuator's ID and connection info.</p>
 </ol>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<p>You’ve just sent your first command via the PULSAR Python API!
-Now you can explore doing much more by:</p>
+<p>You’ve just sent your first command using the PULSAR Python API!
+You can now do much more with it:</p>
 <ul>
 <li>
-<p>checking out more <a href="../../control/python_api/example_single_actuator_nb/">example scripts starting with this one</a> </p>
+<p>Checking out more example scripts, starting with <a href="../../control/python_api/example_single_actuator_nb/">the simple actuator example</a>.</p>
 </li>
 <li>
-<p>trying other communication methods beyond direct USB enabling the control of multiple actuators, <a href="../../communicate/communicate_real/#3-connect-via-can">such as CAN</a></p>
+<p>Trying communication methods beyond direct USB that enable control of multiple actuators, such as <a href="../../communicate/communicate_real/#3-connect-via-can">PULSAR CAN Communication</a>.</p>
 </li>
 <li>
-<p>get intimate with the Python API code reference <a href="../../control/python_api/class_PulsarActuator/">starting from understanding the actuator classes and methods</a> </p>
+<p>Becoming familiar with the Python API code reference, starting with the <a href="../../control/python_api/class_PulsarActuator/">actuator classes and methods</a>.</p>
 </li>
 <li>
-<p>If you're interested in <strong>simulating PULSAR actuators</strong> without needing hardware, explore <a href="../../set_up/set_up_virtual/">how to create Virtual Actuators with the AUGUR Digital Twin</a>.</p>
+<p>If you're interested in <strong>simulating PULSAR actuators</strong> without hardware, explore <a href="../../set_up/set_up_virtual/">how to create Virtual Actuators with the AUGUR Digital Twin</a>.</p>
 </li>
 </ul>
 </div>
