@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quickstart-tutorial-no-code-desktop-app-for-real-actuator-via-usb" class="md-skip">
+        <a href="#quickstart-tutorial-no-code-desktop-app-for-a-real-actuator-via-usb" class="md-skip">
           Skip to content
         </a>
       
@@ -403,7 +403,7 @@
   <a href="#step-by-step-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        👣 Step-By-Step Guide
+        👣 Step-by-Step Guide
       
     </span>
   </a>
@@ -1673,7 +1673,7 @@
   <a href="#step-by-step-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        👣 Step-By-Step Guide
+        👣 Step-by-Step Guide
       
     </span>
   </a>
@@ -1697,80 +1697,81 @@
 
 
 
-<h1 id="quickstart-tutorial-no-code-desktop-app-for-real-actuator-via-usb">Quickstart Tutorial: No-Code Desktop App for Real Actuator via USB</h1>
-<p>This page walks you through running a Real Actuator connected via USB without needing to do any coding, using the <a href="../../control/desktop_app/desktop_app/">PULSAR HRI Desktop App</a>, which can be downloaded from <a href="../../download/download_app/">HERE</a>.</p>
-<h2 id="step-by-step-guide">👣 Step-By-Step Guide</h2>
+<h1 id="quickstart-tutorial-no-code-desktop-app-for-a-real-actuator-via-usb">Quickstart Tutorial: No-Code Desktop App for a Real Actuator via USB</h1>
+<p>This page walks you through how to run a real actuator connected via USB without writing any code, using the <a href="../../control/desktop_app/desktop_app/">PULSAR HRI Desktop App</a>, which can be downloaded <a href="../../download/download_app/">here</a>.</p>
+<h2 id="step-by-step-guide">👣 Step-by-Step Guide</h2>
 <ol>
 <li>
-<p>Make sure your actuator is set up and connected via USB, as per the <a href="../quickstart_set_up_usb/">Quickstart Tutorial: Set up Real Actuator and connect via USB</a> </p>
+<p>Make sure your actuator is set up and connected via USB, as described in the <a href="../quickstart_set_up_usb/">Quickstart Tutorial: Set Up a Real Actuator and Connect via USB</a>.</p>
 </li>
 <li>
-<p>Launch the <a href="../../control/desktop_app/desktop_app/">PULSAR HRI Desktop App</a>: you should be able to see the actuator connected via USB in the "Devices" dropdown. Upon selecting it, a popup will inform you of the successful connection and the actuator's address will be shown </p>
+<p>Launch the <a href="../../control/desktop_app/desktop_app/">PULSAR HRI Desktop App</a>. You should see the actuator connected via USB in the <strong>Devices</strong> drop-down menu. When you select it, a pop-up will confirm the connection and display the actuator's address.</p>
+</li>
+</ol>
 <blockquote>
-<p><em>the Actuator Address is useful for example to connect via CAN Bus instead of USB, but this will be covered in another guide</em></p>
+<p><em>The actuator address is useful to connect via CAN bus instead of USB.</em></p>
 </blockquote>
-<p><img alt="GUI to connect" src="../../assets/images/GUI_to_connect.png" />
-<img alt="GUI connected" src="../../assets/images/GUI_connected.png" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>You successfully connected to the actuator, which is now ready to move, that's great!!
-But, as they say, with great power come great responsibilities: 
-<strong>be mindful to keep the actuator's operating area clear of any object</strong> that might get caught or collide with any moving parts.</p>
-</div>
-</li>
+<div class="language-text highlight"><pre><span></span><code>![GUI to connect](../assets/images/GUI_to_connect.png)
+![GUI connected](../assets/images/GUI_connected.png)
+!!! warning
+    You have successfully connected to the actuator, which is now ready to move!
+    But, as they say, with great power come great responsibilities: 
+    **be mindful to keep the actuator&#39;s operating area clear of any object** that might get caught or collide with any moving parts.
+</code></pre></div>
+<ol>
 <li>
-<p>As a first example, we'll run the actuator in <strong>Speed Control</strong> mode: </p>
+<p>As a first example, run the actuator in <strong>Speed Control</strong> mode:</p>
 <ul>
-<li>select <strong>Speed Control</strong> mode under <strong>Control Type</strong></li>
-<li>check that the setpoint in rad/s is currently zero</li>
-<li>hit the <strong>play button</strong>: the actuator won't move as you're telling it to move at zero speed. 
+<li>Select <strong>Speed Control</strong> mode under <strong>Control Type</strong>.</li>
+<li>Check that the setpoint in rad/s is currently zero.</li>
+<li>Click the <strong>Play</strong> button: The actuator will not move because the speed setpoint is zero.
 <img alt="Speed Ctrl Zero" src="../../assets/images/GUI_speed_zero.png" /></li>
-<li>you can now change the setpoint speed either by typing the desired rad/s value in the textbox, or by moving the slider</li>
-<li>you'll see the actuator moving and the live plot of the position at the bottom of the GUI being updated accordingly</li>
+<li>You can now change the setpoint speed either by typing the desired rad/s value in the textbox, or by moving the slider.</li>
+<li>You will see the actuator moving and the live plot of the position at the bottom of the GUI being updated accordingly.</li>
 </ul>
 </li>
 <li>
-<p>We can now move to try <strong>Position Control</strong> mode:</p>
+<p>Next, try <strong>Position Control</strong> mode::</p>
 <ul>
-<li>select <strong>Positon Control</strong> mode under <strong>Control Type</strong></li>
-<li>click on the <strong>SET 0 POSITION</strong> button, this will store the current position (output angle) of the actuator as the zero. <ul>
-<li>If you skip setting the zero position, it will use the latest zero position that was set and written to memory 
+<li>Select <strong>Position Control</strong> mode under <strong>Control Type</strong>.</li>
+<li>Click the <strong>SET 0 POSITION</strong> button. This stores the current actuator position (output angle) as zero. <ul>
+<li>If you skip this step, the actuator will use the most recently stored zero position.
 <img alt="Position Ctrl Zero" src="../../assets/images/GUI_position_control_zero.png" /></li>
 </ul>
 </li>
-<li>hit the <strong>play button</strong>: the actuator won't move as you're telling it to hold the zero position you just set.
+<li>Click the <strong>Play</strong> button: The actuator will not move because you are commanding it to hold the zero position you just set.
 <img alt="Position Ctrl Move" src="../../assets/images/GUI_position_control_move.png" /></li>
-<li>you can now <strong>change the setpoint position</strong> either by typing the desired rad value in the textbox, or by moving the slider</li>
-<li>you'll see the actuator moving and the live plot of the position at the bottom of the GUI being updated accordingly</li>
+<li>You can now <strong>change the setpoint position</strong> either by typing the desired rad value in the textbox, or by moving the slider.</li>
+<li>You'll see the actuator moving and the live plot of the position at the bottom of the GUI being updated accordingly.</li>
 </ul>
 </li>
 <li>
-<p>You can now try changing the values of <strong>actuator limits</strong> and of the <strong>control parameters</strong> associated to different <a href="../../control/control_modes_explained/control_modes_overview/">available Actuator Control Modes</a></p>
+<p>You can now try changing the <strong>actuator limits</strong> and the <strong>control parameters</strong> associated with the different <a href="../../control/control_modes_explained/control_modes_overview/">available actuator control modes</a>.</p>
 <ul>
-<li>Continuing from the previous point we can try changing the control parameter associated to Position control, <strong>Position Kp</strong><ul>
-<li>increasing this parameter essentially makes the actuator more responsive but, if set too high, it will at some point lead to overshooting setpoints and eventually instable behaviour</li>
+<li>Continuing from the previous step, you can try changing the control parameter associated with <strong>Position Control</strong>: <strong>Position Kp</strong>.<ul>
+<li>Increasing this parameter makes the actuator more responsive, but if it is set too high, it may cause overshoot and eventually unstable behavior.</li>
 </ul>
 </li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>When changing control parameters such as Kp Position, introduce small gradual changes at a time to avoid unexpected and potentially unsafe behaviour of the actuator. For example you can try going from 0.5 to 1 and see how the change impact the behaviour of the actuator, don't go e.g. from 0.5 to 5</p>
+<p>When changing control parameters such as <strong>Position Kp</strong>, make small, gradual adjustments to avoid unexpected and potentially unsafe actuator behavior. For example, try changing the value from 0.5 to 1 first and observe the effect. Do not jump directly from 0.5 to 5.</p>
 </div>
 <ul>
-<li>Upon changing the value of Position Kp, for it to take effect you will need to click the <strong>Apply</strong> button</li>
+<li>After changing the value of Position Kp, click the <strong>Apply</strong> button for the change to take effect.</li>
 <li>This same process can be applied when selecting other modes, changing their respective control parameters.<ul>
-<li>The <strong>Torque</strong> and the <strong>Speed</strong> control loops also have some preset control parameters that can be simply sleected form the respective dropdown menus</li>
+<li>The <strong>Torque</strong> and <strong>Speed</strong> control loops also have preset control parameters that can be selected from the respective drop-down menus.</li>
 </ul>
 </li>
-<li>You can then try to set some position and torque limts from <strong>Set Limits</strong> and see how that impacts the behaviour of the actuator.</li>
+<li>You can then set position and torque limits under <strong>Set Limits</strong> and observe how they affect the actuator's behavior.</li>
 </ul>
 </li>
 <li>
-<p>If you have a mechanical shaft that you can attach to the output shaft of the actuator (such as those printable from <a href="../../set_up/hardware_interfaces/mechanical_interfaces/">here</a>)</p>
+<p>If you have a mechanical shaft that can be attached to the actuator output shaft, such as one of the printable designs available <a href="../../set_up/hardware_interfaces/mechanical_interfaces/">here</a>:</p>
 <ul>
-<li>you could try fastening a shaft to the output of the actuator and try interacting with it in different contorl modes, for example:<ul>
-<li>get the actuator to hold a position setpoint in <strong>Position Control</strong> mode and try to move the output shaft manually: you will feel the actuator opposing your force, the highest the Position Kp, the stronger it will oppose you</li>
-<li>starting with a low value, e.g. 2Nm, set a torque setpoint in <strong>Torque Control</strong>: the actuator will start spinnging producing such torque at the output: if you grab the output shaft, this will stop as soon as you exert a countertorque of the same amount. You can try changing the torque setpoint from there or the torque loop control parameters.</li>
+<li>You could try fastening a shaft to the output of the actuator and try interacting with it in different control modes, for example:<ul>
+<li>Set the actuator to hold a position setpoint in <strong>Position Control</strong> mode, then try to move the output shaft manually. You will feel the actuator oppose your force. The higher the Position Kp, the stronger that resistance will be.</li>
+<li>Starting with a low value, for example 2 Nm, set a torque setpoint in <strong>Torque Control</strong> mode. The actuator will start spinning and produce that torque at the output. If you hold the output shaft, it will stop once you apply an equal counter-torque. You can then adjust the torque setpoint or the torque-loop control parameters.</li>
 </ul>
 </li>
 </ul>
@@ -1778,11 +1779,11 @@ But, as they say, with great power come great responsibilities:
 </ol>
 <div class="admonition success">
 <p class="admonition-title">Success</p>
-<p>Well done! You’ve successfully powered on a PULSAR actuator, switched control modes, and observed how it responds. You’ve already covered a lot 🚀</p>
+<p>Well done! You have successfully powered on a PULSAR actuator, switched control modes, and observed how it responds. You’ve already covered a lot! 🚀</p>
 <p>Where can you go from here?</p>
 <ul>
 <li>
-<p>If you’re comfortable with Python and want <strong>deeper control or multi-actuator setups</strong>, continue with the <a href="../quickstart_python_api/">Quickstart Tutorial: Python API for Real Actuator</a> </p>
+<p>If you’re comfortable with Python and want <strong>deeper control or multi-actuator setups</strong>, continue with the <a href="../quickstart_python_api/">Quickstart Tutorial: Python API for Real Actuator</a>.</p>
 </li>
 <li>
 <p>If you're interested in <strong>simulating PULSAR actuators</strong> without needing hardware, explore <a href="../../set_up/set_up_virtual/">how to create Virtual Actuators with the AUGUR Digital Twin</a>.</p>
