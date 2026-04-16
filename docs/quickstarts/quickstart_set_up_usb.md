@@ -24,7 +24,9 @@ Usually **not** provided by PULSAR HRI:
 2. Turn on the Power Supply Unit to power the actuator. Check that the [actuator status LED](../set_up/hardware_interfaces/led.md) turns on.
 3. Plug the USB-C cable into your computer, then connect it to the actuator USB connector. The [actuator status LED](../set_up/hardware_interfaces/led.md) will change color.
 
-![PWR_USB_connection](../assets/images/PWR_USB_connection.png)
+<p align="center">
+  <img src="/assets/images/PWR_USB_connection.png" alt="PWR_USB_connection" width="350">
+</p>
 
 !!! success
     Your actuator is now connected! Move to the next [Quickstart Tutorial: No-Code Desktop App for Real Actuator](../quickstarts/quickstart_desktop_app.md) to get it running in minutes!

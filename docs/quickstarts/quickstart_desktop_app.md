@@ -10,15 +10,16 @@ This page walks you through how to run a real actuator connected via USB without
 > *The actuator address is useful to connect via CAN bus instead of USB.*
 
 <p align="center">
-    <img src="../assets/images/GUI_to_connect.png" alt="GUI to connect" width="30%";>
+  <img src="/assets/images/GUI_to_connect.png" alt="GUI to connect" width="30%">
 </p>
+
 <p align="center">
-    <img src="../assets/images/GUI_connected.png" alt="GUI connected" width="80%">
+  <img src="/assets/images/GUI_connected.png" alt="GUI connected" width="80%">
 </p>
+
 !!! warning
-    You have successfully connected to the actuator, which is now ready to move!
-    But, as they say, with great power come great responsibilities: 
-    **be mindful to keep the actuator's operating area clear of any object** that might get caught or collide with any moving parts.
+    You have successfully connected to the actuator, which is now ready to move.
+    Keep the actuator's operating area clear of any object that might get caught or collide with moving parts.
 
 3. As a first example, run the actuator in **Speed Control** mode:
     - Select **Speed Control** mode under **Control Type**.
