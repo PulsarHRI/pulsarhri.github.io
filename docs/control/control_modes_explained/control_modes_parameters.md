@@ -1,8 +1,8 @@
-# Which control parameters can be used in each mode?
+# Which Control Parameters Can Be Used in Each Mode?
 
-Not all the available parameters are useful in all the control modes, the following table shows a summary of which control parameters are compatibles with each control mode.
+Not all available parameters are relevant to every control mode. The following table summarizes which control parameters are compatible with each control mode.
 
-**Table – Use of the parameters depending on the control type**
+**Table: Use of parameters by control mode**
 
 | Parameter                                | Torque control (CtrlType = 5) | Speed control (CtrlType = 6) | Position control (CtrlType = 7) | Impedance control (CtrlType = 8) | Calibration (CtrlType = 1) | FVI (CtrlType = 2) | Open loop (CtrlType = 3) | DVI (CtrlType = 4) |
 |:------------------------------------------:|:-------------------------------:|:------------------------------:|:----------------------------------:|:------------------------------------:|:----------------------------:|:--------------------:|:---------------------------:|:--------------------:|
