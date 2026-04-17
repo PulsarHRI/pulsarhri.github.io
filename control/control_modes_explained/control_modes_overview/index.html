@@ -27,7 +27,7 @@
     
     
       
-        <title>Control modes overview - PULSAR HRI Ecosystem Documentation</title>
+        <title>Control Modes Overview - PULSAR HRI Ecosystem Documentation</title>
       
     
     
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Control modes overview
+              Control Modes Overview
             
           </span>
         </div>
@@ -1347,7 +1347,7 @@
   <span class="md-ellipsis">
     
   
-    Control modes overview
+    Control Modes Overview
   
 
     
@@ -1365,7 +1365,7 @@
   <span class="md-ellipsis">
     
   
-    Control modes overview
+    Control Modes Overview
   
 
     
@@ -1391,10 +1391,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview-of-operation-modes" class="md-nav__link">
+  <a href="#overview-of-operating-modes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview of Operation Modes
+        Overview of Operating Modes
       
     </span>
   </a>
@@ -1450,7 +1450,7 @@
   <a href="#impedance-control-under-development" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Impedance Control (Under development)
+        Impedance Control (Under Development)
       
     </span>
   </a>
@@ -1546,7 +1546,7 @@
   <span class="md-ellipsis">
     
   
-    Which control parameters can be used in each mode?
+    Which Control Parameters Can Be Used in Each Mode?
   
 
     
@@ -1794,10 +1794,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview-of-operation-modes" class="md-nav__link">
+  <a href="#overview-of-operating-modes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview of Operation Modes
+        Overview of Operating Modes
       
     </span>
   </a>
@@ -1853,7 +1853,7 @@
   <a href="#impedance-control-under-development" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Impedance Control (Under development)
+        Impedance Control (Under Development)
       
     </span>
   </a>
@@ -1943,57 +1943,57 @@
 
 
 
-<h1 id="control-modes-overview">Control modes overview</h1>
-<h2 id="overview-of-operation-modes">Overview of Operation Modes</h2>
-<p>Before initiating any actuator movement, it is essential to configure the appropriate control mode. The selected mode determines how the actuator interprets and responds to setpoints. Once a control mode is active, the system will establish the corresponding setpoint based on the mode’s logic and parameters.</p>
+<h1 id="control-modes-overview">Control Modes Overview</h1>
+<h2 id="overview-of-operating-modes">Overview of Operating Modes</h2>
+<p>Before initiating any actuator movement, it is essential to select the appropriate control mode. The selected mode determines how the actuator interprets and responds to setpoints. Once a control mode is active, the system establishes the corresponding setpoint based on that mode’s logic and parameters.</p>
 <h2 id="standard-control-modes">Standard Control Modes</h2>
-<p>The actuator supports several core control strategies, each optimized for specific performance characteristics:</p>
+<p>The actuator supports several core control strategies, each optimized for specific performance characteristics.</p>
 <h3 id="electromagnetic-torque-control">Electromagnetic Torque Control</h3>
-<p>This mode directly controls the torque output of the actuator by regulating the motor current. It includes three predefined profiles, each offering a different control bandwidth—from conservative to aggressive—tailored for various application needs.</p>
+<p>This mode directly controls the torque output of the actuator by regulating the motor current. It includes three predefined profiles, each offering a different control bandwidth, from conservative to aggressive, tailored to different application needs.</p>
 <p><img alt="Te scheme" src="../figs/Te_scheme.png" /></p>
 <h3 id="speed-control">Speed Control</h3>
 <p>Speed control is implemented using a dual-loop architecture:</p>
 <ul>
 <li>The inner loop manages torque via current control.</li>
-<li>The outer loop regulates speed using a Proportional-Integral (PI) controller.</li>
+<li>The outer loop regulates speed using a proportional-integral (PI) controller.</li>
 </ul>
-<p>Users can either manually tune the PI parameters or select from optimized preset profiles.</p>
-<p><img alt="Spd scheme" src="../figs/Spd_scheme.png" /></p>
+<p>Users can either tune the PI parameters manually or select from optimized preset profiles.</p>
+<p><img alt="Speed control scheme" src="../figs/Spd_scheme.png" /></p>
 <h3 id="position-control">Position Control</h3>
 <p>Position control is achieved through a hierarchical control structure:</p>
 <ul>
 <li>A proportional controller governs the position loop.</li>
 <li>This loop operates over the speed and torque control layers, ensuring smooth and accurate positioning.</li>
 </ul>
-<p><img alt="Pos scheme" src="../figs/Pos_scheme.png" /></p>
-<h3 id="impedance-control-under-development">Impedance Control (Under development)</h3>
+<p><img alt="Position control scheme" src="../figs/Pos_scheme.png" /></p>
+<h3 id="impedance-control-under-development">Impedance Control (<em>Under Development</em>)</h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>DO NOT USE THIS MODE AS IT IS UNDER DEVELOPMENT</p>
+<p>Do not use this mode, as it is still under development.</p>
 </div>
-<p>This advanced mode simulates mechanical impedance (stiffness and damping) by manipulating motor currents at a low level. It is particularly useful for applications requiring compliant or human-interactive behavior. </p>
+<p>This advanced mode simulates mechanical impedance (stiffness and damping) by manipulating motor currents at a low level. It is particularly useful for applications that require compliant or human-interactive behavior.</p>
 <p><img alt="Impedance scheme" src="../figs/Impedance_scheme.png" /></p>
 <h2 id="special-purpose-modes">Special-Purpose Modes</h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>DO NOT USE THESE MODES UNLESS SPECIFIED BY PULSAR DEVELOPMENT TEAM</p>
+<p>Do not use these modes unless instructed to do so by the PULSAR development team.</p>
 </div>
-<p>In addition to the standard modes, the actuator includes several specialized modes designed for debugging, testing, and system integration. These are not intended for regular operation but are invaluable during development and troubleshooting:</p>
+<p>In addition to the standard modes, the actuator includes several specialized modes designed for debugging, testing, and system integration. These are not intended for regular operation, but they are invaluable during development and troubleshooting.</p>
 <h3 id="startup-calibration-mode">Startup Calibration Mode</h3>
-<p>The actuator includes an internal calibration routine that can be triggered directly. During calibration, the system performs offset calibration for both current sensing and position measurement—aligning the motor’s electrical position with the mechanical position of the encoder. As part of this process, the relative position (turn count) is reset to zero.</p>
+<p>The actuator includes an internal calibration routine that can be triggered directly. During calibration, the system performs offset calibration for both current sensing and position measurement, aligning the motor’s electrical position with the encoder’s mechanical position.</p>
 <p>During this calibration:</p>
 <ul>
 <li>The relative position (also known as the "turn count") is reset to zero.</li>
-<li><strong>Note:</strong> This does not affect the absolute position. To reset the absolute position, the <code>Set Zero Position</code> command must be used separately.</li>
+<li><strong>Note:</strong> This does not affect the absolute position. To reset the absolute position, use the <code>Set Zero Position</code> command separately.</li>
 </ul>
 <h3 id="fixed-voltage-injection-fvi">Fixed Voltage Injection (FVI)</h3>
-<p>Injects a constant DC voltage into the motor phases. Useful for basic motor testing and diagnostics.</p>
+<p>This mode injects a constant DC voltage into the motor phases. It is useful for basic motor testing and diagnostics.</p>
 <p><img alt="FVI scheme" src="../figs/FVI_scheme.png" /></p>
 <h3 id="open-loop-mode">Open-Loop Mode</h3>
-<p>Applies a rotating voltage vector to the motor using a V/f (voltage-to-frequency) control method. This mode typically runs at a constant speed or can be configured with user-defined parameters.</p>
+<p>This mode applies a rotating voltage vector to the motor using a V/f (voltage-to-frequency) control method. It typically runs at a constant speed or can be configured with user-defined parameters.</p>
 <p><img alt="OL scheme" src="../figs/OL_scheme.png" /></p>
 <h3 id="direct-voltage-injection-dvi">Direct Voltage Injection (DVI)</h3>
-<p>Allows manual control of the voltage vector applied to the motor phases. The internal encoder is used to orient the voltage field, enabling precise testing of motor response.</p>
+<p>This mode allows manual control of the voltage vector applied to the motor phases. The internal encoder is used to orient the voltage field, enabling precise testing of motor response.</p>
 <p><img alt="DVI scheme" src="../figs/DVI_scheme.png" /></p>
 
 
@@ -2041,13 +2041,13 @@
         
         
           
-          <a href="../control_modes_parameters/" class="md-footer__link md-footer__link--next" aria-label="Next: Which control parameters can be used in each mode?">
+          <a href="../control_modes_parameters/" class="md-footer__link md-footer__link--next" aria-label="Next: Which Control Parameters Can Be Used in Each Mode?">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Which control parameters can be used in each mode?
+                Which Control Parameters Can Be Used in Each Mode?
               </div>
             </div>
             <div class="md-footer__button md-icon">
