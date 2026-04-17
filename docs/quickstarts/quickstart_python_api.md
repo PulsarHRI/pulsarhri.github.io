@@ -58,7 +58,7 @@ adapter.close()
 
     - Becoming familiar with the Python API code reference, starting with the [actuator classes and methods](../control/python_api/class_PulsarActuator.md).
 
-    - If you're interested in **simulating PULSAR actuators** without hardware, explore [how to create Virtual Actuators with the AUGUR Digital Twin](../set_up/set_up_virtual.md).
+    - If you're interested in **simulating PULSAR actuators** without hardware, explore [how to create virtual actuators with the AUGUR Digital Twin](../set_up/set_up_virtual.md).
 
 !!! question
     Need help or something doesn’t work? Head over to the [Support page](../support.md): we’ve got your back.

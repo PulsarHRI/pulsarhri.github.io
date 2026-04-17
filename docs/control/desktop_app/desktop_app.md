@@ -1,7 +1,7 @@
 # PULSAR Desktop App
 
 !!! note
-    Currently, the Desktop App works only with Real Actuators, not with Virtual Actuators.
+    Currently, the Desktop App works only with real actuators, not with virtual actuators.
 
 The **PULSAR Desktop App** provides the simplest way to get started with a PULSAR actuator. It offers a graphical interface (GUI) to configure, control, and monitor the actuator without writing any code.
 

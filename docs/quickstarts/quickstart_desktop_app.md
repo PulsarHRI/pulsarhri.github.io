@@ -58,7 +58,7 @@ This page walks you through how to run a real actuator connected via USB without
 
     - If you’re comfortable with Python and want **deeper control or multi-actuator setups**, continue with the [Quickstart Tutorial: Python API for Real Actuator](../quickstarts/quickstart_python_api.md).
         
-    - If you're interested in **simulating PULSAR actuators** without needing hardware, explore [how to create Virtual Actuators with the AUGUR Digital Twin](../set_up/set_up_virtual.md).
+    - If you're interested in **simulating PULSAR actuators** without needing hardware, explore [how to create virtual actuators with the AUGUR Digital Twin](../set_up/set_up_virtual.md).
 
 !!! question
     Need help or something doesn’t work? Head over to the [Support page](../support.md): we’ve got your back.
