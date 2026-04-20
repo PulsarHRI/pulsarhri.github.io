@@ -734,12 +734,12 @@
   <a href="#can-bus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CAN bus
+        CAN Bus
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="CAN bus">
+    <nav class="md-nav" aria-label="CAN Bus">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -757,7 +757,7 @@
   <a href="#can-bus-cables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CAN bus Cables
+        CAN Bus Cables
       
     </span>
   </a>
@@ -768,7 +768,7 @@
   <a href="#can-bus-termination-resistors-tr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CAN bus Termination Resistors (TR)
+        CAN Bus Termination Resistors (TR)
       
     </span>
   </a>
@@ -1794,12 +1794,12 @@
   <a href="#can-bus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CAN bus
+        CAN Bus
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="CAN bus">
+    <nav class="md-nav" aria-label="CAN Bus">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1817,7 +1817,7 @@
   <a href="#can-bus-cables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CAN bus Cables
+        CAN Bus Cables
       
     </span>
   </a>
@@ -1828,7 +1828,7 @@
   <a href="#can-bus-termination-resistors-tr" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CAN bus Termination Resistors (TR)
+        CAN Bus Termination Resistors (TR)
       
     </span>
   </a>
@@ -1861,44 +1861,45 @@
 <h2 id="power-bus">Power Bus</h2>
 <p>The power bus requirements are:</p>
 <ul>
-<li>Voltage: 48V DC</li>
-<li>Current: up to 30A</li>
+<li>Voltage: 48 V DC</li>
+<li>Current: up to 30 A</li>
 </ul>
-<p>Keep in mind that the actuators usually draw much less current (less than 1A without load), but you should still ensure that your power supply can provide the maximum current, or limit the current if the device is demanding more than the power supply can provide.</p>
+<p>Keep in mind that the actuators usually draw much less current (less than 1 A without load), but you should still ensure that your power supply can provide the maximum current. Otherwise, limit the current if the device demands more than the power supply can provide.</p>
 <h3 id="power-bus-cable">Power Bus Cable</h3>
 <p>The device has an XT30 male connector for power input. The pinout is as follows:</p>
-<p><img alt="XT30 Pinout" src="../../../assets/images/XT30_01.png" width="50%" /></p>
-<p>To power an actuator you will need a power cable with an XT30 female connector at one end, as shown in the example picture below</p>
+<p align="center">
+  <img src="/assets/images/XT30_01_inv.png" alt="XT30 Pinout" width="60%">
+</p>
+
+<p>To power an actuator, you will need a power cable with an XT30 female connector at one end, as shown in the example image below.</p>
 <p><img alt="XT30 Power Connection" src="../../../assets/images/power_connection.jpeg" width="50%" /></p>
 <h2 id="usb">USB</h2>
-<p>PULSAR devices also include a USB connector. </p>
-<p>This allows to connect one actuator directly to a computer via a standard USB-A to USB-C cable.</p>
-<p>Such USB interface is intended for configuration, single actuator testing and firmware updates.</p>
-<h2 id="can-bus">CAN bus</h2>
-<p>PULSAR devices are compatible with CAN-FD 1Mbit/s|5Mbit/s. 
-This is the communication mode currently available to connect and control multiple actuators within a robotic system: all PULSAR HRI devices have dual CAN connectors, so you can daisy-chain them easily. </p>
-<p>An example of CAN bus is depicted in the diagram below, showing CAN bus connection between two daisy-chained PULSAR actuators and a PULSAR CAN to USB adapter, with Termination Resistors (TR) at the two ends of the bus.</p>
-<p><img alt="CAN example" src="../../../assets/images/can_02.png" /></p>
+<p>PULSAR devices also include a USB connector. This allows one actuator to be connected directly to a computer via a standard USB-A to USB-C cable. This USB interface is intended for configuration, single actuator testing and firmware updates.</p>
+<h2 id="can-bus">CAN Bus</h2>
+<p>PULSAR devices are compatible with CAN-FD 1 Mbit/s | 5 Mbit/s. 
+This is the communication mode currently available for connecting and controlling multiple actuators within a robotic system. All PULSAR HRI devices have dual CAN connectors, so they can be daisy-chained easily.</p>
+<p>An example of a CAN bus is shown in the diagram below. It shows a CAN bus connection between two daisy-chained PULSAR actuators and a PULSAR CAN-to-USB adapter, with termination resistors (TR) at both ends of the bus.</p>
+<p><img alt="CAN example" src="../../../assets/images/can_02_inv.png" /></p>
 <h3 id="can-communication-adapter">CAN Communication Adapter</h3>
-<p>A dedicated device is required in order to enable communicating to PULSAR HRI actuators via CAN communication protocol.</p>
-<p>Different devices are available on the market to do so, and we provide a CAN to USB adapter, shown below from both sides.</p>
+<p>A dedicated device is required to communicate with PULSAR HRI actuators via the CAN communication protocol.</p>
+<p>Different devices are available on the market for this purpose, and we provide a CAN-to-USB adapter, shown below from both sides.</p>
 <p><img alt="CAN adapter" src="../../../assets/images/CAN_adapter.png" /></p>
-<h3 id="can-bus-cables">CAN bus Cables</h3>
-<p>The cables for realizing the CAN bus connections compatible with PULSAR HRI actuators are characterized by having 3-pin Molex PicoBlade connectors at the two ends.
-Such cables are available on the market, and can provided by PULSAR HRI, with an example shown below.</p>
+<h3 id="can-bus-cables">CAN Bus Cables</h3>
+<p>The cables used to create CAN bus connections compatible with PULSAR HRI actuators have 3-pin Molex PicoBlade connectors at both ends.</p>
+<p>Such cables are available on the market and can also be provided by PULSAR HRI. An example is shown below.</p>
 <p><img alt="CAN Bus Cable" src="../../../assets/images/Can_bus_cable.jpeg" width="50%" /></p>
 <p>Their pinout is as follows:</p>
 <p><img alt="CAN Bus Pinout" src="../../../assets/images/can_01.png" /></p>
-<p>When purchasing or making one such cable, ensure that the pinout at both ends of teh cable is respected, as indicated below</p>
+<p>When purchasing or making such a cable, ensure that the pinout at both ends of the cable is respected, as shown below.</p>
 <p><img alt="CAN Bus Pins Ends" src="../../../assets/images/Can_cable_pins_ends.png" /></p>
-<h3 id="can-bus-termination-resistors-tr">CAN bus Termination Resistors (TR)</h3>
-<p>Industry standard CAN specifications require Termination Resistors (TR)  at both ends of the bus (usually 120 Ohm) to ensure a stable data transmission on the CAN bus. This is particularly important for high-speed communication. </p>
+<h3 id="can-bus-termination-resistors-tr">CAN Bus Termination Resistors (TR)</h3>
+<p>Industry-standard CAN specifications require termination resistors (TR) at both ends of the bus, usually 120 ohms, to ensure stable data transmission on the CAN bus. This is particularly important for high-speed communication.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Ensure to connect the termination resistors at both ends of the CAN bus to avoid communication issues.</p>
+<p>Ensure that termination resistors are connected at both ends of the CAN bus to avoid communication issues.</p>
 </div>
-<p>Such TRs simply consist of a 3-way Molex picoblade connector with a 120 Ohm resistor between the CAN-H and CAN_L pins.</p>
-<p>These TRs are not usually found on the market: they can be either self-made, or provided by PULSAR HRI, one example shown below. </p>
+<p>These TRs consist of a 3-way Molex PicoBlade connector with a 120-ohm resistor between the CAN-H and CAN-L pins.</p>
+<p>These TRs are not usually available on the market. They can either be made by the user or provided by PULSAR HRI. An example is shown below.</p>
 <p><img alt="Termination resistor" src="../../../assets/images/termination_resistor.jpeg" width="30%" /></p>
 
 
