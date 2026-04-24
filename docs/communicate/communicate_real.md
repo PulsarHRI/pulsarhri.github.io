@@ -7,7 +7,9 @@ Currently, there are two supported modes of communication:
 1. **USB**: Direct connection to a single actuator using a USB-C cable.
 2. **CAN** (via USB-to-CAN adapter): Used for connecting one or multiple actuators on a CAN bus.
 
-![High-level ecosystem diagram](../assets/images/high_level_diagram_ecosystem.png)
+<p align="center">
+  <img src="/assets/images/high_level_diagram_ecosystem_black.png" alt="High-level ecosystem diagram" width="80%">
+</p>
 
 ---
 
@@ -32,7 +34,6 @@ Use a USB-A to USB-C cable to connect the actuator directly to your computer.
 To verify the connection either start up the [PULSAR Desktop App](../control/desktop_app/desktop_app.md), or use the [Python API CLI tool](../control/python_api/cli.md).
 
 You should see your actuator listed.
-
 
 ---
 
