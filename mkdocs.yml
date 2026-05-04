@@ -95,6 +95,16 @@ nav:
         - API Code Reference:
           - control/python_api/class_PulsarActuator.md
           - control/python_api/class_PCP_over_USB.md
+    - "C++ API":
+        - control/cpp_api/cli.md
+        - Examples:
+          - control/cpp_api/example_single_actuator.md
+          - control/cpp_api/example_multiple_actuators.md
+          - control/cpp_api/example_advanced_features.md
+          - control/cpp_api/example_log_to_csv.md
+          - control/cpp_api/example_communication_information.md
+          - control/cpp_api/example_test_actuator_motion.md
+          - control/cpp_api/example_test_synchronization.md
     - Control Modes Explained:
       - control/control_modes_explained/control_modes_overview.md
       - control/control_modes_explained/control_modes_parameters.md
