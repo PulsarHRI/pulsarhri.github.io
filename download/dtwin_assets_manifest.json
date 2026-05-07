@@ -1,0 +1,21 @@
+{
+  "latest": "20260213-test",
+  "releases": {
+    "20260213-test": {
+      "label": "Dummy DTwin asset package for installer testing",
+      "models": [
+        "DUMMY"
+      ],
+      "notes": "Placeholder files only. This archive validates download and extraction plumbing and does not contain a real DTwin model.",
+      "pcp_api": "development",
+      "platforms": {
+        "any": {
+          "sha256": "79978d2f22def74bbf46a7b624b0148d6ba84b800541ba74acaf520393d19161",
+          "size": 4341,
+          "url": "dtwin_assets/pulsar-dtwin-assets-20260213-test.zip"
+        }
+      },
+      "released": "2026-02-13"
+    }
+  }
+}

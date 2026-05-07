@@ -1818,6 +1818,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download AUGUR Digital Twin
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1834,6 +1852,36 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#temporary-test-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporary test package
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1949,6 +1997,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#temporary-test-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temporary test package
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1965,8 +2032,20 @@
 
 
 <h1 id="download-augur-digital-twin">Download AUGUR Digital Twin</h1>
-<p>In this page you can find the AUGUR Digital Twin library files to set up PULSAR HRI virtual actuators</p>
-<p>Coming soon.. <a href="../../support/">contact our team for more info</a></p>
+<p>AUGUR DTwin asset packages provide the generated shared libraries and Python bindings needed to run PULSAR HRI virtual actuator examples.</p>
+<h2 id="temporary-test-package">Temporary test package</h2>
+<p>The current public package is a dummy release used to validate the download workflow before publishing real generated DTwin assets. It contains placeholder files only and cannot run a real virtual actuator model.</p>
+<ul>
+<li>Latest test version: <code>20260213-test</code></li>
+<li>Models: <code>DUMMY</code></li>
+<li>Manifest: <a href="../dtwin_assets_manifest.json"><code>dtwin_assets_manifest.json</code></a></li>
+<li>Archive: <a href="../dtwin_assets/pulsar-dtwin-assets-20260213-test.zip"><code>pulsar-dtwin-assets-20260213-test.zip</code></a></li>
+</ul>
+<p>From the Python API repository, install the package with:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>examples<span class="w"> </span>install-dtwin-assets<span class="w"> </span>--version<span class="w"> </span><span class="m">20260213</span>-test
+</span></code></pre></div>
+<p>Once real DTwin packages are published, this page will keep the newest compatible release at the top while preserving older versions for compatibility checks.</p>
+<p>For support, <a href="../../support/">contact our team</a>.</p>
 
 
 
