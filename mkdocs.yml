@@ -96,6 +96,7 @@ nav:
           - control/python_api/class_PulsarActuator.md
           - control/python_api/class_PCP_over_USB.md
     - "C++ API":
+        - control/cpp_api/install_cpp_api.md
         - control/cpp_api/cli.md
         - Examples:
           - control/cpp_api/example_single_actuator.md
