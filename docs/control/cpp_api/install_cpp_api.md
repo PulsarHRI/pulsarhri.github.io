@@ -16,7 +16,7 @@ The current release targets Linux x86_64 systems, mainly Ubuntu/Debian.
 
 ## Available Packages
 
-PULSAR HRI provides the C++ API in two Linux package formats:
+PULSAR HRI provides the C++ API in [two Linux package formats](../../download/download_cpp_api.md):
 
 ```text
 pcp-api-cpp-<version>-linux-x86_64.deb
@@ -85,9 +85,7 @@ For Ubuntu/Debian systems, the recommended installation method is the Debian pac
 
 Download:
 
-```text
-pcp-api-cpp-<version>-linux-x86_64.deb
-```
+[pcp-api-cpp-0.9.1-linux-x86_64.deb](../../download/pcp-api-cpp-0.9.1-linux-x86_64.deb)
 
 Install it with:
 
@@ -103,9 +101,7 @@ Use this method if you want to install the SDK manually into a custom folder.
 
 Download:
 
-```text
-pcp-api-cpp-<version>-linux-x86_64.tar.gz
-```
+[pcp-api-cpp-0.9.1-linux-x86_64.tar.gz](../../download/pcp-api-cpp-0.9.1-linux-x86_64.tar.gz)
 
 Extract it to a location of your choice. For a system-like local installation, `/opt/pcp_api` is recommended:
 
