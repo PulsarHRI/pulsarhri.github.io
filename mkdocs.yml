@@ -69,7 +69,7 @@ nav:
   - index.md
   - Quickstart Tutorials: 
     - "Set up Real Actuator and connect via USB": quickstarts/quickstart_set_up_usb.md
-    - "No-Code Desktop App for Real Actuator via USB": quickstarts/quickstart_desktop_app.md
+    - "No-Code GUI for Real Actuator via USB": quickstarts/quickstart_pulsar_app.md
     - "Python API for Real Actuator via USB": quickstarts/quickstart_python_api.md
   - "Set Up & Communication": 
     - "with Real Actuators":
@@ -83,7 +83,7 @@ nav:
       - set_up/set_up_virtual.md
       - communicate/communicate_virtual.md
   - "Control Actuators":
-    - "Desktop App": control/desktop_app/desktop_app.md
+    - "PULSAR App GUI": control/pulsar_app/pulsar_app.md
     - "Python API":
         - control/python_api/install_python_api.md
         - control/python_api/cli.md
@@ -117,7 +117,7 @@ nav:
   # - Licensing & Support:
   #     - licensing.md
   - Downloads:
-      - download/download_app.md
+      - "Desktop App Download": download/download_app.md
       - download/download_dtwin.md
       - download/download_cpp_api.md
       - set_up/hardware_interfaces/3d_models.md

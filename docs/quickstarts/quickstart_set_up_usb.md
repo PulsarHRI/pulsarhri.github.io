@@ -1,5 +1,5 @@
 # Quickstart Tutorial: Set Up Real Actuator and Connect via USB
-Follow this tutorial for the fastest way to set up a PULSAR actuator out of the box, connected via USB. You will then be able to get it running in no time with the [PULSAR HRI Desktop App](../control/desktop_app/desktop_app.md).
+Follow this tutorial for the fastest way to set up a PULSAR actuator out of the box, connected via USB. You will then be able to get it running in no time with the [PULSAR App no-code GUI](../control/pulsar_app/pulsar_app.md).
 
 ## 🧰 What You’ll Need
 
@@ -29,7 +29,7 @@ Usually **not** provided by PULSAR HRI:
 </p>
 
 !!! success
-    Your actuator is now connected! Move to the next [Quickstart Tutorial: No-Code Desktop App for Real Actuator](../quickstarts/quickstart_desktop_app.md) to get it running in minutes!
+    Your actuator is now connected! Move to the next [Quickstart Tutorial: No-Code GUI for a Real Actuator](../quickstarts/quickstart_pulsar_app.md) to get it running in minutes!
 
 !!! question
     Need help, or is something not working? Head over to the [Support page](../support.md): we’ve got your back.
