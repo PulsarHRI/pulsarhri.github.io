@@ -31,7 +31,7 @@ At a glance, these are the main elements of the PULSAR HRI ecosystem:
     - [**PULSAR App GUI**](control/pulsar_app/pulsar_app.md): A no-code GUI for single-actuator testing, available in the browser or as a desktop package, offering [the easiest quickstart experience](quickstarts/quickstart_pulsar_app.md) to get familiar with PULSAR HRI actuators and their control.
     - [**Python API**](control/python_api/install_python_api.md): A simple but powerful way to control multiple actuators in robotics prototypes and to leverage Python libraries such as for **ML** and **AI** applications.
         - 🚧 **ROS2 Python Node** (*under development*).
-    - 🚧 [**C++ API**](control/cpp_api/cli.md): Intended to control multiple actuators in demanding applications with strict real-time requirements, where latency is a blocker.
+    - [**C++ API**](control/cpp_api/cli.md): Intended to control multiple actuators in demanding applications with strict real-time requirements, where latency is a blocker.
         - 🚧 **ROS2 C++ Node** (*under development*).
 
 !!! note
