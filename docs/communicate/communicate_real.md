@@ -31,7 +31,7 @@ Use a USB-A to USB-C cable to connect the actuator directly to your computer.
 
 ### 2. Check USB Communication
 
-To verify the connection either start up the [PULSAR Desktop App](../control/desktop_app/desktop_app.md), or use the [Python API CLI tool](../control/python_api/cli.md).
+To verify the connection either start up the [PULSAR App GUI](../control/pulsar_app/pulsar_app.md), or use the [Python API CLI tool](../control/python_api/cli.md).
 
 You should see your actuator listed.
 
@@ -80,7 +80,7 @@ Your setup should now look like this:
 
 ### 3. Connect via CAN
 
-To communicate via CAN using the [Python API](../control/python_api/install_python_api.md) or the [Desktop App](../control/desktop_app/desktop_app.md), you will need the **CAN address** of the actuator.
+To communicate via CAN using the [Python API](../control/python_api/install_python_api.md) or the [PULSAR App GUI](../control/pulsar_app/pulsar_app.md), you will need the **CAN address** of the actuator.
 
 * Each actuator has a unique integer CAN address stored in its firmware.
 * The address is automatically included in CAN messages so that each actuator knows which messages to respond to.
@@ -196,7 +196,7 @@ This allows parallel, modular control of different parts of the system.
 !!! success
     You can now connect to the actuator(s)!! You can now interact with the actuator either using:
 
-    * The [PULSAR HRI Desktop App as per this tutorial](../quickstarts/quickstart_desktop_app.md)
+    * The [PULSAR App GUI as per this tutorial](../quickstarts/quickstart_pulsar_app.md)
     * The [Python API as per this other tutorial](../quickstarts/quickstart_python_api.md)
 
 !!! question

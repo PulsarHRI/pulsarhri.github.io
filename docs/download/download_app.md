@@ -1,6 +1,12 @@
 # Download Desktop App
 
-Here you can download the latest version of the [PULSAR HRI Desktop App](../control/desktop_app/desktop_app.md), you can use it following the [Quickstart No-Code](../quickstarts/quickstart_desktop_app.md) guide.
+Here you can download the desktop package for the [PULSAR App no-code GUI](../control/pulsar_app/pulsar_app.md). You can use it by following the [No-Code GUI quickstart](../quickstarts/quickstart_pulsar_app.md).
+
+If you do not want to install the desktop app, use the browser version at [https://app.pulsarhri.com/](https://app.pulsarhri.com/).
+
+=== "Windows"
+
+    [Download PulsarApp-1.0.0.zip](../assets/desktopApp/PulsarApp-1.0.0.zip)
 
 === "Linux"
 
@@ -15,10 +21,6 @@ Here you can download the latest version of the [PULSAR HRI Desktop App](../cont
     This will automatically install the app and resolve dependencies.  
     Once installed, you can launch the app from your applications menu by searching for **PulsarApp**.
 
-
-=== "Windows"
-
-    [Download PulsarApp-1.0.0.zip](../assets/desktopApp/PulsarApp-1.0.0.zip)
 
 ---
 

@@ -1,11 +1,15 @@
-# Quickstart Tutorial: No-Code Desktop App for a Real Actuator via USB
+# Quickstart Tutorial: No-Code GUI for a Real Actuator via USB
 
-This page walks you through how to run a real actuator connected via USB without writing any code, using the [PULSAR HRI Desktop App](../control/desktop_app/desktop_app.md), which can be downloaded [here](../download/download_app.md).
+This page walks you through how to run a real actuator connected via USB without writing any code, using the [PULSAR App no-code GUI](../control/pulsar_app/pulsar_app.md).
 
 ## 👣 Step-by-Step Guide
 1. Make sure your actuator is set up and connected via USB, as described in the [Quickstart Tutorial: Set Up a Real Actuator and Connect via USB](../quickstarts/quickstart_set_up_usb.md).
 
-2. Launch the [PULSAR HRI Desktop App](../control/desktop_app/desktop_app.md). You should see the actuator connected via USB in the **Devices** drop-down menu. When you select it, a pop-up will confirm the connection and display the actuator's address.
+2. Launch the [PULSAR App](../control/pulsar_app/pulsar_app.md) using either:
+    - **Browser app**: open [https://app.pulsarhri.com/](https://app.pulsarhri.com/)
+    - **Desktop app**: launch the [downloaded desktop package](../download/download_app.md)
+
+    You should see the actuator connected via USB in the **Devices** drop-down menu. When you select it, a pop-up will confirm the connection and display the actuator's address.
 > *The actuator address is useful to connect via CAN bus instead of USB.*
 <p align="center">
   <img src="/assets/images/GUI_to_connect.png" alt="GUI to connect" width="30%">
@@ -26,7 +30,7 @@ This page walks you through how to run a real actuator connected via USB without
     - You can now change the setpoint speed either by typing the desired rad/s value in the textbox, or by moving the slider.
     - You will see the actuator moving and the live plot of the position at the bottom of the GUI being updated accordingly.
 
-4. Next, try **Position Control** mode::
+4. Next, try **Position Control** mode:
     - Select **Position Control** mode under **Control Type**.
     - Click the **SET 0 POSITION** button. This stores the current actuator position (output angle) as zero. 
         - If you skip this step, the actuator will use the most recently stored zero position.
