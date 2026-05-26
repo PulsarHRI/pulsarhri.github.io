@@ -7,7 +7,7 @@ PULSAR HRI develops best-in-class actuation systems and a surrounding ecosystem 
 
 ### ⚡ First Time Here?
 
-If you really can't wait to get hands-on, just go straight to the [**Quickstart No-Code Guide**](quickstarts/quickstart_desktop_app.md) to set up, power your actuator and get moving in minutes!
+If you can't wait to see your actuator moving, just go straight to the [**No-Code GUI Quickstart**](quickstarts/quickstart_pulsar_app.md) to set up, power your actuator and get moving in minutes controlling it directly from your browser!
 
 !!! tip
     Make sure to read the following short section: it will allow you to easily find what you need on the website.
@@ -28,10 +28,10 @@ At a glance, these are the main elements of the PULSAR HRI ecosystem:
     - 🚧 [**AUGUR Digital Twin**](set_up/set_up_virtual.md) (*under development*): Models the physics of the real actuator and runs the exact same control algorithms.
 <br><br>
 - **CONTROL INTERFACES** of different kinds and for different needs, used to control both real and virtual actuators:
-    - [**Desktop Application**](control/desktop_app/desktop_app.md): A no-code GUI for single-actuator testing, offering [the easiest quickstart experience](quickstarts/quickstart_desktop_app.md) and to get familiar with PULSAR HRI actuators and their control.
+    - [**PULSAR App GUI**](control/pulsar_app/pulsar_app.md): A no-code GUI for single-actuator testing, available in the browser or as a desktop package, offering [the easiest quickstart experience](quickstarts/quickstart_pulsar_app.md) to get familiar with PULSAR HRI actuators and their control.
     - [**Python API**](control/python_api/install_python_api.md): A simple but powerful way to control multiple actuators in robotics prototypes and to leverage Python libraries such as for **ML** and **AI** applications.
         - 🚧 **ROS2 Python Node** (*under development*).
-    - 🚧 [**C++ API**](control/cpp_api/cli.md): Intended to control multiple actuators in demanding applications with strict real-time requirements, where latency is a blocker.
+    - [**C++ API**](control/cpp_api/cli.md): Intended to control multiple actuators in demanding applications with strict real-time requirements, where latency is a blocker.
         - 🚧 **ROS2 C++ Node** (*under development*).
 
 !!! note
@@ -52,4 +52,3 @@ Visit our [Support page](support.md) or check the [FAQ](faq.md).
 
 ---
 ![PULSAR](assets/images/P98_01.jpg){ loading=lazy }
-
