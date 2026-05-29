@@ -22,7 +22,8 @@ If you can't wait to see your actuator moving, just go straight to the [**No-Cod
 At a glance, these are the main elements of the PULSAR HRI ecosystem:
 
 <p align="center">
-  <img src="/assets/images/high_level_diagram_ecosystem_black_no_logo.png" alt="High-level ecosystem diagram" width="80%">
+  <img class="pulsar-theme-image pulsar-theme-image--light pulsar-ecosystem-diagram" src="assets/images/high_level_diagram_ecosystem_white.png" alt="High-level ecosystem diagram">
+  <img class="pulsar-theme-image pulsar-theme-image--dark pulsar-ecosystem-diagram" src="assets/images/high_level_diagram_ecosystem_black.png" alt="High-level ecosystem diagram">
 </p>
 
 - **REAL ACTUATORS** which, once [set up](set_up/set_up_real.md), offer the following [hardware communication interfaces](communicate/communicate_real.md): 
