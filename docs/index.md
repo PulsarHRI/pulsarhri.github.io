@@ -17,7 +17,7 @@ If you really can't wait to get hands-on, just go straight to the [**Quickstart 
 At a glance, these are the main elements of the PULSAR HRI ecosystem:
 
 <p align="center">
-  <img src="/assets/images/high_level_diagram_ecosystem_black.png" alt="High-level ecosystem diagram" width="80%">
+  <img src="/assets/images/high_level_diagram_ecosystem_black.png" alt="High-level ecosystem diagram" width="90%">
 </p>
 
 - **REAL ACTUATORS** which, once [set up](set_up/set_up_real.md), offer the following [hardware communication interfaces](communicate/communicate_real.md): 
@@ -30,9 +30,8 @@ At a glance, these are the main elements of the PULSAR HRI ecosystem:
 - **CONTROL INTERFACES** of different kinds and for different needs, used to control both real and virtual actuators:
     - [**Desktop Application**](control/desktop_app/desktop_app.md): A no-code GUI for single-actuator testing, offering [the easiest quickstart experience](quickstarts/quickstart_desktop_app.md) and to get familiar with PULSAR HRI actuators and their control.
     - [**Python API**](control/python_api/install_python_api.md): A simple but powerful way to control multiple actuators in robotics prototypes and to leverage Python libraries such as for **ML** and **AI** applications.
-        - 🚧 **ROS2 Python Node** (*under development*).
-    - 🚧 [**C++ API**](control/cpp_api/cli.md): Intended to control multiple actuators in demanding applications with strict real-time requirements, where latency is a blocker.
-        - 🚧 **ROS2 C++ Node** (*under development*).
+    - [**C++ API**](control/cpp_api/install_cpp_api.md): Intended to control multiple actuators in demanding applications with strict real-time requirements, where latency is a blocker.
+    - 🚧 [**ROS 2 Bidge**](control/ros2_bridge/install_ros2_bridge.md) (*under development*): The package sits between high-level robotic software (ROS 2) and the low-level PULSAR Communication Protocol (PCP) actuator interface (Python/C++ APIs). 
 
 !!! note
     A quick alignment on naming we use:
