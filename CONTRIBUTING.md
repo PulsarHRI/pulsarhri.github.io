@@ -30,7 +30,7 @@ python -m pip install -r requirements.txt
 Start the live preview server:
 
 ```bash
-mkdocs serve
+python -m mkdocs serve
 ```
 
 Open:
@@ -46,12 +46,12 @@ Stop the server with `Ctrl+C`.
 Before submitting changes, run:
 
 ```bash
-mkdocs build --strict
+python -m mkdocs build --strict
 ```
 
-The build should complete successfully. Notebook validation warnings may appear
-until older notebooks are normalized, but they should not cause the build to
-fail.
+Running MkDocs through `python -m` ensures the command uses the active virtual
+environment instead of a stale global executable. The build should complete
+successfully.
 
 ## Writing Guidelines
 

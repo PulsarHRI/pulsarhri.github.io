@@ -20,6 +20,9 @@ This is the most straightforward method for connecting a single actuator during 
 !!! warning
     Before continuing, ensure that your actuator is securely mounted and powered on, as explained in the [Set Up Real Actuators](../set_up/set_up_real.md) guide.
 
+!!! tip
+    If you only need the fastest path to a direct USB connection, use the [USB setup quickstart](../quickstarts/quickstart_set_up_usb.md).
+
 
 ### 1. Connect USB
 

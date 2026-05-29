@@ -7,7 +7,7 @@ This page walks you through how to run a real actuator connected via USB without
 
 2. Launch the [PULSAR App](../control/pulsar_app/pulsar_app.md) using either:
     - **Browser app**: open [https://app.pulsarhri.com/](https://app.pulsarhri.com/)
-    - **Desktop app**: launch the [downloaded desktop package](../download/download_app.md)
+    - **Desktop package**: launch the [downloaded desktop package](../download/download_app.md)
 
     You should see the actuator connected via USB in the **Devices** drop-down menu. When you select it, a pop-up will confirm the connection and display the actuator's address.
 > *The actuator address is useful to connect via CAN bus instead of USB.*
@@ -62,7 +62,7 @@ This page walks you through how to run a real actuator connected via USB without
 
     - If you’re comfortable with Python and want **deeper control or multi-actuator setups**, continue with the [Quickstart Tutorial: Python API for Real Actuator](../quickstarts/quickstart_python_api.md).
         
-    - If you're interested in **simulating PULSAR actuators** without needing hardware, explore [how to create virtual actuators with the AUGUR Digital Twin](../set_up/set_up_virtual.md).
+    - If you're interested in **simulating PULSAR actuators** without needing hardware, explore [how to create virtual actuators with the AUGUR Digital Twin](../set_up/set_up_virtual.md). The first public DTwin beta asset release is available for Linux x86_64 and Windows x86_64.
 
 !!! question
     Need help or something doesn’t work? Head over to the [Support page](../support.md): we’ve got your back.
