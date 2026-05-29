@@ -1,122 +1,56 @@
-from typing import List, Optional, Callable
 import logging
+from enum import Enum
+from math import nan
+from pathlib import Path
+from typing import Any, Callable, Dict, List, Optional, Union
 
+class PcpOverUsb:
+    def __init__(self, port: Optional[str] = None, connect_on_init: bool = True, logger: Optional[logging.Logger] = None) -> None: ...
 
-class PCP_over_USB:
-    """
-    PCP (Pulsar Communication Protocol) adapter for USB connections.
+    def close(self) -> None: ...
 
-    This class provides USB serial communication for the PCP protocol, sending messages,
-    receiving incoming messages in a thread for asynchronous communication
-    """
-
-    def __init__(self, port: Optional[str] = None, connect_on_init: bool = True, logger: Optional[logging.Logger] = None) -> None:
-        """
-        Initialize PCP over USB communication adapter.
-
-        Args:
-            port: Serial port name (e.g., 'COM3', '/dev/ttyACM0'). If None, auto-discovery is attempted.
-            connect_on_init: Whether to automatically connect during initialization
-            logger: Optional logger for debugging messages
-        """
+    def set_callback(self, address: int, callback: Callable) -> None:
+        """Register a callback for a transport address."""
         ...
 
-    def connect(self, port: Optional[str] = None) -> bool:
-        """
-        Establish a connection to the device.
-
-        Args:
-            port (str, optional): Serial port name. If None, uses previously set port or auto-discovery.
-
-        Returns:
-            bool: True if connection successful, False otherwise
-        """
-        ...
-
-    def disconnect(self) -> None:
-        """
-        Disconnect from the USB serial port and stop background threads.
-
-        Cleanly shuts down the polling thread and closes the serial connection.
-        """
-        ...
-
-    def close(self) -> None:
-        """
-        Alias for disconnect() method.
-
-        Provided for compatibility and explicit resource cleanup.
-        """
-        ...
-
-    def set_callback(self, address: int, callback: Callable[[int, List[int]], None]) -> None:
-        """
-        Register a callback function for messages from a specific PCP address.
-
-        Args:
-            address: PCP address to listen for (0x0001-0x3FFE)
-            callback: Function to call when messages are received from this address.
-                     Callback signature: callback(address: int, data: List[int])
-        """
-        ...
+    def setCallback(self, address: int, callback: Callable) -> None: ...
 
     def remove_callback(self, address: int) -> None:
-        """
-        Unregister the callback function for a specific PCP address.
-
-        Args:
-            address: PCP address to stop listening for (0x0001-0x3FFE)
-        """
+        """Remove a callback for a specific address"""
         ...
 
-    def send_PCP(self, address: int, data: list, priority: bool = True, can_high_speed: bool = False) -> bool:
-        """
-        Send a PCP message to the specified address.
+    def removeCallback(self, address: int) -> None: ...
 
-        Args:
-            address: Target PCP address (0x0001-0x3FFE)
-            data: List of bytes to send as message payload
-            priority: If True, send as a high-priority message
-            can_high_speed: If True, allow using a higher-speed CAN/transport mode when supported
+    def connect(self, port: Optional[str] = None) -> bool: ...
 
-        Returns:
-            True if message was sent successfully, False otherwise
-        """
+    def disconnect(self) -> None: ...
+
+    @property
+    def is_connected(self) -> bool: ...
+
+    @staticmethod
+    def check_pcp_id_range(can_id: int) -> bool:
+        """Check if the address fits the 14-bit PCP address field."""
         ...
 
     @staticmethod
-    def get_ports() -> List[str]:
-        """
-        Get list of available USB serial ports from Pulsar HRI devices.
+    def check_pcp_payload_size(payload) -> bool: ...
 
-        Automatically filters serial ports to only include those manufactured
-        by Pulsar HRI, which are compatible with PCP over USB.
+    def send_PCP(self, address: int, data: list, priority: bool = True, can_high_speed: bool = False) -> bool: ...
 
-        Returns:
-            List of serial port names/paths (e.g., ['COM3', 'COM5'] on Windows
-            or ['/dev/ttyACM0', '/dev/ttyACM1'] on Linux)
-        """
+    def enter_bootloader(self) -> None:
+        """To put the CAN adapter itself into bootloader mode """
         ...
+
+    @staticmethod
+    def get_ports() -> list[str]: ...
 
     @staticmethod
     def get_port() -> str:
-        """
-        Auto-discover a single USB serial port for PCP communication.
-
-        Attempts to automatically find a suitable serial port. If exactly one
-        Pulsar HRI port is found, returns it. Otherwise, returns empty string.
-
-        Returns:
-            Serial port name if exactly one suitable port is found, empty string otherwise
-        """
+        """Autodiscover the serial port for PCP over USB."""
         ...
 
-    @property
-    def is_connected(self) -> bool:
-        """
-        Check if the USB connection is active.
+class PCP_over_USB(PcpOverUsb):
+    """Deprecated compatibility name for PcpOverUsb."""
 
-        Returns:
-            True if connected, False otherwise
-        """
-        ...
+    def __init__(self, port: Optional[str] = None, connect_on_init: bool = True, logger: Optional[logging.Logger] = None) -> None: ...

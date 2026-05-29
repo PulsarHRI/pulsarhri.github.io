@@ -1,9 +1,23 @@
 # Control Modes Overview
 
+!!! note
+    This page describes the control-mode terminology used by Python API 2.0.0 and the matching actuator firmware family. Check the compatibility matrix when it is published before mixing firmware and API versions.
+
 ## Overview of Operating Modes
 
 Before initiating any actuator movement, it is essential to select the appropriate control mode. The selected mode determines how the actuator interprets and responds to setpoints. Once a control mode is active, the system establishes the corresponding setpoint based on that mode’s logic and parameters.
 
+## API Mode Names
+
+| User-facing mode | Python API enum | Control type value |
+| --- | --- | --- |
+| Torque control | `Mode.TORQUE` | `5` |
+| Speed control | `Mode.SPEED` | `6` |
+| Position control | `Mode.POSITION` | `7` |
+| Impedance control | `Mode.IMPEDANCE` | `8` |
+| Fixed voltage injection | `Mode.FVI` | `2` |
+| Open loop | `Mode.OPEN_LOOP` | `3` |
+| Direct voltage injection | `Mode.DVI` | `4` |
 
 ## Standard Control Modes
 

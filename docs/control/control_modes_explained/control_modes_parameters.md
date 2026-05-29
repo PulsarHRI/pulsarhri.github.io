@@ -1,5 +1,8 @@
 # Which Control Parameters Can Be Used in Each Mode?
 
+!!! note
+    This table describes Python API 2.0.0 control-mode terminology and the matching actuator firmware family. Check the compatibility matrix when it is published before mixing firmware and API versions.
+
 Not all available parameters are relevant to every control mode. The following table summarizes which control parameters are compatible with each control mode.
 
 **Table: Use of parameters by control mode**
@@ -23,4 +26,3 @@ Not all available parameters are relevant to every control mode. The following t
 | Max position (rad)                       | No                            | No                           | Yes                              | Yes                                | No                         | No                 | No                        | No                 |
 | Min position (rad)                       | No                            | No                           | Yes                              | Yes                                | No                         | No                 | No                        | No                 |
 | Max absolute torque (Nm)                 | Yes                           | Yes                          | Yes                              | Yes                                | Yes (for the debug bus)    | Yes (for the debug bus) | Yes (for the debug bus)   | Yes (for the debug bus) |
-
