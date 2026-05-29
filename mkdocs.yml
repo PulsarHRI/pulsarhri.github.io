@@ -106,6 +106,10 @@ nav:
           - control/cpp_api/example_communication_information.md
           - control/cpp_api/example_test_actuator_motion.md
           - control/cpp_api/example_test_synchronization.md
+    - ROS 2 Bridge:
+      - control/ros2_bridge/install_ros2_bridge.md
+      - control/ros2_bridge/cli.md
+      - control/ros2_bridge/tutorials.md
     - Control Modes Explained:
       - control/control_modes_explained/control_modes_overview.md
       - control/control_modes_explained/control_modes_parameters.md
