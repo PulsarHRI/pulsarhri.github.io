@@ -1,5 +1,5 @@
 site_name: PULSAR HRI Ecosystem Documentation
-site_description: How to use PULSAR HRI hardware and software, including actuators APIs and AUGUR digital twin.
+site_description: How to use PULSAR HRI hardware and software, including actuator APIs and the AUGUR Digital Twin.
 
 site_url: https://pulsarhri.github.io/
 use_directory_urls: true
@@ -37,8 +37,14 @@ theme:
     - content.code.copy
 plugins:
   - search
+  - redirects:
+      redirect_maps:
+        control/python_api/class_PCP_over_USB.md: control/python_api/class_PcpOverUsb.md
+        control/python_api/class_PulsarActuator.md: control/python_api/class_PulsarActuatorReal.md
   - mkdocstrings
   - mkdocs-jupyter
+exclude_docs: |
+  control/python_api/example_*_nb.ipynb
 markdown_extensions:
   - tables
   - attr_list
@@ -58,6 +64,9 @@ markdown_extensions:
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - assets/javascripts/external-links.js
+extra_css:
+  - assets/stylesheets/pulsar.css
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -71,6 +80,7 @@ nav:
     - "Set up Real Actuator and connect via USB": quickstarts/quickstart_set_up_usb.md
     - "No-Code GUI for Real Actuator via USB": quickstarts/quickstart_pulsar_app.md
     - "Python API for Real Actuator via USB": quickstarts/quickstart_python_api.md
+    - "Python API for Virtual Actuator with DTwin": quickstarts/quickstart_virtual_python_api.md
   - "Set Up & Communication": 
     - "with Real Actuators":
       - set_up/set_up_real.md
@@ -87,14 +97,12 @@ nav:
     - "Python API":
         - control/python_api/install_python_api.md
         - control/python_api/cli.md
-        - Jupyter Notebooks:
-          - Notebook:  control/python_api/example_single_actuator_nb.ipynb
-          - Notebook:  control/python_api/example_several_actuators_nb.ipynb
-          - Notebook:  control/python_api/example_advanced_features_nb.ipynb
-          - Notebook:  control/python_api/example_log_to_csv_nb.ipynb
+        - Examples Repository: control/python_api/examples.md
         - API Code Reference:
-          - control/python_api/class_PulsarActuator.md
-          - control/python_api/class_PCP_over_USB.md
+          - PcpOverUsb: control/python_api/class_PcpOverUsb.md
+          - PulsarActuatorReal: control/python_api/class_PulsarActuatorReal.md
+          - PulsarActuatorVirtual: control/python_api/class_PulsarActuatorVirtual.md
+          - Compatibility Aliases: control/python_api/compatibility_aliases.md
     - "C++ API":
         - control/cpp_api/install_cpp_api.md
         - control/cpp_api/cli.md
@@ -117,8 +125,9 @@ nav:
   # - Licensing & Support:
   #     - licensing.md
   - Downloads:
-      - "Desktop App Download": download/download_app.md
+      - "PULSAR App Desktop Package": download/download_app.md
       - download/download_dtwin.md
+      - "Robot Model Assets": download/download_robot_assets.md
       - download/download_cpp_api.md
       - set_up/hardware_interfaces/3d_models.md
   - support.md
