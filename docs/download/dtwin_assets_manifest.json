@@ -1,21 +1,29 @@
 {
-  "latest": "20260213-test",
+  "latest": "20260529_2",
   "releases": {
-    "20260213-test": {
-      "label": "Dummy DTwin asset package for installer testing",
+    "20260529_2": {
+      "label": "PULSAR DTwin actuator assets 20260529_2",
       "models": [
-        "DUMMY"
+        "P100",
+        "P90",
+        "PULSE115",
+        "PULSE98"
       ],
-      "notes": "Placeholder files only. This archive validates download and extraction plumbing and does not contain a real DTwin model.",
-      "pcp_api": "development",
+      "notes": "Linux x86_64 and Windows x86_64 generated DTwin shared libraries and Python bindings for the PCP API 2.0.0 release-candidate virtual actuator workflow.",
+      "pcp_api": ">=2.0.0rc1,<2.1",
       "platforms": {
-        "any": {
-          "sha256": "79978d2f22def74bbf46a7b624b0148d6ba84b800541ba74acaf520393d19161",
-          "size": 4341,
-          "url": "dtwin_assets/pulsar-dtwin-assets-20260213-test.zip"
+        "linux-x86_64": {
+          "sha256": "f2c48ccbd018663f569fb052d3fcada6a90f4784f4e65d4968683e40e79c7a61",
+          "size": 338784,
+          "url": "dtwin_assets/pulsar-dtwin-assets-20260529_2-linux-windows-x86_64.zip"
+        },
+        "windows-x86_64": {
+          "sha256": "f2c48ccbd018663f569fb052d3fcada6a90f4784f4e65d4968683e40e79c7a61",
+          "size": 338784,
+          "url": "dtwin_assets/pulsar-dtwin-assets-20260529_2-linux-windows-x86_64.zip"
         }
       },
-      "released": "2026-02-13"
+      "released": "2026-05-29"
     }
   }
 }
