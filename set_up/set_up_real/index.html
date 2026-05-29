@@ -6,14 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to use PULSAR HRI hardware and software, including actuators APIs and AUGUR digital twin.">
+        <meta name="description" content="How to use PULSAR HRI hardware and software, including actuator APIs and the AUGUR Digital Twin.">
       
       
       
         <link rel="canonical" href="https://pulsarhri.github.io/set_up/set_up_real/">
       
       
-        <link rel="prev" href="../../quickstarts/quickstart_python_api/">
+        <link rel="prev" href="../../quickstarts/quickstart_virtual_python_api/">
       
       
         <link rel="next" href="../../communicate/communicate_real/">
@@ -54,6 +54,8 @@
     
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/pulsar.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -387,6 +389,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstarts/quickstart_virtual_python_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API for Virtual Actuator with DTwin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -573,7 +603,7 @@
   <a href="#step-by-step-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        👣 Step-By-Step Guide
+        👣 Step-by-Step Guide
       
     </span>
   </a>
@@ -1066,62 +1096,15 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Jupyter Notebooks
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Jupyter Notebooks
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../control/python_api/example_single_actuator_nb/" class="md-nav__link">
+      <a href="../../control/python_api/examples/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Controlling One Real Actuator
+    Examples Repository
   
 
     
@@ -1130,98 +1113,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_several_actuators_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Controlling Several Real Actuators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_advanced_features_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced Features
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_log_to_csv_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Data to CSV
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1281,14 +1172,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/python_api/class_PulsarActuator/" class="md-nav__link">
+      <a href="../../control/python_api/class_PcpOverUsb/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    PulsarActuator
+    PcpOverUsb
   
 
     
@@ -1309,14 +1200,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/python_api/class_PCP_over_USB/" class="md-nav__link">
+      <a href="../../control/python_api/class_PulsarActuatorReal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    PCP_over_USB
+    PulsarActuatorReal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/python_api/class_PulsarActuatorVirtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PulsarActuatorVirtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/python_api/compatibility_aliases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility Aliases
   
 
     
@@ -1887,7 +1834,7 @@
   <span class="md-ellipsis">
     
   
-    Desktop App Download
+    PULSAR App Desktop Package
   
 
     
@@ -1915,7 +1862,35 @@
   <span class="md-ellipsis">
     
   
-    Download AUGUR Digital Twin
+    Download AUGUR Digital Twin Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/download_robot_assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot Model Assets
   
 
     
@@ -2087,7 +2062,7 @@
   <a href="#step-by-step-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        👣 Step-By-Step Guide
+        👣 Step-by-Step Guide
       
     </span>
   </a>
@@ -2112,24 +2087,24 @@
 
 
 <h1 id="set-up-real-actuators">Set Up Real Actuators</h1>
-<p>This page walks you through the mechanical and electrical setup of a real PULSAR actuator, excluding communication. For guidance on connecting via USB or CAN, see the next section: <a href="../../communicate/communicate_real/">Communicate with Real Actuators</a>.</p>
+<p>This page walks you through the mechanical and electrical setup of a real PULSAR actuator, excluding communication. If you only need the fastest USB path, start with the <a href="../../quickstarts/quickstart_set_up_usb/">USB setup quickstart</a>. For guidance on connecting via USB or CAN in more detail, see <a href="../../communicate/communicate_real/">Communicate with Real Actuators</a>.</p>
 <h2 id="what-youll-need">🧰 What You’ll Need</h2>
 <p>Usually provided by PULSAR HRI:</p>
 <ul>
 <li>1x PULSAR HRI <strong>actuator</strong></li>
 <li>1x <strong>Power Bus Cable</strong> (<a href="../hardware_interfaces/electrical_interfaces/#power-bus-cable">more details here</a>)</li>
 </ul>
-<p>Usually NOT provided by PULSAR HRI:</p>
+<p>Usually <strong>not</strong> provided by PULSAR HRI:</p>
 <ul>
 <li>A <strong>mechanical support</strong> and <strong>screws</strong> to secure the actuator (<a href="../hardware_interfaces/mechanical_interfaces/">see mounting hole patterns and printable designs</a>)</li>
-<li>A <strong>48V Power Supply Unit</strong> (<a href="../hardware_interfaces/electrical_interfaces/#power-bus">more details here</a>)</li>
-<li>A <strong>Computer</strong> (only needed later for communication setup)</li>
+<li>A <strong>48 V Power Supply Unit</strong> (<a href="../hardware_interfaces/electrical_interfaces/#power-bus">more details here</a>)</li>
+<li>A <strong>computer</strong> (only needed later for communication setup)</li>
 </ul>
-<div class="admonition operating-system-compatibility">
-<p class="admonition-title">Operating-system-compatibility</p>
+<div class="admonition note">
+<p class="admonition-title">Operating system compatibility</p>
+<p>Currently, the ecosystem is mainly compatible with and tested on Windows and Ubuntu Linux.</p>
 </div>
-<p>Currently the ecosystem is mainly compatible with, and tested on Windows and Linux Ubuntu operating systems</p>
-<h2 id="step-by-step-guide">👣 Step-By-Step Guide</h2>
+<h2 id="step-by-step-guide">👣 Step-by-Step Guide</h2>
 <ol>
 <li>
 <p><strong>Mechanically mount</strong> the actuator using the recommended fixture or a custom support. Refer to <a href="../hardware_interfaces/mechanical_interfaces/">Mechanical Interfaces</a> for guidance.</p>
@@ -2141,7 +2116,7 @@
 <p>Plug the Power Bus Cable into the actuator’s power port.</p>
 </li>
 <li>
-<p>Connect the other end to the 48V Power Supply Unit.</p>
+<p>Connect the other end to the 48 V Power Supply Unit.</p>
 </li>
 <li>
 <p><strong>Power on the actuator</strong>:</p>
@@ -2188,7 +2163,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../quickstarts/quickstart_python_api/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python API for Real Actuator via USB">
+          <a href="../../quickstarts/quickstart_virtual_python_api/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Python API for Virtual Actuator with DTwin">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2198,7 +2173,7 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Python API for Real Actuator via USB
+                Python API for Virtual Actuator with DTwin
               </div>
             </div>
           </a>
@@ -2276,6 +2251,8 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../assets/javascripts/external-links.js"></script>
       
     
   </body>

@@ -1,0 +1,26 @@
+{
+  "assets": {
+    "pulse_arm_4dof": {
+      "label": "Pulse Arm 4DOF MuJoCo robot assets",
+      "latest": "20260529_1",
+      "releases": {
+        "20260529_1": {
+          "label": "Pulse Arm 4DOF MuJoCo assets 20260529_1",
+          "models": [
+            "pulse_arm_4dof"
+          ],
+          "notes": "MuJoCo XML, meshes, texture, and sample joint-space trajectories used by the PCP API Python examples robot tutorial.",
+          "platforms": {
+            "any": {
+              "sha256": "727a29e7f8a2670a847f1b2b92494eb23f404b246b9d8c0eab1aa54c51e1e597",
+              "size": 9322220,
+              "strip_prefix": "assets",
+              "url": "robot_assets/pulse-arm-4dof-assets-20260529_1.zip"
+            }
+          },
+          "released": "2026-05-29"
+        }
+      }
+    }
+  }
+}

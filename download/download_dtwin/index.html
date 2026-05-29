@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to use PULSAR HRI hardware and software, including actuators APIs and AUGUR digital twin.">
+        <meta name="description" content="How to use PULSAR HRI hardware and software, including actuator APIs and the AUGUR Digital Twin.">
       
       
       
@@ -16,7 +16,7 @@
         <link rel="prev" href="../download_app/">
       
       
-        <link rel="next" href="../download_cpp_api/">
+        <link rel="next" href="../download_robot_assets/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Download AUGUR Digital Twin - PULSAR HRI Ecosystem Documentation</title>
+        <title>Download AUGUR Digital Twin Assets - PULSAR HRI Ecosystem Documentation</title>
       
     
     
@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
+      <link rel="stylesheet" href="../../assets/stylesheets/pulsar.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -80,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#download-augur-digital-twin" class="md-skip">
+        <a href="#download-augur-digital-twin-assets" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Download AUGUR Digital Twin
+              Download AUGUR Digital Twin Assets
             
           </span>
         </div>
@@ -374,6 +376,34 @@
     
   
     Python API for Real Actuator via USB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstarts/quickstart_virtual_python_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API for Virtual Actuator with DTwin
   
 
     
@@ -993,62 +1023,15 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Jupyter Notebooks
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Jupyter Notebooks
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../control/python_api/example_single_actuator_nb/" class="md-nav__link">
+      <a href="../../control/python_api/examples/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Controlling One Real Actuator
+    Examples Repository
   
 
     
@@ -1057,98 +1040,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_several_actuators_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Controlling Several Real Actuators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_advanced_features_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced Features
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_log_to_csv_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Data to CSV
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1208,14 +1099,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/python_api/class_PulsarActuator/" class="md-nav__link">
+      <a href="../../control/python_api/class_PcpOverUsb/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    PulsarActuator
+    PcpOverUsb
   
 
     
@@ -1236,14 +1127,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/python_api/class_PCP_over_USB/" class="md-nav__link">
+      <a href="../../control/python_api/class_PulsarActuatorReal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    PCP_over_USB
+    PulsarActuatorReal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/python_api/class_PulsarActuatorVirtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PulsarActuatorVirtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/python_api/compatibility_aliases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility Aliases
   
 
     
@@ -1816,7 +1763,7 @@
   <span class="md-ellipsis">
     
   
-    Desktop App Download
+    PULSAR App Desktop Package
   
 
     
@@ -1853,7 +1800,7 @@
   <span class="md-ellipsis">
     
   
-    Download AUGUR Digital Twin
+    Download AUGUR Digital Twin Assets
   
 
     
@@ -1871,7 +1818,7 @@
   <span class="md-ellipsis">
     
   
-    Download AUGUR Digital Twin
+    Download AUGUR Digital Twin Assets
   
 
     
@@ -1897,10 +1844,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#temporary-test-package" class="md-nav__link">
+  <a href="#first-beta-package" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Temporary test package
+        First Beta Package
       
     </span>
   </a>
@@ -1911,6 +1858,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download_robot_assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot Model Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2060,10 +2035,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#temporary-test-package" class="md-nav__link">
+  <a href="#first-beta-package" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Temporary test package
+        First Beta Package
       
     </span>
   </a>
@@ -2087,20 +2062,18 @@
 
 
 
-<h1 id="download-augur-digital-twin">Download AUGUR Digital Twin</h1>
-<p>AUGUR DTwin asset packages provide the generated shared libraries and Python bindings needed to run PULSAR HRI virtual actuator examples.</p>
-<h2 id="temporary-test-package">Temporary test package</h2>
-<p>The current public package is a dummy release used to validate the download workflow before publishing real generated DTwin assets. It contains placeholder files only and cannot run a real virtual actuator model.</p>
+<h1 id="download-augur-digital-twin-assets">Download AUGUR Digital Twin Assets</h1>
+<p>AUGUR Digital Twin (DTwin) asset packages provide the generated shared libraries and Python bindings needed to run PULSAR HRI virtual actuator examples.</p>
+<p>A first beta release is now available for Linux x86_64 and Windows x86_64. It is intended for use with the PCP API 2.0.0 virtual actuator workflow.</p>
+<h2 id="first-beta-package">First Beta Package</h2>
 <ul>
-<li>Latest test version: <code>20260213-test</code></li>
-<li>Models: <code>DUMMY</code></li>
+<li>Latest version: <code>20260529_2</code></li>
+<li>Platforms: Linux x86_64, Windows x86_64</li>
+<li>Models: <code>P100</code>, <code>P90</code>, <code>PULSE115</code>, <code>PULSE98</code></li>
 <li>Manifest: <a href="../dtwin_assets_manifest.json"><code>dtwin_assets_manifest.json</code></a></li>
-<li>Archive: <a href="../dtwin_assets/pulsar-dtwin-assets-20260213-test.zip"><code>pulsar-dtwin-assets-20260213-test.zip</code></a></li>
+<li>Archive: <a href="../dtwin_assets/pulsar-dtwin-assets-20260529_2-linux-windows-x86_64.zip"><code>pulsar-dtwin-assets-20260529_2-linux-windows-x86_64.zip</code></a></li>
 </ul>
-<p>From the Python API repository, install the package with:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pixi<span class="w"> </span>run<span class="w"> </span>-e<span class="w"> </span>examples<span class="w"> </span>install-dtwin-assets<span class="w"> </span>--version<span class="w"> </span><span class="m">20260213</span>-test
-</span></code></pre></div>
-<p>Once real DTwin packages are published, this page will keep the newest compatible release at the top while preserving older versions for compatibility checks.</p>
+<p>To install and use DTwin assets with the Python API, follow the <a href="../../control/python_api/examples/">Python API Examples</a> page. The examples repository README is the source of truth for setup, run commands, and the current DTwin asset installer workflow.</p>
 <p>For support, <a href="../../support/">contact our team</a>.</p>
 
 
@@ -2131,7 +2104,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../download_app/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Desktop App Download">
+          <a href="../download_app/" class="md-footer__link md-footer__link--prev" aria-label="Previous: PULSAR App Desktop Package">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2141,20 +2114,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Desktop App Download
+                PULSAR App Desktop Package
               </div>
             </div>
           </a>
         
         
           
-          <a href="../download_cpp_api/" class="md-footer__link md-footer__link--next" aria-label="Next: Download C++ API">
+          <a href="../download_robot_assets/" class="md-footer__link md-footer__link--next" aria-label="Next: Robot Model Assets">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Download C++ API
+                Robot Model Assets
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2219,6 +2192,8 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../assets/javascripts/external-links.js"></script>
       
     
   </body>

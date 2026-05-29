@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to use PULSAR HRI hardware and software, including actuators APIs and AUGUR digital twin.">
+        <meta name="description" content="How to use PULSAR HRI hardware and software, including actuator APIs and the AUGUR Digital Twin.">
       
       
       
@@ -54,6 +54,8 @@
     
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/pulsar.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -445,6 +447,34 @@
     
   
     Python API for Real Actuator via USB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart_virtual_python_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API for Virtual Actuator with DTwin
   
 
     
@@ -1064,62 +1094,15 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Jupyter Notebooks
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Jupyter Notebooks
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../control/python_api/example_single_actuator_nb/" class="md-nav__link">
+      <a href="../../control/python_api/examples/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Controlling One Real Actuator
+    Examples Repository
   
 
     
@@ -1128,98 +1111,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_several_actuators_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Controlling Several Real Actuators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_advanced_features_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced Features
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_log_to_csv_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Data to CSV
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1279,14 +1170,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/python_api/class_PulsarActuator/" class="md-nav__link">
+      <a href="../../control/python_api/class_PcpOverUsb/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    PulsarActuator
+    PcpOverUsb
   
 
     
@@ -1307,14 +1198,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/python_api/class_PCP_over_USB/" class="md-nav__link">
+      <a href="../../control/python_api/class_PulsarActuatorReal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    PCP_over_USB
+    PulsarActuatorReal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/python_api/class_PulsarActuatorVirtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PulsarActuatorVirtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/python_api/compatibility_aliases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility Aliases
   
 
     
@@ -1885,7 +1832,7 @@
   <span class="md-ellipsis">
     
   
-    Desktop App Download
+    PULSAR App Desktop Package
   
 
     
@@ -1913,7 +1860,35 @@
   <span class="md-ellipsis">
     
   
-    Download AUGUR Digital Twin
+    Download AUGUR Digital Twin Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/download_robot_assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot Model Assets
   
 
     
@@ -2110,11 +2085,12 @@
 
 
 <h1 id="quickstart-tutorial-set-up-real-actuator-and-connect-via-usb">Quickstart Tutorial: Set Up Real Actuator and Connect via USB</h1>
-<p>Follow this tutorial for the fastest way to set up a PULSAR actuator out of the box, connected via USB. You will then be able to get it running in no time with the <a href="../../control/pulsar_app/pulsar_app/">PULSAR App no-code GUI</a>.</p>
+<p>Follow this tutorial for the fastest way to set up a PULSAR actuator out of the box and connect it via USB. It intentionally combines only the minimum power and USB steps needed before launching the <a href="../../control/pulsar_app/pulsar_app/">PULSAR App no-code GUI</a>.</p>
+<p>For more detailed mechanical mounting, power, USB, and CAN background, see <a href="../../set_up/set_up_real/">Set Up Real Actuators</a> and <a href="../../communicate/communicate_real/">Communicate with Real Actuators</a>.</p>
 <h2 id="what-youll-need">🧰 What You’ll Need</h2>
 <p>Usually provided by PULSAR HRI:</p>
 <ul>
-<li>1x PULSAR HRI <strong>actuator</strong> </li>
+<li>1x PULSAR HRI <strong>actuator</strong></li>
 <li>1x <strong>Power Bus Cable</strong> (<a href="../../set_up/hardware_interfaces/electrical_interfaces/#power-bus-cable">more details here</a>)</li>
 <li>1x standard USB-A to <strong>USB-C cable</strong></li>
 </ul>
@@ -2122,10 +2098,10 @@
 <ul>
 <li>A <strong>mechanical support</strong> and <strong>screws</strong> to secure the actuator (<a href="../../set_up/hardware_interfaces/mechanical_interfaces/">more details and some 3D-printable designs here</a>)</li>
 <li>A 48 V <strong>Power Supply Unit</strong> (<a href="../../set_up/hardware_interfaces/electrical_interfaces/#power-bus">more details here</a>)</li>
-<li>A <strong>computer</strong> </li>
+<li>A <strong>computer</strong></li>
 </ul>
-<div class="admonition operating-system-compatibility">
-<p class="admonition-title">Operating-system-compatibility</p>
+<div class="admonition note">
+<p class="admonition-title">Operating system compatibility</p>
 <p>Currently, the ecosystem is mainly compatible with and tested on Windows and Ubuntu Linux.</p>
 </div>
 <h2 id="step-by-step-guide">👣 Step-by-Step Guide</h2>
@@ -2263,6 +2239,8 @@
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../assets/javascripts/external-links.js"></script>
       
     
   </body>

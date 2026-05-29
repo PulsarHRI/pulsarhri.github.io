@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to use PULSAR HRI hardware and software, including actuators APIs and AUGUR digital twin.">
+        <meta name="description" content="How to use PULSAR HRI hardware and software, including actuator APIs and the AUGUR Digital Twin.">
       
       
       
@@ -16,7 +16,7 @@
         <link rel="prev" href="../install_python_api/">
       
       
-        <link rel="next" href="../example_single_actuator_nb/">
+        <link rel="next" href="../examples/">
       
       
         
@@ -54,6 +54,8 @@
     
     
       <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/pulsar.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -374,6 +376,34 @@
     
   
     Python API for Real Actuator via USB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quickstarts/quickstart_virtual_python_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API for Virtual Actuator with DTwin
   
 
     
@@ -1064,6 +1094,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scan-for-devices" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1127,62 +1168,15 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Jupyter Notebooks
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Jupyter Notebooks
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../example_single_actuator_nb/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Controlling One Real Actuator
+    Examples Repository
   
 
     
@@ -1191,98 +1185,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../example_several_actuators_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Controlling Several Real Actuators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../example_advanced_features_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced Features
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../example_log_to_csv_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Data to CSV
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1342,14 +1244,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../class_PulsarActuator/" class="md-nav__link">
+      <a href="../class_PcpOverUsb/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    PulsarActuator
+    PcpOverUsb
   
 
     
@@ -1370,14 +1272,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../class_PCP_over_USB/" class="md-nav__link">
+      <a href="../class_PulsarActuatorReal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    PCP_over_USB
+    PulsarActuatorReal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_PulsarActuatorVirtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PulsarActuatorVirtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compatibility_aliases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility Aliases
   
 
     
@@ -1948,7 +1906,7 @@
   <span class="md-ellipsis">
     
   
-    Desktop App Download
+    PULSAR App Desktop Package
   
 
     
@@ -1976,7 +1934,35 @@
   <span class="md-ellipsis">
     
   
-    Download AUGUR Digital Twin
+    Download AUGUR Digital Twin Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/download_robot_assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot Model Assets
   
 
     
@@ -2168,6 +2154,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#scan-for-devices" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2235,6 +2232,7 @@
 
 <h1 id="command-line-interface-cli">Command-Line Interface (CLI)</h1>
 <p>The Command-Line Interface (CLI) is included in the Python package. It provides a convenient way to interact with the actuator directly from the terminal. This is particularly useful for quick communication tests and for scanning devices on the CAN bus.</p>
+<p>This section targets Python API 2.0.0.</p>
 <h2 id="verifying-the-installation">Verifying the Installation</h2>
 <p>The CLI is installed alongside the Python package. To confirm that it is working correctly, run the following command:</p>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pulsar-cli<span class="w"> </span>-h
@@ -2244,20 +2242,47 @@ This should display the help message.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pulsar-cli<span class="w"> </span>--version
 </span></code></pre></div>
 <h2 id="using-the-cli">Using the CLI</h2>
-<p>The CLI provides several commands to interact with the PULSAR actuator. Here are some common commands:</p>
 <h3 id="general-notes">General notes</h3>
 <ul>
 <li>If <code>--port</code> is omitted, the CLI tries to auto-detect the USB serial port.</li>
-<li>When using CAN,  <code>--address</code> is required. It accepts both hexadecimal and decimal notation, for example <code>0x10</code> or <code>16</code>.</li>
+<li>When using CAN, <code>--address</code> is required. It accepts both hexadecimal and decimal notation, for example <code>0x10</code> or <code>16</code>.</li>
+<li>Run <code>pulsar-cli &lt;command&gt; -h</code> to see the options for a specific command.</li>
 </ul>
+<h3 id="commands">Commands</h3>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scan</code></td>
+<td>Scan the CAN bus for connected PULSAR devices.</td>
+</tr>
+<tr>
+<td><code>params</code></td>
+<td>Read parameters from a connected actuator.</td>
+</tr>
+<tr>
+<td><code>blink</code></td>
+<td>Blink an actuator LED to identify a device.</td>
+</tr>
+<tr>
+<td><code>home</code></td>
+<td>Store the current actuator position as the home position.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="scan-for-devices">Scan for Devices</h3>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>pulsar-cli<span class="w"> </span>scan
 </span></code></pre></div>
-This command scans the CAN bus for connected PULSAR devices and lists their addresses. You need a CAN adapter connected and a <a href="../../../set_up/hardware_interfaces/electrical_interfaces/#can-bus">correctly wired CAN bus</a>. Use the <code>-h</code> flag to see more options.</p>
+This command scans the CAN bus for connected PULSAR devices and lists their addresses. You need a CAN adapter connected and a <a href="../../../set_up/hardware_interfaces/electrical_interfaces/#can-bus">correctly wired CAN bus</a>.</p>
 <h3 id="get-device-parameters">Get Device Parameters</h3>
 <p><div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pulsar-cli<span class="w"> </span>params
 </span></code></pre></div>
-You can retrieve all parameters of the connected device.  Use the <code>-h</code> flag to see more options.</p>
+You can retrieve all parameters of the connected device.</p>
 <p>Examples:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pulsar-cli<span class="w"> </span>params<span class="w">  </span><span class="c1"># Connects directly over USB</span>
 </span></code></pre></div>
@@ -2266,11 +2291,11 @@ You can retrieve all parameters of the connected device.  Use the <code>-h</code
 <h3 id="blink-device-led">Blink Device LED</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pulsar-cli<span class="w"> </span>blink<span class="w"> </span>--address<span class="w"> </span>0x10
 </span></code></pre></div>
-<p>This command blinks the actuator LED so that you can identify a device on the CAN bus. An address is required for this command.</p>
+<p>This command blinks the actuator LED so that you can identify a device on the CAN bus. An address is required when identifying an actuator on a CAN bus.</p>
 <h3 id="set-home-position">Set Home Position</h3>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pulsar-cli<span class="w"> </span>home
 </span></code></pre></div>
-<p>This command stores the actuator's current position as the home position (zero reference). The position is stored in the device's non-volatile memory and is retained even after power cycling. Use the <code>-h</code> flag to see more options.</p>
+<p>This command stores the actuator's current position as the home position (zero reference). The position is stored in the device's non-volatile memory and is retained even after power cycling.</p>
 
 
 
@@ -2317,13 +2342,13 @@ You can retrieve all parameters of the connected device.  Use the <code>-h</code
         
         
           
-          <a href="../example_single_actuator_nb/" class="md-footer__link md-footer__link--next" aria-label="Next: Controlling One Real Actuator">
+          <a href="../examples/" class="md-footer__link md-footer__link--next" aria-label="Next: Examples Repository">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Controlling One Real Actuator
+                Examples Repository
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2388,6 +2413,8 @@ You can retrieve all parameters of the connected device.  Use the <code>-h</code
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../assets/javascripts/external-links.js"></script>
       
     
   </body>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="How to use PULSAR HRI hardware and software, including actuators APIs and AUGUR digital twin.">
+        <meta name="description" content="How to use PULSAR HRI hardware and software, including actuator APIs and the AUGUR Digital Twin.">
       
       
       
@@ -27,7 +27,7 @@
     
     
       
-        <title>Desktop App Download - PULSAR HRI Ecosystem Documentation</title>
+        <title>PULSAR App Desktop Package - PULSAR HRI Ecosystem Documentation</title>
       
     
     
@@ -55,6 +55,8 @@
     
       <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
+      <link rel="stylesheet" href="../../assets/stylesheets/pulsar.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -80,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#download-desktop-app" class="md-skip">
+        <a href="#download-pulsar-app-desktop-package" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Desktop App Download
+              PULSAR App Desktop Package
             
           </span>
         </div>
@@ -374,6 +376,34 @@
     
   
     Python API for Real Actuator via USB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstarts/quickstart_virtual_python_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python API for Virtual Actuator with DTwin
   
 
     
@@ -993,62 +1023,15 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Jupyter Notebooks
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Jupyter Notebooks
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../control/python_api/example_single_actuator_nb/" class="md-nav__link">
+      <a href="../../control/python_api/examples/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Controlling One Real Actuator
+    Examples Repository
   
 
     
@@ -1057,98 +1040,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_several_actuators_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Controlling Several Real Actuators
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_advanced_features_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced Features
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../control/python_api/example_log_to_csv_nb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Log Data to CSV
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1208,14 +1099,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/python_api/class_PulsarActuator/" class="md-nav__link">
+      <a href="../../control/python_api/class_PcpOverUsb/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    PulsarActuator
+    PcpOverUsb
   
 
     
@@ -1236,14 +1127,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../../control/python_api/class_PCP_over_USB/" class="md-nav__link">
+      <a href="../../control/python_api/class_PulsarActuatorReal/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    PCP_over_USB
+    PulsarActuatorReal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/python_api/class_PulsarActuatorVirtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PulsarActuatorVirtual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control/python_api/compatibility_aliases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compatibility Aliases
   
 
     
@@ -1825,7 +1772,7 @@
   <span class="md-ellipsis">
     
   
-    Desktop App Download
+    PULSAR App Desktop Package
   
 
     
@@ -1854,7 +1801,35 @@
   <span class="md-ellipsis">
     
   
-    Download AUGUR Digital Twin
+    Download AUGUR Digital Twin Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../download_robot_assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot Model Assets
   
 
     
@@ -2020,21 +1995,16 @@
 
 
 
-<h1 id="download-desktop-app">Download Desktop App</h1>
+<h1 id="download-pulsar-app-desktop-package">Download PULSAR App Desktop Package</h1>
 <p>Here you can download the desktop package for the <a href="../../control/pulsar_app/pulsar_app/">PULSAR App no-code GUI</a>. You can use it by following the <a href="../../quickstarts/quickstart_pulsar_app/">No-Code GUI quickstart</a>.</p>
-<p>If you do not want to install the desktop app, use the browser version at <a href="https://app.pulsarhri.com/">https://app.pulsarhri.com/</a>.</p>
+<p>If you do not want to install the desktop package, use the browser app at <a href="https://app.pulsarhri.com/">https://app.pulsarhri.com/</a>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><a href="../../assets/desktopApp/PulsarApp-1.0.0.zip">Download PulsarApp-1.0.0.zip</a></p>
 </div>
 <div class="tabbed-block">
-<p>Not available at the moment</p>
-<p>To install the <code>.deb</code> package, run:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>./PulsarApp-1.0.0.deb
-</span></code></pre></div>
-<p>This will automatically install the app and resolve dependencies.<br />
-Once installed, you can launch the app from your applications menu by searching for <strong>PulsarApp</strong>.</p>
+<p>Not available at the moment.</p>
 </div>
 </div>
 </div>
@@ -2086,13 +2056,13 @@ Once installed, you can launch the app from your applications menu by searching 
         
         
           
-          <a href="../download_dtwin/" class="md-footer__link md-footer__link--next" aria-label="Next: Download AUGUR Digital Twin">
+          <a href="../download_dtwin/" class="md-footer__link md-footer__link--next" aria-label="Next: Download AUGUR Digital Twin Assets">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Download AUGUR Digital Twin
+                Download AUGUR Digital Twin Assets
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2157,6 +2127,8 @@ Once installed, you can launch the app from your applications menu by searching 
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../assets/javascripts/external-links.js"></script>
       
     
   </body>
