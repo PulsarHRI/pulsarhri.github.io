@@ -13,6 +13,16 @@
   margin: 0 auto;
 }
 
+.pulsar-theme-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.pulsar-ecosystem-diagram {
+  width: min(920px, 100%);
+}
+
 .pulsar-visually-hidden {
   position: absolute;
   width: 1px;
@@ -29,11 +39,17 @@
   display: none;
 }
 
-[data-md-color-scheme="slate"] .pulsar-theme-logo--light {
+.pulsar-theme-image--dark {
   display: none;
 }
 
-[data-md-color-scheme="slate"] .pulsar-theme-logo--dark {
+[data-md-color-scheme="slate"] .pulsar-theme-logo--light,
+[data-md-color-scheme="slate"] .pulsar-theme-image--light {
+  display: none;
+}
+
+[data-md-color-scheme="slate"] .pulsar-theme-logo--dark,
+[data-md-color-scheme="slate"] .pulsar-theme-image--dark {
   display: block;
 }
 
