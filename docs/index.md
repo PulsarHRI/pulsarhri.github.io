@@ -26,14 +26,21 @@ At a glance, these are the main elements of the PULSAR HRI ecosystem:
   <img class="pulsar-theme-image pulsar-theme-image--dark pulsar-ecosystem-diagram" src="assets/images/high_level_diagram_ecosystem_black.png" alt="High-level ecosystem diagram">
 </p>
 
+### Motors & Actuators
+
 - **REAL ACTUATORS** which, once [set up](set_up/set_up_real.md), offer the following [hardware communication interfaces](communicate/communicate_real.md): 
     - Direct **USB** connection, to connect to a single actuator for quick tests and firmware updates.
-    - **CAN** communication (CAN FD at selectable 1 or 5 MBps), to connect to multiple actuators in robotic systems.
+    - **CAN** communication (CAN FD at selectable 1 or 5 Mbps), to connect to multiple actuators in robotic systems.
 <br><br>
 - **VIRTUAL ACTUATORS** closely matching their real counterparts' behavior. These virtual actuators can be set up through:
     - [**AUGUR Digital Twin (DTwin)**](set_up/set_up_virtual.md): a first beta release is available for Linux x86_64. It models the physics of the real actuator and runs the exact same control algorithms.
 <br><br>
-- **CONTROL INTERFACES** of different kinds and for different needs, used to control both real and virtual actuators:
+- **CONTROL MODES** such as torque, speed, position, and impedance run at the lowest level in the same way on real actuator firmware and in the virtual AUGUR Digital Twin model. See the [Control Modes Overview](control/control_modes_explained/control_modes_overview.md) for the shared behavior and terminology.
+<br><br>
+
+### Control
+
+- **SOFTWARE INTERFACES** of different kinds and for different needs, used to control both real and virtual actuators:
     - [**PULSAR App GUI**](control/pulsar_app/pulsar_app.md): A no-code GUI for single-actuator testing, available in the browser or as a desktop package
         - offering [the easiest quickstart experience](quickstarts/quickstart_pulsar_app.md) to get familiar with PULSAR HRI actuators and their control.
     - [**Python API**](control/python_api/install_python_api.md): A flexible way to control real and virtual actuators from Python, from quick experiments to multi-actuator workflows at high update rates, both for Real and AUGUR-powered Virtual Actuators

@@ -93,30 +93,32 @@ nav:
       - set_up/set_up_virtual.md
       - communicate/communicate_virtual.md
   - "Control Actuators":
-    - "PULSAR App GUI": control/pulsar_app/pulsar_app.md
-    - "Python API":
-        - control/python_api/install_python_api.md
-        - control/python_api/cli.md
-        - Examples Repository: control/python_api/examples.md
-        - API Code Reference:
-          - PcpOverUsb: control/python_api/class_PcpOverUsb.md
-          - PulsarActuatorReal: control/python_api/class_PulsarActuatorReal.md
-          - PulsarActuatorVirtual: control/python_api/class_PulsarActuatorVirtual.md
-          - Compatibility Aliases: control/python_api/compatibility_aliases.md
-    - "C++ API":
-        - control/cpp_api/install_cpp_api.md
-        - control/cpp_api/cli.md
-        - Examples:
-          - control/cpp_api/example_single_actuator.md
-          - control/cpp_api/example_multiple_actuators.md
-          - control/cpp_api/example_advanced_features.md
-          - control/cpp_api/example_log_to_csv.md
-          - control/cpp_api/example_communication_information.md
-          - control/cpp_api/example_test_actuator_motion.md
-          - control/cpp_api/example_test_synchronization.md
-    - Control Modes Explained:
-      - control/control_modes_explained/control_modes_overview.md
-      - control/control_modes_explained/control_modes_parameters.md
+    - Control Modes:
+      - Control Modes Overview: control/control_modes_explained/control_modes_overview.md
+      - Which Control Parameters Can Be Used in Each Mode: control/control_modes_explained/control_modes_parameters.md
+    - Software Interfaces:
+      - "PULSAR App GUI": control/pulsar_app/pulsar_app.md
+      - "Python API":
+          - control/python_api/install_python_api.md
+          - control/python_api/cli.md
+          - Examples Repository: control/python_api/examples.md
+          - API Code Reference:
+            - PcpOverUsb: control/python_api/class_PcpOverUsb.md
+            - PulsarActuatorReal: control/python_api/class_PulsarActuatorReal.md
+            - PulsarActuatorVirtual: control/python_api/class_PulsarActuatorVirtual.md
+            - Compatibility Aliases: control/python_api/compatibility_aliases.md
+      - "C++ API":
+          - control/cpp_api/install_cpp_api.md
+          - control/cpp_api/cli.md
+          - Examples:
+            - control/cpp_api/example_single_actuator.md
+            - control/cpp_api/example_multiple_actuators.md
+            - control/cpp_api/example_advanced_features.md
+            - control/cpp_api/example_log_to_csv.md
+            - control/cpp_api/example_communication_information.md
+            - control/cpp_api/example_test_actuator_motion.md
+            - control/cpp_api/example_test_synchronization.md
+      - "ROS 2 Bridge": control/ros2_bridge.md
 
 
   # This is already in How to Use AUGUR Digital Twin
@@ -126,9 +128,9 @@ nav:
   #     - licensing.md
   - Downloads:
       - "PULSAR App Desktop Package": download/download_app.md
-      - download/download_dtwin.md
+      - "AUGUR Digital Twin Assets": download/download_dtwin.md
       - "Robot Model Assets": download/download_robot_assets.md
-      - download/download_cpp_api.md
+      - "C++ API": download/download_cpp_api.md
       - set_up/hardware_interfaces/3d_models.md
   - support.md
   - faq.md
