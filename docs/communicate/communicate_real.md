@@ -8,8 +8,8 @@ Currently, there are two supported modes of communication:
 2. **CAN** (via USB-to-CAN adapter): Used for connecting one or multiple actuators on a CAN bus.
 
 <p align="center">
-  <img class="pulsar-theme-image pulsar-theme-image--light pulsar-ecosystem-diagram" src="../assets/images/high_level_diagram_ecosystem_white.png" alt="High-level ecosystem diagram">
-  <img class="pulsar-theme-image pulsar-theme-image--dark pulsar-ecosystem-diagram" src="../assets/images/high_level_diagram_ecosystem_black.png" alt="High-level ecosystem diagram">
+  <img class="pulsar-theme-image pulsar-theme-image--light pulsar-ecosystem-diagram" src="../../assets/images/high_level_diagram_ecosystem_white.png" alt="High-level ecosystem diagram">
+  <img class="pulsar-theme-image pulsar-theme-image--dark pulsar-ecosystem-diagram" src="../../assets/images/high_level_diagram_ecosystem_black.png" alt="High-level ecosystem diagram">
 </p>
 
 ---
@@ -44,6 +44,20 @@ You should see your actuator listed.
 ## CAN Communication
 
 By connecting actuators on the same CAN bus, you can control one or multiple actuators together. Communication is enabled through a CAN adapter device.
+
+PULSAR actuators use CAN FD communication with selectable bus speeds of 1 Mbps or 5 Mbps. The higher-speed option can support denser telemetry and multi-actuator setups, but it also depends more strongly on correct wiring, termination, cable quality, bus topology, and host-side load.
+
+!!! note "Feedback bandwidth"
+    The available feedback signals, a.k.a. `PCP_Items`, should be treated as a selection menu, not as a recommendation to enable every channel. See them listed, for example, in the [Python API code reference](../control/python_api/class_PulsarActuatorReal.md#pcp_api.pulsar_actuator_real.PulsarActuatorReal.PCP_Items). For real hardware, each enabled feedback item adds payload to the feedback stream, so reliable telemetry depends on:
+
+    * the number of actuators on the bus,
+    * the requested feedback rate,
+    * the transport path, such as direct USB, CAN, or high-speed CAN,
+    * the host computer capabilities and current load.
+
+    Start with only the signals needed for the question you are testing. For a single-actuator tutorial run, this is usually the controlled variable, speed, torque, power, and temperature. For high-rate or multi-actuator runs, prefer only three or four feedback items at first, then increase gradually if samples remain stable.
+
+    As a low-speed CAN reference with three feedback items, expect roughly 400-500 Hz for 5 actuators, and about 100 Hz for 16 actuators. If samples are missing or irregular, reduce the requested feedback rate, disable nonessential feedback items, use a faster transport path when available, or lower other host-side workload.
 
 The steps below guide you through connecting a **single actuator via CAN**. The same procedure can then be extended to multiple actuators.
 
