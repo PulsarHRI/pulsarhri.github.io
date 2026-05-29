@@ -1,11 +1,22 @@
 # Control Modes Overview
 
 !!! note
-    This page describes the control-mode terminology used by Python API 2.0.0 and the matching actuator firmware family. Check the compatibility matrix when it is published before mixing firmware and API versions.
+    Control modes run at the lowest level in the same way on real actuator firmware and in the virtual AUGUR Digital Twin model. They are accessed through the available [software interfaces](../pulsar_app/pulsar_app.md), with API enum names and control type values currently shown using Python API 2.0.0 terminology.
 
 ## Overview of Operating Modes
 
 Before initiating any actuator movement, it is essential to select the appropriate control mode. The selected mode determines how the actuator interprets and responds to setpoints. Once a control mode is active, the system establishes the corresponding setpoint based on that mode’s logic and parameters.
+
+The available user-facing control modes are:
+
+- **Electromagnetic torque control**: regulate output torque through the current loop.
+- **Speed control**: regulate actuator speed through an outer speed loop.
+- **Position control**: regulate actuator position through nested position, speed, and torque loops.
+- **Impedance control**: regulate compliant behavior through virtual stiffness, damping, inertia, and torque terms.
+
+For the parameters associated with each mode, see [Which Control Parameters Can Be Used in Each Mode?](control_modes_parameters.md). For runnable real and virtual actuator tutorials, follow the [Python API Examples](../python_api/examples.md); the examples repository includes dedicated notebooks for changing control modes and control parameters.
+
+The diagrams below are simplified signal-flow diagrams. They show the main reference, saturation, controller, and feedback paths used by each mode; they do not include every firmware protection or diagnostic path.
 
 ## API Mode Names
 
@@ -15,79 +26,44 @@ Before initiating any actuator movement, it is essential to select the appropria
 | Speed control | `Mode.SPEED` | `6` |
 | Position control | `Mode.POSITION` | `7` |
 | Impedance control | `Mode.IMPEDANCE` | `8` |
-| Fixed voltage injection | `Mode.FVI` | `2` |
-| Open loop | `Mode.OPEN_LOOP` | `3` |
-| Direct voltage injection | `Mode.DVI` | `4` |
 
-## Standard Control Modes
+## Control Modes
 
-The actuator supports several core control strategies, each optimized for specific performance characteristics.
+The actuator supports several control strategies, each optimized for specific performance characteristics.
 
 ### Electromagnetic Torque Control
 
-This mode directly controls the torque output of the actuator by regulating the motor current. It includes three predefined profiles, each offering a different control bandwidth, from conservative to aggressive, tailored to different application needs.
+This mode controls the actuator torque by converting a reference torque in Nm into field-oriented current references. The requested torque is first limited by the configured torque saturation, then the field-oriented control (FOC) block generates `idq` current references. The current controller closes the loop using `idq` feedback from the motor.
 
-![Te scheme](figs/Te_scheme.png)
+![Electromagnetic torque control signal flow](figs/control_mode_electromagnetic_torque.png)
 
 ### Speed Control
 
 Speed control is implemented using a dual-loop architecture:
 
-- The inner loop manages torque via current control.
+- The inner loop is electromagnetic torque control, which closes the current loop.
 - The outer loop regulates speed using a proportional-integral (PI) controller.
 
-Users can either tune the PI parameters manually or select from optimized preset profiles.
+The reference speed is limited by the configured speed saturation and slew-rate limit before entering the speed controller. The PI speed controller uses speed feedback to generate the torque command sent to the inner torque-control loop.
 
-![Speed control scheme](figs/Spd_scheme.png)
+![Speed control signal flow](figs/control_mode_speed.png)
 
 ### Position Control
 
 Position control is achieved through a hierarchical control structure:
 
-- A proportional controller governs the position loop.
-- This loop operates over the speed and torque control layers, ensuring smooth and accurate positioning.
+- A proportional controller governs the outer position loop.
+- The position loop generates a speed request for the nested speed-control loop.
+- The speed-control loop then uses the electromagnetic torque-control loop internally.
 
-![Position control scheme](figs/Pos_scheme.png)
+The reference position is limited by the configured position saturation and slew-rate limit before entering the position controller.
 
-### Impedance Control (*Under Development*)
+![Position control signal flow](figs/control_mode_position.png)
 
-!!! warning
-    Do not use this mode, as it is still under development.
+### Impedance Control
 
-This advanced mode simulates mechanical impedance (stiffness and damping) by manipulating motor currents at a low level. It is particularly useful for applications that require compliant or human-interactive behavior.
+This mode computes a torque request from virtual stiffness, damping, and inertia terms. Position, speed, acceleration, and feedforward torque references are combined with position and speed feedback before torque saturation and the inner electromagnetic torque-control loop.
 
-![Impedance scheme](figs/Impedance_scheme.png)
+It is intended for compliant or human-interactive behavior and is available through both the real and virtual actuator Python APIs.
 
-## Special-Purpose Modes
-
-!!! warning
-    Do not use these modes unless instructed to do so by the PULSAR development team.
-
-In addition to the standard modes, the actuator includes several specialized modes designed for debugging, testing, and system integration. These are not intended for regular operation, but they are invaluable during development and troubleshooting.
-
-### Startup Calibration Mode
-
-The actuator includes an internal calibration routine that can be triggered directly. During calibration, the system performs offset calibration for both current sensing and position measurement, aligning the motor’s electrical position with the encoder’s mechanical position.
-
-During this calibration:
-
-- The relative position (also known as the "turn count") is reset to zero.
-- **Note:** This does not affect the absolute position. To reset the absolute position, use the `Set Zero Position` command separately.
-
-### Fixed Voltage Injection (FVI)
-
-This mode injects a constant DC voltage into the motor phases. It is useful for basic motor testing and diagnostics.
-
-![FVI scheme](figs/FVI_scheme.png)
-
-### Open-Loop Mode
-
-This mode applies a rotating voltage vector to the motor using a V/f (voltage-to-frequency) control method. It typically runs at a constant speed or can be configured with user-defined parameters.
-
-![OL scheme](figs/OL_scheme.png)
-
-### Direct Voltage Injection (DVI)
-
-This mode allows manual control of the voltage vector applied to the motor phases. The internal encoder is used to orient the voltage field, enabling precise testing of motor response.
-
-![DVI scheme](figs/DVI_scheme.png)
+![Impedance control signal flow](figs/control_mode_impedance.png)

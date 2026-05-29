@@ -23,6 +23,75 @@
   width: min(920px, 100%);
 }
 
+.pulsar-table-scroll {
+  max-height: min(72vh, 760px);
+  overflow: auto;
+  margin: 1em 0;
+  border: 0.05rem solid var(--md-typeset-table-color);
+  border-radius: 0.2rem;
+}
+
+.md-typeset .pulsar-table-scroll table {
+  display: table;
+  width: max-content;
+  min-width: 100%;
+  margin: 0;
+}
+
+.md-typeset .pulsar-table-scroll th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+  background: var(--md-default-bg-color--light);
+  box-shadow: 0 0.05rem 0 var(--md-typeset-table-color);
+}
+
+.md-typeset .pulsar-parameter-table th:first-child,
+.md-typeset .pulsar-parameter-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 11rem;
+  background: var(--md-default-bg-color);
+  box-shadow: 0.05rem 0 0 var(--md-typeset-table-color);
+}
+
+.md-typeset .pulsar-parameter-table th:first-child {
+  z-index: 3;
+  background: var(--md-default-bg-color--light);
+}
+
+.pulsar-yes,
+.pulsar-no,
+.pulsar-na {
+  display: inline-block;
+  min-width: 2.2em;
+  padding: 0.02rem 0.28rem;
+  border-radius: 0.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.pulsar-yes {
+  color: #0f5f31;
+  background: rgba(26, 127, 55, 0.12);
+  border: 0.05rem solid rgba(26, 127, 55, 0.26);
+}
+
+.pulsar-no {
+  color: #8a251f;
+  background: rgba(179, 38, 30, 0.11);
+  border: 0.05rem solid rgba(179, 38, 30, 0.24);
+}
+
+.pulsar-na {
+  color: #5f5f5f;
+  background: rgba(127, 127, 127, 0.12);
+  border: 0.05rem solid rgba(127, 127, 127, 0.24);
+}
+
 .pulsar-visually-hidden {
   position: absolute;
   width: 1px;
@@ -51,6 +120,24 @@
 [data-md-color-scheme="slate"] .pulsar-theme-logo--dark,
 [data-md-color-scheme="slate"] .pulsar-theme-image--dark {
   display: block;
+}
+
+[data-md-color-scheme="slate"] .pulsar-yes {
+  color: #98d8ad;
+  background: rgba(46, 160, 67, 0.18);
+  border-color: rgba(86, 211, 100, 0.34);
+}
+
+[data-md-color-scheme="slate"] .pulsar-no {
+  color: #ffb1a8;
+  background: rgba(248, 81, 73, 0.16);
+  border-color: rgba(248, 81, 73, 0.32);
+}
+
+[data-md-color-scheme="slate"] .pulsar-na {
+  color: #d0d0d0;
+  background: rgba(160, 160, 160, 0.14);
+  border-color: rgba(190, 190, 190, 0.24);
 }
 
 [data-md-color-scheme="default"] {
