@@ -63,6 +63,18 @@
   background: var(--md-default-bg-color--light);
 }
 
+.md-typeset .pulsar-parameter-table th:nth-child(2),
+.md-typeset .pulsar-parameter-table td:nth-child(2) {
+  width: 14rem;
+  max-width: 14rem;
+  white-space: normal;
+}
+
+.md-typeset .pulsar-parameter-table td:nth-child(2) code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 .pulsar-yes,
 .pulsar-no,
 .pulsar-na {
