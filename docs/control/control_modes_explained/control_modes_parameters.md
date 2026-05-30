@@ -22,7 +22,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
     <tbody>
       <tr>
         <td>Main setpoint</td>
-        <td><code>SETPOINT</code>, <code>change_setpoint(...)</code></td>
+        <td><code>SETPOINT</code><br><code>change_setpoint(...)</code></td>
         <td><span class="pulsar-yes">Yes</span>, torque in Nm</td>
         <td><span class="pulsar-yes">Yes</span>, speed in rad/s</td>
         <td><span class="pulsar-yes">Yes</span>, position in rad</td>
@@ -30,7 +30,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Torque performance preset</td>
-        <td><code>TORQUE_PERFORMANCE</code>, <code>set_torque_performance(...)</code></td>
+        <td><code>TORQUE_PERFORMANCE</code><br><code>set_torque_performance(...)</code></td>
         <td><span class="pulsar-yes">Yes</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
@@ -38,7 +38,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Speed performance preset</td>
-        <td><code>SPEED_PERFORMANCE</code>, <code>set_speed_performance(...)</code></td>
+        <td><code>SPEED_PERFORMANCE</code><br><code>set_speed_performance(...)</code></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
@@ -46,7 +46,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Current-loop gains</td>
-        <td><code>id_Kp</code>, <code>id_Ki</code>, <code>iq_Kp</code>, <code>iq_Ki</code> in <code>change_torque_setpoint(...)</code></td>
+        <td><code>id_Kp</code>, <code>id_Ki</code><br><code>iq_Kp</code>, <code>iq_Ki</code><br>in <code>change_torque_setpoint(...)</code></td>
         <td><span class="pulsar-yes">Yes</span></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-no">No</span></td>
@@ -54,7 +54,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Speed-loop gains</td>
-        <td><code>KP_SPEED</code>, <code>KI_SPEED</code>, <code>spd_Kp</code>, <code>spd_Ki</code></td>
+        <td><code>KP_SPEED</code>, <code>KI_SPEED</code><br><code>spd_Kp</code>, <code>spd_Ki</code></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
@@ -62,7 +62,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Position-loop gain</td>
-        <td><code>KP_POSITION</code>, <code>pos_Kp</code></td>
+        <td><code>KP_POSITION</code><br><code>pos_Kp</code></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
@@ -70,7 +70,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Impedance stiffness</td>
-        <td><code>K_STIFFNESS</code>, <code>K_stiff</code></td>
+        <td><code>K_STIFFNESS</code><br><code>K_stiff</code></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-no">No</span></td>
@@ -78,7 +78,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Impedance damping</td>
-        <td><code>K_DAMPING</code>, <code>K_damp</code></td>
+        <td><code>K_DAMPING</code><br><code>K_damp</code></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-no">No</span></td>
@@ -94,7 +94,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Feed-forward torque</td>
-        <td><code>TORQUE_FF</code>, <code>ref_ff_torque</code></td>
+        <td><code>TORQUE_FF</code><br><code>ref_ff_torque</code></td>
         <td><span class="pulsar-na">N/A</span>, main setpoint is torque</td>
         <td><span class="pulsar-yes">Yes</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
@@ -110,7 +110,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Symmetric torque limit</td>
-        <td><code>LIM_TORQUE</code>, <code>PROFILE_TORQUE_MAX_NM</code></td>
+        <td><code>LIM_TORQUE</code><br><code>PROFILE_TORQUE_MAX_NM</code></td>
         <td><span class="pulsar-yes">Yes</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
@@ -118,7 +118,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Speed limits</td>
-        <td><code>LIM_SPEED_MAX</code>, <code>LIM_SPEED_MIN</code></td>
+        <td><code>LIM_SPEED_MAX</code><br><code>LIM_SPEED_MIN</code></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
@@ -126,7 +126,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Position limits</td>
-        <td><code>LIM_POSITION_MAX</code>, <code>LIM_POSITION_MIN</code></td>
+        <td><code>LIM_POSITION_MAX</code><br><code>LIM_POSITION_MIN</code></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
@@ -134,7 +134,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Position-profile speed limits</td>
-        <td><code>PROFILE_POSITION_MAX</code>, <code>PROFILE_POSITION_MIN</code></td>
+        <td><code>PROFILE_POSITION_MAX</code><br><code>PROFILE_POSITION_MIN</code></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
@@ -142,7 +142,7 @@ Special-purpose voltage-injection and debug modes are intentionally not document
       </tr>
       <tr>
         <td>Speed-profile acceleration limits</td>
-        <td><code>PROFILE_SPEED_MAX</code>, <code>PROFILE_SPEED_MIN</code></td>
+        <td><code>PROFILE_SPEED_MAX</code><br><code>PROFILE_SPEED_MIN</code></td>
         <td><span class="pulsar-no">No</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
         <td><span class="pulsar-yes">Yes</span></td>
