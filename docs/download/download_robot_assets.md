@@ -4,6 +4,8 @@ Robot model asset packages provide simulation models, meshes, textures, and traj
 
 ## Single Link 1DOF
 
+![Single Link 1DOF MuJoCo model](../assets/images/single_link_1dof_scene_20260530_1.png)
+
 - Latest version: `20260530_1`
 - Model: `single_link_1dof`
 - Contents: MuJoCo XML scenes and STL meshes for the single-link DTwin robot tutorials, including payload sweep variants
