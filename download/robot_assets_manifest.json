@@ -24,7 +24,7 @@
     },
     "single_link_1dof": {
       "label": "Single Link 1DOF MuJoCo robot assets",
-      "latest": "20260530_1",
+      "latest": "20260531_1",
       "releases": {
         "20260530_1": {
           "label": "Single Link 1DOF MuJoCo assets 20260530_1",
@@ -41,6 +41,22 @@
             }
           },
           "released": "2026-05-30"
+        },
+        "20260531_1": {
+          "label": "Single Link 1DOF MuJoCo assets 20260531_1",
+          "models": [
+            "single_link_1dof"
+          ],
+          "notes": "MuJoCo XML scenes and STL meshes for the single-link DTwin robot tutorials, including payload sweep variants up to 20 kg.",
+          "platforms": {
+            "any": {
+              "sha256": "ce0063cc0983b89a4307c94fab1d992537481476af053644023e61087ea15873",
+              "size": 1342592,
+              "strip_prefix": "assets",
+              "url": "robot_assets/single-link-1dof-assets-20260531_1.zip"
+            }
+          },
+          "released": "2026-05-31"
         }
       }
     }
