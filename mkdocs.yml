@@ -41,6 +41,7 @@ plugins:
       redirect_maps:
         control/python_api/class_PCP_over_USB.md: control/python_api/class_PcpOverUsb.md
         control/python_api/class_PulsarActuator.md: control/python_api/class_PulsarActuatorReal.md
+        set_up/hardware_interfaces/3d_models.md: download/download_3d_models.md
   - mkdocstrings
   - mkdocs-jupyter
 exclude_docs: |
@@ -130,7 +131,7 @@ nav:
       - "AUGUR Digital Twin Assets": download/download_dtwin.md
       - "Robot Model Assets": download/download_robot_assets.md
       - "C++ API": download/download_cpp_api.md
-      - set_up/hardware_interfaces/3d_models.md
+      - "3D Models": download/download_3d_models.md
   - support.md
   - faq.md
 
