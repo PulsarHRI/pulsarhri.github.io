@@ -127,11 +127,11 @@ nav:
   # - Licensing & Support:
   #     - licensing.md
   - Downloads:
-      - "PULSAR App Desktop Package": download/download_app.md
       - "AUGUR Digital Twin Assets": download/download_dtwin.md
-      - "Robot Model Assets": download/download_robot_assets.md
+      - "PULSAR App Desktop Package": download/download_app.md
       - "C++ API": download/download_cpp_api.md
-      - "3D Models": download/download_3d_models.md
+      - "Misc 3D Models for Design": download/download_3d_models.md
+      - "Robot Models for Simulation": download/download_robot_assets.md
   - support.md
   - faq.md
 
