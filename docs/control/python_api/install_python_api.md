@@ -4,6 +4,8 @@ This guide walks you through the installation of the PULSAR HRI Python API, whic
 
 This section targets Python API 2.0.0.
 
+After this you can dive straight into the several available [quickstart examples and in-depth tutorials](../python_api/examples.md).
+
 
 ## Installation
 

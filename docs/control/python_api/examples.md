@@ -2,9 +2,8 @@
 
 Runnable Python examples live in the public examples repository:
 
-```text
-https://github.com/PulsarHRI/pcp_api_python_examples
-```
+> [https://github.com/PulsarHRI/pcp_api_python_examples](https://github.com/PulsarHRI/pcp_api_python_examples)
+
 
 The examples repository is versioned separately from the Python API package so tutorials can be updated without requiring a new API wheel release.
 
