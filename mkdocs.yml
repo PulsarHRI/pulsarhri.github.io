@@ -78,7 +78,7 @@ nav:
   - index.md
   - Quickstart Tutorials: 
     - "Set up Real Actuator and connect via USB": quickstarts/quickstart_set_up_usb.md
-    - "No-Code GUI for Real Actuator via USB": quickstarts/quickstart_pulsar_app.md
+    - "No-Code in-browser App for Real Actuator via USB": quickstarts/quickstart_pulsar_app.md
     - "Python API for Real Actuator via USB": quickstarts/quickstart_python_api.md
     - "Python API for Virtual Actuator with DTwin": quickstarts/quickstart_virtual_python_api.md
   - "Set Up & Communication": 

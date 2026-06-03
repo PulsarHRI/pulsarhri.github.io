@@ -6,10 +6,10 @@ This page walks you through how to run a real actuator connected via USB without
 1. Make sure your actuator is set up and connected via USB, as described in the [Quickstart Tutorial: Set Up a Real Actuator and Connect via USB](../quickstarts/quickstart_set_up_usb.md).
 
 2. Launch the [PULSAR App](../control/pulsar_app/pulsar_app.md) using either:
-    - **Browser app**: open [https://app.pulsarhri.com/](https://app.pulsarhri.com/)
+    - **Browser app**: ⏩ open [https://app.pulsarhri.com/](https://app.pulsarhri.com/)
     - **Desktop package**: launch the [downloaded desktop package](../download/download_app.md)
 
-    You should see the actuator connected via USB in the **Devices** drop-down menu. When you select it, a pop-up will confirm the connection and display the actuator's address.
+    You should see the actuator connected via USB in the **Devices** drop-down menu (hit the refresh icon next to the drop-down menu if you don't see it). When you select it, a pop-up will confirm the connection and display the actuator's address.
 > *The actuator address is useful to connect via CAN bus instead of USB.*
 <p align="center">
   <img src="/assets/images/GUI_to_connect.png" alt="GUI to connect" width="30%">

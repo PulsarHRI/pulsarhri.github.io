@@ -5,7 +5,7 @@
 
 The **PULSAR App** is the no-code GUI for connecting to, configuring, controlling, and monitoring a PULSAR actuator. It is available in two forms:
 
-- > **Browser app**: open [https://app.pulsarhri.com/](https://app.pulsarhri.com/)
+- **Browser app**: ⏩ open [**https://app.pulsarhri.com/**](https://app.pulsarhri.com/)
 - **Desktop app**: download and launch the installable desktop package
 
 Both forms provide the same guided interface, so the quickstart workflow applies whether you launch it from the browser or from the desktop package.
