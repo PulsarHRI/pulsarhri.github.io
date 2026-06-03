@@ -132,6 +132,8 @@ nav:
       - "C++ API": download/download_cpp_api.md
       - "Misc 3D Models for Design": download/download_3d_models.md
       - "Robot Models for Simulation": download/download_robot_assets.md
+      - "Technical Documents":
+          - "Test Reports": download/download_technical_reports.md
   - support.md
   - faq.md
 
