@@ -85,12 +85,13 @@ For Ubuntu/Debian systems, the recommended installation method is the Debian pac
 
 Download:
 
-[pcp-api-cpp-0.9.1-linux-x86_64.deb](../../download/pcp-api-cpp-0.9.1-linux-x86_64.deb)
+[pcp-api-cpp-2.0.0-linux-x86_64.deb](../../download/pcp-api-cpp-2.0.0-linux-x86_64.deb)
 
 Install it with:
 
 ```bash
-sudo apt install ./pcp-api-cpp-<version>-linux-x86_64.deb
+sudo dpkg -i dist/pcp-api-cpp-<version>-linux-x86_64.deb
+sudo apt -f install
 ```
 
 ---
@@ -101,7 +102,7 @@ Use this method if you want to install the SDK manually into a custom folder.
 
 Download:
 
-[pcp-api-cpp-0.9.1-linux-x86_64.tar.gz](../../download/pcp-api-cpp-0.9.1-linux-x86_64.tar.gz)
+[pcp-api-cpp-2.0.0-linux-x86_64.tar.gz](../../download/pcp-api-cpp-2.0.0-linux-x86_64.tar.gz)
 
 Extract it to a location of your choice. For a system-like local installation, `/opt/pcp_api` is recommended:
 
