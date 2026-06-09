@@ -9,11 +9,11 @@
           "models": [
             "pulse_arm_4dof"
           ],
-          "notes": "MuJoCo XML, meshes, texture, and sample joint-space trajectories used by the PCP API Python examples robot tutorial.",
+          "notes": "MuJoCo XML, meshes, texture, and sample joint-space trajectories used by the PCP API Python examples robot tutorial. The XML model name is pulse_arm_4dof_v1_0.",
           "platforms": {
             "any": {
-              "sha256": "727a29e7f8a2670a847f1b2b92494eb23f404b246b9d8c0eab1aa54c51e1e597",
-              "size": 9322220,
+              "sha256": "fdfe563fab41aeed3f7956d3817f1693c07587fdf661ad39d911cc35b2ebd5b0",
+              "size": 9347449,
               "strip_prefix": "assets",
               "url": "robot_assets/pulse-arm-4dof-assets-20260529_1.zip"
             }
