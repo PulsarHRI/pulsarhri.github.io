@@ -3,3 +3,5 @@
 git_exclude/
 site/
 docs/download/dtwin_assets/*/
+AGENTS.md
+TODO.md

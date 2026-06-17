@@ -1,79 +1,30 @@
-**# PULSAR HRI Ecosystem Documentation website**
+# PULSAR HRI Documentation
 
-The content of this Repo gets published in the [PULSAR HRI Ecosystem Documentation website](https://pulsarhri.github.io).
+This repository contains the source files for the public
+[PULSAR HRI Ecosystem Documentation](https://pulsarhri.github.io/).
 
-Related Confluence Space [HERE](https://arquimeagroup.atlassian.net/wiki/spaces/HU/pages/2626453638/PULSAR+Ecosystem+Documentation)
+The documentation covers:
 
-## 📘 Local Preview: Editing and Visualizing the Documentation
+- setting up and communicating with PULSAR HRI actuators;
+- using the PULSAR App no-code GUI;
+- using the Python and C++ APIs;
+- downloading public packages, tools, and mechanical assets.
 
-To preview and edit the PULSAR documentation locally in your browser:
+For the published documentation, visit:
 
-### ✅ 1. Create a virtual environment (recommended)
-
-You can install the Python dependencies globally, but it is **highly recommended** to use a virtual environment to avoid polluting your system Python.
-
-If you choose to install globally (NOT recommended):
-
-```bash
-pip install -r requirements.txt
+```text
+https://pulsarhri.github.io/
 ```
 
-If you prefer a virtual environment (recommended), make sure `venv` is installed:
+## Support
 
-* **Ubuntu**:
+If you need help, use the
+[support page](https://pulsarhri.github.io/support/) or open an issue in this
+repository.
 
-  ```bash
-  sudo apt update
-  sudo apt install python3-venv
-  ```
-* **Windows**:
-  Usually comes with Python. If not, install Python from [https://www.python.org](https://www.python.org) and ensure you check the box "Add Python to PATH" during installation.
+## Contributing
 
-Then, from the root of the repo:
+For local preview and validation instructions, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-```
-
----
-
-### ✅ 2. Install dependencies
-
-Once the virtual environment is active, install the required packages:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-### ✅ 3. Start the local server
-
-From the root of the repository (where `mkdocs.yml` is located), run:
-
-```bash
-mkdocs serve
-```
-
-This will start a live-reloading dev server at:
-
-```
-http://127.0.0.1:8000
-```
-
-Visit that address in your browser to view the documentation.
-
-As you edit `.md` files under `docs/`, the page will update automatically.
-
----
-
-### ❌ To stop the server
-
-Press `CTRL+C` in the terminal.
-
----
-
-### 🚀 To Publish
-
-Commit and push your changes to the `main` branch.
+PULSAR HRI maintainers should refer to the internal documentation for publishing
+and release procedures.

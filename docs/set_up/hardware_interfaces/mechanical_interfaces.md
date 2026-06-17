@@ -1,12 +1,19 @@
 # Mechanical Interfaces
 
+Use this page to check the actuator mounting interfaces before designing brackets, fixtures, or robot integrations.
+
 ## PULSE98 Actuator
 
-![PULSE98](../../assets/images/pulse98_mec_01_inv.png)
+![PULSE98 mechanical interface drawing](../../assets/images/PULSE98_202605.png)
+
+The PULSE98 public STEP assembly will be added to the [3D Models](../../download/download_3d_models.md#actuators-cad-assemblies) page once available.
 
 ## PULSE115 Actuator
- > coming soon
+
+![PULSE115 mechanical interface drawing](../../assets/images/PULSE115_202605.png)
+
+A public STEP file of the PULSE115 merged assembly is available on the [3D Models](../../download/download_3d_models.md#actuators-cad-assemblies) page for fit checks and mechanical integration planning.
 
 ## 3D Models
 
-[we provide some 3D printable files](./3d_models.md)
+Printable bracket, base, shaft, and public assembly files are available on the [3D Models](../../download/download_3d_models.md) page.
