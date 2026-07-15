@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+  <title id="title">pcp_ros2_bridge golden path</title>
+  <desc id="desc">High-level flow from ROS 2 robot applications through ros2_control, the PCP hardware interface, the shared actuator driver, pcp_api, and virtual or real actuators, with a side path for PCP-specific tools.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .title { font: 700 34px DejaVu Sans, Arial, sans-serif; fill: #102033; }
+      .subtitle { font: 400 17px DejaVu Sans, Arial, sans-serif; fill: #506174; }
+      .label { font: 700 18px DejaVu Sans, Arial, sans-serif; fill: #102033; }
+      .body { font: 400 14px DejaVu Sans, Arial, sans-serif; fill: #314155; }
+      .small { font: 400 12px DejaVu Sans, Arial, sans-serif; fill: #5f6f82; }
+      .mono { font: 600 13px DejaVu Sans Mono, monospace; fill: #26364a; }
+      .core { fill: #eaf3ff; stroke: #2374d3; stroke-width: 2.5; }
+      .control { fill: #fff6e4; stroke: #d98711; stroke-width: 2.5; }
+      .driver { fill: #eaf8f2; stroke: #2f9c62; stroke-width: 2.5; }
+      .api { fill: #f1f4f8; stroke: #6d7b8a; stroke-width: 2.5; }
+      .actuator { fill: #fdf2f4; stroke: #c23b55; stroke-width: 2.5; }
+      .optional { fill: #f4ecff; stroke: #7b4fc7; stroke-width: 2.5; stroke-dasharray: 9 7; }
+      .arrow { stroke: #2374d3; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .return { stroke: #2f9c62; stroke-width: 3; fill: none; stroke-dasharray: 8 7; marker-end: url(#return-arrow); }
+      .optional-arrow { stroke: #7b4fc7; stroke-width: 3.5; fill: none; stroke-dasharray: 9 7; marker-end: url(#optional-arrow); }
+      .note { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+    </style>
+    <marker id="arrow" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto">
+      <path d="M 0 0 L 13 6.5 L 0 13 z" fill="#2374d3"/>
+    </marker>
+    <marker id="return-arrow" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto">
+      <path d="M 0 0 L 13 6.5 L 0 13 z" fill="#2f9c62"/>
+    </marker>
+    <marker id="optional-arrow" markerWidth="13" markerHeight="13" refX="11" refY="6.5" orient="auto">
+      <path d="M 0 0 L 13 6.5 L 0 13 z" fill="#7b4fc7"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1600" height="760"/>
+
+  <text class="title" x="800" y="54" text-anchor="middle">pcp_ros2_bridge golden path</text>
+  <text class="subtitle" x="800" y="84" text-anchor="middle">Use standard ROS 2 control for robot motion, then use PCP-rich tools only when actuator-specific information is needed.</text>
+
+  <rect class="core" x="55" y="170" width="210" height="135" rx="18"/>
+  <text class="label" x="160" y="205" text-anchor="middle">ROS 2 user code</text>
+  <text class="body" x="82" y="235">Application, planner,</text>
+  <text class="body" x="82" y="257">MoveIt-style client,</text>
+  <text class="body" x="82" y="279">or demo script</text>
+
+  <rect class="control" x="330" y="165" width="235" height="145" rx="18"/>
+  <text class="label" x="447.5" y="200" text-anchor="middle">ros2_control</text>
+  <text class="mono" x="360" y="231">joint_trajectory_controller</text>
+  <text class="body" x="360" y="258">Standard action input</text>
+  <text class="body" x="360" y="280">and controller manager</text>
+
+  <rect class="control" x="630" y="165" width="255" height="145" rx="18"/>
+  <text class="label" x="757.5" y="200" text-anchor="middle">PCP SystemInterface</text>
+  <text class="mono" x="660" y="231">PcpSystemHardware</text>
+  <text class="body" x="660" y="258">Translates ROS joint</text>
+  <text class="body" x="660" y="280">interfaces to PCP commands</text>
+
+  <rect class="driver" x="950" y="165" width="230" height="145" rx="18"/>
+  <text class="label" x="1065" y="200" text-anchor="middle">PcpActuatorDriver</text>
+  <text class="body" x="980" y="232">Shared real, virtual,</text>
+  <text class="body" x="980" y="254">and paired backend facade</text>
+  <text class="body" x="980" y="278">plus state normalization</text>
+
+  <rect class="api" x="1245" y="165" width="140" height="145" rx="18"/>
+  <text class="label" x="1315" y="200" text-anchor="middle">pcp_api</text>
+  <text class="body" x="1275" y="232">Official</text>
+  <text class="body" x="1275" y="254">low-level</text>
+  <text class="body" x="1275" y="276">SDK</text>
+
+  <rect class="actuator" x="1450" y="165" width="120" height="145" rx="18"/>
+  <text class="label" x="1510" y="198" text-anchor="middle">Actuator</text>
+  <text class="body" x="1478" y="230">Virtual</text>
+  <text class="body" x="1478" y="252">DTwin</text>
+  <text class="body" x="1478" y="281">or real</text>
+
+  <path class="arrow" d="M 265 237 L 330 237"/>
+  <path class="arrow" d="M 565 237 L 630 237"/>
+  <path class="arrow" d="M 885 237 L 950 237"/>
+  <path class="arrow" d="M 1180 237 L 1245 237"/>
+  <path class="arrow" d="M 1385 237 L 1450 237"/>
+
+  <text class="small" x="297" y="222" text-anchor="middle">trajectory goal</text>
+  <text class="small" x="597" y="222" text-anchor="middle">joint commands</text>
+  <text class="small" x="917" y="222" text-anchor="middle">PCP calls</text>
+  <text class="small" x="1212" y="222" text-anchor="middle">SDK calls</text>
+  <text class="small" x="1417" y="222" text-anchor="middle">hardware</text>
+
+  <path class="return" d="M 1510 322 C 1510 430 1065 430 1065 322"/>
+  <text class="small" x="1280" y="418" text-anchor="middle">state, feedback, errors, voltage, temperature</text>
+
+  <path class="return" d="M 1065 322 C 1065 470 757 470 757 322"/>
+  <text class="small" x="910" y="462" text-anchor="middle">position / velocity / effort</text>
+
+  <path class="return" d="M 757 322 C 757 510 447 510 447 322"/>
+  <text class="small" x="602" y="502" text-anchor="middle">/joint_states and controller feedback</text>
+
+  <rect class="optional" x="205" y="555" width="360" height="125" rx="18"/>
+  <text class="label" x="385" y="590" text-anchor="middle">Optional PCP-rich tools</text>
+  <text class="body" x="238" y="621">CLI, notebooks, diagnostics, parameter tuning</text>
+  <text class="mono" x="238" y="650">/actuators/&lt;name&gt;/...</text>
+
+  <path class="optional-arrow" d="M 565 617 C 700 617 785 385 950 292"/>
+
+  <rect class="note" x="650" y="555" width="360" height="125" rx="18"/>
+  <text class="label" x="830" y="590" text-anchor="middle">Simplification rule</text>
+  <text class="body" x="682" y="621">Users should mostly see ros2_control.</text>
+  <text class="body" x="682" y="646">PCP-rich services stay available for</text>
+  <text class="body" x="682" y="671">features standard ROS does not model.</text>
+
+  <rect class="note" x="1095" y="555" width="360" height="125" rx="18"/>
+  <text class="label" x="1275" y="590" text-anchor="middle">What not to remove</text>
+  <text class="body" x="1128" y="621">Keep pcp_api as the SDK boundary.</text>
+  <text class="body" x="1128" y="646">Keep PcpActuatorDriver as the shared</text>
+  <text class="body" x="1128" y="671">real/virtual/paired actuator layer.</text>
+</svg>
