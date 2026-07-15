@@ -4,7 +4,7 @@
 
 PULSAR HRI provides the C++ API in two Linux package formats for both **x86_64 (AMD64)** and **ARM64 (AArch64)** platforms.
 
-### x86_64 (AMD64)
+### AMD64 (x86_64)
 
 | Package | Recommended for | Download |
 |---|---|---|
