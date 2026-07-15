@@ -46,7 +46,7 @@ At a glance, these are the main elements of the PULSAR HRI ecosystem:
     - [**Python API**](control/python_api/install_python_api.md): A flexible way to control real and virtual actuators from Python, from quick experiments to multi-actuator workflows at high update rates, both for Real and AUGUR-powered Virtual Actuators
         - with several [example quickstart and in-depth tutorials as jupyter notebooks](control/python_api/examples.md)
     - [**C++ API**](control/cpp_api/install_cpp_api.md): A lower-level option for more demanding and real-time applications.
-    - [**ROS 2 Bidge**](control/ros2_bridge/install_ros2_bridge.md): The package sits between high-level robotic software (ROS 2) and the low-level PULSAR Communication Protocol (PCP) actuator interface (Python/C++ APIs). 
+    - [**ROS 2 Bridge**](control/ros2_bridge.md): The package sits between high-level robotic software (ROS 2) and the low-level PULSAR Communication Protocol (PCP) actuator interface (Python/C++ APIs). It supports both standard `ros2_control` robot workflows and direct PCP-rich topics/services for bring-up, diagnostics, and actuator-specific tools.
 
 !!! note
     A quick alignment on naming we use:

@@ -1,134 +1,220 @@
 # PCP ROS 2 Bridge Tutorials
 
-This [PCP ROS 2 package](https://github.com/cconejob-arc/pcp_ros2_bridge) includes tutorial documentation and Python/C++ examples:
-
-| Tutorial | Goal |
-|---|---|
-| **Tutorial 1** | Discover the namespaced API |
-| **Tutorial 2** | Read live actuator state |
-| **Tutorial 3** | Use services: get info and trigger |
-| **Tutorial 4** | Send commands and build a minimal client |
-| **Tutorial 5** | Run a motion and parameter-change test |
-
-## Tutorial 1: Discover the `pcp_ros2_bridge` package
-
-This tutorial shows how to verify that `pcp_ros2_bridge` is running and that its ROS2 API is visible to client software.It does not enable, disable, or move the actuator.
-
-The purpose is to understand the basic architecture:
-
-<p align="center">
-  <img src="/assets/images/pcp_ros2_bridge_high_level.png" alt="High-level ecosystem diagram" width="70%">
-</p>
+This page gives a recommended learning order for `pcp_ros2_bridge`. Start with the virtual workflow, then prove the standard `ros2_control` path, then connect real hardware in read-only mode before commanding motion.
 
 !!! note
-    Client software should not use `pcp_api` directly. Client software should communicate with the bridge through ROS2 topics and services.
+    Client software should communicate with the bridge through ROS 2 topics, services, or `ros2_control`. It should not call `pcp_api` directly.
 
-!!! success
-    After this tutorial, the user should understand:
-    
-    - the bridge is a ROS2 API layer over `pcp_api`
-    - clients communicate through ROS2 topics and services
-    - `/actuators/state` is used for feedback
-    - `/actuators/command` is used for commands
-    - `/actuators/get_info` is used for on-demand actuator information
-    - `/actuators/trigger` is used for discrete actions such as enable and disable
+## First-Day Acceptance Path
 
-## Tutorial 2: Read Live Actuator State
+| Step | Command | Success looks like |
+|---|---|---|
+| Install and build | `pixi run setup` then `pixi run build` | The package builds without missing `pcp_api`, ROS 2, or asset errors. |
+| Virtual smoke test | `pixi run first-run-virtual` | `joint_1_virtual` moves, state is printed, and the bridge shuts down cleanly. |
+| Robot demo with RViz | `pixi run launch-control-demo-rviz` | RViz opens and the `single_link_1dof` model appears. |
+| Standard trajectory command | `pixi run control-demo-command` | The robot moves through `joint_trajectory_controller`. |
+| PCP-specific inspection | `pixi run launch-virtual`, then `pixi run virtual-info` | Info includes model, firmware, connection state, diagnostics, and feedback names. |
+| Real actuator read-only check | `pixi run launch-real`, then `pixi run real-info` and `pixi run real-state` | The real actuator reports the expected model, address, voltage, temperature, and position while disabled. |
 
-This tutorial shows how client software reads live actuator feedback from `pcp_ros2_bridge`.
+Stop before motion if any read-only real-hardware check looks wrong.
 
-The bridge publishes continuous actuator feedback on:
+## Tutorial 1: Prove the Virtual Actuator Path
 
-```text
-/actuators/state
+Run:
+
+```bash
+pixi run first-run-virtual
 ```
 
-!!! note
-    This tutorial is safe. It only subscribes to actuator state. It does not enable, disable, or move the actuator.
+This tutorial validates the no-hardware path. Success means:
 
-!!! success
-    After this tutorial, the user should understand:
+- the virtual bridge starts,
+- `/actuators/joint_1_virtual/get_info` appears,
+- the actuator moves to a small target,
+- state is printed before and after motion,
+- the actuator returns to zero unless the default options were changed.
 
-    - continuous feedback is read from `/actuators/state`
-    - state subscribers should use compatible QoS
-    - named fields are the main client-facing state API
-    - generic feedback arrays can expose additional actuator-specific values
-    - state reading does not require direct `pcp_api` access
+This proves that the local ROS 2 environment, generated interfaces, bridge executable, PCP API binding, and AUGUR DTwin backend are usable.
 
-## Tutorial 3: Use Services: Get Info, Enable, Disable, Reset Fault
+## Tutorial 2: Discover Topics and Services
 
-This tutorial shows how client software uses ROS2 services exposed by `pcp_ros2_bridge`.
+Terminal 1:
 
-It covers two service patterns:
-
-1. Request actuator information on demand with `/actuators/get_info`.
-2. Send discrete actuator actions with `/actuators/trigger`.
-
-!!! warning
-    Unlike Tutorial 1 and Tutorial 2, this tutorial can change actuator state if you send `enable`, `disable`, or `reset_fault`. 
-
-!!! success
-    After this tutorial, the user should understand:
-
-    - services are used for request/response operations
-    - `/actuators/get_info` is for on-demand information
-    - `/actuators/trigger` is for discrete actions
-    - enabling/disabling is done through the bridge, not through direct `pcp_api` calls
-
-## Tutorial 4: Send Commands and Build a Minimal Client
-
-This tutorial shows how a client sends actuator commands through `pcp_ros2_bridge`.
-
-Commands are published on:
-
-```text
-/actuators/command
+```bash
+pixi run launch-virtual
 ```
 
-This tutorial also shows the minimal client pattern:
+Terminal 2:
 
-1. Subscribe to `/actuators/state`.
-2. Optionally call `/actuators/trigger` to enable or disable.
-3. Publish one command to `/actuators/command`.
-4. Monitor state.
+```bash
+pixi run topics
+pixi run services
+pixi run virtual-info
+pixi run virtual-state
+```
 
-!!! warning
-    This tutorial can move the actuator if you enable command publishing and the actuator is enabled.
+The most important direct bridge endpoints are namespaced by actuator:
+
+| Endpoint | Type | Purpose |
+|---|---|---|
+| `/actuators/<name>/state` | Topic | PCP-rich state, including position, velocity, torque, voltage, temperature, mode, and enable state. |
+| `/actuators/<name>/command` | Topic | Direct PCP-rich command for one actuator. |
+| `/actuators/<name>/get_info` | Service | Static info, parameters, feedback, and diagnostics. |
+| `/actuators/<name>/enable` | Service | Enable or disable an actuator. |
+| `/actuators/<name>/stop` | Service | Stop an actuator. |
 
 !!! success
-    After this tutorial, the user should understand:
+    After this tutorial, users should understand that the direct bridge API is namespaced per actuator and that read-only inspection does not require motion.
 
-    - command messages are published to `/actuators/command`
-    - commands are targeted by `actuator_name`
-    - state should be monitored before and after commands
-    - enabling/disabling should be handled through `/actuators/trigger`
-    - clients still do not use `pcp_api` directly
+## Tutorial 3: Use the Standard Robot Path
 
-## Tutorial 5: Motion and Parameter Restore Test
+Use this when building robot applications, planners, RViz demos, or trajectory-control workflows.
 
-This tutorial shows how a client application can coordinate a complete actuator test through `pcp_ros2_bridge`.
+Terminal 1:
 
-The test demonstrates how to:
+```bash
+pixi run launch-control-demo-rviz
+```
 
-1. Read and store the original actuator parameters.
-2. Disable the actuator.
-3. Set the current position as home.
-4. Apply an initial parameter set.
-5. Enable the actuator.
-6. Command speed mode at `0.75 rad/s`.
-7. Change the command to `0.25 rad/s`.
-8. Modify selected parameters during the test.
-9. Disable the actuator.
-10. Restore the original parameters.
-11. Verify the restored values.
+Terminal 2:
 
-!!! note
-    The client does **not** call `pcp_api` directly. It only uses ROS2 topics and services exposed by `pcp_ros2_bridge`.
+```bash
+pixi run control-demo-command
+```
+
+Success means:
+
+- `controller_manager` starts,
+- `joint_state_broadcaster` and `joint_trajectory_controller` load,
+- RViz shows the `single_link_1dof` model,
+- the trajectory command is sent through `joint_trajectory_controller`,
+- motion is visible through `/joint_states`.
+
+The same launch file also supports the Pulse Arm 4DOF demo:
+
+```bash
+pixi run launch-pulse-arm-control-demo-rviz
+pixi run control-demo-pulse-arm-command
+```
+
+## Tutorial 4: Inspect PCP-Specific Data
+
+Some actuator information does not fit in standard ROS interfaces. Use the direct bridge for parameters, diagnostics, DTwin load/step tools, speed experiments, torque experiments, and support checks.
+
+Terminal 1:
+
+```bash
+pixi run launch-virtual
+```
+
+Terminal 2:
+
+```bash
+pixi run virtual-info
+pixi run virtual-state
+ros2 run pcp_ros2_bridge pcp_bridge_cli.py param-get joint_1_virtual
+```
+
+This path should print actuator name, PCP address, model, firmware, connection state, mode, enable state, diagnostics, voltage, temperature, position, velocity, torque, and configured feedback.
+
+## Tutorial 5: Connect One Real Actuator Safely
+
+Edit:
+
+```text
+config/pcp/single_actuator_real.yaml
+```
+
+Check:
+
+- `port` matches the adapter, or is intentionally `auto`,
+- `address` matches the actuator CAN address,
+- `real.address` matches `address`,
+- `start_enabled` remains `false`,
+- `startup_parameters` remains `{}` while learning.
+
+Terminal 1:
+
+```bash
+pixi run launch-real
+```
+
+Terminal 2:
+
+```bash
+pixi run real-info
+pixi run real-state
+```
+
+Success means:
+
+- `connected: true`,
+- the model is the expected PULSAR actuator,
+- voltage and temperatures are plausible,
+- position feedback is stable,
+- diagnostics do not report unexpected connection or backend errors.
+
+Do not move the real actuator until these read-only checks pass.
+
+## Tutorial 6: First Real Motion
+
+Use a staged command sequence so every side effect is visible:
+
+```bash
+ros2 run pcp_ros2_bridge pcp_bridge_cli.py info joint_1_real
+ros2 run pcp_ros2_bridge pcp_bridge_cli.py state joint_1_real
+ros2 run pcp_ros2_bridge pcp_bridge_cli.py mode joint_1_real SPEED
+ros2 run pcp_ros2_bridge pcp_bridge_cli.py enable joint_1_real
+ros2 run pcp_ros2_bridge pcp_bridge_cli.py speed joint_1_real 0.02
+ros2 run pcp_ros2_bridge pcp_bridge_cli.py stop joint_1_real
+ros2 run pcp_ros2_bridge pcp_bridge_cli.py disable joint_1_real
+```
 
 !!! warning
-    This tutorial can move real actuator hardware. Before running with motion enabled:
+    This tutorial can move real actuator hardware. Make sure the actuator is mechanically safe to move, the output shaft is clear or properly constrained, and a power-off or disable path is ready.
 
-    - Make sure the actuator is mechanically safe to move.
-    - Make sure the output shaft is free or properly constrained.
-    - Keep an emergency stop strategy available.
-    - Start with conservative values.
+## Notebook Tutorials
+
+The package also includes Jupyter notebooks.
+
+Run:
+
+```bash
+pixi run setup
+pixi run build
+pixi run notebooks
+```
+
+Use the Jupyter kernel named:
+
+```text
+Python (pcp_ros2_bridge)
+```
+
+Recommended quickstart order:
+
+| Notebook | Backend | Purpose |
+|---|---|---|
+| `quickstarts/V_01_virtual_dtwin_quickstart.ipynb` | virtual | First no-hardware bridge launch and virtual actuator motion. |
+| `quickstarts/V_02_virtual_topics_and_services.ipynb` | virtual | Explore ROS topics, services, and CLI. |
+| `quickstarts/V_03_ros_single_actuator_basic_control.ipynb` | virtual | Move one virtual actuator through ROS 2. |
+| `quickstarts/R_01_real_hardware_safety.ipynb` | real | Read-only real-hardware connection and safety checks. |
+| `quickstarts/R_02_ros_real_single_actuator_basic_control.ipynb` | real | Carefully move one real actuator after safety checks. |
+| `quickstarts/RV_01_paired_sim2real_quickstart.ipynb` | paired | Mirror a small command to paired real and virtual backends. |
+
+Advanced notebooks:
+
+| Notebook | Backend | Purpose |
+|---|---|---|
+| `advanced/A_01_parameters_feedback_and_virtual_services.ipynb` | virtual | Read/set parameters, configure feedback, discover DTwin models, set virtual load, and step the virtual actuator. |
+| `advanced/A_02_mujoco_visual_position_control.ipynb` | virtual/MuJoCo | Command position through ROS 2 and visualize the resulting state trajectory with MuJoCo. |
+
+## Support Report
+
+Before asking for support, run:
+
+```bash
+pixi run support-report
+```
+
+Include the generated report with the command you ran, terminal output around the failure, the YAML config you selected, whether the actuator was virtual, real, or paired, and whether motion was commanded through `ros2_control` or the direct bridge.
