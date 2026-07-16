@@ -2346,8 +2346,8 @@
 <hr />
 <h2 id="available-packages">Available Packages</h2>
 <p>PULSAR HRI provides the C++ API in <a href="../../../download/download_cpp_api/">two Linux package formats</a>:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pcp-api-cpp-&lt;version&gt;-linux-x86_64.deb
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pcp-api-cpp-&lt;version&gt;-linux-x86_64.tar.gz
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>*.deb
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>*.tar.gz
 </span></code></pre></div>
 <p>Use the <code>.deb</code> package if you are using Ubuntu or Debian.</p>
 <p>Use the <code>.tar.gz</code> archive if you want a manual installation in a custom location, such as <code>/opt/pcp_api</code>.</p>
@@ -2380,20 +2380,18 @@
 <hr />
 <h1 id="option-1-installation-from-deb">Option 1: Installation from <code>.deb</code></h1>
 <p>For Ubuntu/Debian systems, the recommended installation method is the Debian package.</p>
-<p>Download:</p>
-<p><a href="../../../download/pcp-api-cpp-2.0.0-linux-x86_64.deb">pcp-api-cpp-2.0.0-linux-x86_64.deb</a></p>
+<p>Download it from: <a href="../../../download/download_cpp_api/">Download C++ API</a></p>
 <p>Install it with:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>dist/pcp-api-cpp-&lt;version&gt;-linux-x86_64.deb
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>pcp-api-cpp-&lt;version&gt;-linux-&lt;architecture&gt;.deb
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>-f<span class="w"> </span>install
 </span></code></pre></div>
 <hr />
 <h1 id="option-2-installation-from-targz">Option 2: Installation from <code>.tar.gz</code></h1>
 <p>Use this method if you want to install the SDK manually into a custom folder.</p>
-<p>Download:</p>
-<p><a href="../../../download/pcp-api-cpp-2.0.0-linux-x86_64.tar.gz">pcp-api-cpp-2.0.0-linux-x86_64.tar.gz</a></p>
+<p>Download it from: <a href="../../../download/download_cpp_api/">Download C++ API</a></p>
 <p>Extract it to a location of your choice. For a system-like local installation, <code>/opt/pcp_api</code> is recommended:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/pcp_api
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-xzf<span class="w"> </span>pcp-api-cpp-&lt;version&gt;-linux-x86_64.tar.gz<span class="w"> </span>-C<span class="w"> </span>/opt/pcp_api
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-xzf<span class="w"> </span>pcp-api-cpp-&lt;version&gt;-linux-&lt;architecture&gt;.tar.gz<span class="w"> </span>-C<span class="w"> </span>/opt/pcp_api
 </span></code></pre></div>
 <p>The extracted SDK should contain a structure similar to:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>/opt/pcp_api/
