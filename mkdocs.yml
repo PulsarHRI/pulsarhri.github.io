@@ -65,6 +65,7 @@ markdown_extensions:
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - assets/javascripts/external-links.js
+  - assets/javascripts/bus-utilization.js
 extra_css:
   - assets/stylesheets/pulsar.css
 extra:
@@ -134,6 +135,7 @@ nav:
       - "Robot Models for Simulation": download/download_robot_assets.md
       - "Technical Documents":
           - "Test Reports": download/download_technical_reports.md
+  - "Bus Utilization Tool": tools/bus_utilization.md
   - support.md
   - faq.md
 
