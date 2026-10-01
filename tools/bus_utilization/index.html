@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://pulsarhri.github.io/set_up/hardware_interfaces/electrical_interfaces/">
+        <link rel="canonical" href="https://pulsarhri.github.io/tools/bus_utilization/">
       
       
-        <link rel="prev" href="../mechanical_interfaces/">
+        <link rel="prev" href="../../download/download_technical_reports/">
       
       
-        <link rel="next" href="../led/">
+        <link rel="next" href="../../support/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/icons/icon.ico">
+      <link rel="icon" href="../../assets/icons/icon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Electrical Interfaces - PULSAR HRI Ecosystem Documentation</title>
+        <title>Bus Utilization Tool - PULSAR HRI Ecosystem Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,11 +53,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/pulsar.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/pulsar.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#electrical-interfaces" class="md-skip">
+        <a href="#can-fd-bus-utilization-tool" class="md-skip">
           Skip to content
         </a>
       
@@ -98,9 +98,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="PULSAR HRI Ecosystem Documentation" class="md-header__button md-logo" aria-label="PULSAR HRI Ecosystem Documentation" data-md-component="logo">
+    <a href="../.." title="PULSAR HRI Ecosystem Documentation" class="md-header__button md-logo" aria-label="PULSAR HRI Ecosystem Documentation" data-md-component="logo">
       
-  <img src="../../../assets/icons/P_Logo_white_svg.png" alt="logo">
+  <img src="../../assets/icons/P_Logo_white_svg.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Electrical Interfaces
+              Bus Utilization Tool
             
           </span>
         </div>
@@ -221,9 +221,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="PULSAR HRI Ecosystem Documentation" class="md-nav__button md-logo" aria-label="PULSAR HRI Ecosystem Documentation" data-md-component="logo">
+    <a href="../.." title="PULSAR HRI Ecosystem Documentation" class="md-nav__button md-logo" aria-label="PULSAR HRI Ecosystem Documentation" data-md-component="logo">
       
-  <img src="../../../assets/icons/P_Logo_white_svg.png" alt="logo">
+  <img src="../../assets/icons/P_Logo_white_svg.png" alt="logo">
 
     </a>
     PULSAR HRI Ecosystem Documentation
@@ -238,7 +238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -312,7 +312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../quickstarts/quickstart_set_up_usb/" class="md-nav__link">
+      <a href="../../quickstarts/quickstart_set_up_usb/" class="md-nav__link">
         
   
   
@@ -340,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../quickstarts/quickstart_pulsar_app/" class="md-nav__link">
+      <a href="../../quickstarts/quickstart_pulsar_app/" class="md-nav__link">
         
   
   
@@ -368,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../quickstarts/quickstart_python_api/" class="md-nav__link">
+      <a href="../../quickstarts/quickstart_python_api/" class="md-nav__link">
         
   
   
@@ -396,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../quickstarts/quickstart_virtual_python_api/" class="md-nav__link">
+      <a href="../../quickstarts/quickstart_virtual_python_api/" class="md-nav__link">
         
   
   
@@ -428,20 +428,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -462,7 +460,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -477,20 +475,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -511,7 +507,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -529,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../set_up_real/" class="md-nav__link">
+      <a href="../../set_up/set_up_real/" class="md-nav__link">
         
   
   
@@ -557,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../communicate/communicate_real/" class="md-nav__link">
+      <a href="../../communicate/communicate_real/" class="md-nav__link">
         
   
   
@@ -582,20 +578,18 @@
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
         
           
           <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
@@ -616,7 +610,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -634,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mechanical_interfaces/" class="md-nav__link">
+      <a href="../../set_up/hardware_interfaces/mechanical_interfaces/" class="md-nav__link">
         
   
   
@@ -659,37 +653,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Electrical Interfaces
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../set_up/hardware_interfaces/electrical_interfaces/" class="md-nav__link">
         
   
   
@@ -705,115 +672,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#power-bus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Power Bus
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Power Bus">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#power-bus-cable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Power Bus Cable
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usb" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        USB
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#can-bus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CAN Bus
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CAN Bus">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#can-communication-adapter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CAN Communication Adapter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-bus-cables" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CAN Bus Cables
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-bus-termination-resistors-tr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CAN Bus Termination Resistors (TR)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -826,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../led/" class="md-nav__link">
+      <a href="../../set_up/hardware_interfaces/led/" class="md-nav__link">
         
   
   
@@ -917,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../set_up_virtual/" class="md-nav__link">
+      <a href="../../set_up/set_up_virtual/" class="md-nav__link">
         
   
   
@@ -945,7 +803,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../communicate/communicate_virtual/" class="md-nav__link">
+      <a href="../../communicate/communicate_virtual/" class="md-nav__link">
         
   
   
@@ -1082,7 +940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/control_modes_explained/control_modes_overview/" class="md-nav__link">
+      <a href="../../control/control_modes_explained/control_modes_overview/" class="md-nav__link">
         
   
   
@@ -1110,7 +968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/control_modes_explained/control_modes_parameters/" class="md-nav__link">
+      <a href="../../control/control_modes_explained/control_modes_parameters/" class="md-nav__link">
         
   
   
@@ -1193,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/pulsar_app/pulsar_app/" class="md-nav__link">
+      <a href="../../control/pulsar_app/pulsar_app/" class="md-nav__link">
         
   
   
@@ -1268,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/python_api/install_python_api/" class="md-nav__link">
+      <a href="../../control/python_api/install_python_api/" class="md-nav__link">
         
   
   
@@ -1296,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/python_api/cli/" class="md-nav__link">
+      <a href="../../control/python_api/cli/" class="md-nav__link">
         
   
   
@@ -1324,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/python_api/examples/" class="md-nav__link">
+      <a href="../../control/python_api/examples/" class="md-nav__link">
         
   
   
@@ -1399,7 +1257,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/python_api/class_PcpOverUsb/" class="md-nav__link">
+      <a href="../../control/python_api/class_PcpOverUsb/" class="md-nav__link">
         
   
   
@@ -1427,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/python_api/class_PulsarActuatorReal/" class="md-nav__link">
+      <a href="../../control/python_api/class_PulsarActuatorReal/" class="md-nav__link">
         
   
   
@@ -1455,7 +1313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/python_api/class_PulsarActuatorVirtual/" class="md-nav__link">
+      <a href="../../control/python_api/class_PulsarActuatorVirtual/" class="md-nav__link">
         
   
   
@@ -1483,7 +1341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/python_api/compatibility_aliases/" class="md-nav__link">
+      <a href="../../control/python_api/compatibility_aliases/" class="md-nav__link">
         
   
   
@@ -1574,7 +1432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/cpp_api/install_cpp_api/" class="md-nav__link">
+      <a href="../../control/cpp_api/install_cpp_api/" class="md-nav__link">
         
   
   
@@ -1602,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/cpp_api/cli/" class="md-nav__link">
+      <a href="../../control/cpp_api/cli/" class="md-nav__link">
         
   
   
@@ -1677,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/cpp_api/example_single_actuator/" class="md-nav__link">
+      <a href="../../control/cpp_api/example_single_actuator/" class="md-nav__link">
         
   
   
@@ -1705,7 +1563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/cpp_api/example_multiple_actuators/" class="md-nav__link">
+      <a href="../../control/cpp_api/example_multiple_actuators/" class="md-nav__link">
         
   
   
@@ -1733,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/cpp_api/example_advanced_features/" class="md-nav__link">
+      <a href="../../control/cpp_api/example_advanced_features/" class="md-nav__link">
         
   
   
@@ -1761,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/cpp_api/example_log_to_csv/" class="md-nav__link">
+      <a href="../../control/cpp_api/example_log_to_csv/" class="md-nav__link">
         
   
   
@@ -1789,7 +1647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/cpp_api/example_communication_information/" class="md-nav__link">
+      <a href="../../control/cpp_api/example_communication_information/" class="md-nav__link">
         
   
   
@@ -1817,7 +1675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/cpp_api/example_test_actuator_motion/" class="md-nav__link">
+      <a href="../../control/cpp_api/example_test_actuator_motion/" class="md-nav__link">
         
   
   
@@ -1845,7 +1703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/cpp_api/example_test_synchronization/" class="md-nav__link">
+      <a href="../../control/cpp_api/example_test_synchronization/" class="md-nav__link">
         
   
   
@@ -1889,7 +1747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../control/ros2_bridge/" class="md-nav__link">
+      <a href="../../control/ros2_bridge/" class="md-nav__link">
         
   
   
@@ -1979,7 +1837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/download_dtwin/" class="md-nav__link">
+      <a href="../../download/download_dtwin/" class="md-nav__link">
         
   
   
@@ -2007,7 +1865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/download_app/" class="md-nav__link">
+      <a href="../../download/download_app/" class="md-nav__link">
         
   
   
@@ -2035,7 +1893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/download_cpp_api/" class="md-nav__link">
+      <a href="../../download/download_cpp_api/" class="md-nav__link">
         
   
   
@@ -2063,7 +1921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/download_3d_models/" class="md-nav__link">
+      <a href="../../download/download_3d_models/" class="md-nav__link">
         
   
   
@@ -2091,7 +1949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/download_robot_assets/" class="md-nav__link">
+      <a href="../../download/download_robot_assets/" class="md-nav__link">
         
   
   
@@ -2166,7 +2024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/download_technical_reports/" class="md-nav__link">
+      <a href="../../download/download_technical_reports/" class="md-nav__link">
         
   
   
@@ -2206,10 +2064,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../tools/bus_utilization/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bus Utilization Tool
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2225,6 +2110,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-estimate-is-calculated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the estimate is calculated
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2236,7 +2152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../support/" class="md-nav__link">
+      <a href="../../support/" class="md-nav__link">
         
   
   
@@ -2263,7 +2179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../faq/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   
@@ -2310,91 +2226,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#power-bus" class="md-nav__link">
+  <a href="#how-the-estimate-is-calculated" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Power Bus
+        How the estimate is calculated
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Power Bus">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#power-bus-cable" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Power Bus Cable
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usb" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        USB
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#can-bus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CAN Bus
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="CAN Bus">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#can-communication-adapter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CAN Communication Adapter
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-bus-cables" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CAN Bus Cables
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-bus-termination-resistors-tr" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CAN Bus Termination Resistors (TR)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2415,50 +2253,102 @@
 
 
 
-<h1 id="electrical-interfaces">Electrical Interfaces</h1>
-<h2 id="power-bus">Power Bus</h2>
-<p>The power bus requirements are:</p>
-<ul>
-<li>Voltage: 48 V DC</li>
-<li>Current: up to 30 A</li>
-</ul>
-<p>Keep in mind that the actuators usually draw much less current (less than 1 A without load), but you should still ensure that your power supply can provide the maximum current. Otherwise, limit the current if the device demands more than the power supply can provide.</p>
-<h3 id="power-bus-cable">Power Bus Cable</h3>
-<p>The device has an XT30 male connector for power input. The pinout is as follows:</p>
-<p align="center">
-  <img src="/assets/images/XT30_01_inv.png" alt="XT30 Pinout" width="60%">
-</p>
+<h1 id="can-fd-bus-utilization-tool">CAN FD Bus Utilization Tool</h1>
+<p>Estimate the theoretical CAN FD bus load for a group of PULSAR actuators. Adjust the controls to see how actuator count, feedback, command frequency, and data bitrate affect utilization.</p>
+<div class="bus-utilization" id="bus-utilization-tool">
+  <div class="bus-utilization__controls">
+    <label class="bus-utilization__control" for="bus-actuators">
+      <span>Actuators <output id="bus-actuators-value" for="bus-actuators">6</output></span>
+      <input id="bus-actuators" type="range" min="1" max="10" value="6">
+      <small>1–10 actuators on one bus</small>
+    </label>
 
-<p>To power an actuator, you will need a power cable with an XT30 female connector at one end, as shown in the example image below.</p>
-<p><img alt="XT30 Power Connection" src="../../../assets/images/power_connection.jpeg" width="50%" /></p>
-<h2 id="usb">USB</h2>
-<p>PULSAR devices also include a USB connector. This allows one actuator to be connected directly to a computer via a standard USB-A to USB-C cable. This USB interface is intended for configuration, single actuator testing and firmware updates.</p>
-<h2 id="can-bus">CAN Bus</h2>
-<p>PULSAR devices are compatible with CAN-FD 1 Mbit/s | 5 Mbit/s. 
-This is the communication mode currently available for connecting and controlling multiple actuators within a robotic system. All PULSAR HRI devices have dual CAN connectors, so they can be daisy-chained easily.</p>
-<p>An example of a CAN bus is shown in the diagram below. It shows a CAN bus connection between two daisy-chained PULSAR actuators and a PULSAR CAN-to-USB adapter, with termination resistors (TR) at both ends of the bus.</p>
-<p><img alt="CAN example" src="../../../assets/images/can_02_inv.png" /></p>
-<h3 id="can-communication-adapter">CAN Communication Adapter</h3>
-<p>A dedicated device is required to communicate with PULSAR HRI actuators via the CAN communication protocol.</p>
-<p>Different devices are available on the market for this purpose, and we provide a CAN-to-USB adapter, shown below from both sides.</p>
-<p><img alt="CAN adapter" src="../../../assets/images/CAN_adapter.png" /></p>
-<h3 id="can-bus-cables">CAN Bus Cables</h3>
-<p>The cables used to create CAN bus connections compatible with PULSAR HRI actuators have 3-pin Molex PicoBlade connectors at both ends.</p>
-<p>Such cables are available on the market and can also be provided by PULSAR HRI. An example is shown below.</p>
-<p><img alt="CAN Bus Cable" src="../../../assets/images/Can_bus_cable.jpeg" width="50%" /></p>
-<p>Their pinout is as follows:</p>
-<p><img alt="CAN Bus Pinout" src="../../../assets/images/can_01.png" /></p>
-<p>When purchasing or making such a cable, ensure that the pinout at both ends of the cable is respected, as shown below.</p>
-<p><img alt="CAN Bus Pins Ends" src="../../../assets/images/Can_cable_pins_ends.png" /></p>
-<h3 id="can-bus-termination-resistors-tr">CAN Bus Termination Resistors (TR)</h3>
-<p>Industry-standard CAN specifications require termination resistors (TR) at both ends of the bus, usually 120 ohms, to ensure stable data transmission on the CAN bus. This is particularly important for high-speed communication.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Ensure that termination resistors are connected at both ends of the CAN bus to avoid communication issues.</p>
+    <label class="bus-utilization__control" for="bus-feedback-items">
+      <span>Feedback items per actuator <output id="bus-feedback-items-value" for="bus-feedback-items">4</output></span>
+      <input id="bus-feedback-items" type="range" min="1" max="10" value="4">
+      <small>Each item uses a 1-byte identifier and a 4-byte value</small>
+    </label>
+
+    <div class="bus-utilization__control">
+      <span>
+        <label for="bus-feedback-hz">Feedback frequency</label>
+        <label class="bus-utilization__number" for="bus-feedback-hz-number"><input id="bus-feedback-hz-number" type="number" min="1" max="2000" value="500" step="1"><span>Hz</span></label>
+      </span>
+      <input id="bus-feedback-hz" type="range" min="1" max="2000" value="500" step="1">
+      <small>Sent by each actuator</small>
+    </div>
+
+    <div class="bus-utilization__control">
+      <span>
+        <label for="bus-command-hz">Command frequency</label>
+        <label class="bus-utilization__number" for="bus-command-hz-number"><input id="bus-command-hz-number" type="number" min="1" max="2000" value="500" step="1"><span>Hz</span></label>
+      </span>
+      <input id="bus-command-hz" type="range" min="1" max="2000" value="500" step="1">
+      <small>Sent by the host to each actuator</small>
+    </div>
+
+    <label class="bus-utilization__control" for="bus-control-mode">
+      <span>Control mode
+        <select id="bus-control-mode">
+          <option value="torque">Torque</option>
+          <option value="speed">Speed</option>
+          <option value="position">Position</option>
+          <option value="impedance" selected>Impedance</option>
+        </select>
+      </span>
+      <small>Determines the maximum command parameters</small>
+    </label>
+
+    <label class="bus-utilization__control" for="bus-command-parameters">
+      <span>Command parameters <output id="bus-command-parameters-value" for="bus-command-parameters">8 / 8</output></span>
+      <input id="bus-command-parameters" type="range" min="1" max="8" value="8">
+      <small>Includes the setpoint; each parameter is a float32</small>
+    </label>
+
+    <fieldset class="bus-utilization__rate">
+      <legend>CAN FD data bitrate</legend>
+      <label><input type="radio" name="bus-data-rate" value="1"> <span>1 Mbps</span></label>
+      <label><input type="radio" name="bus-data-rate" value="5" checked> <span>5 Mbps</span></label>
+    </fieldset>
+  </div>
+
+  <section class="bus-utilization__result" aria-labelledby="bus-utilization-heading">
+    <h2 id="bus-utilization-heading">Estimated utilization</h2>
+    <div class="bus-utilization__gauge" id="bus-utilization-gauge" role="meter" aria-label="Estimated bus utilization" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="bus-utilization__gauge-center">
+        <strong id="bus-utilization-value" aria-live="polite">0.0%</strong>
+        <span>of bus capacity</span>
+      </div>
+    </div>
+    <p class="bus-utilization__status" id="bus-utilization-status"></p>
+
+    <div class="bus-utilization__breakdown">
+      <div>
+        <span>Feedback</span><strong id="bus-feedback-load">0.0%</strong>
+        <i><b id="bus-feedback-bar"></b></i>
+      </div>
+      <div>
+        <span>Commands</span><strong id="bus-command-load">0.0%</strong>
+        <i><b id="bus-command-bar"></b></i>
+      </div>
+    </div>
+
+    <dl class="bus-utilization__details">
+      <div><dt>Feedback frame</dt><dd id="bus-feedback-frame">—</dd></div>
+      <div><dt>Command frame</dt><dd id="bus-command-frame">—</dd></div>
+      <div><dt>Total frames</dt><dd id="bus-total-frames">—</dd></div>
+    </dl>
+  </section>
 </div>
-<p>These TRs consist of a 3-way Molex PicoBlade connector with a 120-ohm resistor between the CAN-H and CAN-L pins.</p>
-<p>These TRs are not usually available on the market. They can either be made by the user or provided by PULSAR HRI. An example is shown below.</p>
-<p><img alt="Termination resistor" src="../../../assets/images/termination_resistor.jpeg" width="30%" /></p>
+
+<h2 id="how-the-estimate-is-calculated">How the estimate is calculated</h2>
+<p>Each feedback item occupies <strong>5 data bytes</strong>: a 1-byte PCP item identifier and a 4-byte value. The combined data is rounded up to the next valid CAN FD payload size: 0–8, 12, 16, 20, 24, 32, 48, or 64 bytes. Firmware currently supports up to 10 configured high-rate feedback items.</p>
+<p>Each command contains a 1-byte action identifier followed by the selected number of 4-byte parameters. The setpoint is always included. Torque and Speed support up to 5 parameters, Position up to 6, and Impedance up to 8. The resulting data is rounded up to the next valid CAN FD payload size.</p>
+<p>Both directions use 29-bit extended CAN identifiers; source and target addresses are carried in that identifier rather than the data payload. The calculation assumes a 1 Mbps nominal/arbitration bitrate, applies the selected bitrate to the CAN FD data phase, and includes protocol overhead, inter-frame spacing, and worst-case bit stuffing.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a theoretical upper-bound estimate for periodic traffic. Real systems need additional headroom for arbitration, configuration and error messages, retransmissions, clock tolerance, adapter/host timing, and non-periodic traffic. Values at or above 100% cannot fit on the bus; lower values are not a guarantee of real-time performance.</p>
+</div>
 
 
 
@@ -2488,7 +2378,7 @@ This is the communication mode currently available for connecting and controllin
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../mechanical_interfaces/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mechanical Interfaces">
+          <a href="../../download/download_technical_reports/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Test Reports">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2498,20 +2388,20 @@ This is the communication mode currently available for connecting and controllin
                 Previous
               </span>
               <div class="md-ellipsis">
-                Mechanical Interfaces
+                Test Reports
               </div>
             </div>
           </a>
         
         
           
-          <a href="../led/" class="md-footer__link md-footer__link--next" aria-label="Next: LED Status Indicators">
+          <a href="../../support/" class="md-footer__link md-footer__link--next" aria-label="Next: Support">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                LED Status Indicators
+                Support
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2568,16 +2458,16 @@ This is the communication mode currently available for connecting and controllin
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "toggle", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "toggle", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../assets/javascripts/external-links.js"></script>
+        <script src="../../assets/javascripts/external-links.js"></script>
       
-        <script src="../../../assets/javascripts/bus-utilization.js"></script>
+        <script src="../../assets/javascripts/bus-utilization.js"></script>
       
     
   </body>
