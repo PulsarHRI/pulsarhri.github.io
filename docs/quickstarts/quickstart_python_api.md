@@ -54,7 +54,7 @@ PY
 
     - Following the [public Python examples repository](../control/python_api/examples.md), starting with the quickstart examples and then moving to the in-depth tutorials.
     
-    - Trying communication methods beyond direct USB that enable control of multiple actuators, such as [PULSAR CAN Communication](../communicate/communicate_real.md#3-connect-via-can).
+     - Trying communication methods beyond direct USB that enable control of multiple actuators, such as [PULSAR CAN Communication](../communicate/communicate_real/can/index.md).
 
     - Becoming familiar with the Python API code reference, starting with [`PulsarActuatorReal`](../control/python_api/class_PulsarActuatorReal.md).
 

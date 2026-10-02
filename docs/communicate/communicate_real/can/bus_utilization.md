@@ -1,4 +1,4 @@
-# CAN FD Bus Utilization Tool
+# CAN Bus Utilization Tool
 
 Estimate the theoretical CAN FD bus load for a group of PULSAR actuators. Adjust the controls to see how actuator count, feedback, command frequency, and data bitrate affect utilization.
 

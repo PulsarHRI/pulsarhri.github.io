@@ -1,7 +1,7 @@
 # Quickstart Tutorial: Set Up Real Actuator and Connect via USB
 Follow this tutorial for the fastest way to set up a PULSAR actuator out of the box and connect it via USB. It intentionally combines only the minimum power and USB steps needed before launching the [PULSAR App no-code GUI](../control/pulsar_app/pulsar_app.md).
 
-For more detailed mechanical mounting, power, USB, and CAN background, see [Set Up Real Actuators](../set_up/set_up_real.md) and [Communicate with Real Actuators](../communicate/communicate_real.md).
+For more detailed mechanical mounting, power, USB, and CAN background, see [Set Up Real Actuators](../set_up/set_up_real.md), [USB Communication](../communicate/communicate_real/usb.md), and [CAN Communication](../communicate/communicate_real/can/index.md).
 
 ## 🧰 What You’ll Need
 

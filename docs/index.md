@@ -28,9 +28,10 @@ At a glance, these are the main elements of the PULSAR HRI ecosystem:
 
 ### Motors & Actuators
 
-- **REAL ACTUATORS** which, once [set up](set_up/set_up_real.md), offer the following [hardware communication interfaces](communicate/communicate_real.md): 
-    - Direct **USB** connection, to connect to a single actuator for quick tests and firmware updates.
-    - **CAN** communication (CAN FD at selectable 1 or 5 Mbps), to connect to multiple actuators in robotic systems.
+- **REAL ACTUATORS** which, once [set up](set_up/set_up_real.md), support these [communication methods](communicate/communicate_real/index.md):
+    - [**USB**](communicate/communicate_real/usb.md), for direct connection to a single actuator.
+    - [**CAN**](communicate/communicate_real/can/index.md), for one or more actuators on a CAN FD bus; use the [CAN Bus Utilization Tool](communicate/communicate_real/can/bus_utilization.md) to estimate theoretical bus load.
+    - [**EtherCAT**](communicate/communicate_real/ethercat.md), currently work in progress.
 <br><br>
 - **VIRTUAL ACTUATORS** closely matching their real counterparts' behavior. These virtual actuators can be set up through:
     - [**AUGUR Digital Twin (DTwin)**](set_up/set_up_virtual.md): a first beta release is available for Linux x86_64. It models the physics of the real actuator and runs the exact same control algorithms.

@@ -1,6 +1,6 @@
 # Set Up Real Actuators
 
-This page walks you through the mechanical and electrical setup of a real PULSAR actuator, excluding communication. If you only need the fastest USB path, start with the [USB setup quickstart](../quickstarts/quickstart_set_up_usb.md). For guidance on connecting via USB or CAN in more detail, see [Communicate with Real Actuators](../communicate/communicate_real.md).
+This page walks you through the mechanical and electrical setup of a real PULSAR actuator, excluding communication. If you only need the fastest USB path, start with the [USB setup quickstart](../quickstarts/quickstart_set_up_usb.md). For guidance on connecting via USB or CAN in more detail, see [Communicate with Real Actuators](../communicate/communicate_real/index.md).
 
 ## 🧰 What You’ll Need
 
@@ -33,7 +33,7 @@ Usually **not** provided by PULSAR HRI:
    * The [actuator status LED](../set_up/hardware_interfaces/led.md) should light up, confirming it is receiving power.
 
 !!! success
-    Your actuator is now powered and mounted correctly. You’re ready to move on to the next step: [Communicate with Real Actuators](../communicate/communicate_real.md) to establish a connection for sending commands and reading telemetry!
+    Your actuator is now powered and mounted correctly. You’re ready to move on to the next step: [Communicate with Real Actuators](../communicate/communicate_real/index.md) to establish a connection for sending commands and reading telemetry!
 
 !!! question
     Need help or something doesn’t work? Head over to the [Support page](../support.md): we’ve got your back.

@@ -42,6 +42,7 @@ plugins:
         control/python_api/class_PCP_over_USB.md: control/python_api/class_PcpOverUsb.md
         control/python_api/class_PulsarActuator.md: control/python_api/class_PulsarActuatorReal.md
         set_up/hardware_interfaces/3d_models.md: download/download_3d_models.md
+        tools/bus_utilization.md: communicate/communicate_real/can/bus_utilization.md
   - mkdocstrings
   - mkdocs-jupyter
 exclude_docs: |
@@ -85,7 +86,12 @@ nav:
   - "Set Up & Communication": 
     - "with Real Actuators":
       - set_up/set_up_real.md
-      - communicate/communicate_real.md
+      - "Communicate with Real Actuators": communicate/communicate_real/index.md
+      - "USB Communication": communicate/communicate_real/usb.md
+      - "CAN Communication":
+          - communicate/communicate_real/can/index.md
+          - "CAN Bus Utilization Tool": communicate/communicate_real/can/bus_utilization.md
+      - EtherCAT: communicate/communicate_real/ethercat.md
       - "More Details on Hardware Interfaces":
         - set_up/hardware_interfaces/mechanical_interfaces.md
         - set_up/hardware_interfaces/electrical_interfaces.md
@@ -135,7 +141,6 @@ nav:
       - "Robot Models for Simulation": download/download_robot_assets.md
       - "Technical Documents":
           - "Test Reports": download/download_technical_reports.md
-  - "Bus Utilization Tool": tools/bus_utilization.md
   - support.md
   - faq.md
 
