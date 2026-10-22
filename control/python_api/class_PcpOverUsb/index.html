@@ -2630,95 +2630,95 @@
 
               <details class="mkdocstrings-source">
                 <summary>Source code in <code>pcp_api/pcp_over_usb.pyi</code></summary>
-                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span>
-<span class="normal"><a href="#__codelineno-0-22">22</a></span>
-<span class="normal"><a href="#__codelineno-0-23">23</a></span>
-<span class="normal"><a href="#__codelineno-0-24">24</a></span>
-<span class="normal"><a href="#__codelineno-0-25">25</a></span>
-<span class="normal"><a href="#__codelineno-0-26">26</a></span>
-<span class="normal"><a href="#__codelineno-0-27">27</a></span>
-<span class="normal"><a href="#__codelineno-0-28">28</a></span>
-<span class="normal"><a href="#__codelineno-0-29">29</a></span>
-<span class="normal"><a href="#__codelineno-0-30">30</a></span>
-<span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span>
-<span class="normal"><a href="#__codelineno-0-35">35</a></span>
-<span class="normal"><a href="#__codelineno-0-36">36</a></span>
-<span class="normal"><a href="#__codelineno-0-37">37</a></span>
-<span class="normal"><a href="#__codelineno-0-38">38</a></span>
-<span class="normal"><a href="#__codelineno-0-39">39</a></span>
-<span class="normal"><a href="#__codelineno-0-40">40</a></span>
-<span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span>
-<span class="normal"><a href="#__codelineno-0-44">44</a></span>
-<span class="normal"><a href="#__codelineno-0-45">45</a></span>
-<span class="normal"><a href="#__codelineno-0-46">46</a></span>
-<span class="normal"><a href="#__codelineno-0-47">47</a></span>
-<span class="normal"><a href="#__codelineno-0-48">48</a></span>
-<span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="k">class</span><span class="w"> </span><span class="nc">PcpOverUsb</span><span class="p">:</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">connect_on_init</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">logger</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">        </span><span class="sd">"""Register a callback for a transport address."""</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="o">...</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">setCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">remove_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">        </span><span class="sd">"""Remove a callback for a specific address"""</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>        <span class="o">...</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">removeCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>    <span class="nd">@property</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_connected</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>    <span class="nd">@staticmethod</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">check_pcp_id_range</span><span class="p">(</span><span class="n">can_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">        </span><span class="sd">"""Check if the address fits the 14-bit PCP address field."""</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>        <span class="o">...</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>
-</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>    <span class="nd">@staticmethod</span>
-</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">check_pcp_payload_size</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a>
-</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">send_PCP</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">priority</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">can_high_speed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
-</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>
-</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">enter_bootloader</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">        </span><span class="sd">"""To put the CAN adapter itself into bootloader mode """</span>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a>        <span class="o">...</span>
-</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a>    <span class="nd">@staticmethod</span>
-</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_ports</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span> <span class="o">...</span>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a>
-</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a>    <span class="nd">@staticmethod</span>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_port</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="w">        </span><span class="sd">"""Autodiscover the serial port for PCP over USB."""</span>
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a>        <span class="o">...</span>
+                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-7"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-7" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-7"></a><span class="k">class</span><span class="w"> </span><span class="nc">PcpOverUsb</span><span class="p">:</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-8"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-8" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-8"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">connect_on_init</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">logger</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">logging</span><span class="o">.</span><span class="n">Logger</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-9"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-9" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-9"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-10"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-10" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-10"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-11"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-11" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-11"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-12"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-12" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-13"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-13" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-13"></a><span class="w">        </span><span class="sd">"""Register a callback for a transport address."""</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-14"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-14" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-14"></a>        <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-15"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-15" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-15"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-16"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-16" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-16"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">setCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-17"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-17" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-17"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-18"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-18" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-18"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">remove_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-19"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-19" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-19"></a><span class="w">        </span><span class="sd">"""Remove a callback for a specific address"""</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-20"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-20" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-20"></a>        <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-21"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-21" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-21"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-22"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-22" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-22"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">removeCallback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-23"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-23" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-23"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-24"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-24" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-24"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">connect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">port</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-25"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-25" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-25"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-26"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-26" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-26"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">disconnect</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-27"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-27" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-27"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-28"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-28" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-28"></a>    <span class="nd">@property</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-29"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-29" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-29"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">is_connected</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-30"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-30" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-30"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-31"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-31" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-31"></a>    <span class="nd">@staticmethod</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-32"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-32" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-32"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">check_pcp_id_range</span><span class="p">(</span><span class="n">can_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-33"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-33" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-33"></a><span class="w">        </span><span class="sd">"""Check if the address fits the 14-bit PCP address field."""</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-34"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-34" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-34"></a>        <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-35"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-35" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-35"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-36"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-36" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-36"></a>    <span class="nd">@staticmethod</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-37"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-37" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-37"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">check_pcp_payload_size</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-38"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-38" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-38"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-39"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-39" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-39"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">send_PCP</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">priority</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">can_high_speed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span> <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-40"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-40" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-40"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-41"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-41" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-41"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">enter_bootloader</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-42"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-42" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-42"></a><span class="w">        </span><span class="sd">"""To put the CAN adapter itself into bootloader mode """</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-43"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-43" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-43"></a>        <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-44"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-44" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-44"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-45"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-45" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-45"></a>    <span class="nd">@staticmethod</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-46"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-46" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-46"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_ports</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span> <span class="o">...</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-47"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-47" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-47"></a>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-48"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-48" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-48"></a>    <span class="nd">@staticmethod</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-49"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-49" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-49"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_port</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-50"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-50" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-50"></a><span class="w">        </span><span class="sd">"""Autodiscover the serial port for PCP over USB."""</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb--source--__span-0-51"><a id="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-51" name="pcp_api.pcp_over_usb.PcpOverUsb--source--__codelineno-0-51"></a>        <span class="o">...</span>
 </span></code></pre></div></td></tr></table></div>
               </details>
 
@@ -2751,11 +2751,11 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pcp_api/pcp_over_usb.pyi</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">set_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="sd">"""Register a callback for a transport address."""</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>    <span class="o">...</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__codelineno-0-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__span-0-12"><a id="pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__codelineno-0-12" name="pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__codelineno-0-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">set_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__span-0-13"><a id="pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__codelineno-0-13" name="pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__codelineno-0-13"></a><span class="w">    </span><span class="sd">"""Register a callback for a transport address."""</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__span-0-14"><a id="pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__codelineno-0-14" name="pcp_api.pcp_over_usb.PcpOverUsb.set_callback--source--__codelineno-0-14"></a>    <span class="o">...</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2778,11 +2778,11 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pcp_api/pcp_over_usb.pyi</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="k">def</span><span class="w"> </span><span class="nf">remove_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="sd">"""Remove a callback for a specific address"""</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="o">...</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__codelineno-0-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__span-0-18"><a id="pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__codelineno-0-18" name="pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__codelineno-0-18"></a><span class="k">def</span><span class="w"> </span><span class="nf">remove_callback</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__span-0-19"><a id="pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__codelineno-0-19" name="pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__codelineno-0-19"></a><span class="w">    </span><span class="sd">"""Remove a callback for a specific address"""</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__span-0-20"><a id="pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__codelineno-0-20" name="pcp_api.pcp_over_usb.PcpOverUsb.remove_callback--source--__codelineno-0-20"></a>    <span class="o">...</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2809,13 +2809,13 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pcp_api/pcp_over_usb.pyi</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-31">31</a></span>
-<span class="normal"><a href="#__codelineno-0-32">32</a></span>
-<span class="normal"><a href="#__codelineno-0-33">33</a></span>
-<span class="normal"><a href="#__codelineno-0-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="nd">@staticmethod</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="k">def</span><span class="w"> </span><span class="nf">check_pcp_id_range</span><span class="p">(</span><span class="n">can_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">    </span><span class="sd">"""Check if the address fits the 14-bit PCP address field."""</span>
-</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>    <span class="o">...</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-34">34</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__span-0-31"><a id="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-31" name="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-31"></a><span class="nd">@staticmethod</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__span-0-32"><a id="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-32" name="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-32"></a><span class="k">def</span><span class="w"> </span><span class="nf">check_pcp_id_range</span><span class="p">(</span><span class="n">can_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__span-0-33"><a id="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-33" name="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-33"></a><span class="w">    </span><span class="sd">"""Check if the address fits the 14-bit PCP address field."""</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__span-0-34"><a id="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-34" name="pcp_api.pcp_over_usb.PcpOverUsb.check_pcp_id_range--source--__codelineno-0-34"></a>    <span class="o">...</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2838,11 +2838,11 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pcp_api/pcp_over_usb.pyi</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-41">41</a></span>
-<span class="normal"><a href="#__codelineno-0-42">42</a></span>
-<span class="normal"><a href="#__codelineno-0-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="k">def</span><span class="w"> </span><span class="nf">enter_bootloader</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">    </span><span class="sd">"""To put the CAN adapter itself into bootloader mode """</span>
-</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="o">...</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__codelineno-0-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__span-0-41"><a id="pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__codelineno-0-41" name="pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__codelineno-0-41"></a><span class="k">def</span><span class="w"> </span><span class="nf">enter_bootloader</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__span-0-42"><a id="pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__codelineno-0-42" name="pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__codelineno-0-42"></a><span class="w">    </span><span class="sd">"""To put the CAN adapter itself into bootloader mode """</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__span-0-43"><a id="pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__codelineno-0-43" name="pcp_api.pcp_over_usb.PcpOverUsb.enter_bootloader--source--__codelineno-0-43"></a>    <span class="o">...</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2869,13 +2869,13 @@
 
             <details class="mkdocstrings-source">
               <summary>Source code in <code>pcp_api/pcp_over_usb.pyi</code></summary>
-              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-48">48</a></span>
-<span class="normal"><a href="#__codelineno-0-49">49</a></span>
-<span class="normal"><a href="#__codelineno-0-50">50</a></span>
-<span class="normal"><a href="#__codelineno-0-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="nd">@staticmethod</span>
-</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_port</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="w">    </span><span class="sd">"""Autodiscover the serial port for PCP over USB."""</span>
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a>    <span class="o">...</span>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-51">51</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__span-0-48"><a id="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-48" name="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-48"></a><span class="nd">@staticmethod</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__span-0-49"><a id="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-49" name="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-49"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_port</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__span-0-50"><a id="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-50" name="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-50"></a><span class="w">    </span><span class="sd">"""Autodiscover the serial port for PCP over USB."""</span>
+</span><span id="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__span-0-51"><a id="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-51" name="pcp_api.pcp_over_usb.PcpOverUsb.get_port--source--__codelineno-0-51"></a>    <span class="o">...</span>
 </span></code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -3010,5 +3010,112 @@
         <script src="../../../assets/javascripts/bus-utilization.js"></script>
       
     
-  </body>
+  <script data-mkdocs-jupyter-mathjax="{&quot;url&quot;: &quot;https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js&quot;, &quot;version&quot;: 4}">
+/* Shared by full pages and Material's instant navigation. */
+(() => {
+  const config = JSON.parse(document.currentScript.dataset.mkdocsJupyterMathjax);
+  if (window.mkdocsJupyterMathJax) return;
+
+  let loading;
+  let queue = Promise.resolve();
+  let previous = [];
+
+  const ready = async () => {
+    if (!loading) {
+      loading = (async () => {
+        let math = window.MathJax;
+        if (!math?.typesetPromise) {
+          const url = new URL(config.url, document.baseURI).href;
+          const existing = Array.from(document.scripts).find(script =>
+            script.src && (script.src === url || script.id === 'MathJax-script' ||
+              (/mathjax/i.test(script.src) &&
+               /\/(?:MathJax|latest|(?:tex|mml)(?:-mml)?-(?:chtml|svg))\.js(?:[?#]|$)/i.test(script.src))));
+          if (existing) {
+            if (!math?.startup?.promise) {
+              await new Promise((resolve, reject) => {
+                existing.addEventListener('load', resolve, { once: true });
+                existing.addEventListener('error', reject, { once: true });
+              });
+            }
+          } else {
+            // Keep site macros, delimiters and startup hooks when supplied.
+            const options = math || {};
+            window.MathJax = {
+              ...options,
+              loader: {
+                ...options.loader,
+                load: Array.from(new Set(['ui/safe', ...(options.loader?.load || [])]))
+              },
+              startup: { typeset: false, ...options.startup },
+              tex: {
+                tags: 'ams',
+                useLabelIds: true,
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true,
+                ...options.tex
+              }
+            };
+            await new Promise((resolve, reject) => {
+              const script = document.createElement('script');
+              script.src = config.url;
+              script.id = 'MathJax-script';
+              script.async = true;
+              script.onload = resolve;
+              script.onerror = reject;
+              document.head.appendChild(script);
+            });
+          }
+        }
+        math = window.MathJax;
+        await math.startup.promise;
+        return math;
+      })();
+    }
+    const math = await loading;
+    // A site owner can extend the v3 queue again on each navigation.
+    await math.startup.promise;
+    return math;
+  };
+
+  const unrendered = node => {
+    if (node.matches('mjx-container')) return [];
+    if (!node.querySelector('mjx-container')) return [node];
+    // In v3, scanning generated assistive MathML again produces nested output.
+    return Array.from(node.children).flatMap(unrendered);
+  };
+
+  const refresh = () => {
+    // A separate chain also serializes v3, without changing v4's startup promise.
+    queue = queue.then(async () => {
+      const notebooks = Array.from(document.querySelectorAll('.jupyter-wrapper'));
+      if (!notebooks.length && !previous.length) return;
+      if (notebooks.length === previous.length &&
+          notebooks.every((node, index) => node === previous[index])) return;
+      const math = await ready();
+      if (previous.length) {
+        math.typesetClear(previous);
+        math.texReset();
+      }
+      previous = notebooks.filter(node => node.isConnected);
+      const pending = previous.flatMap(unrendered);
+      if (pending.length) await math.typesetPromise(pending);
+    }).catch(error => console.error('mkdocs-jupyter: MathJax rendering failed', error));
+    return queue;
+  };
+
+  window.mkdocsJupyterMathJax = { refresh };
+  const start = () => {
+    if (typeof document$ !== 'undefined') document$.subscribe(refresh);
+    else refresh();
+  };
+  // Theme bundles and user-provided MathJax scripts can follow notebook content.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, { once: true });
+  } else start();
+})();
+
+</script>
+</body>
 </html>
