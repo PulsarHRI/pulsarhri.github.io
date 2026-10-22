@@ -20,7 +20,7 @@ If you're only looking for drawings of mechanical interfaces, check out [the ded
 | Base | PULSE115 bracket | PULSE98 bracket |
 |:---:|:---:|:---:|
 | ![Base](../assets/3d_models/base.png) | ![Bracket](../assets/3d_models/bracket.png) | ![Bracket](../assets/3d_models/bracket.png) |
-| [Download](../assets/3d_models/base.stl) | [Download](../assets/3d_models/bracket.stl) | [Download](../assets/3d_models/bracket_pulse98.stl) |
+| [Download](../assets/3d_models/base.stl) | [Download](../assets/3d_models/bracket_pulse115.stl) | [Download](../assets/3d_models/bracket_pulse98.stl) |
 | Shaft |  |  |
 | ![Shaft](../assets/3d_models/shaft.png) | | |
 | [Download](../assets/3d_models/shaft.stl) | | |
