@@ -133,6 +133,7 @@ nav:
       - Actuator setup: hardware/actuator_setup.md
       - Mechanical interfaces: hardware/mechanical_interfaces.md
       - Electrical interfaces: hardware/electrical_interfaces.md
+      - Regenerative energy management: hardware/regenerative_energy_management.md
       - LED status indicators: hardware/led.md
       - Connectivity:
           - hardware/connectivity/index.md

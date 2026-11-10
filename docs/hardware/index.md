@@ -9,6 +9,8 @@ Use this section to prepare a physical PULSE actuator before controlling it with
 3. Check the [mechanical](mechanical_interfaces.md) and [electrical](electrical_interfaces.md) interfaces.
 4. Choose [USB](connectivity/usb.md) for one actuator or [CAN FD](connectivity/can.md) for one or more actuators.
 
+For systems that can return energy to the DC bus, see [Regenerative energy management](regenerative_energy_management.md).
+
 ## Reference
 
 - [LED status indicators](led.md)
