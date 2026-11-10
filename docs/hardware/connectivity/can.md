@@ -45,6 +45,16 @@ Daisy-chain additional actuators and keep only two termination resistors, one at
 
 More than eight registered actuators is allowed, but Pulsar Python SDK logs a telemetry-utilization warning. Request only the telemetry required by the application and use the [CAN bus utilization tool](can_bus_utilization.md) before increasing actuator count or rates.
 
+## Planning multiple buses
+
+Actuators on one CAN FD bus share its communication capacity. For larger systems, consider distributing actuators across independent buses, each with its own compatible USB-to-CAN adapter, subject to host and software support. Plan each bus separately for command and telemetry traffic, physical wiring, and electrical loading.
+
+Use the [CAN bus utilization tool](can_bus_utilization.md) to estimate communication utilization. This estimate does not establish electrical compatibility or guarantee real-time performance. Each independent bus must retain termination at both physical ends; see [Wire one actuator](#wire-one-actuator) for the termination arrangement.
+
+![A computing unit connects over USB to two CAN-to-USB adapters, each serving a separate linear CAN bus with actuator nodes and termination at both ends; photos show adapter and termination hardware.](../../assets/images/can_multi_bus_example.png)
+
+*The shown node count and addresses are examples, not a product limit. The exposed adapter board is shown for identification only; do not remove an enclosure or operate a board unenclosed.*
+
 ## Data-rate switching
 
 CAN FD can use a 5 Mbit/s data phase. Treat bit-rate switching as a bus-wide configuration: all devices on the bus must be compatible and configured consistently.
