@@ -4,7 +4,7 @@ This page covers physical setup before USB or CAN communication.
 
 ## What you need
 
-Usually supplied by PulsarHRI:
+Usually supplied by PULSAR HRI:
 
 - one PULSE actuator;
 - one power bus cable.
@@ -24,4 +24,4 @@ Usually supplied by the user:
 5. Apply power and check the [status LED](led.md).
 6. Continue with [USB](connectivity/usb.md) or [CAN FD](connectivity/can.md).
 
-For the shortest first-use workflow, continue to [Single actuator with Pulsar App](../quickstart/pulsar_app.md).
+For the shortest first-use workflow, continue to [Physical actuator over direct USB with Pulsar App (browser)](../quickstart/pulsar_app.md).

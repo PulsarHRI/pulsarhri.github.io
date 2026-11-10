@@ -56,6 +56,6 @@ Physical actuators require firmware **2.0.4 or newer**. If an older actuator nee
 
 ## Next steps
 
-- [Single actuator with Pulsar Python SDK](../quickstart/sdk_usb.md)
+- [Physical actuator over direct USB with Pulsar Python SDK](../quickstart/sdk_usb.md)
 - [Virtual actuator with Pulsar Python SDK](../quickstart/sdk_virtual.md)
 - [Core workflow](core_workflow.md)

@@ -35,7 +35,7 @@ PULSE actuators support CAN FD with a 1 Mbit/s arbitration rate and selectable 1
 
 ### USB-to-CAN adapter
 
-A CAN adapter connects the host computer to the actuator bus. PulsarHRI provides a USB-to-CAN adapter.
+A CAN adapter connects the host computer to the actuator bus. PULSAR HRI provides a USB-to-CAN adapter.
 
 ![Pulsar CAN adapter](../assets/images/CAN_adapter.png)
 

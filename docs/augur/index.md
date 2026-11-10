@@ -20,7 +20,7 @@ AUGUR Digital Twin provides validated virtual models of PULSE actuators for soft
 
 ## Start here
 
-- [Virtual actuator quickstart](../quickstart/sdk_virtual.md)
+- [Virtual actuator with Pulsar Python SDK](../quickstart/sdk_virtual.md)
 - [Virtual actuators in Pulsar Python SDK](../sdk/virtual_actuators.md)
 - [Co-simulation coupling](co_sim_coupling.md)
 - [Robot modelling](robot_modelling.md)

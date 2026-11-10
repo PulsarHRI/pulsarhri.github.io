@@ -1,6 +1,6 @@
 # Support
 
-For product and integration support, contact PulsarHRI:
+For product and integration support, contact PULSAR HRI:
 
 - Email: [support.dt@pulsarhri.com](mailto:support.dt@pulsarhri.com)
 - Monday–Thursday: 08:00–17:00 GMT

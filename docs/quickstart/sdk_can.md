@@ -1,4 +1,4 @@
-# Multiple actuators with Pulsar Python SDK
+# Multiple physical actuators over CAN FD with Pulsar Python SDK
 
 Use one USB-to-CAN adapter to control several physical actuators on one CAN FD bus.
 

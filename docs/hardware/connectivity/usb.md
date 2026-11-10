@@ -21,6 +21,6 @@ The SDK and CLI auto-detect the port when possible. If several Pulsar serial dev
 
 ## Continue
 
-- [Single actuator with Pulsar App](../../quickstart/pulsar_app.md)
-- [Single actuator with Pulsar Python SDK](../../quickstart/sdk_usb.md)
+- [Physical actuator over direct USB with Pulsar App (browser)](../../quickstart/pulsar_app.md)
+- [Physical actuator over direct USB with Pulsar Python SDK](../../quickstart/sdk_usb.md)
 - [Direct USB with Pulsar Python SDK](../../sdk/physical/usb.md)

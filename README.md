@@ -1,6 +1,6 @@
-# PulsarHRI Developer Hub
+# PULSAR HRI Developer Hub
 
-This repository contains the public [PulsarHRI Developer Hub](https://pulsarhri.github.io/).
+This repository contains the public [PULSAR HRI Developer Hub](https://pulsarhri.github.io/).
 
 The current documentation covers:
 

@@ -10,11 +10,11 @@ It is organized by user goal and will contain Python examples plus future Rust e
 
 ### Physical actuator over USB
 
-Use the complete [single-actuator quickstart](../quickstart/sdk_usb.md).
+Use the complete [Physical actuator over direct USB with Pulsar Python SDK](../quickstart/sdk_usb.md).
 
 ### Scan and use CAN
 
-Use [Multiple actuators with Pulsar Python SDK](../quickstart/sdk_can.md) and [CAN](physical/can.md).
+Use [Multiple physical actuators over CAN FD with Pulsar Python SDK](../quickstart/sdk_can.md) and [CAN](physical/can.md).
 
 ### Virtual actuator
 

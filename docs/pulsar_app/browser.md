@@ -22,4 +22,4 @@ Firefox may not provide the required device behavior and is not recommended.
 4. Grant device access when prompted.
 5. Select the actuator under **Devices**.
 
-Continue with the [GUI quickstart](../quickstart/pulsar_app.md).
+Continue with the [Physical actuator over direct USB with Pulsar App (browser)](../quickstart/pulsar_app.md).

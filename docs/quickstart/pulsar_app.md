@@ -1,4 +1,4 @@
-# Single actuator with Pulsar App
+# Physical actuator over direct USB with Pulsar App (browser)
 
 This is the fastest way to move one physical PULSE actuator without writing code.
 
@@ -50,6 +50,6 @@ Change gains and limits only in small increments. A gain that is too high can pr
 ## Next steps
 
 - [Pulsar App overview](../pulsar_app/index.md)
-- [Single actuator with Pulsar Python SDK](sdk_usb.md)
-- [Control architectures](../control_architectures/index.md)
+- [Physical actuator over direct USB with Pulsar Python SDK](sdk_usb.md)
+- [Control](../control_architectures/index.md)
 - [CAN FD connectivity](../hardware/connectivity/can.md)
