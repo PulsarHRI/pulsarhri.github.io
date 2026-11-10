@@ -1,0 +1,22 @@
+[workspace]
+authors = ["Seif Farag <sabdelbaset@arquimea.com>"]
+channels = ["conda-forge"]
+name = "pulsarhri.github.io"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+serve = "mkdocs serve"
+build = "mkdocs build --strict"
+prepare-versions = "python tools/prepare_versioned_docs.py"
+serve-versions = "python tools/prepare_versioned_docs.py && mike serve"
+
+[dependencies]
+python = "==3.13"
+
+[pypi-dependencies]
+mkdocs-material = ">=9.8.1, <10"
+mkdocs-redirects = ">=1.2.3, <2"
+mkdocstrings = { version = ">=1.0.8, <2", extras = ["python"] }
+mkdocs-jupyter = ">=0.27.0, <0.28"
+mike = ">=2.2.0, <3"

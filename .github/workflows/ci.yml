@@ -1,4 +1,5 @@
 name: ci
+
 on:
   push:
     branches:
@@ -19,13 +20,13 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 10 
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Configure Git Credentials
+      - name: Configure Git credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
@@ -34,11 +35,11 @@ jobs:
         with:
           python-version: '3.12'
 
-      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - run: echo "cache_id=$(date --utc '+%V')" >> "$GITHUB_ENV"
 
       - uses: actions/cache@v4
         with:
-          key: mkdocs-material-v2-${{ env.cache_id }}
+          key: mkdocs-material-v3-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
@@ -51,12 +52,42 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: python -m pip install -r requirements.txt
 
-      - name: Validate MkDocs configuration
-        run: mkdocs build --strict
+      - name: Validate current documentation
+        run: python -m mkdocs build --strict
 
-      # Only deploy on push to main/master, not on PRs
-      - name: Deploy documentation
+      - name: Deploy versioned documentation
         if: github.event_name == 'push'
-        run: mkdocs gh-deploy --force
+        env:
+          LEGACY_COMMIT: 6e279824fc747ef88628bdf4ee74a322b0db61ed
+        run: |
+          git fetch origin gh-pages
+
+          if ! git show origin/gh-pages:versions.json 2>/dev/null | grep -q '"version": "2.0.4"'; then
+            legacy_dir="$RUNNER_TEMP/pulsar-docs-2.0.4"
+            git worktree add --detach "$legacy_dir" "$LEGACY_COMMIT"
+
+            LEGACY_DIR="$legacy_dir" python - <<'PY'
+          import os
+          from pathlib import Path
+
+          config = Path(os.environ["LEGACY_DIR"]) / "mkdocs.yml"
+          text = config.read_text()
+          marker = "\nnav:\n"
+          if marker not in text:
+              raise SystemExit("Could not add the legacy version selector")
+          text = text.replace(
+              marker,
+              "\n  version:\n    provider: mike\n\nnav:\n",
+              1,
+          )
+          config.write_text(text)
+          PY
+
+            (cd "$legacy_dir" && mike deploy --push 2.0.4)
+            git worktree remove "$legacy_dir"
+          fi
+
+          mike deploy --push 3.0.0
+          mike set-default --push 3.0.0

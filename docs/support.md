@@ -1,12 +1,15 @@
 # Support
 
-If you encounter any issues or have any questions regarding the use of any product, please do not hesitate to reach out to our support team. 
+For product and integration support, contact PulsarHRI:
 
-* Support Email: support.dt@pulsarhri.com
-* Support Hours: Monday to Thursday, 8:00 AM - 5:00 PM (GMT) and Friday, 8:00 AM - 1:00 PM (GMT) 
+- Email: [support.dt@pulsarhri.com](mailto:support.dt@pulsarhri.com)
+- Monday–Thursday: 08:00–17:00 GMT
+- Friday: 08:00–13:00 GMT
 
+Include the actuator model, firmware version, host operating system, connection type, and a concise description of what happened.
 
-For additional resources and troubleshooting tips, please contact our support team.
-Thank you for choosing our product. We are committed to providing you with the best possible experience.
+For Developer Hub bugs or documentation requests, open an issue:
 
-You can also create an [issue](https://github.com/PulsarHRI/pulsarhri.github.io/issues) reporting a bug or requesting a new feature.
+[github.com/PulsarHRI/pulsarhri.github.io/issues](https://github.com/PulsarHRI/pulsarhri.github.io/issues)
+
+Do not post credentials, private packages, serial numbers, or other sensitive information in a public issue.

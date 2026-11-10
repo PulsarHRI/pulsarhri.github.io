@@ -1,68 +1,65 @@
-<h1 class="pulsar-visually-hidden">PULSAR HRI Ecosystem Documentation</h1>
+<h1 class="pulsar-visually-hidden">PulsarHRI Developer Hub</h1>
 
 <p align="center">
-  <img class="pulsar-theme-logo pulsar-theme-logo--light" src="assets/images/pulsarhri_logo_black.png" alt="PULSAR HRI">
-  <img class="pulsar-theme-logo pulsar-theme-logo--dark" src="assets/images/pulsarhri_logo_white.png" alt="PULSAR HRI">
+  <img class="pulsar-theme-logo pulsar-theme-logo--light" src="assets/images/pulsarhri_logo_black.png" alt="PulsarHRI">
+  <img class="pulsar-theme-logo pulsar-theme-logo--dark" src="assets/images/pulsarhri_logo_white.png" alt="PulsarHRI">
 </p>
 
-Welcome to the **[PULSAR HRI](https://pulsarhri.com/) Ecosystem Documentation**!
+# Build with PulsarHRI
 
-Whether you're a researcher, developer, or engineer, the content on this website will help you get up and running with PULSAR products. 
-PULSAR HRI develops best-in-class actuation systems and a surrounding ecosystem to enable next-generation robotics.
+The PulsarHRI Developer Hub brings together the hardware, software, control, and simulation information needed to build robotics systems with PULSE actuators.
 
-### ⚡ First Time Here?
+## Choose your path
 
-If you can't wait to see your actuator moving, just go straight to the [**No-Code GUI Quickstart**](quickstarts/quickstart_pulsar_app.md) to set up, power your actuator and get moving in minutes controlling it directly from your browser!
+| I want to… | Start here |
+| --- | --- |
+| Move one physical actuator without writing code | [Single actuator with Pulsar App](quickstart/pulsar_app.md) |
+| Control one physical actuator from Python | [Single actuator with Pulsar SDK](quickstart/sdk_usb.md) |
+| Control several actuators over CAN FD | [Multiple actuators with Pulsar SDK](quickstart/sdk_can.md) |
+| Develop without physical hardware | [Virtual actuator with Pulsar SDK](quickstart/sdk_virtual.md) |
+| Design a robot integration | [Hardware](hardware/index.md) and [AUGUR Digital Twin](augur/index.md) |
 
-!!! tip
-    Make sure to read the following short section: it will allow you to easily find what you need on the website.
+## Main areas
 
-## 🧭 Ecosystem Overview
+### Hardware
 
-At a glance, these are the main elements of the PULSAR HRI ecosystem:
+Mount and power an actuator, understand its interfaces, and connect by USB or CAN FD.
 
-<p align="center">
-  <img class="pulsar-theme-image pulsar-theme-image--light pulsar-ecosystem-diagram" src="assets/images/high_level_diagram_ecosystem_white.png" alt="High-level ecosystem diagram">
-  <img class="pulsar-theme-image pulsar-theme-image--dark pulsar-ecosystem-diagram" src="assets/images/high_level_diagram_ecosystem_black.png" alt="High-level ecosystem diagram">
-</p>
+[Explore hardware](hardware/index.md)
 
-### Motors & Actuators
+### Pulsar App
 
-- **REAL ACTUATORS** which, once [set up](set_up/set_up_real.md), support these [communication methods](communicate/communicate_real/index.md):
-    - [**USB**](communicate/communicate_real/usb.md), for direct connection to a single actuator.
-    - [**CAN**](communicate/communicate_real/can/index.md), for one or more actuators on a CAN FD bus; use the [CAN Bus Utilization Tool](communicate/communicate_real/can/bus_utilization.md) to estimate theoretical bus load.
-    - [**EtherCAT**](communicate/communicate_real/ethercat.md), currently work in progress.
-<br><br>
-- **VIRTUAL ACTUATORS** closely matching their real counterparts' behavior. These virtual actuators can be set up through:
-    - [**AUGUR Digital Twin (DTwin)**](set_up/set_up_virtual.md): a first beta release is available for Linux x86_64. It models the physics of the real actuator and runs the exact same control algorithms.
-<br><br>
-- **CONTROL MODES** such as torque, speed, position, and impedance run at the lowest level in the same way on real actuator firmware and in the virtual AUGUR Digital Twin model. See the [Control Modes Overview](control/control_modes_explained/control_modes_overview.md) for the shared behavior and terminology.
-<br><br>
+Use the browser or desktop GUI to configure, command, and inspect one physical actuator.
 
-### Control
+[Open the Pulsar App documentation](pulsar_app/index.md)
 
-- **SOFTWARE INTERFACES** of different kinds and for different needs, used to control both real and virtual actuators:
-    - [**PULSAR App GUI**](control/pulsar_app/pulsar_app.md): A no-code GUI for single-actuator testing, available in the browser or as a desktop package
-        - offering [the easiest quickstart experience](quickstarts/quickstart_pulsar_app.md) to get familiar with PULSAR HRI actuators and their control.
-    - [**Python API**](control/python_api/install_python_api.md): A flexible way to control real and virtual actuators from Python, from quick experiments to multi-actuator workflows at high update rates, both for Real and AUGUR-powered Virtual Actuators
-        - with several [example quickstart and in-depth tutorials as jupyter notebooks](control/python_api/examples.md)
-    - [**C++ API**](control/cpp_api/install_cpp_api.md): A lower-level option for more demanding and real-time applications.
+### Pulsar SDK
 
-!!! note
-    A quick alignment on naming we use:
-    
-    - **Motors** = Direct-drive units without a transmission.
-    - **Actuators** = Motors with an integrated transmission.
+Build Python applications for physical and virtual actuators, from one device to multi-domain robot platforms.
 
-A question we often hear is: 
->*"How are you different from other actuator companies?"*
+[Explore Pulsar SDK](sdk/index.md)
 
-Glad you asked. Check out [PULSAR HRI's website](https://pulsarhri.com/technology/) for answers!
+### AUGUR Digital Twin
 
----
+Run validated virtual actuator models and couple them to external robot simulators.
 
-### 🆘 Need help? 
-Visit our [Support page](support.md) or check the [FAQ](faq.md).
+[Explore AUGUR Digital Twin](augur/index.md)
 
----
-![Actuator to digital twin transition](assets/images/actuators_digital_twin_transition_5loops.gif){ loading=lazy }
+### Control architectures
+
+Understand torque, velocity, position, and impedance control and the parameters available in each mode.
+
+[Explore control architectures](control_architectures/index.md)
+
+!!! note "Rust SDK"
+    The Pulsar Rust SDK will follow the same user-facing concepts as Pulsar SDK for Python. Its documentation and examples are coming soon.
+
+## Compatibility at a glance
+
+- Physical SDK firmware requirement: **2.0.4 or newer**.
+- Supported hosts: **Linux x86_64**, **Linux ARM64**, and **Windows x86_64**.
+- Supported Python versions: **3.10–3.13**.
+- macOS is not currently supported.
+- The Pulsar App controls one physical actuator at a time.
+
+Need help? Visit [Support](support.md) or [FAQ and Issues](faq_issues.md).
