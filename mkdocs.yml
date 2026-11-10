@@ -1,5 +1,5 @@
-site_name: PulsarHRI Developer Hub
-site_description: Hardware, software, control, and simulation documentation for PulsarHRI PULSE actuators.
+site_name: PULSAR HRI Developer Hub
+site_description: Hardware, software, control, and simulation documentation for PULSAR HRI PULSE actuators.
 site_url: https://pulsarhri.github.io/
 use_directory_urls: true
 
@@ -108,6 +108,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - assets/javascripts/external-links.js
   - assets/javascripts/bus-utilization.js
+  - assets/javascripts/docs-version-label.js
 
 extra_css:
   - assets/stylesheets/pulsar.css
@@ -121,12 +122,12 @@ extra:
 
 nav:
   - Home: index.md
-  - Quickstart:
+  - Quickstarts:
       - quickstart/index.md
-      - Single Actuator with Pulsar App: quickstart/pulsar_app.md
-      - Single Actuator with Pulsar Python SDK: quickstart/sdk_usb.md
-      - Multiple Actuators (CAN) with Pulsar Python SDK: quickstart/sdk_can.md
-      - Virtual Actuator with Pulsar Python SDK: quickstart/sdk_virtual.md
+      - One physical actuator · direct USB · Pulsar App (browser): quickstart/pulsar_app.md
+      - One physical actuator · direct USB · Python SDK: quickstart/sdk_usb.md
+      - Multiple physical actuators · CAN FD · Python SDK: quickstart/sdk_can.md
+      - Virtual actuators · Python SDK: quickstart/sdk_virtual.md
   - Hardware:
       - hardware/index.md
       - Safety and prerequisites: hardware/safety.md
@@ -143,11 +144,14 @@ nav:
           - EtherCAT status: hardware/connectivity/ethercat.md
   - Firmware:
       - firmware/index.md
+  - Control:
+      - control_architectures/index.md
+      - Control parameters by mode: control_architectures/parameters.md
   - Pulsar App:
       - pulsar_app/index.md
       - Browser app: pulsar_app/browser.md
-      - Desktop app: pulsar_app/desktop.md
-      - GUI quickstart: pulsar_app/quickstart.md
+      - PULSAR Desktop App: pulsar_app/desktop.md
+      - Pulsar App quickstart: pulsar_app/quickstart.md
   - Pulsar Python SDK:
       - sdk/index.md
       - Install: sdk/install.md
@@ -171,16 +175,13 @@ nav:
       - augur/index.md
       - Co-simulation coupling: augur/co_sim_coupling.md
       - Robot modelling: augur/robot_modelling.md
-  - Control Architectures:
-      - control_architectures/index.md
-      - Control parameters by mode: control_architectures/parameters.md
   - Downloads and Resources:
       - resources/index.md
-      - Pulsar App desktop package: resources/pulsar_app.md
+      - PULSAR Desktop App package: resources/pulsar_app.md
       - Mechanical CAD and printable fixtures: resources/cad.md
       - Robot model assets: resources/robot_assets.md
       - Datasheets: resources/datasheets.md
   - FAQ and Issues: faq_issues.md
   - Support: support.md
 
-copyright: Copyright &copy; 2026 PulsarHRI
+copyright: Copyright &copy; 2026 PULSAR HRI

@@ -1,6 +1,7 @@
-# Control architectures
+# Control
 
-PULSE actuators provide four user-facing control modes. The same low-level behavior is used by physical firmware and AUGUR Digital Twin models.
+PULSE actuators provide four user-facing control modes.
+The physical firmware and AUGUR Digital Twin models run the same low-level control algorithms at 20 kHz.
 
 | Mode | Pulsar Python SDK enum | Primary command |
 | --- | --- | --- |
