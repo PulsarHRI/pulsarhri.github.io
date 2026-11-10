@@ -27,6 +27,12 @@ Mount and power an actuator, understand its interfaces, and connect by USB or CA
 
 [Explore hardware](hardware/index.md)
 
+### Firmware
+
+Learn how the Pulsar App checks for firmware releases and access the current update portal.
+
+[Explore firmware](firmware/index.md)
+
 ### Pulsar App
 
 Use the browser or desktop GUI to configure, command, and inspect one physical actuator.

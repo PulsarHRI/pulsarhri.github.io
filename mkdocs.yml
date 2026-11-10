@@ -141,6 +141,8 @@ nav:
           - CAN FD: hardware/connectivity/can.md
           - CAN bus utilization: hardware/connectivity/can_bus_utilization.md
           - EtherCAT status: hardware/connectivity/ethercat.md
+  - Firmware:
+      - firmware/index.md
   - Pulsar App:
       - pulsar_app/index.md
       - Browser app: pulsar_app/browser.md
