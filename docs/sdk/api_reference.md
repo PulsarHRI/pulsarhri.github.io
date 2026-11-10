@@ -1,4 +1,4 @@
-# Pulsar SDK API reference
+# Pulsar Python SDK API reference
 
 Public reference for:
 
@@ -6,7 +6,7 @@ Public reference for:
 from pulsar_sdk import ...
 ```
 
-The behavior and workflow guide is in the [Pulsar SDK user contract](user_contract.md).
+The behavior and workflow guide is in the [Pulsar Python SDK user contract](user_contract.md).
 
 ## Diagrams
 

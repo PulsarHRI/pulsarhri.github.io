@@ -4,7 +4,7 @@
 
 ### Which interface should I use first?
 
-Use [Pulsar App](pulsar_app/index.md) for one physical actuator without code, direct USB with [Pulsar SDK](quickstart/sdk_usb.md) for Python development, CAN FD for several physical actuators, and `VirtualWorld` when no hardware is available.
+Use [Pulsar App](pulsar_app/index.md) for one physical actuator without code, direct USB with [Pulsar Python SDK](quickstart/sdk_usb.md) for Python development, CAN FD for several physical actuators, and `VirtualWorld` when no hardware is available.
 
 ### Which firmware is required by Pulsar SDK?
 
@@ -22,9 +22,9 @@ No. Pulsar App currently controls one physical actuator at a time. Use Pulsar SD
 
 The Pulsar Rust SDK is coming soon. Its section will be expanded when the crate, examples, and reference are released.
 
-## Open SDK issues
+## Open Pulsar Python SDK issues
 
-The following work is currently tracked for Pulsar SDK:
+The following work is currently tracked for Pulsar Python SDK:
 
 - **#5 — Reconnect isolation:** queued transport-loss handling must not affect a newly reconnected actuator session.
 - **#6 — Physical-domain validation:** `PulsarActuatorReal` must reject `VirtualWorld` instead of accepting a non-physical domain.

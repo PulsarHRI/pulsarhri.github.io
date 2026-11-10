@@ -14,11 +14,11 @@ Use the complete [single-actuator quickstart](../quickstart/sdk_usb.md).
 
 ### Scan and use CAN
 
-Use [Multiple actuators with Pulsar SDK](../quickstart/sdk_can.md) and [CAN](physical/can.md).
+Use [Multiple actuators with Pulsar Python SDK](../quickstart/sdk_can.md) and [CAN](physical/can.md).
 
 ### Virtual actuator
 
-Use [Virtual actuator with Pulsar SDK](../quickstart/sdk_virtual.md).
+Use [Virtual actuator with Pulsar Python SDK](../quickstart/sdk_virtual.md).
 
 ### Telemetry logging
 

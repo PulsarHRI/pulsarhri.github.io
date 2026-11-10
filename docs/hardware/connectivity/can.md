@@ -25,7 +25,7 @@ CAN ports are bidirectional. The termination resistors must remain at the two ph
 
 ## Discover addresses
 
-Install Pulsar SDK, then scan the bus:
+Install Pulsar Python SDK, then scan the bus:
 
 ```bash
 pulsar-cli scan --port /dev/ttyACM0
@@ -43,7 +43,7 @@ The default scan range is 16–255. Valid actuator CAN addresses are 16–16382.
 
 Daisy-chain additional actuators and keep only two termination resistors, one at each physical end. Every actuator on one `PcpOverCan` domain must have a unique address.
 
-More than eight registered actuators is allowed, but Pulsar SDK logs a telemetry-utilization warning. Request only the telemetry required by the application and use the [CAN bus utilization tool](can_bus_utilization.md) before increasing actuator count or rates.
+More than eight registered actuators is allowed, but Pulsar Python SDK logs a telemetry-utilization warning. Request only the telemetry required by the application and use the [CAN bus utilization tool](can_bus_utilization.md) before increasing actuator count or rates.
 
 ## Data-rate switching
 

@@ -77,7 +77,7 @@ Do not publish private repository URLs, source paths, credentials, testing chann
 ## Writing guidelines
 
 - Write for public users.
-- Use `PulsarHRI`, `Pulsar App`, `Pulsar SDK`, `AUGUR Digital Twin`, and uppercase `PULSE` model names.
+- Use `PulsarHRI`, `Pulsar App`, `Pulsar Python SDK`, `Pulsar Rust SDK`, `AUGUR Digital Twin`, and uppercase `PULSE` model names.
 - Keep real-hardware instructions safe and include shutdown behavior.
 - Prefer stable public links.
 - Keep current and legacy documentation concerns separate.

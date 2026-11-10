@@ -1,6 +1,6 @@
-# Pulsar SDK
+# Pulsar Python SDK
 
-Pulsar SDK is the Python interface for physical PULSE actuators and AUGUR Digital Twin models. The same lifecycle, modes, commands, grouping, status, and safety concepts apply across physical and virtual backends.
+Pulsar Python SDK is the Python interface for physical PULSE actuators and AUGUR Digital Twin models. The same lifecycle, modes, commands, grouping, status, and safety concepts apply across physical and virtual backends.
 
 ## Supported environments
 
@@ -14,7 +14,7 @@ macOS is not currently supported.
 
 ## Start here
 
-1. [Install Pulsar SDK](install.md).
+1. [Install Pulsar Python SDK](install.md).
 2. Learn the [core workflow](core_workflow.md).
 3. Choose [physical actuators](physical/index.md) or [virtual actuators](virtual_actuators.md).
 4. Add [groups and platforms](groups_platforms.md) when the application contains several actuators.
@@ -22,7 +22,7 @@ macOS is not currently supported.
 
 ## Object model
 
-![Pulsar SDK class model](assets/diagrams/class-model.png)
+![Pulsar Python SDK class model](assets/diagrams/class-model.png)
 
 - An actuator belongs to one execution domain.
 - An `ActuatorGroup` contains named actuators from one domain and one control mode.

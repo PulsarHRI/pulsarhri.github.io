@@ -2,14 +2,14 @@
 
 PULSE actuators provide four user-facing control modes. The same low-level behavior is used by physical firmware and AUGUR Digital Twin models.
 
-| Mode | Pulsar SDK enum | Primary command |
+| Mode | Pulsar Python SDK enum | Primary command |
 | --- | --- | --- |
 | Torque control | `Mode.TORQUE` | torque in N·m |
 | Speed/velocity control | `Mode.VELOCITY` | angular velocity in rad/s |
 | Position control | `Mode.POSITION` | output position in rad |
 | Impedance control | `Mode.IMPEDANCE` | position in rad plus optional impedance fields |
 
-Pulsar App labels velocity mode as **Speed Control**. Pulsar SDK uses the more precise enum name `VELOCITY`.
+Pulsar App labels velocity mode as **Speed Control**. Pulsar Python SDK uses the more precise enum name `VELOCITY`.
 
 ## Torque
 

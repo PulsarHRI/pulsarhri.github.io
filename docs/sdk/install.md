@@ -1,4 +1,4 @@
-# Install Pulsar SDK
+# Install Pulsar Python SDK
 
 Pixi is the recommended installation method because it pins Python and native packages per project.
 
@@ -22,7 +22,7 @@ pixi add pulsar-assets
 Run Python or the CLI through Pixi:
 
 ```bash
-pixi run python -c "import pulsar_sdk; print('Pulsar SDK installed')"
+pixi run python -c "import pulsar_sdk; print('Pulsar Python SDK installed')"
 pixi run pulsar-cli --help
 ```
 
@@ -56,6 +56,6 @@ Physical actuators require firmware **2.0.4 or newer**. If an older actuator nee
 
 ## Next steps
 
-- [Single actuator with Pulsar SDK](../quickstart/sdk_usb.md)
-- [Virtual actuator with Pulsar SDK](../quickstart/sdk_virtual.md)
+- [Single actuator with Pulsar Python SDK](../quickstart/sdk_usb.md)
+- [Virtual actuator with Pulsar Python SDK](../quickstart/sdk_virtual.md)
 - [Core workflow](core_workflow.md)

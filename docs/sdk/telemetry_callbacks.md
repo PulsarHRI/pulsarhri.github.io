@@ -1,6 +1,6 @@
 # Telemetry and callbacks
 
-Pulsar SDK supports direct telemetry reads, actuator callbacks, complete group controller batches, and platform-wide callback registration.
+Pulsar Python SDK supports direct telemetry reads, actuator callbacks, complete group controller batches, and platform-wide callback registration.
 
 ## Configure periodic telemetry
 

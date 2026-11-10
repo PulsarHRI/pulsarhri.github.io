@@ -25,7 +25,7 @@ The actuator requires an XT30 female connector on the power cable.
 
 The actuator USB connector supports direct connection to one computer for configuration, single-actuator testing, control, and maintenance. Use a standard USB-A to USB-C cable.
 
-Direct USB uses actuator address `0` in Pulsar SDK.
+Direct USB uses actuator address `0` in Pulsar Python SDK.
 
 ## CAN FD
 

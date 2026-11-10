@@ -2,7 +2,7 @@
 
 Operating state, connection state, and health are separate facts. Use `Actuator.status` and `GroupStatus` rather than inferring safety from one boolean.
 
-![Pulsar SDK lifecycle](assets/diagrams/lifecycle.png)
+![Pulsar Python SDK lifecycle](assets/diagrams/lifecycle.png)
 
 ## Operating states
 

@@ -1,6 +1,6 @@
 # Core workflow
 
-Pulsar SDK separates object construction, connection, configuration, output enable, commands, and shutdown.
+Pulsar Python SDK separates object construction, connection, configuration, output enable, commands, and shutdown.
 
 ## One physical actuator
 

@@ -1,4 +1,4 @@
-# Single actuator with Pulsar SDK
+# Single actuator with Pulsar Python SDK
 
 Control one physical actuator connected directly by USB.
 

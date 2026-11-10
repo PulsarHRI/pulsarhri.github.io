@@ -1,6 +1,6 @@
 # Commands and parameters
 
-Pulsar SDK distinguishes runtime commands from stored or readable parameters.
+Pulsar Python SDK distinguishes runtime commands from stored or readable parameters.
 
 ## Primary command
 

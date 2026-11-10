@@ -1,4 +1,4 @@
-# Virtual actuator with Pulsar SDK
+# Virtual actuator with Pulsar Python SDK
 
 Run a PULSE115-60G virtual actuator using AUGUR Digital Twin assets. No physical actuator, power supply, USB cable, or CAN adapter is required.
 

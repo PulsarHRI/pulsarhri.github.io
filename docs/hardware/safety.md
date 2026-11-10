@@ -20,7 +20,7 @@ PULSE actuators can move quickly and produce substantial torque. Treat every con
 
 ## Safe software lifecycle
 
-With Pulsar SDK:
+With Pulsar Python SDK:
 
 1. connect;
 2. configure while output is inactive;

@@ -84,7 +84,7 @@ Estimate the theoretical CAN FD load for a group of PULSE actuators. Adjust actu
 
 ## Calculation
 
-Each telemetry item occupies five data bytes: a one-byte identifier and a four-byte value. Payloads are rounded to a valid CAN FD size. Pulsar SDK permits at most 12 configured telemetry items.
+Each telemetry item occupies five data bytes: a one-byte identifier and a four-byte value. Payloads are rounded to a valid CAN FD size. Pulsar Python SDK permits at most 12 configured telemetry items.
 
 Each command contains an action identifier followed by mode-specific float32 values. The estimate includes extended identifiers, protocol overhead, inter-frame spacing, and worst-case bit stuffing.
 

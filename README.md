@@ -6,7 +6,7 @@ The current documentation covers:
 
 - PULSE actuator hardware, setup, USB, and CAN FD;
 - Pulsar App browser and desktop workflows;
-- Pulsar SDK for physical and virtual actuators;
+- Pulsar Python SDK for physical and virtual actuators;
 - AUGUR Digital Twin and MuJoCo co-simulation;
 - actuator control architectures;
 - CAD, datasheets, support, and known issues.
@@ -15,7 +15,7 @@ The current documentation covers:
 
 The published site uses `mike` to keep both documentation generations available:
 
-- `3.0.0` — current Developer Hub and Pulsar SDK documentation;
+- `3.0.0` — current Developer Hub and Pulsar Python SDK documentation;
 - `2.0.4` — preserved legacy API documentation and downloads.
 
 Use the version selector in the site header to switch versions.

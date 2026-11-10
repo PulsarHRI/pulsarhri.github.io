@@ -124,9 +124,9 @@ nav:
   - Quickstart:
       - quickstart/index.md
       - Single Actuator with Pulsar App: quickstart/pulsar_app.md
-      - Single Actuator with Pulsar SDK: quickstart/sdk_usb.md
-      - Multiple Actuators (CAN) with Pulsar SDK: quickstart/sdk_can.md
-      - Virtual Actuator with Pulsar SDK: quickstart/sdk_virtual.md
+      - Single Actuator with Pulsar Python SDK: quickstart/sdk_usb.md
+      - Multiple Actuators (CAN) with Pulsar Python SDK: quickstart/sdk_can.md
+      - Virtual Actuator with Pulsar Python SDK: quickstart/sdk_virtual.md
   - Hardware:
       - hardware/index.md
       - Safety and prerequisites: hardware/safety.md
@@ -148,7 +148,7 @@ nav:
       - Browser app: pulsar_app/browser.md
       - Desktop app: pulsar_app/desktop.md
       - GUI quickstart: pulsar_app/quickstart.md
-  - Pulsar SDK:
+  - Pulsar Python SDK:
       - sdk/index.md
       - Install: sdk/install.md
       - Core workflow: sdk/core_workflow.md

@@ -1,6 +1,6 @@
 # Command-line interface
 
-Installing Pulsar SDK provides `pulsar-cli` in the active environment.
+Installing Pulsar Python SDK provides `pulsar-cli` in the active environment.
 
 With Pixi, prefix commands with `pixi run`:
 

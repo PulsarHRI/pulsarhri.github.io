@@ -8,4 +8,4 @@ Choose a physical communication method based on the system size and use case.
 | [CAN FD](can.md) | One or more actuators on a shared bus | Available |
 | [EtherCAT](ethercat.md) | Future industrial network integration | In development |
 
-Virtual actuators do not use a physical bus. They run through Pulsar SDK and `VirtualWorld`; see [Virtual actuators](../../sdk/virtual_actuators.md).
+Virtual actuators do not use a physical bus. They run through Pulsar Python SDK and `VirtualWorld`; see [Virtual actuators](../../sdk/virtual_actuators.md).

@@ -1,4 +1,4 @@
-# Pulsar SDK user contract
+# Pulsar Python SDK user contract
 
 This guide explains the public behavior of the Python `pulsar_sdk` package. It covers object ownership, lifecycle, control callbacks, safety, and the differences between physical and virtual actuators.
 
@@ -14,11 +14,11 @@ For exact signatures and enum values, see [`api_reference.md`](api_reference.md)
 # Core concepts
 
 ## Overall runtime diagram
-![Pulsar SDK object ownership model](assets/diagrams/runtime.png)
+![Pulsar Python SDK object ownership model](assets/diagrams/runtime.png)
 
 ## Object model
 
-![Pulsar SDK object ownership model](assets/diagrams/class-model.png)
+![Pulsar Python SDK object ownership model](assets/diagrams/class-model.png)
 
 - An **actuator** belongs to one `ExecutionDomain`.
 - A **group** contains named actuators from exactly one domain. All members use the same control mode.
@@ -132,7 +132,7 @@ Calling `configure()`, `set_mode()`, `switch_to()`, `sync()`, `enable()`, `disab
 
 # Lifecycle
 
-![Pulsar SDK actuator lifecycle and recovery transitions](assets/diagrams/lifecycle.png)
+![Pulsar Python SDK actuator lifecycle and recovery transitions](assets/diagrams/lifecycle.png)
 
 | State | Meaning |
 | --- | --- |

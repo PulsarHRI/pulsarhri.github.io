@@ -50,6 +50,6 @@ Change gains and limits only in small increments. A gain that is too high can pr
 ## Next steps
 
 - [Pulsar App overview](../pulsar_app/index.md)
-- [Single actuator with Pulsar SDK](sdk_usb.md)
+- [Single actuator with Pulsar Python SDK](sdk_usb.md)
 - [Control architectures](../control_architectures/index.md)
 - [CAN FD connectivity](../hardware/connectivity/can.md)

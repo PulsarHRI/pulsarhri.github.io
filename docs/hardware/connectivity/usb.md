@@ -15,12 +15,12 @@ Direct USB is the simplest physical connection for one actuator.
 Use either:
 
 - [Pulsar App](../../pulsar_app/browser.md); or
-- Pulsar SDK with `PcpOverUsb` and actuator address `0`.
+- Pulsar Python SDK with `PcpOverUsb` and actuator address `0`.
 
 The SDK and CLI auto-detect the port when possible. If several Pulsar serial devices are connected, pass the port explicitly.
 
 ## Continue
 
 - [Single actuator with Pulsar App](../../quickstart/pulsar_app.md)
-- [Single actuator with Pulsar SDK](../../quickstart/sdk_usb.md)
-- [Direct USB with Pulsar SDK](../../sdk/physical/usb.md)
+- [Single actuator with Pulsar Python SDK](../../quickstart/sdk_usb.md)
+- [Direct USB with Pulsar Python SDK](../../sdk/physical/usb.md)

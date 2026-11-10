@@ -1,4 +1,4 @@
-# Multiple actuators with Pulsar SDK
+# Multiple actuators with Pulsar Python SDK
 
 Use one USB-to-CAN adapter to control several physical actuators on one CAN FD bus.
 
@@ -14,7 +14,7 @@ Before writing code:
 
 ## Find actuator addresses
 
-After [installing Pulsar SDK](../sdk/install.md), scan the bus:
+After [installing Pulsar Python SDK](../sdk/install.md), scan the bus:
 
 ```bash
 pixi run pulsar-cli scan --port /dev/ttyACM0
@@ -61,6 +61,6 @@ The SDK validates the complete selected batch before the first write. Member wri
 ## Next steps
 
 - [Groups and platforms](../sdk/groups_platforms.md)
-- [CAN with Pulsar SDK](../sdk/physical/can.md)
+- [CAN with Pulsar Python SDK](../sdk/physical/can.md)
 - [CAN bus utilization](../hardware/connectivity/can_bus_utilization.md)
 - [Telemetry and callbacks](../sdk/telemetry_callbacks.md)

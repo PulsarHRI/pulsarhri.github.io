@@ -1,6 +1,6 @@
 # Control parameters by mode
 
-Pulsar SDK separates command-scoped `ControlParams` from readable/writable `Parameters`.
+Pulsar Python SDK separates command-scoped `ControlParams` from readable/writable `Parameters`.
 
 ## Command-scoped fields
 

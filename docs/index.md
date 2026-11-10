@@ -14,9 +14,9 @@ The PulsarHRI Developer Hub brings together the hardware, software, control, and
 | I want to… | Start here |
 | --- | --- |
 | Move one physical actuator without writing code | [Single actuator with Pulsar App](quickstart/pulsar_app.md) |
-| Control one physical actuator from Python | [Single actuator with Pulsar SDK](quickstart/sdk_usb.md) |
-| Control several actuators over CAN FD | [Multiple actuators with Pulsar SDK](quickstart/sdk_can.md) |
-| Develop without physical hardware | [Virtual actuator with Pulsar SDK](quickstart/sdk_virtual.md) |
+| Control one physical actuator from Python | [Single actuator with Pulsar Python SDK](quickstart/sdk_usb.md) |
+| Control several actuators over CAN FD | [Multiple actuators with Pulsar Python SDK](quickstart/sdk_can.md) |
+| Develop without physical hardware | [Virtual actuator with Pulsar Python SDK](quickstart/sdk_virtual.md) |
 | Design a robot integration | [Hardware](hardware/index.md) and [AUGUR Digital Twin](augur/index.md) |
 
 ## Main areas
@@ -39,11 +39,11 @@ Use the browser or desktop GUI to configure, command, and inspect one physical a
 
 [Open the Pulsar App documentation](pulsar_app/index.md)
 
-### Pulsar SDK
+### Pulsar Python SDK
 
 Build Python applications for physical and virtual actuators, from one device to multi-domain robot platforms.
 
-[Explore Pulsar SDK](sdk/index.md)
+[Explore Pulsar Python SDK](sdk/index.md)
 
 ### AUGUR Digital Twin
 
@@ -58,7 +58,7 @@ Understand torque, velocity, position, and impedance control and the parameters 
 [Explore control architectures](control_architectures/index.md)
 
 !!! note "Rust SDK"
-    The Pulsar Rust SDK will follow the same user-facing concepts as Pulsar SDK for Python. Its documentation and examples are coming soon.
+    The Pulsar Rust SDK will follow the same user-facing concepts as Pulsar Python SDK. Its documentation and examples are coming soon.
 
 ## Compatibility at a glance
 
