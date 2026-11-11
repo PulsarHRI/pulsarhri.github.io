@@ -1,3 +1,6 @@
+AUGUR Digital Twin
+{ .pulsar-home-eyebrow }
+
 # AUGUR Digital Twin
 
 AUGUR Digital Twin provides validated virtual models of PULSE actuators for software development, controller testing, and robot co-simulation.

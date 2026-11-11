@@ -1,3 +1,6 @@
+Pulsar Python SDK
+{ .pulsar-home-eyebrow }
+
 # Groups and platforms
 
 Use an `ActuatorGroup` for named actuators that share one execution domain and one control mode. Use a `Platform` to coordinate one or more groups, including groups on different domains.
@@ -7,7 +10,7 @@ Use an `ActuatorGroup` for named actuators that share one execution domain and o
 ```python
 from pulsar_sdk import ActuatorGroup, PcpOverCan, PulsarActuatorReal
 
-can = PcpOverCan("/dev/ttyACM0")
+can = PcpOverCan()
 arm = ActuatorGroup(
     "arm",
     {
@@ -55,6 +58,7 @@ robot = Platform({
 
 A platform:
 
+- keeps a stable, read-only mapping of group names;
 - coordinates connect, configure, enable, disable, and recovery;
 - can span several execution domains;
 - propagates active safety across its groups;
@@ -75,7 +79,7 @@ with robot:
     robot.disable()
 ```
 
-Platform operations validate selected groups before writing and attempt safety-critical cleanup across all groups before reporting aggregate failures.
+Platform operations validate selected groups before writing and attempt safety-critical cleanup across all groups before reporting aggregate failures. They are not transactional across actuators or domains.
 
 ## Lifecycle routing
 

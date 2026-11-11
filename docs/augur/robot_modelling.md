@@ -1,3 +1,6 @@
+AUGUR Digital Twin
+{ .pulsar-home-eyebrow }
+
 # Robot modelling
 
 Use AUGUR Digital Twin actuator models with an external robot simulator when the application needs link inertia, gravity, contacts, constraints, or multi-body dynamics.

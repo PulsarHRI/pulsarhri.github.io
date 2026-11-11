@@ -1,3 +1,6 @@
+Hardware
+{ .pulsar-home-eyebrow }
+
 # Safety and prerequisites
 
 PULSE actuators can move quickly and produce substantial torque. Treat every connected actuator as capable of immediate motion.

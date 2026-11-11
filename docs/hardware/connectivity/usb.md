@@ -1,3 +1,6 @@
+Hardware
+{ .pulsar-home-eyebrow }
+
 # Direct USB
 
 Direct USB is the simplest physical connection for one actuator.

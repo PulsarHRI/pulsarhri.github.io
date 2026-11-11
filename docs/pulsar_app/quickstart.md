@@ -1,3 +1,6 @@
+Pulsar App
+{ .pulsar-home-eyebrow }
+
 # Pulsar App quickstart
 
 The maintained step-by-step guide is under Quickstarts:

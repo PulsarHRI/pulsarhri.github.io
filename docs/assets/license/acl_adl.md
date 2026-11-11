@@ -1,3 +1,6 @@
+AUGUR Digital Twin
+{ .pulsar-home-eyebrow }
+
 # **AUGUR Digital Twin Software License Agreement** 
 
 _Dual licensing framework: AUGUR Development License (ADL) and AUGUR Commercial License (ACL)_ 

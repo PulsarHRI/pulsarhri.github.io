@@ -7,6 +7,8 @@ Run a PULSE115-60G virtual actuator using AUGUR Digital Twin assets. No physical
 
 ## Install the SDK and assets
 
+Install [Pixi](https://pixi.prefix.dev/latest/installation/) first, then create a pixi project environment.
+
 ```bash
 pixi init pulsar-virtual-quickstart
 cd pulsar-virtual-quickstart
@@ -14,8 +16,8 @@ pixi workspace channel add --prepend https://prefix.dev/pulsarhri/pulsar-forge
 pixi add pulsar-sdk pulsar-assets
 ```
 
-!!! warning "License Notice"
-    pulsar-assets and the AUGUR digital twin operate under the AUGUR Development Licence (ADL) and AUGUR Commercial License (ACL), please read the license carefully before using the AUGUR digital twins.
+!!! warning "License notice"
+    `pulsar-assets` and AUGUR Digital Twin operate under the AUGUR Development Licence (ADL) and AUGUR Commercial License (ACL). Read the [AUGUR license](../augur/license.md) before using the digital twins.
 
 Check the installed models:
 

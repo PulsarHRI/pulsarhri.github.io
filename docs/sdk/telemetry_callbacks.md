@@ -1,3 +1,6 @@
+Pulsar Python SDK
+{ .pulsar-home-eyebrow }
+
 # Telemetry and callbacks
 
 Pulsar Python SDK supports direct telemetry reads, actuator callbacks, complete group controller batches, and platform-wide callback registration.
@@ -40,7 +43,7 @@ def on_telemetry(address, telemetry):
 actuator.set_telemetry_callback(on_telemetry)
 ```
 
-A domain worker runs user callbacks away from the transport reader thread. For each callback source, at most one callback runs and one newest pending packet waits. Older pending work may be replaced; inspect `dropped_telemetry_packets`.
+One worker per execution domain runs user callbacks away from the transport reader thread. For each callback source, at most one callback runs and one newest pending packet waits. Older pending work may be replaced; inspect `dropped_telemetry_packets`.
 
 ## Group controller
 
@@ -61,11 +64,13 @@ arm.set_control_callback(controller)
 
 ![Telemetry and control callback sequence](assets/diagrams/telemetry-sequence.png)
 
-Callback output is fully validated before the first member write. If the source is stopped, reconfigured, or faulted while the callback runs, its result is discarded.
+Callback output is fully validated before the first member write. Member writes are sequential, so a later transport failure can occur after an earlier command was sent. Callback-path transmission failures latch a `HostError` and apply the configured safety policy.
+
+If the source is stopped, reconfigured, or faulted while the callback runs, its result is discarded. Inspect `dropped_batches` when newer complete group batches replace pending work.
 
 ## Platform callback
 
-`Platform.set_control_callback()` registers the same callback on every group. Calls remain independent; `metadata.group_name` identifies the group. A platform does not create one cross-domain telemetry batch.
+`Platform.set_control_callback()` registers the same callback on every group. Calls remain independent, may run on different domain workers, and use `metadata.group_name` to identify the source. A platform does not create one cross-domain telemetry batch or synchronize domain clocks.
 
 ## Timeouts
 
@@ -74,7 +79,7 @@ An `ActuatorGroup` has two independent timeouts:
 - `telemetry_timeout_s`, default `0.1` seconds;
 - `controller_timeout_s`, default `1.0` second, or `None` to disable the callback deadline.
 
-Stale telemetry or a callback deadline pauses callback control and applies the configured safety policy. Fresh telemetry alone does not clear the retained fault or resume control.
+The telemetry timeout applies only while callback control is active and periodic telemetry is configured. Stale telemetry or a callback deadline pauses callback control and applies the configured safety policy. Fresh telemetry alone does not clear the retained fault or resume control; fix the cause, call `clear_faults()`, then call `resume()`.
 
 Python cannot cancel a callback thread that exceeds its deadline. Its eventual result is discarded.
 

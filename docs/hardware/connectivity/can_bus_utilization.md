@@ -1,3 +1,6 @@
+Hardware
+{ .pulsar-home-eyebrow }
+
 # CAN bus utilization
 
 Estimate the theoretical CAN FD load for a group of PULSE actuators. Adjust actuator count, telemetry selection, command rate, and data bitrate before configuring a high-rate system.

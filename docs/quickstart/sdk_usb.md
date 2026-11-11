@@ -14,7 +14,9 @@ Control one physical actuator connected directly by USB.
 
 Read [Safety and prerequisites](../hardware/safety.md) before sending a command.
 
-## Install with Pixi
+## Install with [Pixi](https://pixi.prefix.dev/latest/installation/)
+
+[Pixi](https://pixi.prefix.dev/latest/installation/) creates a reproducible project environment and uses the same project commands on Linux and Windows.
 
 ```bash
 pixi init pulsar-quickstart
@@ -77,7 +79,7 @@ The context manager connects before the body and disconnects when the body exits
 
 ## Next steps
 
-- [Core workflow](../sdk/core_workflow.md)
+- [Core concepts and workflow](../sdk/core_workflow.md)
 - [Direct USB](../sdk/physical/usb.md)
 - [Commands and parameters](../sdk/commands_parameters.md)
 - [Lifecycle and recovery](../sdk/lifecycle_recovery.md)

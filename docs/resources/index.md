@@ -1,3 +1,6 @@
+Downloads and Resources
+{ .pulsar-home-eyebrow }
+
 # Downloads and resources
 
 - [PULSAR Desktop App package](pulsar_app.md)

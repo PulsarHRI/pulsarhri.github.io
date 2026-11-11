@@ -1,13 +1,15 @@
+Pulsar App
+{ .pulsar-home-eyebrow }
+
 # Pulsar App
 
 Pulsar App is the no-code interface for connecting to, configuring, commanding, and monitoring one physical PULSE actuator.
 
-## Choose a version
 
-- [Browser app](browser.md) — recommended for the fastest start.
+[Browser app](browser.md) — recommended for the fastest start.
 <!--- [PULSAR Desktop App](desktop.md) — packaged Windows application.-->
 
-Both provide the same guided workflow and currently control one physical actuator at a time. Virtual actuators are controlled with [Pulsar SDK](../sdk/index.md).
+The app currently controls one physical actuator at a time. Multiple physical or Virtual actuators are controlled with [Pulsar SDK](../sdk/index.md).
 
 ## Main capabilities
 

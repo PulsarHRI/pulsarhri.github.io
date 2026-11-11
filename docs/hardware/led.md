@@ -1,3 +1,6 @@
+Hardware
+{ .pulsar-home-eyebrow }
+
 # LED status indicators
 
 The RGB LED gives a quick indication of device state.

@@ -1,3 +1,6 @@
+Control
+{ .pulsar-home-eyebrow }
+
 # Control parameters by mode
 
 Pulsar Python SDK separates command-scoped `ControlParams` from readable/writable `Parameters`.

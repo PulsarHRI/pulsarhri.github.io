@@ -1,3 +1,6 @@
+Hardware
+{ .pulsar-home-eyebrow }
+
 # CAN FD
 
 CAN FD connects one or more PULSE actuators to a computer through a USB-to-CAN adapter.

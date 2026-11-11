@@ -19,13 +19,27 @@ Before writing code:
 
 After [installing Pulsar Python SDK](../sdk/install.md), scan the bus:
 
+With one connected Pulsar device:
+
 ```bash
 pixi run pulsar-cli scan
-# if you have multiple Pulsar devices connected
-pixi run pulsar-cli scan --port /dev/ttyACM0 # on linux
-pixi run pulsar-cli scan --port COM3 # Windows
 ```
-Replace ports with the exact ports on your machine.
+
+With several connected devices, select the adapter port:
+
+=== "Linux"
+
+    ```bash
+    pixi run pulsar-cli scan --port /dev/ttyACM0
+    ```
+
+=== "Windows PowerShell"
+
+    ```powershell
+    pixi run pulsar-cli scan --port COM3
+    ```
+
+Replace the example port with the exact port on your machine.
 
 ## Configure one group
 Replace the example addresses below with the values reported by the scan.
@@ -62,7 +76,7 @@ with arm:
     arm.disable()
 ```
 
-Use can.list_ports() and provide the port to 'can.port = chosen_port' if multiple are available, otherwise the correct port is detected and chosen automatically.
+`PcpOverCan()` automatically selects the port when exactly one Pulsar device is connected. With several devices, use `PcpOverCan.list_ports()` and construct the domain as `PcpOverCan(chosen_port)`.
 
 The SDK validates the complete selected batch before the first write. Member writes are still sequential, so a later transport failure can occur after an earlier actuator was updated.
 

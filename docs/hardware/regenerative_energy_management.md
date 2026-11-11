@@ -1,3 +1,6 @@
+Hardware
+{ .pulsar-home-eyebrow }
+
 # Regenerative energy management
 
 > **TL;DR**

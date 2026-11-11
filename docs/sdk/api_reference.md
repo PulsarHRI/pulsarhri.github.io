@@ -1,12 +1,28 @@
-# Pulsar Python SDK API reference
+Pulsar Python SDK
+{ .pulsar-home-eyebrow }
 
-Public reference for:
+# API reference
+
+Public types exported by:
 
 ```python
 from pulsar_sdk import ...
 ```
 
-The behavior and workflow guide is in the [Pulsar Python SDK user contract](user_contract.md).
+Start with [Core concepts and workflow](core_workflow.md) for object ownership and the normal lifecycle. Use this page for exact constructors, methods, records, enum values, and exceptions.
+
+## Browse the API
+
+| Area | Contents |
+| --- | --- |
+| [Domains](#domains) | USB, CAN, and virtual execution domains |
+| [Actuators](#actuators) | Common, physical, and virtual actuator APIs |
+| [Groups](#groups) and [platforms](#platforms) | Multi-actuator composition and lifecycle |
+| [Records](#records) | Configuration, status, diagnostics, and results |
+| [Enumerations](#enumerations) | Lifecycle, modes, diagnostics, parameters, telemetry, and capabilities |
+| [Exceptions](#exceptions) | SDK exception hierarchy |
+
+The right-side table of contents lists each API area and public type.
 
 ## Diagrams
 
@@ -15,7 +31,7 @@ The behavior and workflow guide is in the [Pulsar Python SDK user contract](user
 - [Lifecycle and recovery](assets/diagrams/lifecycle.png)
 - [Setup, callback, and safety sequence](assets/diagrams/full-sequence.png)
 
-# Type aliases and callbacks
+## Type aliases and callbacks
 
 ```python
 Telemetry = dict[TelemetryItems, int | float]
@@ -46,9 +62,9 @@ An actuator-level diagnostic callback has this signature:
 Callable[[Actuator, ActuatorDiagnostic], None]
 ```
 
-# Domains
+## Domains
 
-## `ExecutionDomain`
+### `ExecutionDomain`
 
 ```python
 ExecutionDomain(*, logger: logging.Logger | None = None)
@@ -56,13 +72,13 @@ ExecutionDomain(*, logger: logging.Logger | None = None)
 
 Base class for one transport or simulation clock. It also owns the callback worker, telemetry watchdog, and actuator leases.
 
-### Properties
+#### Properties
 
 - `capabilities: Capability`
 - `connection_state: ConnectionState`
 - `is_connected: bool`
 
-### Methods
+#### Methods
 
 - `supports(capability: Capability) -> bool` — Return whether the domain advertises the capability.
 - `connect() -> None` — Explicitly keep the domain open. Repeated calls are safe.
@@ -72,7 +88,7 @@ Base class for one transport or simulation clock. It also owns the callback work
 
 The class supports `with`; entering connects and exiting disconnects.
 
-## `PcpOverCan`
+### `PcpOverCan`
 
 ```python
 PcpOverCan(
@@ -90,7 +106,7 @@ PCP domain for one USB-to-CAN adapter.
 
 CAN actuator addresses must be unique within the domain and lie in `16..16382`. Scan bounds use the same range, `start_address` must not exceed `end_address`, and `timeout_s` must be finite and positive.
 
-## `PcpOverUsb`
+### `PcpOverUsb`
 
 ```python
 PcpOverUsb(
@@ -104,7 +120,7 @@ Direct-USB domain for exactly one actuator at address `0`.
 
 - `list_ports() -> tuple[str, ...]` — List detected Pulsar serial ports.
 
-## `VirtualWorld`
+### `VirtualWorld`
 
 ```python
 VirtualWorld(
@@ -117,7 +133,7 @@ VirtualWorld(
 
 Deterministic digital-twin domain. The current model assets require exactly `20_000` Hz.
 
-### Attributes
+#### Attributes
 
 - `time_step_hz: float`
 - `time_step_s: float`
@@ -125,7 +141,7 @@ Deterministic digital-twin domain. The current model assets require exactly `20_
 - `simulation_time_s: float`
 - `simulation_step_count: int`
 
-### Methods
+#### Methods
 
 - `scan() -> tuple[str, ...]` — Return available packaged models for the current host. Current supported names are `P90`, `P100`, `PULSE98-30G`, `PULSE98-55G`, `PULSE115-60G`, and `PULSE115-110G`.
 - `sync() -> FeatureResult` — Reset virtual telemetry timestamps and counters without resetting plant physics.
@@ -135,9 +151,9 @@ Without `assets_path`, lookup checks `PULSAR_ASSETS_PATH`, then the active Conda
 
 Loads must be finite numbers keyed by connected virtual actuator address.
 
-# Actuators
+## Actuators
 
-## `Actuator`
+### `Actuator`
 
 ```python
 Actuator(
@@ -163,7 +179,7 @@ Map a diagnostic to `DO_NOTHING` to keep it report-only: callbacks and `status.d
 
 `diagnostic_damping` must be `None` or a finite positive value.
 
-### Properties
+#### Properties
 
 - `domain: ExecutionDomain` — Owning domain.
 - `address: int | None` — Read-only transport or virtual identifier.
@@ -175,7 +191,7 @@ Map a diagnostic to `DO_NOTHING` to keep it report-only: callbacks and `status.d
 - `info: DeviceInfo`
 - `dropped_telemetry_packets: int` — Pending actuator callback packets replaced by newer packets.
 
-### Lifecycle and control
+#### Lifecycle and control
 
 - `connect() -> None` — Connect the actuator and acquire its domain.
 - `disconnect() -> None` — Request the backend safe disconnect state and release the domain lease.
@@ -189,13 +205,13 @@ Map a diagnostic to `DO_NOTHING` to keep it report-only: callbacks and `status.d
 
 When the actuator belongs to a group, lifecycle and configuration operations are routed through that group.
 
-### Telemetry and callbacks
+#### Telemetry and callbacks
 
 - `read_telemetry(items: Iterable[TelemetryItems]) -> Telemetry` — Read a snapshot in `CONFIG_AND_TELEM` or `DRIVE_ACTIVE`.
 - `set_telemetry_callback(callback: Callable[[int | None, Telemetry], None] | None) -> None` — Register or remove an actuator callback. One callback may run while one newest packet waits.
 - `set_diagnostic_callback(callback: Callable[[Actuator, ActuatorDiagnostic], None] | None) -> None` — Register or remove an actuator diagnostic callback.
 
-### Parameters and optional features
+#### Parameters and optional features
 
 - `read_parameters(parameters: Iterable[Parameters]) -> dict[Parameters, int | float]`
 - `set_parameters(parameters: Mapping[Parameters, int | float]) -> None` — Allowed only while drive output is inactive.
@@ -210,7 +226,7 @@ When the actuator belongs to a group, lifecycle and configuration operations are
 
 Unsupported optional operations return `FeatureResult(UNSUPPORTED, ...)` unless the operation is invalid for the current lifecycle state.
 
-### Fault and diagnostic methods
+#### Fault and diagnostic methods
 
 - `clear_faults() -> bool` — Verify current diagnostics, clear retained SDK faults when possible, and restore thermal torque limits after `OVERTEMPERATURE` clears. Returns `False` while a mapped diagnostic remains active.
 - `recover() -> None` — Recover a diagnostic whose selected action entered `INIT_CONFIG`. This is not a general host-fault clear method.
@@ -219,7 +235,7 @@ Unsupported optional operations return `FeatureResult(UNSUPPORTED, ...)` unless 
 
 The class supports `with`; entering connects and exiting disconnects.
 
-## `PulsarActuatorReal`
+### `PulsarActuatorReal`
 
 ```python
 PulsarActuatorReal(
@@ -240,7 +256,7 @@ Physical actuator using Pulsar Communication Protocols (PCP).
 - CAN-backed actuators advertise `ADDRESS_CHANGE`; USB-backed actuators do not.
 - Physical maintenance methods may return `UNCONFIRMED` because transmission has no dedicated acknowledgement.
 
-## `PulsarActuatorVirtual`
+### `PulsarActuatorVirtual`
 
 ```python
 PulsarActuatorVirtual(
@@ -264,9 +280,9 @@ Generated digital-twin actuator.
 - Telemetry is not available in `INIT_CONFIG`.
 - `identify()` returns `UNSUPPORTED`.
 
-# Groups
+## Groups
 
-## `ActuatorGroup`
+### `ActuatorGroup`
 
 ```python
 ActuatorGroup(
@@ -284,7 +300,7 @@ A named set of actuators that share one domain and one control mode. The group n
 
 `telemetry_timeout_s` and a non-`None` `controller_timeout_s` must be finite and positive. Set `controller_timeout_s=None` to disable the callback deadline.
 
-### Properties
+#### Properties
 
 - `name: str`
 - `actuators: Mapping[str, Actuator]` — Read-only view.
@@ -294,7 +310,7 @@ A named set of actuators that share one domain and one control mode. The group n
 - `controller_state: ControllerState`
 - `status: GroupStatus`
 
-### Lifecycle
+#### Lifecycle
 
 - `connect() -> None` — Connect every member; roll back earlier connections if a later member fails.
 - `disconnect() -> None` — Stop callbacks, apply output-inactive safety where needed, and release group leases.
@@ -308,7 +324,7 @@ A named set of actuators that share one domain and one control mode. The group n
 - `disable() -> None` — Move every member to `CONFIG_AND_TELEM`.
 - `zero_position() -> dict[str, FeatureResult]` — Zero every member in `CONFIG_AND_TELEM` or `DRIVE_ACTIVE`.
 
-### Commands, parameters, and presets
+#### Commands, parameters, and presets
 
 - `set_commands(commands: ControlBatch) -> None` — Validate a selected member batch before the first write. Each member mapping accepts the same mode-specific `ControlParams` as standalone `set_command()`.
 - `read_parameters(parameters: Mapping[str, Iterable[Parameters]]) -> dict[str, dict[Parameters, int | float]]`
@@ -319,7 +335,7 @@ A named set of actuators that share one domain and one control mode. The group n
 
 With `unify=False`, mappings are keyed by actuator name. With `unify=True`, one flat parameter map or one preset is applied to every member.
 
-### Callbacks and recovery
+#### Callbacks and recovery
 
 - `set_control_callback(callback: ControlCallback | None) -> None`
 - `set_diagnostic_callback(callback: DiagnosticCallback | None) -> None`
@@ -330,9 +346,9 @@ With `unify=False`, mappings are keyed by actuator name. With `unify=True`, one 
 
 The class supports `with`; entering connects and exiting disconnects.
 
-# Platforms
+## Platforms
 
-## `Platform`
+### `Platform`
 
 ```python
 Platform(
@@ -344,7 +360,7 @@ Platform(
 
 Top-level composition for lifecycle and safety across one or more domains. The group mapping and every platform group name must be non-empty. A group object cannot appear twice or already belong to another platform.
 
-### Properties
+#### Properties
 
 - `groups: Mapping[str, ActuatorGroup]` — Read-only view.
 - `domains: tuple[ExecutionDomain, ...]` — Unique domains in group order.
@@ -352,7 +368,7 @@ Top-level composition for lifecycle and safety across one or more domains. The g
 - `is_connected: bool`
 - `status: dict[str, GroupStatus]`
 
-### Lifecycle
+#### Lifecycle
 
 - `connect() -> None` — Connect every group and roll back earlier groups on failure.
 - `disconnect() -> None` — Attempt every group and report incomplete shutdown.
@@ -366,7 +382,7 @@ Top-level composition for lifecycle and safety across one or more domains. The g
 - `disable() -> None` — Attempt every group before reporting failures.
 - `zero_position() -> dict[str, dict[str, FeatureResult]]`
 
-### Commands, parameters, and presets
+#### Commands, parameters, and presets
 
 - `set_commands(commands: Mapping[str, ControlBatch]) -> None` — Validate all selected groups before the first platform write. Nested actuator mappings accept the same mode-specific `ControlParams` as standalone `set_command()`.
 - `read_parameters(parameters: Mapping[str, Mapping[str, Iterable[Parameters]]]) -> dict[str, dict[str, dict[Parameters, int | float]]]`
@@ -377,7 +393,7 @@ Top-level composition for lifecycle and safety across one or more domains. The g
 
 Nested mappings preserve `group_name -> actuator_name -> value`. `unify=True` applies one parameter map or preset across all represented actuators and domains.
 
-### Callbacks and recovery
+#### Callbacks and recovery
 
 - `set_control_callback(callback: ControlCallback | None) -> None` — Register the same callback on every group. Calls remain independent per group.
 - `set_diagnostic_callback(callback: DiagnosticCallback | None) -> None`
@@ -388,9 +404,9 @@ Nested mappings preserve `group_name -> actuator_name -> value`. `unify=True` ap
 
 The class supports `with`; entering connects and exiting disconnects.
 
-# Records
+## Records
 
-## `FeatureResult`
+### `FeatureResult`
 
 ```python
 FeatureResult(
@@ -406,7 +422,7 @@ Properties:
 - `ok: bool` — `True` only for `OK`.
 - `unsupported: bool` — `True` only for `UNSUPPORTED`.
 
-## `DeviceInfo`
+### `DeviceInfo`
 
 ```python
 DeviceInfo(
@@ -418,7 +434,7 @@ DeviceInfo(
 )
 ```
 
-## `ControlConfiguration`
+### `ControlConfiguration`
 
 ```python
 ControlConfiguration(
@@ -432,7 +448,7 @@ ControlConfiguration(
 - The rate must be `0` or `1..10_000` Hz.
 - At most 12 unique telemetry items are allowed.
 
-## `ControllerErrorPolicy`
+### `ControllerErrorPolicy`
 
 ```python
 ControllerErrorPolicy(
@@ -444,7 +460,7 @@ ControllerErrorPolicy(
 
 A selected `DAMPED_RELEASE` needs finite positive damping; otherwise safety uses the fallback action. `DO_NOTHING` keeps controller errors report-only, retains the previous command, and allows later callback cycles and direct `set_commands()` calls to continue.
 
-## `ControllerMetadata`
+### `ControllerMetadata`
 
 ```python
 ControllerMetadata(
@@ -457,7 +473,7 @@ ControllerMetadata(
 
 `elapsed_time_ms` is measured from the group connection time.
 
-## `ActuatorDiagnostic`
+### `ActuatorDiagnostic`
 
 ```python
 ActuatorDiagnostic(
@@ -470,7 +486,7 @@ ActuatorDiagnostic(
 
 `flags` uses `DiagnosticFlag` keys. Raw integer keys are rejected.
 
-## `SafetyAttempt`
+### `SafetyAttempt`
 
 ```python
 SafetyAttempt(
@@ -484,7 +500,7 @@ SafetyAttempt(
 
 `guaranteed` is true only when the action was transmitted and acknowledged. Command-based hold, damping, and zero-command actions normally have no operation-specific acknowledgement.
 
-## `HostError`
+### `HostError`
 
 ```python
 HostError(
@@ -495,7 +511,7 @@ HostError(
 )
 ```
 
-## `ActuatorStatus`
+### `ActuatorStatus`
 
 ```python
 ActuatorStatus(
@@ -519,7 +535,7 @@ Properties:
 
 `RecoveryAction.RECOVER` means a retained fault needs to be cleared or verified. It does not always mean that the `recover()` method is the next call; `recover()` is specifically for `INIT_CONFIG` diagnostic safety.
 
-## `GroupStatus`
+### `GroupStatus`
 
 ```python
 GroupStatus(
@@ -538,9 +554,9 @@ GroupStatus(
 
 `operating_state` is `UNKNOWN` when member states differ.
 
-# Enumerations
+## Enumerations
 
-## `ConnectionState`
+### `ConnectionState`
 
 | Constant | Value | Meaning |
 | --- | ---: | --- |
@@ -551,7 +567,7 @@ GroupStatus(
 | `DISCONNECTING` | `4` | Shutdown is in progress. |
 | `FAULTED` | `5` | Connection failed or was lost. |
 
-## `ControllerState`
+### `ControllerState`
 
 | Constant | Value | Meaning |
 | --- | ---: | --- |
@@ -560,7 +576,7 @@ GroupStatus(
 | `WAITING_FOR_TELEMETRY` | `2` | Control is paused pending explicit recovery or resume. |
 | `FAULTED` | `3` | A host/controller fault is latched. |
 
-## `State`
+### `State`
 
 | Constant | Value | Meaning |
 | --- | ---: | --- |
@@ -569,7 +585,7 @@ GroupStatus(
 | `CONFIG_AND_TELEM` | `2` | Telemetry active; drive output inactive. |
 | `DRIVE_ACTIVE` | `3` | Commands can affect output. |
 
-## `HealthState`
+### `HealthState`
 
 | Constant | Value | Meaning |
 | --- | ---: | --- |
@@ -577,7 +593,7 @@ GroupStatus(
 | `HOST_FAULT` | `1` | SDK, controller, or transport fault retained. |
 | `ACTUATOR_FAULT` | `2` | Device error diagnostic retained. |
 
-## `RecoveryAction`
+### `RecoveryAction`
 
 | Constant | Value | Meaning |
 | --- | ---: | --- |
@@ -586,7 +602,7 @@ GroupStatus(
 | `RECOVER` | `2` | A retained fault must be cleared or verified. |
 | `RECONNECT` | `3` | Connection is absent or faulted. |
 
-## `Mode`
+### `Mode`
 
 | Constant | Value | Command unit |
 | --- | ---: | --- |
@@ -595,7 +611,7 @@ GroupStatus(
 | `POSITION` | `7` | rad |
 | `IMPEDANCE` | `8` | position command in rad |
 
-## Gain presets
+### Gain presets
 
 | Type | Constant | Value |
 | --- | --- | ---: |
@@ -606,7 +622,7 @@ GroupStatus(
 | `VelocityGainPreset` | `BALANCED` | `2` |
 | `VelocityGainPreset` | `SOFT` | `3` |
 
-## `FeatureStatus`
+### `FeatureStatus`
 
 | Constant | Value | Meaning |
 | --- | ---: | --- |
@@ -615,7 +631,7 @@ GroupStatus(
 | `FAILED` | `2` | Operation failed. |
 | `UNCONFIRMED` | `3` | Transmission occurred without dedicated confirmation. |
 
-## `ControllerErrorAction`
+### `ControllerErrorAction`
 
 | Constant | Value | Behavior |
 | --- | ---: | --- |
@@ -627,7 +643,7 @@ GroupStatus(
 | `LIMIT_TORQUE` | `5` | Apply diagnostic torque derating. |
 | `DO_NOTHING` | `6` | Report the diagnostic/controller error without changing control, state, inhibition, or command availability. |
 
-## `DiagnosticFlag`
+### `DiagnosticFlag`
 
 Named firmware diagnostics. Values are firmware bit positions, but applications use the enum names rather than raw integers.
 
@@ -650,7 +666,7 @@ Named firmware diagnostics. Values are firmware bit positions, but applications 
 | `INTERNAL_ENCODER_ERROR` | `30` | error |
 | `EXTERNAL_ENCODER_ERROR` | `31` | error |
 
-## `DiagnosticSeverity`
+### `DiagnosticSeverity`
 
 | Constant | Value |
 | --- | ---: |
@@ -658,7 +674,7 @@ Named firmware diagnostics. Values are firmware bit positions, but applications 
 | `WARNING` | `1` |
 | `ERROR` | `2` |
 
-## `HostErrorCode`
+### `HostErrorCode`
 
 | Constant | Value | Meaning |
 | --- | ---: | --- |
@@ -670,7 +686,7 @@ Named firmware diagnostics. Values are firmware bit positions, but applications 
 | `COMMAND_TRANSMISSION_FAILED` | `6` | A callback command write failed. |
 | `CONTROLLER_TIMEOUT` | `7` | Controller callback exceeded its deadline. |
 
-# `Parameters`
+### `Parameters`
 
 Parameter reads are backend-specific. Writes are allowed only while drive output is inactive.
 
@@ -727,7 +743,7 @@ For CAN BRS, prefer `PcpOverCan.set_can_brs_enabled()`. It coordinates all conne
 | `CAN_BRS_ENABLED` | `133` | CAN bit-rate switching flag. |
 | `TELEMETRY_RATE_HZ` | `134` | Effective periodic telemetry rate. |
 
-# `TelemetryItems`
+### `TelemetryItems`
 
 | Constant | Value | Meaning |
 | --- | ---: | --- |
@@ -772,7 +788,7 @@ For CAN BRS, prefer `PcpOverCan.set_can_brs_enabled()`. It coordinates all conne
 | `MOTOR_TEMPERATURE` | `114` | Motor temperature. |
 | `INTERNAL_POSITION_ACTUAL` | `115` | Internal control position. |
 
-# `ControlParams`
+### `ControlParams`
 
 Every selected command mapping requires `COMMAND`. Other fields are valid only in the modes listed below.
 
@@ -796,7 +812,7 @@ Every selected command mapping requires `COMMAND`. Other fields are valid only i
 
 Virtual models expose shared d/q current gains. Supplying different finite d-axis and q-axis values in one command raises `ValueError`.
 
-# `Capability`
+### `Capability`
 
 | Constant | Value | Meaning |
 | --- | ---: | --- |
@@ -810,7 +826,7 @@ Virtual models expose shared d/q current gains. Supplying different finite d-axi
 | `ADDRESS_CHANGE` | `1 << 9` | CAN address change. |
 | `CAN_BRS` | `1 << 10` | CAN bit-rate switching. |
 
-# Exceptions
+## Exceptions
 
 - `SdkError` — Base class for SDK runtime errors.
 - `ConnectionFailedError` — A connect, disconnect, aggregate transition, rollback, or safe shutdown did not complete fully.

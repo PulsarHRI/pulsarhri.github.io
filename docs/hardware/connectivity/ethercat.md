@@ -1,3 +1,6 @@
+Hardware
+{ .pulsar-home-eyebrow }
+
 # EtherCAT status
 
 !!! note "In development"

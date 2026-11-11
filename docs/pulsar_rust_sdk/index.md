@@ -1,3 +1,6 @@
+Pulsar Rust SDK
+{ .pulsar-home-eyebrow }
+
 # Pulsar Rust SDK
 
 !!! info "Coming soon"

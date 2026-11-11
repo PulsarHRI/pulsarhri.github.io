@@ -1,26 +1,51 @@
+Pulsar Python SDK
+{ .pulsar-home-eyebrow }
+
 # CAN
 
 Use `PcpOverCan` for a bus connected through one Pulsar USB-to-CAN adapter.
 
 ## Scan
 
-```python
-from pulsar_sdk import PcpOverCan
+=== "Linux"
 
-with PcpOverCan("/dev/ttyACM0") as can:
-    print(can.scan())
-```
+    ```python
+    from pulsar_sdk import PcpOverCan
+
+    with PcpOverCan("/dev/ttyACM0") as can:
+        print(can.scan())
+    ```
+
+=== "Windows"
+
+    ```python
+    from pulsar_sdk import PcpOverCan
+
+    with PcpOverCan("COM3") as can:
+        print(can.scan())
+    ```
 
 The default scan range is 16–255. Actuator addresses must be unique within the domain and lie in 16–16382.
 
 ## Connect an actuator
 
-```python
-from pulsar_sdk import PcpOverCan, PulsarActuatorReal
+=== "Linux"
 
-can = PcpOverCan("/dev/ttyACM0")
-actuator = PulsarActuatorReal(can, address=0x10)
-```
+    ```python
+    from pulsar_sdk import PcpOverCan, PulsarActuatorReal
+
+    can = PcpOverCan("/dev/ttyACM0")
+    actuator = PulsarActuatorReal(can, address=20)
+    ```
+
+=== "Windows"
+
+    ```python
+    from pulsar_sdk import PcpOverCan, PulsarActuatorReal
+
+    can = PcpOverCan("COM3")
+    actuator = PulsarActuatorReal(can, address=20)
+    ```
 
 Several actuators on the same bus must reuse the same `PcpOverCan` object.
 

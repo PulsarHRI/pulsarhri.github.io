@@ -1,3 +1,6 @@
+Pulsar App
+{ .pulsar-home-eyebrow }
+
 # Browser app
 
 Open Pulsar App at:

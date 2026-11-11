@@ -1,3 +1,6 @@
+Downloads and Resources
+{ .pulsar-home-eyebrow }
+
 # Mechanical CAD and printable fixtures
 
 ## Actuator assemblies

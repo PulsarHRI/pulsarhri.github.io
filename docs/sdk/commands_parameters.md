@@ -1,3 +1,6 @@
+Pulsar Python SDK
+{ .pulsar-home-eyebrow }
+
 # Commands and parameters
 
 Pulsar Python SDK distinguishes runtime commands from stored or readable parameters.
@@ -47,6 +50,8 @@ Every mapping requires `ControlParams.COMMAND`. Optional fields may use `NaN` to
 
 ## Group commands
 
+A group or platform batch may select only some members. Omitted actuators keep their previous device command, and every selected actuator mapping must include `ControlParams.COMMAND`.
+
 ```python
 arm.set_commands({
     "shoulder": {ControlParams.COMMAND: 0.2},
@@ -87,5 +92,7 @@ Parameter and preset methods accept `unify=True` to apply one value across repre
 ## Atomicity
 
 Validation occurs before transmission, but parameter, preset, and member command writes are not transactional. A transport failure can leave earlier writes applied and later writes unapplied.
+
+Direct batch failures raise `CommandTransmissionError`; `successful_members` identifies writes completed before the failure. Callback-path transmission failures instead latch a host error and run the configured safety policy.
 
 See the [API reference](api_reference.md#parameters) for every parameter and exact validation rule.

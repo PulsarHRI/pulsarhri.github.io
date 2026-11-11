@@ -1,3 +1,6 @@
+Pulsar Python SDK
+{ .pulsar-home-eyebrow }
+
 # Examples
 
 The maintained examples repository will be published as:
@@ -87,6 +90,73 @@ if status.last_host_error is not None:
 ```
 
 If diagnostic safety entered `INIT_CONFIG`, use `recover()` after the physical condition is clear.
+
+### Two CAN domains in one platform
+
+Use a separate `PcpOverCan` domain for each USB-to-CAN adapter. The platform coordinates lifecycle and safety, while each group keeps its own telemetry stream and callback timing.
+
+```python
+from pulsar_sdk import (
+    ActuatorGroup,
+    ControlConfiguration,
+    ControlParams,
+    Mode,
+    PcpOverCan,
+    Platform,
+    PulsarActuatorReal,
+    TelemetryItems,
+)
+
+right_can = PcpOverCan("<right-adapter-port>")
+left_can = PcpOverCan("<left-adapter-port>")
+
+right_arm = ActuatorGroup(
+    "right_arm",
+    {
+        "shoulder": PulsarActuatorReal(right_can, address=23),
+        "elbow": PulsarActuatorReal(right_can, address=24),
+    },
+)
+left_arm = ActuatorGroup(
+    "left_arm",
+    {
+        "shoulder": PulsarActuatorReal(left_can, address=23),
+        "elbow": PulsarActuatorReal(left_can, address=24),
+    },
+)
+robot = Platform({"right_arm": right_arm, "left_arm": left_arm})
+configuration = ControlConfiguration(
+    mode=Mode.IMPEDANCE,
+    telemetry_items=(
+        TelemetryItems.POSITION,
+        TelemetryItems.VELOCITY,
+    ),
+    telemetry_rate_hz=500,
+)
+
+
+def controller(metadata, telemetry):
+    return {
+        name: {ControlParams.COMMAND: values[TelemetryItems.POSITION]}
+        for name, values in telemetry.items()
+    }
+
+
+with robot:
+    robot.configure({
+        "right_arm": configuration,
+        "left_arm": configuration,
+    })
+    robot.zero_position()
+    robot.set_control_callback(controller)
+    robot.enable()
+
+    # Run the application control loop here.
+
+    robot.disable()
+```
+
+The same actuator addresses may be reused because the adapters are separate domains. Replace the port placeholders with values returned by `PcpOverCan.list_ports()`.
 
 ### Mixed physical and virtual platform
 

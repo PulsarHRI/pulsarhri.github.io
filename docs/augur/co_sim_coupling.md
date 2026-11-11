@@ -1,3 +1,6 @@
+AUGUR Digital Twin
+{ .pulsar-home-eyebrow }
+
 # Co-simulation coupling
 
 Pulsar SDK supports one validated MuJoCo coupling scheme: **the DTwin owns each coupled joint's position and velocity; MuJoCo is an inverse-dynamics load calculator for those coordinates**.

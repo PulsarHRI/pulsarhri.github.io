@@ -1,3 +1,6 @@
+Control
+{ .pulsar-home-eyebrow }
+
 # Control
 
 PULSE actuators provide four user-facing control modes.

@@ -1,3 +1,6 @@
+Hardware
+{ .pulsar-home-eyebrow }
+
 # Actuator setup
 
 This page covers physical setup before USB or CAN communication.

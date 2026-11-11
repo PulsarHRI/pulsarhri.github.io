@@ -1,8 +1,13 @@
+Pulsar Python SDK
+{ .pulsar-home-eyebrow }
+
 # Virtual actuators
 
 `PulsarActuatorVirtual` runs a validated AUGUR Digital Twin actuator model inside a `VirtualWorld`.
 
 ## Install assets
+
+Install [Pixi](https://pixi.prefix.dev/latest/installation/) first. The following commands are identical on Linux and Windows:
 
 ```bash
 pixi workspace channel add --prepend https://prefix.dev/pulsarhri/pulsar-forge
@@ -61,9 +66,16 @@ with actuator:
     actuator.disable()
 ```
 
-`VirtualWorld.step()` advances every connected model in registration order to the next periodic telemetry event, applies supplied loads, dispatches telemetry, waits for due callbacks, and returns after callback commands are stored for the next public step.
+`VirtualWorld.step()`:
 
-If periodic telemetry is disabled, one call advances one 50 µs internal tick.
+1. finds the earliest next periodic telemetry event among connected virtual actuators;
+2. applies supplied loads for the required internal model ticks;
+3. advances connected models in registration order;
+4. delivers due telemetry;
+5. waits for due actuator and group callbacks;
+6. returns after callback commands are stored for the next public step.
+
+If periodic telemetry is disabled, one call advances one 50 µs internal tick. Disconnected actuators do not participate in stepping and cannot stop other models in the world.
 
 ## External loads
 
@@ -75,7 +87,11 @@ Loads are finite output-shaft torques in N·m keyed by connected virtual actuato
 
 ## Passive states
 
-In `INIT_CONFIG` and `CONFIG_AND_TELEM`, the virtual plant remains mechanically movable under external load but produces passive zero torque. Telemetry is unavailable in `INIT_CONFIG`, matching physical lifecycle behavior.
+In `INIT_CONFIG` and `CONFIG_AND_TELEM`, the virtual plant remains mechanically movable under external load but produces passive zero torque. Telemetry is unavailable in `INIT_CONFIG`, matching physical lifecycle behavior. `DRIVE_ACTIVE` restores the configured control mode.
+
+Telemetry staleness uses simulation time, so pausing the application or debugger does not fault a world that is not advancing. Raw or device-only telemetry is unsupported; virtual `BUS_VOLTAGE` reports the model's fixed 48 V supply.
+
+Position reset occurs on one world-owned 50 µs tick. Every connected actuator advances on that tick, and members of one group reset together.
 
 ## Asset isolation
 

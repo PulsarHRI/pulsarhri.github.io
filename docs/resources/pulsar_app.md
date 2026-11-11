@@ -1,3 +1,6 @@
+Downloads and Resources
+{ .pulsar-home-eyebrow }
+
 # PULSAR Desktop App package
 
 The current Windows desktop package is:

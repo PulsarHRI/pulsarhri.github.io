@@ -1,3 +1,6 @@
+Hardware
+{ .pulsar-home-eyebrow }
+
 # Mechanical interfaces
 
 Check the actuator mounting interfaces before designing brackets, fixtures, or robot integrations.

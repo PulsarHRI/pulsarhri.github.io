@@ -1,3 +1,6 @@
+Downloads and Resources
+{ .pulsar-home-eyebrow }
+
 # Datasheets
 
 | Product | Date | Download |

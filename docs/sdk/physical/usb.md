@@ -1,3 +1,6 @@
+Pulsar Python SDK
+{ .pulsar-home-eyebrow }
+
 # Direct USB
 
 Use `PcpOverUsb` for one actuator connected directly to the computer. The actuator address must be `0`.
@@ -11,11 +14,17 @@ actuator = PulsarActuatorReal(usb, address=0)
 
 Pass a port when auto-detection is ambiguous:
 
-```python
-usb = PcpOverUsb("/dev/ttyACM0")
-```
+=== "Linux"
 
-On Windows, use a port such as `COM3`.
+    ```python
+    usb = PcpOverUsb("/dev/ttyACM0")
+    ```
+
+=== "Windows"
+
+    ```python
+    usb = PcpOverUsb("COM3")
+    ```
 
 ## Complete short run
 

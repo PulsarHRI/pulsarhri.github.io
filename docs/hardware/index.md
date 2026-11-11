@@ -1,3 +1,6 @@
+Hardware
+{ .pulsar-home-eyebrow }
+
 # Hardware
 
 Use this section to prepare a physical PULSE actuator before controlling it with Pulsar App or Pulsar SDK.

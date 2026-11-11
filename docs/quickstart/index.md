@@ -1,4 +1,7 @@
-# Quickstarts
+Quickstart
+{ .pulsar-home-eyebrow }
+
+# Quickstart
 
 Choose the shortest path for the system you want to use.
 

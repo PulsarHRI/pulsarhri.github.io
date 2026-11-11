@@ -1,3 +1,6 @@
+Hardware
+{ .pulsar-home-eyebrow }
+
 # Connectivity
 
 Choose a physical communication method based on the system size and use case.

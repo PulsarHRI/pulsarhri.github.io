@@ -1,3 +1,6 @@
+Firmware
+{ .pulsar-home-eyebrow }
+
 # Firmware
 
 Keeping PULSAR actuator firmware up to date can provide bug fixes and functionality

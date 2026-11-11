@@ -122,7 +122,7 @@ extra:
 
 nav:
   - Home: index.md
-  - Quickstarts:
+  - Quickstart:
       - quickstart/index.md
       - One physical actuator · direct USB · Pulsar App (browser): quickstart/pulsar_app.md
       - One physical actuator · direct USB · Python SDK: quickstart/sdk_usb.md
@@ -156,7 +156,7 @@ nav:
       - sdk/index.md
       - Install: sdk/install.md
       - CLI: sdk/cli.md
-      - Core workflow: sdk/core_workflow.md
+      - Core concepts and workflow: sdk/core_workflow.md
       - Physical actuators:
           - sdk/physical/index.md
           - Direct USB: sdk/physical/usb.md
@@ -167,7 +167,6 @@ nav:
       - Telemetry and callbacks: sdk/telemetry_callbacks.md
       - Lifecycle and recovery: sdk/lifecycle_recovery.md
       - Examples: sdk/examples.md
-      - User contract: sdk/user_contract.md
       - API reference: sdk/api_reference.md
   - Pulsar Rust SDK:
       - pulsar_rust_sdk/index.md
