@@ -4,15 +4,15 @@ The RGB LED gives a quick indication of device state.
 
 ## CAN adapter
 
-- **White:** powered and operating.
+- **Blue:** powered and operating.
+- **Red:** Error in communication, restart required.
 
 ## Actuator
 
-- **White:** powering up and initializing.
-- **Blue:** idle and waiting for PCP commands over CAN.
+- **Orange:** powered up and initialized.
 - **Purple:** direct USB connection established and waiting for commands.
-- **Green:** actively following a command.
+- **Green:** drive is active.
 - **Red:** an error requires attention.
 - **Off:** firmware update mode or no power.
 
-LED state is a useful first check, but it does not replace SDK status and diagnostic information. If an actuator remains red, stop commanding it and [contact support](../support.md).
+LED state is a useful first check, but it does not replace SDK status and diagnostic information. If an actuator remains red, doesn't provide diagnostics over SDK, doesn't return to normal after a reboot, stop the actuator and [contact support](../support.md) to avoid any further damage.

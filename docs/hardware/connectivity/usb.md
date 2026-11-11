@@ -5,7 +5,7 @@ Direct USB is the simplest physical connection for one actuator.
 ## Connect
 
 1. Complete [Actuator setup](../actuator_setup.md).
-2. Connect the actuator directly to the computer using USB-A to USB-C.
+2. Connect the actuator directly to the computer using a USB-C cable.
 3. Confirm that the LED indicates USB communication.
 
 ![Power and USB connection](../../assets/images/PWR_USB_connection.png)
