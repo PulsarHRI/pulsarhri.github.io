@@ -5,7 +5,7 @@ Pulsar App is the no-code interface for connecting to, configuring, commanding, 
 ## Choose a version
 
 - [Browser app](browser.md) — recommended for the fastest start.
-- [PULSAR Desktop App](desktop.md) — packaged Windows application.
+<!--- [PULSAR Desktop App](desktop.md) — packaged Windows application.-->
 
 Both provide the same guided workflow and currently control one physical actuator at a time. Virtual actuators are controlled with [Pulsar SDK](../sdk/index.md).
 
