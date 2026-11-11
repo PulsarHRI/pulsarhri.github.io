@@ -10,7 +10,7 @@ Use one USB-to-CAN adapter to control several physical actuators on one CAN FD b
 Before writing code:
 
 1. securely mount and power every actuator;
-2. wire the CAN bus with 120 Ω termination at both physical ends;
+2. wire the CAN bus with CAN termination at both physical ends;
 3. connect the Pulsar USB-to-CAN adapter;
 4. confirm that every actuator has a unique address using `pulsar-cli`;
 5. read [CAN FD connectivity](../hardware/connectivity/can.md).

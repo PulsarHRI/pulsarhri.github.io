@@ -5,7 +5,7 @@ This tutorial shows how to control multiple PULSAR HRI actuators from a single C
 The actuators are connected to the CAN bus through the adapter, and the adapter is connected to the host computer through USB.
 
 !!! warning
-    Do not forget the termination resistors at the ends of the CAN bus.
+    Do not forget the CAN-Terminators at the ends of the CAN bus.
 
 Before running the example, identify the PCP addresses of your actuators and replace the example addresses below with the actual values used in your setup.
 
