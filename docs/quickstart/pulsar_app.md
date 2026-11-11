@@ -1,3 +1,6 @@
+Quickstart
+{ .pulsar-home-eyebrow }
+
 # Physical actuator over direct USB with Pulsar App (browser)
 
 This is the fastest way to move one physical PULSE actuator without writing code.

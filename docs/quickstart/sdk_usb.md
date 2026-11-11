@@ -1,3 +1,6 @@
+Quickstart
+{ .pulsar-home-eyebrow }
+
 # Physical actuator over direct USB with Pulsar Python SDK
 
 Control one physical actuator connected directly by USB.
@@ -27,15 +30,37 @@ Create `quickstart.py`:
 ```python
 from time import sleep
 
-from pulsar_sdk import ControlConfiguration, Mode, PcpOverUsb, PulsarActuatorReal
+from pulsar_sdk import (
+    ControlConfiguration,
+    Mode,
+    PulsarActuatorReal,
+    TelemetryItems,
+    PcpOverUsb,
+)
 
-actuator = PulsarActuatorReal(PcpOverUsb(), address=0)
+usb = PcpOverUsb()
+actuator = PulsarActuatorReal(usb, address=0)
 
 with actuator:
-    actuator.configure(ControlConfiguration(Mode.VELOCITY))
+    actuator.configure(
+        ControlConfiguration(
+            mode=Mode.VELOCITY,
+            telemetry_items=(
+                TelemetryItems.POSITION,
+                TelemetryItems.VELOCITY,
+            ),
+            telemetry_rate_hz=100,
+        )
+    )
     actuator.enable()
     actuator.set_command(1.0)  # rad/s
+
     sleep(2)
+
+    print(actuator.read_telemetry((
+        TelemetryItems.POSITION,
+        TelemetryItems.VELOCITY,
+    )))
     actuator.disable()
 ```
 

@@ -1,3 +1,6 @@
+Quickstart
+{ .pulsar-home-eyebrow }
+
 # Virtual actuator with Pulsar Python SDK
 
 Run a PULSE115-60G virtual actuator using AUGUR Digital Twin assets. No physical actuator, power supply, USB cable, or CAN adapter is required.
@@ -11,10 +14,13 @@ pixi workspace channel add --prepend https://prefix.dev/pulsarhri/pulsar-forge
 pixi add pulsar-sdk pulsar-assets
 ```
 
+!!! warning "License Notice"
+    pulsar-assets and the AUGUR digital twin operate under the AUGUR Development Licence (ADL) and AUGUR Commercial License (ACL), please read the license carefully before using the AUGUR digital twins.
+
 Check the installed models:
 
 ```bash
-pixi run pulsar-cli virtual-scan
+pixi run pulsar-cli vscan # or virtual-scan, vs
 ```
 
 ## Run the virtual actuator
