@@ -86,7 +86,7 @@ jobs:
           PY
 
             (cd "$legacy_dir" && mike deploy --push 2.0.4)
-            git worktree remove "$legacy_dir"
+            git worktree remove --force "$legacy_dir"
           fi
 
           mike deploy --push 3.0.0
