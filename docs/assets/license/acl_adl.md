@@ -158,9 +158,11 @@ The AUGUR Materials are licensed, neither sold nor transferred. Except for Third
 
 **and interests in and to the AUGUR Materials** , including all intellectual property and proprietary rights such as copyrights, patents, trade secrets, database rights, design rights, know-how, trademarks and others. 
 
-### **References to PULSAR HRI in this Agreement, the Documentation or related materials designate a brand, project, ecosystem, product line or business designation of ARQUIMEA. In this context, PULSAR HRI is not a separate legal entity, licensor, rights holder or contracting party unless expressly stated in a Commercial Agreement.2.2 No Transfer** 
+References to PULSAR HRI in this Agreement, the Documentation or related materials designate a brand, project, ecosystem, product line or business designation of ARQUIMEA. In this context, PULSAR HRI is not a separate legal entity, licensor, rights holder or contracting party unless expressly stated in a Commercial Agreement.
 
-No ownership rights are transferred to Licensee under this Agreement. Licensee receives only the limited rights expressly granted in this Agreement or in a valid Commercial Agreement that it be expressly signed and accepted. 
+### **2.2 No Transfer** 
+
+No ownership rights are transferred to Licensee under this Agreement. Licensee receives only the limited rights expressly granted in this Agreement or in a valid Commercial Agreement that it be expressly signed and accepted.
 
 2.3 Derivative Works, Modifications and Improvements(a) **ARQUIMEA exclusively owns all rights, title and interest in AUGUR Derivative Works** , including all related intellectual-property rights. To the extent that ownership does not automatically vest in ARQUIMEA, Licensee hereby irrevocably assigns such rights to ARQUIMEA and shall procure equivalent written assignments from its Authorized Users and contractors before they contribute to an AUGUR Derivative Work. 
 
