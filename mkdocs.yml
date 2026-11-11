@@ -134,14 +134,14 @@ nav:
       - Actuator setup: hardware/actuator_setup.md
       - Mechanical interfaces: hardware/mechanical_interfaces.md
       - Electrical interfaces: hardware/electrical_interfaces.md
-      - Regenerative energy management: hardware/regenerative_energy_management.md
-      - LED status indicators: hardware/led.md
       - Connectivity:
           - hardware/connectivity/index.md
           - USB: hardware/connectivity/usb.md
           - CAN FD: hardware/connectivity/can.md
           - CAN bus utilization: hardware/connectivity/can_bus_utilization.md
           - EtherCAT status: hardware/connectivity/ethercat.md
+      - LED status indicators: hardware/led.md
+      - Regenerative energy management: hardware/regenerative_energy_management.md
   - Firmware:
       - firmware/index.md
   - Control:
@@ -150,11 +150,12 @@ nav:
   - Pulsar App:
       - pulsar_app/index.md
       - Browser app: pulsar_app/browser.md
-      - PULSAR Desktop App: pulsar_app/desktop.md
+      # - PULSAR Desktop App: pulsar_app/desktop.md
       - Pulsar App quickstart: pulsar_app/quickstart.md
   - Pulsar Python SDK:
       - sdk/index.md
       - Install: sdk/install.md
+      - CLI: sdk/cli.md
       - Core workflow: sdk/core_workflow.md
       - Physical actuators:
           - sdk/physical/index.md
@@ -165,7 +166,6 @@ nav:
       - Commands and parameters: sdk/commands_parameters.md
       - Telemetry and callbacks: sdk/telemetry_callbacks.md
       - Lifecycle and recovery: sdk/lifecycle_recovery.md
-      - CLI: sdk/cli.md
       - Examples: sdk/examples.md
       - User contract: sdk/user_contract.md
       - API reference: sdk/api_reference.md
@@ -175,6 +175,7 @@ nav:
       - augur/index.md
       - Co-simulation coupling: augur/co_sim_coupling.md
       - Robot modelling: augur/robot_modelling.md
+      - License: augur/license.md
   - Downloads and Resources:
       - resources/index.md
       - PULSAR Desktop App package: resources/pulsar_app.md
