@@ -16,8 +16,9 @@ Actuators usually draw much less than the maximum current without load, but the 
 The actuator requires an XT30 female connector on the power cable.
 
 <p align="center">
-  <img src="../assets/images/XT30_01_inv.png" alt="XT30 power connector pinout" width="60%">
+  <img src="/assets/images/XT30_01_inv.png" alt="XT30 Pinout" width="60%">
 </p>
+
 
 ![XT30 power connection](../assets/images/power_connection.jpeg){ width="50%" }
 
@@ -28,7 +29,9 @@ The actuator requires an XT30 female connector on the power cable.
 
 The actuator USB connector supports direct connection to one computer for configuration, single-actuator testing, control, and maintenance. Use a standard USB-A to USB-C cable.
 
-Direct USB uses actuator address `0` in Pulsar Python SDK.
+Direct USB uses actuator address `0` in Pulsar Python SDK; see the [direct USB guide](connectivity/usb.md) and [Python SDK USB quickstart](../quickstart/sdk_usb.md).
+
+For a shared DC bus or applications that may return energy, review [Regenerative energy management](regenerative_energy_management.md).
 
 ## CAN FD
 
@@ -56,8 +59,16 @@ Preserve the pinout at both cable ends:
 
 ### Termination
 
-Place one 120 Ω termination resistor at each physical end of the CAN bus.
+Place one CAN-Terminator at each physical end of the CAN bus.
+These TRs are not usually available on the market. They can either be made by the user or provided by PULSAR HRI.
+
+CAN-Terminator assemblies use a 3-pin Molex PicoBlade connector with components between CAN-H and CAN-L. 
+A minimal version uses a 120 Ω resistor:
 
 ![CAN termination resistor](../assets/images/termination_resistor.jpeg){ width="30%" }
+
+A noise-rejecting version can also include capacitors:
+
+![CAN Terminator with capacitors](../assets/images/can_terminator.png)
 
 Continue with [CAN FD connectivity](connectivity/can.md).
