@@ -1,0 +1,5449 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hardware, software, control, and simulation documentation for PULSAR HRI PULSE actuators.">
+      
+      
+      
+        <link rel="canonical" href="https://pulsarhri.github.io/3.0.0/sdk/api_reference/">
+      
+      
+        <link rel="prev" href="../examples/">
+      
+      
+        <link rel="next" href="../../pulsar_rust_sdk/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/icons/icon.ico">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>API reference - PULSAR HRI Developer Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat+medium:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Montserrat medium";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/pulsar.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PULSAR HRI Developer Hub" class="md-header__button md-logo" aria-label="PULSAR HRI Developer Hub" data-md-component="logo">
+      
+  <img src="../../assets/icons/P_Logo_white_svg.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PULSAR HRI Developer Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              API reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="deep-orange"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/PulsarHRI/pulsarhri.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PulsarHRI/pulsarhri.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PULSAR HRI Developer Hub" class="md-nav__button md-logo" aria-label="PULSAR HRI Developer Hub" data-md-component="logo">
+      
+  <img src="../../assets/icons/P_Logo_white_svg.png" alt="logo">
+
+    </a>
+    PULSAR HRI Developer Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/PulsarHRI/pulsarhri.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PulsarHRI/pulsarhri.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../quickstart/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quickstart
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/pulsar_app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One physical actuator · direct USB · Pulsar App (browser)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/sdk_usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One physical actuator · direct USB · Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/sdk_can/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiple physical actuators · CAN FD · Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/sdk_virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtual actuators · Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../hardware/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety and prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/mechanical_interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanical interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/electrical_interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrical interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/regenerative_energy_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regenerative energy management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/actuator_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actuator setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../hardware/connectivity/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connectivity
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Connectivity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/connectivity/usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/connectivity/can/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAN FD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/connectivity/can_bus_utilization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAN bus utilization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/connectivity/ethercat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EtherCAT status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/led/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LED status indicators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../firmware/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Firmware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../control_architectures/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control_architectures/parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control parameters by mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../augur/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AUGUR Digital Twin
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AUGUR Digital Twin
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../augur/co_sim_coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-simulation coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../augur/robot_modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot modelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../augur/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Interfaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software Interfaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../pulsar_app/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pulsar App
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pulsar App
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pulsar_app/browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browser app
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pulsar_app/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pulsar App quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pulsar Python SDK
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pulsar Python SDK
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../core_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts and workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../physical/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physical actuators
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_2_5" id="__nav_7_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physical actuators
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physical/usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Direct USB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physical/can/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../virtual_actuators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtual actuators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../groups_platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Groups and platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands_parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands and parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../telemetry_callbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry and callbacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifecycle_recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle and recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#browse-the-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browse the API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrams
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-aliases-and-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type aliases and callbacks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#executiondomain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExecutionDomain
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ExecutionDomain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcpovercan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PcpOverCan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcpoverusb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PcpOverUsb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtualworld" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VirtualWorld
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VirtualWorld">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actuators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actuators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actuators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actuator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actuator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actuator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycle-and-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle and control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telemetry-and-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Telemetry and callbacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters-and-optional-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters and optional features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fault-and-diagnostic-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fault and diagnostic methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulsaractuatorreal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PulsarActuatorReal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulsaractuatorvirtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PulsarActuatorVirtual
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actuatorgroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ActuatorGroup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ActuatorGroup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands-parameters-and-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands, parameters, and presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Callbacks and recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platforms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platforms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycle_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands-parameters-and-presets_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands, parameters, and presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks-and-recovery_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Callbacks and recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Records
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Records">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#featureresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FeatureResult
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deviceinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControlConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controllererrorpolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControllerErrorPolicy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controllermetadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControllerMetadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actuatordiagnostic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ActuatorDiagnostic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safetyattempt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SafetyAttempt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosterror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HostError
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actuatorstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ActuatorStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groupstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GroupStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connectionstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConnectionState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controllerstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControllerState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#healthstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HealthState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recoveryaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RecoveryAction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gain-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gain presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#featurestatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FeatureStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controllererroraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControllerErrorAction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnosticflag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DiagnosticFlag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnosticseverity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DiagnosticSeverity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosterrorcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HostErrorCode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telemetryitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TelemetryItems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlparams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControlParams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exceptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../pulsar_rust_sdk/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pulsar Rust SDK
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pulsar Rust SDK
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Downloads and Resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Downloads and Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/pulsar_app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PULSAR Desktop App package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/cad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanical CAD and printable fixtures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/robot_assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot model assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/datasheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datasheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq_issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ and Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#browse-the-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browse the API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagrams
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-aliases-and-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type aliases and callbacks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#executiondomain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExecutionDomain
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ExecutionDomain">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcpovercan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PcpOverCan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pcpoverusb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PcpOverUsb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtualworld" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VirtualWorld
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="VirtualWorld">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actuators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actuators
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actuators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actuator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actuator
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Actuator">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycle-and-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle and control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telemetry-and-callbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Telemetry and callbacks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters-and-optional-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters and optional features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fault-and-diagnostic-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fault and diagnostic methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulsaractuatorreal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PulsarActuatorReal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulsaractuatorvirtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PulsarActuatorVirtual
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Groups
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Groups">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actuatorgroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ActuatorGroup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ActuatorGroup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands-parameters-and-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands, parameters, and presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks-and-recovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Callbacks and recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platforms
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platforms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platform">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#properties_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Properties
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lifecycle_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commands-parameters-and-presets_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands, parameters, and presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks-and-recovery_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Callbacks and recovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Records
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Records">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#featureresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FeatureResult
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deviceinfo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeviceInfo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlconfiguration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControlConfiguration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controllererrorpolicy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControllerErrorPolicy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controllermetadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControllerMetadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actuatordiagnostic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ActuatorDiagnostic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safetyattempt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SafetyAttempt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosterror" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HostError
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actuatorstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ActuatorStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groupstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GroupStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enumerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enumerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connectionstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConnectionState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controllerstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControllerState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#healthstate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HealthState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recoveryaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RecoveryAction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gain-presets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gain presets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#featurestatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FeatureStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controllererroraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControllerErrorAction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnosticflag" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DiagnosticFlag
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnosticseverity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DiagnosticSeverity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosterrorcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HostErrorCode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telemetryitems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TelemetryItems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlparams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ControlParams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Capability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exceptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p class="pulsar-home-eyebrow">Pulsar Python SDK</p>
+<h1 id="api-reference">API reference</h1>
+<p>Public types exported by:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pulsar_sdk</span><span class="w"> </span><span class="kn">import</span> <span class="o">...</span>
+</span></code></pre></div>
+<p>Start with <a href="../core_workflow/">Core concepts and workflow</a> for object ownership and the normal lifecycle. Use this page for exact constructors, methods, records, enum values, and exceptions.</p>
+<h2 id="browse-the-api">Browse the API</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#domains">Domains</a></td>
+<td>USB, CAN, and virtual execution domains</td>
+</tr>
+<tr>
+<td><a href="#actuators">Actuators</a></td>
+<td>Common, physical, and virtual actuator APIs</td>
+</tr>
+<tr>
+<td><a href="#groups">Groups</a> and <a href="#platforms">platforms</a></td>
+<td>Multi-actuator composition and lifecycle</td>
+</tr>
+<tr>
+<td><a href="#records">Records</a></td>
+<td>Configuration, status, diagnostics, and results</td>
+</tr>
+<tr>
+<td><a href="#enumerations">Enumerations</a></td>
+<td>Lifecycle, modes, diagnostics, parameters, telemetry, and capabilities</td>
+</tr>
+<tr>
+<td><a href="#exceptions">Exceptions</a></td>
+<td>SDK exception hierarchy</td>
+</tr>
+</tbody>
+</table>
+<p>The right-side table of contents lists each API area and public type.</p>
+<h2 id="diagrams">Diagrams</h2>
+<ul>
+<li><a href="../assets/diagrams/runtime.png">Runtime architecture</a></li>
+<li><a href="../assets/diagrams/class-model.png">Public class model</a></li>
+<li><a href="../assets/diagrams/lifecycle.png">Lifecycle and recovery</a></li>
+<li><a href="../assets/diagrams/full-sequence.png">Setup, callback, and safety sequence</a></li>
+</ul>
+<h2 id="type-aliases-and-callbacks">Type aliases and callbacks</h2>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Telemetry</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="n">TelemetryItems</span><span class="p">,</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span><span class="p">]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">TelemetryBatch</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Telemetry</span><span class="p">]</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">ControlValues</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="n">ControlParams</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">ControlBatch</span> <span class="o">=</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">ControlParams</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">ControlCallback</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="p">[</span><span class="n">ControllerMetadata</span><span class="p">,</span> <span class="n">TelemetryBatch</span><span class="p">],</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">ControlBatch</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">]</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">DiagnosticCallback</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="p">[</span><span class="n">ActuatorGroup</span><span class="p">,</span> <span class="n">Actuator</span><span class="p">,</span> <span class="n">ActuatorDiagnostic</span><span class="p">],</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">]</span>
+</span></code></pre></div>
+<p>An actuator-level telemetry callback has this signature:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">Callable</span><span class="p">[[</span><span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">Telemetry</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span>
+</span></code></pre></div>
+<p>An actuator-level diagnostic callback has this signature:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Callable</span><span class="p">[[</span><span class="n">Actuator</span><span class="p">,</span> <span class="n">ActuatorDiagnostic</span><span class="p">],</span> <span class="kc">None</span><span class="p">]</span>
+</span></code></pre></div>
+<h2 id="domains">Domains</h2>
+<h3 id="executiondomain"><code>ExecutionDomain</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">ExecutionDomain</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Base class for one transport or simulation clock. It also owns the callback worker, telemetry watchdog, and actuator leases.</p>
+<h4 id="properties">Properties</h4>
+<ul>
+<li><code>capabilities: Capability</code></li>
+<li><code>connection_state: ConnectionState</code></li>
+<li><code>is_connected: bool</code></li>
+</ul>
+<h4 id="methods">Methods</h4>
+<ul>
+<li><code>supports(capability: Capability) -&gt; bool</code> — Return whether the domain advertises the capability.</li>
+<li><code>connect() -&gt; None</code> — Explicitly keep the domain open. Repeated calls are safe.</li>
+<li><code>disconnect() -&gt; None</code> — Release the explicit connection. Raises <code>ResourceBusyError</code> while connected actuators still use the domain.</li>
+<li><code>sync() -&gt; FeatureResult</code> — Reset telemetry timestamps and counters for the domain when supported.</li>
+<li><code>reset_telemetry_timestamp() -&gt; FeatureResult</code> — Same operation as <code>sync()</code>.</li>
+</ul>
+<p>The class supports <code>with</code>; entering connects and exiting disconnects.</p>
+<h3 id="pcpovercan"><code>PcpOverCan</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">PcpOverCan</span><span class="p">(</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="o">*</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>PCP domain for one USB-to-CAN adapter.</p>
+<ul>
+<li><code>list_ports() -&gt; tuple[str, ...]</code> — List detected Pulsar serial ports.</li>
+<li><code>scan(start_address=16, end_address=255, *, timeout_s=0.12) -&gt; tuple[int, ...]</code> — Probe the inclusive address range. The domain connects automatically if needed.</li>
+<li><code>set_can_brs_enabled(enabled: bool) -&gt; None</code> — Update connected actuators while output is inactive. Enabling BRS is verified and rolled back on failure.</li>
+</ul>
+<p>CAN actuator addresses must be unique within the domain and lie in <code>16..16382</code>. Scan bounds use the same range, <code>start_address</code> must not exceed <code>end_address</code>, and <code>timeout_s</code> must be finite and positive.</p>
+<h3 id="pcpoverusb"><code>PcpOverUsb</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">PcpOverUsb</span><span class="p">(</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="o">*</span><span class="p">,</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>Direct-USB domain for exactly one actuator at address <code>0</code>.</p>
+<ul>
+<li><code>list_ports() -&gt; tuple[str, ...]</code> — List detected Pulsar serial ports.</li>
+</ul>
+<h3 id="virtualworld"><code>VirtualWorld</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">VirtualWorld</span><span class="p">(</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="o">*</span><span class="p">,</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">time_step_hz</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">20_000</span><span class="p">,</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">assets_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>Deterministic digital-twin domain. The current model assets require exactly <code>20_000</code> Hz.</p>
+<h4 id="attributes">Attributes</h4>
+<ul>
+<li><code>time_step_hz: float</code></li>
+<li><code>time_step_s: float</code></li>
+<li><code>assets_path: Path | None</code> — Explicit asset root, if supplied.</li>
+<li><code>simulation_time_s: float</code></li>
+<li><code>simulation_step_count: int</code></li>
+</ul>
+<h4 id="methods_1">Methods</h4>
+<ul>
+<li><code>scan() -&gt; tuple[str, ...]</code> — Return available packaged models for the current host. Current supported names are <code>P90</code>, <code>P100</code>, <code>PULSE98-30G</code>, <code>PULSE98-55G</code>, <code>PULSE115-60G</code>, and <code>PULSE115-110G</code>.</li>
+<li><code>sync() -&gt; FeatureResult</code> — Reset virtual telemetry timestamps and counters without resetting plant physics.</li>
+<li><code>step(*, loads_by_address: Mapping[int, float] | None = None) -&gt; None</code> — Advance connected models to the earliest next telemetry event and wait for due callbacks. If no periodic telemetry is configured, advance one model tick.</li>
+</ul>
+<p>Without <code>assets_path</code>, lookup checks <code>PULSAR_ASSETS_PATH</code>, then the active Conda prefix and Python environment prefix under <code>share/pulsar-assets</code> and <code>Library/share/pulsar-assets</code>.</p>
+<p>Loads must be finite numbers keyed by connected virtual actuator address.</p>
+<h2 id="actuators">Actuators</h2>
+<h3 id="actuator"><code>Actuator</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Actuator</span><span class="p">(</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="n">domain</span><span class="p">:</span> <span class="n">ExecutionDomain</span><span class="p">,</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="o">*</span><span class="p">,</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="n">address</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">capabilities</span><span class="p">:</span> <span class="n">Capability</span> <span class="o">=</span> <span class="n">Capability</span><span class="o">.</span><span class="n">NONE</span><span class="p">,</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">diagnostic_actions</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">DiagnosticFlag</span><span class="p">,</span> <span class="n">ControllerErrorAction</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">diagnostic_damping</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>Backend-neutral actuator contract. Most users create <code>PulsarActuatorReal</code> or <code>PulsarActuatorVirtual</code> instead.</p>
+<p><code>diagnostic_actions</code> maps named <code>DiagnosticFlag</code> values to safety actions. Defaults are:</p>
+<ul>
+<li><code>DiagnosticFlag.OVERTEMPERATURE</code> → <code>LIMIT_TORQUE</code></li>
+<li><code>DiagnosticFlag.INTERNAL_ENCODER_ERROR</code> and <code>EXTERNAL_ENCODER_ERROR</code> → <code>INIT_CONFIG</code></li>
+<li>other unmapped error diagnostics → <code>DEFAULT_SAFETY</code></li>
+</ul>
+<p>Map a diagnostic to <code>DO_NOTHING</code> to keep it report-only: callbacks and <code>status.diagnostic</code> still update, but it does not fault, inhibit, pause, propagate safety, or block direct commands/enabling. Mapping every <code>DiagnosticFlag</code> provides the explicit destructive-testing configuration.</p>
+<p><code>diagnostic_damping</code> must be <code>None</code> or a finite positive value.</p>
+<h4 id="properties_1">Properties</h4>
+<ul>
+<li><code>domain: ExecutionDomain</code> — Owning domain.</li>
+<li><code>address: int | None</code> — Read-only transport or virtual identifier.</li>
+<li><code>capabilities: Capability</code></li>
+<li><code>connection_state: ConnectionState</code></li>
+<li><code>is_connected: bool</code></li>
+<li><code>status: ActuatorStatus</code> — Includes the current and last observed operating state, connection, health, diagnostic, safety, and recovery information.</li>
+<li><code>mode: Mode | None</code></li>
+<li><code>info: DeviceInfo</code></li>
+<li><code>dropped_telemetry_packets: int</code> — Pending actuator callback packets replaced by newer packets.</li>
+</ul>
+<h4 id="lifecycle-and-control">Lifecycle and control</h4>
+<ul>
+<li><code>connect() -&gt; None</code> — Connect the actuator and acquire its domain.</li>
+<li><code>disconnect() -&gt; None</code> — Request the backend safe disconnect state and release the domain lease.</li>
+<li><code>configure(configuration: ControlConfiguration) -&gt; None</code> — Apply mode and periodic telemetry configuration in <code>INIT_CONFIG</code> or <code>CONFIG_AND_TELEM</code>.</li>
+<li><code>set_mode(mode: Mode) -&gt; None</code> — Change mode while drive output is inactive. The cached mode changes only after the backend update succeeds.</li>
+<li><code>switch_to(state: State) -&gt; None</code> — Request <code>INIT_CONFIG</code>, <code>CONFIG_AND_TELEM</code>, or <code>DRIVE_ACTIVE</code>. <code>UNKNOWN</code> cannot be requested.</li>
+<li><code>sync() -&gt; FeatureResult</code> — Move to <code>CONFIG_AND_TELEM</code> when needed, then synchronize the whole domain.</li>
+<li><code>enable() -&gt; None</code> — Check configuration and diagnostics, synchronize when required, and enter <code>DRIVE_ACTIVE</code>.</li>
+<li><code>disable() -&gt; None</code> — Enter <code>CONFIG_AND_TELEM</code>.</li>
+<li><code>set_command(command: float | Mapping[ControlParams, float]) -&gt; None</code> — Send a primary command or a validated mode-specific control mapping in <code>DRIVE_ACTIVE</code>. A mapping must include <code>ControlParams.COMMAND</code>; omitted optional packet fields remain unchanged by firmware.</li>
+</ul>
+<p>When the actuator belongs to a group, lifecycle and configuration operations are routed through that group.</p>
+<h4 id="telemetry-and-callbacks">Telemetry and callbacks</h4>
+<ul>
+<li><code>read_telemetry(items: Iterable[TelemetryItems]) -&gt; Telemetry</code> — Read a snapshot in <code>CONFIG_AND_TELEM</code> or <code>DRIVE_ACTIVE</code>.</li>
+<li><code>set_telemetry_callback(callback: Callable[[int | None, Telemetry], None] | None) -&gt; None</code> — Register or remove an actuator callback. One callback may run while one newest packet waits.</li>
+<li><code>set_diagnostic_callback(callback: Callable[[Actuator, ActuatorDiagnostic], None] | None) -&gt; None</code> — Register or remove an actuator diagnostic callback.</li>
+</ul>
+<h4 id="parameters-and-optional-features">Parameters and optional features</h4>
+<ul>
+<li><code>read_parameters(parameters: Iterable[Parameters]) -&gt; dict[Parameters, int | float]</code></li>
+<li><code>set_parameters(parameters: Mapping[Parameters, int | float]) -&gt; None</code> — Allowed only while drive output is inactive.</li>
+<li><code>set_torque_gain_preset(preset: TorqueGainPreset) -&gt; FeatureResult</code></li>
+<li><code>set_velocity_gain_preset(preset: VelocityGainPreset) -&gt; FeatureResult</code></li>
+<li><code>zero_position() -&gt; FeatureResult</code> — Allowed in <code>CONFIG_AND_TELEM</code> or <code>DRIVE_ACTIVE</code>. Position and impedance modes reset the COMMAND to zero to avoid sudden motion.</li>
+<li><code>identify() -&gt; FeatureResult</code></li>
+<li><code>set_address(address: int) -&gt; FeatureResult</code></li>
+<li><code>save_parameters() -&gt; FeatureResult</code></li>
+<li><code>enter_bootloader() -&gt; FeatureResult</code></li>
+<li><code>supports(capability: Capability) -&gt; bool</code></li>
+</ul>
+<p>Unsupported optional operations return <code>FeatureResult(UNSUPPORTED, ...)</code> unless the operation is invalid for the current lifecycle state.</p>
+<h4 id="fault-and-diagnostic-methods">Fault and diagnostic methods</h4>
+<ul>
+<li><code>clear_faults() -&gt; bool</code> — Verify current diagnostics, clear retained SDK faults when possible, and restore thermal torque limits after <code>OVERTEMPERATURE</code> clears. Returns <code>False</code> while a mapped diagnostic remains active.</li>
+<li><code>recover() -&gt; None</code> — Recover a diagnostic whose selected action entered <code>INIT_CONFIG</code>. This is not a general host-fault clear method.</li>
+<li><code>resume() -&gt; None</code> — Resume a healthy standalone actuator. If output is inactive, this runs the normal enable checks before entering <code>DRIVE_ACTIVE</code>. A grouped actuator routes the call through its group.</li>
+<li><code>override_diagnostic_safety(flags: Iterable[DiagnosticFlag]) -&gt; None</code> — Bypass SDK safety for currently active named diagnostics. Overrides expire when those diagnostics clear. This is a dangerous operation.</li>
+</ul>
+<p>The class supports <code>with</code>; entering connects and exiting disconnects.</p>
+<h3 id="pulsaractuatorreal"><code>PulsarActuatorReal</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">PulsarActuatorReal</span><span class="p">(</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">domain</span><span class="p">:</span> <span class="n">ExecutionDomain</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">address</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="o">*</span><span class="p">,</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">diagnostic_actions</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">DiagnosticFlag</span><span class="p">,</span> <span class="n">ControllerErrorAction</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">diagnostic_damping</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>Physical actuator using Pulsar Communication Protocols (PCP).</p>
+<ul>
+<li><code>info</code> reports model and firmware version.</li>
+<li>Physical state requests complete only after the requested state is observed.</li>
+<li>Connection reads and caches maximum torque and the current torque limit for thermal safety.</li>
+<li>CAN-backed actuators advertise <code>ADDRESS_CHANGE</code>; USB-backed actuators do not.</li>
+<li>Physical maintenance methods may return <code>UNCONFIRMED</code> because transmission has no dedicated acknowledgement.</li>
+</ul>
+<h3 id="pulsaractuatorvirtual"><code>PulsarActuatorVirtual</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">PulsarActuatorVirtual</span><span class="p">(</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="n">domain</span><span class="p">:</span> <span class="n">VirtualWorld</span><span class="p">,</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="o">*</span><span class="p">,</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">address</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">diagnostic_actions</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">DiagnosticFlag</span><span class="p">,</span> <span class="n">ControllerErrorAction</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">diagnostic_damping</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>Generated digital-twin actuator.</p>
+<ul>
+<li><code>model: str</code> — Requested model name.</li>
+<li><code>info</code> reports the model name and generated model version.</li>
+<li>An omitted address is allocated monotonically within the world.</li>
+<li>Explicit addresses must be unique integers in <code>0..16382</code>.</li>
+<li>The plant remains enabled as a passive zero-torque model in <code>INIT_CONFIG</code> and <code>CONFIG_AND_TELEM</code>, so external loads can still move it.</li>
+<li>Telemetry is not available in <code>INIT_CONFIG</code>.</li>
+<li><code>identify()</code> returns <code>UNSUPPORTED</code>.</li>
+</ul>
+<h2 id="groups">Groups</h2>
+<h3 id="actuatorgroup"><code>ActuatorGroup</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">ActuatorGroup</span><span class="p">(</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="n">actuators</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Actuator</span><span class="p">],</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="o">*</span><span class="p">,</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="n">telemetry_timeout_s</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">controller_timeout_s</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="n">controller_error_policy</span><span class="p">:</span> <span class="n">ControllerErrorPolicy</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>A named set of actuators that share one domain and one control mode. The group name, member mapping, and every member name must be non-empty; members must be distinct actuator objects from one domain.</p>
+<p><code>telemetry_timeout_s</code> and a non-<code>None</code> <code>controller_timeout_s</code> must be finite and positive. Set <code>controller_timeout_s=None</code> to disable the callback deadline.</p>
+<h4 id="properties_2">Properties</h4>
+<ul>
+<li><code>name: str</code></li>
+<li><code>actuators: Mapping[str, Actuator]</code> — Read-only view.</li>
+<li><code>domain: ExecutionDomain</code></li>
+<li><code>connection_state: ConnectionState</code></li>
+<li><code>is_connected: bool</code></li>
+<li><code>controller_state: ControllerState</code></li>
+<li><code>status: GroupStatus</code></li>
+</ul>
+<h4 id="lifecycle">Lifecycle</h4>
+<ul>
+<li><code>connect() -&gt; None</code> — Connect every member; roll back earlier connections if a later member fails.</li>
+<li><code>disconnect() -&gt; None</code> — Stop callbacks, apply output-inactive safety where needed, and release group leases.</li>
+<li><code>close(*, disconnect_actuators: bool = True) -&gt; None</code> — Disconnect, detach members, and make the group unusable.</li>
+<li><code>configure(configuration: ControlConfiguration) -&gt; None</code> — Apply one configuration to every member. A partial failure invalidates the group configuration until the whole group is configured again.</li>
+<li><code>set_mode(mode: Mode) -&gt; None</code> — Change every member while all drives are inactive.</li>
+<li><code>switch_to(state: State) -&gt; None</code> — Request one state for every member and report aggregate failure.</li>
+<li><code>sync() -&gt; FeatureResult</code> — Enter <code>CONFIG_AND_TELEM</code> where needed and synchronize the shared domain.</li>
+<li><code>reset_telemetry_timestamp() -&gt; FeatureResult</code> — Same operation as <code>sync()</code>.</li>
+<li><code>enable() -&gt; None</code> — Check faults and diagnostics, synchronize when required, then enable every member. Failure attempts rollback to <code>CONFIG_AND_TELEM</code>.</li>
+<li><code>disable() -&gt; None</code> — Move every member to <code>CONFIG_AND_TELEM</code>.</li>
+<li><code>zero_position() -&gt; dict[str, FeatureResult]</code> — Zero every member in <code>CONFIG_AND_TELEM</code> or <code>DRIVE_ACTIVE</code>.</li>
+</ul>
+<h4 id="commands-parameters-and-presets">Commands, parameters, and presets</h4>
+<ul>
+<li><code>set_commands(commands: ControlBatch) -&gt; None</code> — Validate a selected member batch before the first write. Each member mapping accepts the same mode-specific <code>ControlParams</code> as standalone <code>set_command()</code>.</li>
+<li><code>read_parameters(parameters: Mapping[str, Iterable[Parameters]]) -&gt; dict[str, dict[Parameters, int | float]]</code></li>
+<li><code>set_parameters(parameters: Mapping[str, Mapping[Parameters, int | float]] | Mapping[Parameters, int | float], *, unify: bool = False) -&gt; None</code></li>
+<li><code>set_torque_gain_presets(presets: Mapping[str, TorqueGainPreset] | TorqueGainPreset, *, unify: bool = False) -&gt; dict[str, FeatureResult]</code></li>
+<li><code>set_velocity_gain_presets(presets: Mapping[str, VelocityGainPreset] | VelocityGainPreset, *, unify: bool = False) -&gt; dict[str, FeatureResult]</code></li>
+<li><code>save_parameters() -&gt; dict[str, FeatureResult]</code></li>
+</ul>
+<p>With <code>unify=False</code>, mappings are keyed by actuator name. With <code>unify=True</code>, one flat parameter map or one preset is applied to every member.</p>
+<h4 id="callbacks-and-recovery">Callbacks and recovery</h4>
+<ul>
+<li><code>set_control_callback(callback: ControlCallback | None) -&gt; None</code></li>
+<li><code>set_diagnostic_callback(callback: DiagnosticCallback | None) -&gt; None</code></li>
+<li><code>clear_faults() -&gt; bool</code> — Attempt every member, then clear group fault state only when all checks pass.</li>
+<li><code>resume() -&gt; None</code> — Resume callback control after faults are clear and telemetry is fresh. If output is already active, it is not cycled.</li>
+<li><code>recover() -&gt; None</code> — Recover members whose diagnostic action selected <code>INIT_CONFIG</code>.</li>
+<li><code>raise_for_host_error() -&gt; None</code> — Raise <code>ControllerFaultError</code> when a host fault is latched.</li>
+</ul>
+<p>The class supports <code>with</code>; entering connects and exiting disconnects.</p>
+<h2 id="platforms">Platforms</h2>
+<h3 id="platform"><code>Platform</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">Platform</span><span class="p">(</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="n">groups</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ActuatorGroup</span><span class="p">],</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="o">*</span><span class="p">,</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>Top-level composition for lifecycle and safety across one or more domains. The group mapping and every platform group name must be non-empty. A group object cannot appear twice or already belong to another platform.</p>
+<h4 id="properties_3">Properties</h4>
+<ul>
+<li><code>groups: Mapping[str, ActuatorGroup]</code> — Read-only view.</li>
+<li><code>domains: tuple[ExecutionDomain, ...]</code> — Unique domains in group order.</li>
+<li><code>connection_state: ConnectionState</code> — Live aggregate. <code>FAULTED</code> takes priority, followed by <code>PARTIAL</code> and transition states.</li>
+<li><code>is_connected: bool</code></li>
+<li><code>status: dict[str, GroupStatus]</code></li>
+</ul>
+<h4 id="lifecycle_1">Lifecycle</h4>
+<ul>
+<li><code>connect() -&gt; None</code> — Connect every group and roll back earlier groups on failure.</li>
+<li><code>disconnect() -&gt; None</code> — Attempt every group and report incomplete shutdown.</li>
+<li><code>close() -&gt; None</code> — Disconnect and detach groups. Groups and actuators remain reusable.</li>
+<li><code>configure(configurations: Mapping[str, ControlConfiguration]) -&gt; None</code> — Requires exactly one configuration per group.</li>
+<li><code>set_modes(modes: Mapping[str, Mode]) -&gt; None</code> — Requires exactly one mode per group.</li>
+<li><code>switch_to(state: State) -&gt; None</code> — Attempt every group, then report aggregate failure.</li>
+<li><code>sync() -&gt; dict[ExecutionDomain, FeatureResult]</code> — Prepare groups and synchronize each domain independently.</li>
+<li><code>reset_telemetry_timestamp() -&gt; dict[ExecutionDomain, FeatureResult]</code> — Same operation as <code>sync()</code>.</li>
+<li><code>enable() -&gt; None</code> — Enable groups in order. On failure, attempt to disable every group already enabled.</li>
+<li><code>disable() -&gt; None</code> — Attempt every group before reporting failures.</li>
+<li><code>zero_position() -&gt; dict[str, dict[str, FeatureResult]]</code></li>
+</ul>
+<h4 id="commands-parameters-and-presets_1">Commands, parameters, and presets</h4>
+<ul>
+<li><code>set_commands(commands: Mapping[str, ControlBatch]) -&gt; None</code> — Validate all selected groups before the first platform write. Nested actuator mappings accept the same mode-specific <code>ControlParams</code> as standalone <code>set_command()</code>.</li>
+<li><code>read_parameters(parameters: Mapping[str, Mapping[str, Iterable[Parameters]]]) -&gt; dict[str, dict[str, dict[Parameters, int | float]]]</code></li>
+<li><code>set_parameters(parameters: Mapping[str, Mapping[str, Mapping[Parameters, int | float]]] | Mapping[Parameters, int | float], *, unify: bool = False) -&gt; None</code></li>
+<li><code>set_torque_gain_presets(presets: Mapping[str, Mapping[str, TorqueGainPreset]] | TorqueGainPreset, *, unify: bool = False) -&gt; dict[str, dict[str, FeatureResult]]</code></li>
+<li><code>set_velocity_gain_presets(presets: Mapping[str, Mapping[str, VelocityGainPreset]] | VelocityGainPreset, *, unify: bool = False) -&gt; dict[str, dict[str, FeatureResult]]</code></li>
+<li><code>save_parameters() -&gt; dict[str, dict[str, FeatureResult]]</code></li>
+</ul>
+<p>Nested mappings preserve <code>group_name -&gt; actuator_name -&gt; value</code>. <code>unify=True</code> applies one parameter map or preset across all represented actuators and domains.</p>
+<h4 id="callbacks-and-recovery_1">Callbacks and recovery</h4>
+<ul>
+<li><code>set_control_callback(callback: ControlCallback | None) -&gt; None</code> — Register the same callback on every group. Calls remain independent per group.</li>
+<li><code>set_diagnostic_callback(callback: DiagnosticCallback | None) -&gt; None</code></li>
+<li><code>clear_faults() -&gt; bool</code> — Attempt every group.</li>
+<li><code>resume() -&gt; None</code> — Resume every group after validation.</li>
+<li><code>recover() -&gt; None</code> — Recover groups with <code>INIT_CONFIG</code> diagnostic safety, then verify that faults cleared.</li>
+<li><code>raise_for_host_error() -&gt; None</code> — Raise one aggregate <code>ControllerFaultError</code>.</li>
+</ul>
+<p>The class supports <code>with</code>; entering connects and exiting disconnects.</p>
+<h2 id="records">Records</h2>
+<h3 id="featureresult"><code>FeatureResult</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">FeatureResult</span><span class="p">(</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="n">status</span><span class="p">:</span> <span class="n">FeatureStatus</span><span class="p">,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="n">acknowledged</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>Properties:</p>
+<ul>
+<li><code>supported: bool</code> — <code>False</code> only for <code>UNSUPPORTED</code>.</li>
+<li><code>ok: bool</code> — <code>True</code> only for <code>OK</code>.</li>
+<li><code>unsupported: bool</code> — <code>True</code> only for <code>UNSUPPORTED</code>.</li>
+</ul>
+<h3 id="deviceinfo"><code>DeviceInfo</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">DeviceInfo</span><span class="p">(</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="n">serial_number</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="n">firmware_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="n">model_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>    <span class="n">control_model_crc</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="controlconfiguration"><code>ControlConfiguration</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">ControlConfiguration</span><span class="p">(</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="n">telemetry_items</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">TelemetryItems</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="n">telemetry_rate_hz</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li><code>actual_telemetry_rate_hz: float</code> — Divider-derived rate based on a 20 kHz clock.</li>
+<li>The rate must be <code>0</code> or <code>1..10_000</code> Hz.</li>
+<li>At most 12 unique telemetry items are allowed.</li>
+</ul>
+<h3 id="controllererrorpolicy"><code>ControllerErrorPolicy</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">ControllerErrorPolicy</span><span class="p">(</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="n">action</span><span class="p">:</span> <span class="n">ControllerErrorAction</span> <span class="o">=</span> <span class="n">ControllerErrorAction</span><span class="o">.</span><span class="n">DEFAULT_SAFETY</span><span class="p">,</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="n">damping</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="n">fallback</span><span class="p">:</span> <span class="n">ControllerErrorAction</span> <span class="o">=</span> <span class="n">ControllerErrorAction</span><span class="o">.</span><span class="n">INIT_CONFIG</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>A selected <code>DAMPED_RELEASE</code> needs finite positive damping; otherwise safety uses the fallback action. <code>DO_NOTHING</code> keeps controller errors report-only, retains the previous command, and allows later callback cycles and direct <code>set_commands()</code> calls to continue.</p>
+<h3 id="controllermetadata"><code>ControllerMetadata</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">ControllerMetadata</span><span class="p">(</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="n">callback_count</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">elapsed_time_ms</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="n">mode</span><span class="p">:</span> <span class="n">Mode</span><span class="p">,</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="n">group_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><code>elapsed_time_ms</code> is measured from the group connection time.</p>
+<h3 id="actuatordiagnostic"><code>ActuatorDiagnostic</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">ActuatorDiagnostic</span><span class="p">(</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="n">address</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="n">flags</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">DiagnosticFlag</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="n">severity</span><span class="p">:</span> <span class="n">DiagnosticSeverity</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="n">device_timestamp_ms</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><code>flags</code> uses <code>DiagnosticFlag</code> keys. Raw integer keys are rejected.</p>
+<h3 id="safetyattempt"><code>SafetyAttempt</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">SafetyAttempt</span><span class="p">(</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="n">action</span><span class="p">:</span> <span class="n">ControllerErrorAction</span><span class="p">,</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="n">transmitted</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="n">acknowledged</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    <span class="n">guaranteed</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    <span class="n">message</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><code>guaranteed</code> is true only when the action was transmitted and acknowledged. Command-based hold, damping, and zero-command actions normally have no operation-specific acknowledgement.</p>
+<h3 id="hosterror"><code>HostError</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">HostError</span><span class="p">(</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="n">code</span><span class="p">:</span> <span class="n">HostErrorCode</span><span class="p">,</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="n">message</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    <span class="n">actuator_addresses</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    <span class="n">safety_attempt</span><span class="p">:</span> <span class="n">SafetyAttempt</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="actuatorstatus"><code>ActuatorStatus</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">ActuatorStatus</span><span class="p">(</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    <span class="n">operating_state</span><span class="p">:</span> <span class="n">State</span><span class="p">,</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    <span class="n">last_operating_state</span><span class="p">:</span> <span class="n">State</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    <span class="n">connection_state</span><span class="p">:</span> <span class="n">ConnectionState</span><span class="p">,</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    <span class="n">health</span><span class="p">:</span> <span class="n">HealthState</span><span class="p">,</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    <span class="n">recovery</span><span class="p">:</span> <span class="n">RecoveryAction</span><span class="p">,</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>    <span class="n">diagnostic</span><span class="p">:</span> <span class="n">ActuatorDiagnostic</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>    <span class="n">host_error</span><span class="p">:</span> <span class="n">HostError</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>    <span class="n">safety_attempt</span><span class="p">:</span> <span class="n">SafetyAttempt</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    <span class="n">inhibited_by</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>Properties:</p>
+<ul>
+<li><code>can_configure: bool</code> — Connected and in <code>INIT_CONFIG</code> or <code>CONFIG_AND_TELEM</code>.</li>
+<li><code>commands_effective: bool</code> — Output is enabled and the actuator is healthy and uninhibited.</li>
+<li><code>output_enabled: bool</code> — Connected and physically in <code>DRIVE_ACTIVE</code>, including a faulted active hold/damping state.</li>
+</ul>
+<p><code>RecoveryAction.RECOVER</code> means a retained fault needs to be cleared or verified. It does not always mean that the <code>recover()</code> method is the next call; <code>recover()</code> is specifically for <code>INIT_CONFIG</code> diagnostic safety.</p>
+<h3 id="groupstatus"><code>GroupStatus</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">GroupStatus</span><span class="p">(</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    <span class="n">connection_state</span><span class="p">:</span> <span class="n">ConnectionState</span><span class="p">,</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    <span class="n">controller_state</span><span class="p">:</span> <span class="n">ControllerState</span><span class="p">,</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>    <span class="n">operating_state</span><span class="p">:</span> <span class="n">State</span><span class="p">,</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    <span class="n">actuator_statuses</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ActuatorStatus</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    <span class="n">stale_names</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>    <span class="n">stale_addresses</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">(),</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>    <span class="n">wait_reason</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>    <span class="n">last_host_error</span><span class="p">:</span> <span class="n">HostError</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>    <span class="n">dropped_batches</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>    <span class="n">timestamp_skew_ms</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="p">)</span>
+</span></code></pre></div>
+<p><code>operating_state</code> is <code>UNKNOWN</code> when member states differ.</p>
+<h2 id="enumerations">Enumerations</h2>
+<h3 id="connectionstate"><code>ConnectionState</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DISCONNECTED</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>No active backend connection.</td>
+</tr>
+<tr>
+<td><code>CONNECTING</code></td>
+<td style="text-align: right;"><code>1</code></td>
+<td>Connection is in progress.</td>
+</tr>
+<tr>
+<td><code>CONNECTED</code></td>
+<td style="text-align: right;"><code>2</code></td>
+<td>Connection is ready.</td>
+</tr>
+<tr>
+<td><code>PARTIAL</code></td>
+<td style="text-align: right;"><code>3</code></td>
+<td>Only part of an aggregate is connected.</td>
+</tr>
+<tr>
+<td><code>DISCONNECTING</code></td>
+<td style="text-align: right;"><code>4</code></td>
+<td>Shutdown is in progress.</td>
+</tr>
+<tr>
+<td><code>FAULTED</code></td>
+<td style="text-align: right;"><code>5</code></td>
+<td>Connection failed or was lost.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="controllerstate"><code>ControllerState</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>STOPPED</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>Callback control is inactive.</td>
+</tr>
+<tr>
+<td><code>ACTIVE</code></td>
+<td style="text-align: right;"><code>1</code></td>
+<td>Complete telemetry batches invoke the controller.</td>
+</tr>
+<tr>
+<td><code>WAITING_FOR_TELEMETRY</code></td>
+<td style="text-align: right;"><code>2</code></td>
+<td>Control is paused pending explicit recovery or resume.</td>
+</tr>
+<tr>
+<td><code>FAULTED</code></td>
+<td style="text-align: right;"><code>3</code></td>
+<td>A host/controller fault is latched.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="state"><code>State</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UNKNOWN</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>Disconnected or unobserved; not requestable.</td>
+</tr>
+<tr>
+<td><code>INIT_CONFIG</code></td>
+<td style="text-align: right;"><code>1</code></td>
+<td>Drive output and runtime telemetry inactive; configuration allowed.</td>
+</tr>
+<tr>
+<td><code>CONFIG_AND_TELEM</code></td>
+<td style="text-align: right;"><code>2</code></td>
+<td>Telemetry active; drive output inactive.</td>
+</tr>
+<tr>
+<td><code>DRIVE_ACTIVE</code></td>
+<td style="text-align: right;"><code>3</code></td>
+<td>Commands can affect output.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="healthstate"><code>HealthState</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HEALTHY</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>No retained actuator or host fault.</td>
+</tr>
+<tr>
+<td><code>HOST_FAULT</code></td>
+<td style="text-align: right;"><code>1</code></td>
+<td>SDK, controller, or transport fault retained.</td>
+</tr>
+<tr>
+<td><code>ACTUATOR_FAULT</code></td>
+<td style="text-align: right;"><code>2</code></td>
+<td>Device error diagnostic retained.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="recoveryaction"><code>RecoveryAction</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NONE</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>No recovery action is required.</td>
+</tr>
+<tr>
+<td><code>RESUME</code></td>
+<td style="text-align: right;"><code>1</code></td>
+<td>A healthy actuator is paused or inhibited; resume after validation.</td>
+</tr>
+<tr>
+<td><code>RECOVER</code></td>
+<td style="text-align: right;"><code>2</code></td>
+<td>A retained fault must be cleared or verified.</td>
+</tr>
+<tr>
+<td><code>RECONNECT</code></td>
+<td style="text-align: right;"><code>3</code></td>
+<td>Connection is absent or faulted.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mode"><code>Mode</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Command unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TORQUE</code></td>
+<td style="text-align: right;"><code>5</code></td>
+<td>N·m</td>
+</tr>
+<tr>
+<td><code>VELOCITY</code></td>
+<td style="text-align: right;"><code>6</code></td>
+<td>rad/s</td>
+</tr>
+<tr>
+<td><code>POSITION</code></td>
+<td style="text-align: right;"><code>7</code></td>
+<td>rad</td>
+</tr>
+<tr>
+<td><code>IMPEDANCE</code></td>
+<td style="text-align: right;"><code>8</code></td>
+<td>position command in rad</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gain-presets">Gain presets</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TorqueGainPreset</code></td>
+<td><code>AGGRESSIVE</code></td>
+<td style="text-align: right;"><code>1</code></td>
+</tr>
+<tr>
+<td><code>TorqueGainPreset</code></td>
+<td><code>BALANCED</code></td>
+<td style="text-align: right;"><code>2</code></td>
+</tr>
+<tr>
+<td><code>TorqueGainPreset</code></td>
+<td><code>SOFT</code></td>
+<td style="text-align: right;"><code>3</code></td>
+</tr>
+<tr>
+<td><code>VelocityGainPreset</code></td>
+<td><code>AGGRESSIVE</code></td>
+<td style="text-align: right;"><code>1</code></td>
+</tr>
+<tr>
+<td><code>VelocityGainPreset</code></td>
+<td><code>BALANCED</code></td>
+<td style="text-align: right;"><code>2</code></td>
+</tr>
+<tr>
+<td><code>VelocityGainPreset</code></td>
+<td><code>SOFT</code></td>
+<td style="text-align: right;"><code>3</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="featurestatus"><code>FeatureStatus</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OK</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>Operation completed and was confirmed where applicable.</td>
+</tr>
+<tr>
+<td><code>UNSUPPORTED</code></td>
+<td style="text-align: right;"><code>1</code></td>
+<td>Backend does not provide the feature.</td>
+</tr>
+<tr>
+<td><code>FAILED</code></td>
+<td style="text-align: right;"><code>2</code></td>
+<td>Operation failed.</td>
+</tr>
+<tr>
+<td><code>UNCONFIRMED</code></td>
+<td style="text-align: right;"><code>3</code></td>
+<td>Transmission occurred without dedicated confirmation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="controllererroraction"><code>ControllerErrorAction</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DRIVE_INACTIVE</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>Request <code>CONFIG_AND_TELEM</code>.</td>
+</tr>
+<tr>
+<td><code>HOLD_POSITION</code></td>
+<td style="text-align: right;"><code>1</code></td>
+<td>Send the latest known position in position or impedance mode.</td>
+</tr>
+<tr>
+<td><code>DAMPED_RELEASE</code></td>
+<td style="text-align: right;"><code>2</code></td>
+<td>Use zero stiffness and positive damping in impedance mode; velocity mode sends zero velocity.</td>
+</tr>
+<tr>
+<td><code>DEFAULT_SAFETY</code></td>
+<td style="text-align: right;"><code>3</code></td>
+<td>Select hold, damped release, or zero velocity from mode and damping. Torque mode quick-switches to velocity mode and commands zero velocity.</td>
+</tr>
+<tr>
+<td><code>INIT_CONFIG</code></td>
+<td style="text-align: right;"><code>4</code></td>
+<td>Request <code>INIT_CONFIG</code>.</td>
+</tr>
+<tr>
+<td><code>LIMIT_TORQUE</code></td>
+<td style="text-align: right;"><code>5</code></td>
+<td>Apply diagnostic torque derating.</td>
+</tr>
+<tr>
+<td><code>DO_NOTHING</code></td>
+<td style="text-align: right;"><code>6</code></td>
+<td>Report the diagnostic/controller error without changing control, state, inhibition, or command availability.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagnosticflag"><code>DiagnosticFlag</code></h3>
+<p>Named firmware diagnostics. Values are firmware bit positions, but applications use the enum names rather than raw integers.</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Severity class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OVERTEMPERATURE</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>warning</td>
+</tr>
+<tr>
+<td><code>POSITION_REFERENCE_MAXIMUM</code></td>
+<td style="text-align: right;"><code>2</code></td>
+<td>warning</td>
+</tr>
+<tr>
+<td><code>POSITION_REFERENCE_MINIMUM</code></td>
+<td style="text-align: right;"><code>3</code></td>
+<td>warning</td>
+</tr>
+<tr>
+<td><code>VELOCITY_TELEMETRY_MAXIMUM</code></td>
+<td style="text-align: right;"><code>4</code></td>
+<td>warning</td>
+</tr>
+<tr>
+<td><code>BUS_VOLTAGE_OUT_OF_RANGE</code></td>
+<td style="text-align: right;"><code>5</code></td>
+<td>warning</td>
+</tr>
+<tr>
+<td><code>TORQUE_REFERENCE_MAXIMUM</code></td>
+<td style="text-align: right;"><code>6</code></td>
+<td>warning</td>
+</tr>
+<tr>
+<td><code>TORQUE_TELEMETRY_MAXIMUM</code></td>
+<td style="text-align: right;"><code>7</code></td>
+<td>warning</td>
+</tr>
+<tr>
+<td><code>POSITION_TELEMETRY_MAXIMUM</code></td>
+<td style="text-align: right;"><code>8</code></td>
+<td>warning</td>
+</tr>
+<tr>
+<td><code>POSITION_TELEMETRY_MINIMUM</code></td>
+<td style="text-align: right;"><code>9</code></td>
+<td>warning</td>
+</tr>
+<tr>
+<td><code>CONTROL_OVERRUN</code></td>
+<td style="text-align: right;"><code>12</code></td>
+<td>warning</td>
+</tr>
+<tr>
+<td><code>COMMUNICATION_OVERRUN</code></td>
+<td style="text-align: right;"><code>13</code></td>
+<td>warning</td>
+</tr>
+<tr>
+<td><code>CURRENT_MAXIMUM</code></td>
+<td style="text-align: right;"><code>16</code></td>
+<td>error</td>
+</tr>
+<tr>
+<td><code>INVALID_LIMITS</code></td>
+<td style="text-align: right;"><code>17</code></td>
+<td>error</td>
+</tr>
+<tr>
+<td><code>BUS_VOLTAGE_CRITICAL_RANGE</code></td>
+<td style="text-align: right;"><code>29</code></td>
+<td>error</td>
+</tr>
+<tr>
+<td><code>INTERNAL_ENCODER_ERROR</code></td>
+<td style="text-align: right;"><code>30</code></td>
+<td>error</td>
+</tr>
+<tr>
+<td><code>EXTERNAL_ENCODER_ERROR</code></td>
+<td style="text-align: right;"><code>31</code></td>
+<td>error</td>
+</tr>
+</tbody>
+</table>
+<h3 id="diagnosticseverity"><code>DiagnosticSeverity</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INFO</code></td>
+<td style="text-align: right;"><code>0</code></td>
+</tr>
+<tr>
+<td><code>WARNING</code></td>
+<td style="text-align: right;"><code>1</code></td>
+</tr>
+<tr>
+<td><code>ERROR</code></td>
+<td style="text-align: right;"><code>2</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="hosterrorcode"><code>HostErrorCode</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CONTROLLER_EXCEPTION</code></td>
+<td style="text-align: right;"><code>1</code></td>
+<td>Controller callback raised.</td>
+</tr>
+<tr>
+<td><code>INVALID_CONTROLLER_OUTPUT</code></td>
+<td style="text-align: right;"><code>2</code></td>
+<td>Controller returned an invalid command batch.</td>
+</tr>
+<tr>
+<td><code>CONNECTION_LOST</code></td>
+<td style="text-align: right;"><code>3</code></td>
+<td>Transport connection was lost.</td>
+</tr>
+<tr>
+<td><code>SAFETY_ACTION_FAILED</code></td>
+<td style="text-align: right;"><code>4</code></td>
+<td>Selected host safety action failed or could not be confirmed.</td>
+</tr>
+<tr>
+<td><code>STALE_TELEMETRY</code></td>
+<td style="text-align: right;"><code>5</code></td>
+<td>Required callback telemetry became stale.</td>
+</tr>
+<tr>
+<td><code>COMMAND_TRANSMISSION_FAILED</code></td>
+<td style="text-align: right;"><code>6</code></td>
+<td>A callback command write failed.</td>
+</tr>
+<tr>
+<td><code>CONTROLLER_TIMEOUT</code></td>
+<td style="text-align: right;"><code>7</code></td>
+<td>Controller callback exceeded its deadline.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parameters"><code>Parameters</code></h3>
+<p>Parameter reads are backend-specific. Writes are allowed only while drive output is inactive.</p>
+<p>These values are directly writable with <code>set_parameters()</code>:</p>
+<ul>
+<li>impedance gains: <code>IMPEDANCE_DAMPING</code>, <code>IMPEDANCE_STIFFNESS</code>;</li>
+<li>torque, position, velocity, profile-velocity, and profile-acceleration limits;</li>
+<li>loop gains: <code>VELOCITY_KP</code>, <code>VELOCITY_KI</code>, <code>POSITION_KP</code>, <code>FEEDFORWARD_GAIN</code>;</li>
+<li><code>DIRECTION_INVERTED</code>, <code>VELOCITY_FILTER_CUTOFF</code>, <code>CURRENT_FILTER_CUTOFF</code>, and <code>CAN_BRS_ENABLED</code>.</li>
+</ul>
+<p>The following values require dedicated methods instead:</p>
+<ul>
+<li><code>MODE</code> → <code>set_mode()</code>;</li>
+<li><code>COMMAND</code> → command methods;</li>
+<li><code>TORQUE_GAIN_PRESET</code> and <code>VELOCITY_GAIN_PRESET</code> → preset methods;</li>
+<li><code>PCP_ADDRESS</code> → <code>set_address()</code>;</li>
+<li><code>TELEMETRY_RATE_HZ</code> → <code>configure()</code>.</li>
+</ul>
+<p>These fields are read-only: <code>RATED_VELOCITY_RAD_S</code>, <code>MAXIMUM_TORQUE_NM</code>, <code>FIRMWARE_VERSION</code>, <code>SERIAL_NUMBER</code>, <code>DEVICE_MODEL</code>, and <code>CONTROL_MODEL_CRC</code>. A backend may reject an otherwise writable field that its device or model does not provide.</p>
+<p>For CAN BRS, prefer <code>PcpOverCan.set_can_brs_enabled()</code>. It coordinates all connected actuators, verifies the new setting, and rolls back a failed enable.</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IMPEDANCE_DAMPING</code></td>
+<td style="text-align: right;"><code>1</code></td>
+<td>Impedance damping gain.</td>
+</tr>
+<tr>
+<td><code>IMPEDANCE_STIFFNESS</code></td>
+<td style="text-align: right;"><code>2</code></td>
+<td>Impedance stiffness gain.</td>
+</tr>
+<tr>
+<td><code>TORQUE_LIMIT</code></td>
+<td style="text-align: right;"><code>4</code></td>
+<td>Torque limit in N·m; <code>+inf</code> restores the unbounded software default.</td>
+</tr>
+<tr>
+<td><code>POSITION_LIMIT_MAX</code></td>
+<td style="text-align: right;"><code>5</code></td>
+<td>Maximum position in rad; <code>+inf</code> is unbounded.</td>
+</tr>
+<tr>
+<td><code>POSITION_LIMIT_MIN</code></td>
+<td style="text-align: right;"><code>6</code></td>
+<td>Minimum position in rad; <code>-inf</code> is unbounded.</td>
+</tr>
+<tr>
+<td><code>VELOCITY_LIMIT_MAX</code></td>
+<td style="text-align: right;"><code>7</code></td>
+<td>Maximum velocity in rad/s; <code>+inf</code> is unbounded.</td>
+</tr>
+<tr>
+<td><code>VELOCITY_LIMIT_MIN</code></td>
+<td style="text-align: right;"><code>8</code></td>
+<td>Minimum velocity in rad/s; <code>-inf</code> is unbounded.</td>
+</tr>
+<tr>
+<td><code>POSITION_PROFILE_VELOCITY_MAX</code></td>
+<td style="text-align: right;"><code>9</code></td>
+<td>Positive position-profile velocity limit; <code>+inf</code> is unbounded.</td>
+</tr>
+<tr>
+<td><code>POSITION_PROFILE_VELOCITY_MIN</code></td>
+<td style="text-align: right;"><code>10</code></td>
+<td>Negative position-profile velocity limit; <code>-inf</code> is unbounded.</td>
+</tr>
+<tr>
+<td><code>VELOCITY_PROFILE_ACCELERATION_MAX</code></td>
+<td style="text-align: right;"><code>11</code></td>
+<td>Positive velocity-profile acceleration limit; <code>+inf</code> is unbounded.</td>
+</tr>
+<tr>
+<td><code>VELOCITY_PROFILE_ACCELERATION_MIN</code></td>
+<td style="text-align: right;"><code>12</code></td>
+<td>Negative velocity-profile acceleration limit; <code>-inf</code> is unbounded.</td>
+</tr>
+<tr>
+<td><code>VELOCITY_KP</code></td>
+<td style="text-align: right;"><code>13</code></td>
+<td>Velocity-loop proportional gain.</td>
+</tr>
+<tr>
+<td><code>VELOCITY_KI</code></td>
+<td style="text-align: right;"><code>14</code></td>
+<td>Velocity-loop integral gain.</td>
+</tr>
+<tr>
+<td><code>POSITION_KP</code></td>
+<td style="text-align: right;"><code>15</code></td>
+<td>Position-loop proportional gain.</td>
+</tr>
+<tr>
+<td><code>MODE</code></td>
+<td style="text-align: right;"><code>48</code></td>
+<td>Current mode.</td>
+</tr>
+<tr>
+<td><code>COMMAND</code></td>
+<td style="text-align: right;"><code>49</code></td>
+<td>Current primary command.</td>
+</tr>
+<tr>
+<td><code>TORQUE_GAIN_PRESET</code></td>
+<td style="text-align: right;"><code>64</code></td>
+<td>Current torque gain preset.</td>
+</tr>
+<tr>
+<td><code>VELOCITY_GAIN_PRESET</code></td>
+<td style="text-align: right;"><code>65</code></td>
+<td>Current velocity gain preset.</td>
+</tr>
+<tr>
+<td><code>RATED_VELOCITY_RAD_S</code></td>
+<td style="text-align: right;"><code>66</code></td>
+<td>Rated velocity.</td>
+</tr>
+<tr>
+<td><code>MAXIMUM_TORQUE_NM</code></td>
+<td style="text-align: right;"><code>67</code></td>
+<td>Maximum actuator torque.</td>
+</tr>
+<tr>
+<td><code>DIRECTION_INVERTED</code></td>
+<td style="text-align: right;"><code>68</code></td>
+<td>Direction inversion flag.</td>
+</tr>
+<tr>
+<td><code>FEEDFORWARD_GAIN</code></td>
+<td style="text-align: right;"><code>69</code></td>
+<td>Controller feedforward gain.</td>
+</tr>
+<tr>
+<td><code>VELOCITY_FILTER_CUTOFF</code></td>
+<td style="text-align: right;"><code>70</code></td>
+<td>Velocity filter cutoff.</td>
+</tr>
+<tr>
+<td><code>CURRENT_FILTER_CUTOFF</code></td>
+<td style="text-align: right;"><code>71</code></td>
+<td>Current filter cutoff.</td>
+</tr>
+<tr>
+<td><code>FIRMWARE_VERSION</code></td>
+<td style="text-align: right;"><code>128</code></td>
+<td>Encoded physical firmware version.</td>
+</tr>
+<tr>
+<td><code>PCP_ADDRESS</code></td>
+<td style="text-align: right;"><code>129</code></td>
+<td>PCP address.</td>
+</tr>
+<tr>
+<td><code>SERIAL_NUMBER</code></td>
+<td style="text-align: right;"><code>130</code></td>
+<td>Device serial number.</td>
+</tr>
+<tr>
+<td><code>DEVICE_MODEL</code></td>
+<td style="text-align: right;"><code>131</code></td>
+<td>Encoded device model.</td>
+</tr>
+<tr>
+<td><code>CONTROL_MODEL_CRC</code></td>
+<td style="text-align: right;"><code>132</code></td>
+<td>Control-model compatibility identifier.</td>
+</tr>
+<tr>
+<td><code>CAN_BRS_ENABLED</code></td>
+<td style="text-align: right;"><code>133</code></td>
+<td>CAN bit-rate switching flag.</td>
+</tr>
+<tr>
+<td><code>TELEMETRY_RATE_HZ</code></td>
+<td style="text-align: right;"><code>134</code></td>
+<td>Effective periodic telemetry rate.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="telemetryitems"><code>TelemetryItems</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INTERNAL_ENCODER_POSITION</code></td>
+<td style="text-align: right;"><code>65</code></td>
+<td>Internal encoder position.</td>
+</tr>
+<tr>
+<td><code>INTERNAL_ENCODER_RAW</code></td>
+<td style="text-align: right;"><code>66</code></td>
+<td>Raw internal encoder count.</td>
+</tr>
+<tr>
+<td><code>EXTERNAL_ENCODER_POSITION</code></td>
+<td style="text-align: right;"><code>67</code></td>
+<td>External encoder position.</td>
+</tr>
+<tr>
+<td><code>EXTERNAL_ENCODER_RAW</code></td>
+<td style="text-align: right;"><code>68</code></td>
+<td>Raw external encoder count.</td>
+</tr>
+<tr>
+<td><code>VELOCITY</code></td>
+<td style="text-align: right;"><code>69</code></td>
+<td>Measured angular velocity.</td>
+</tr>
+<tr>
+<td><code>PHASE_A_CURRENT</code></td>
+<td style="text-align: right;"><code>70</code></td>
+<td>Phase-A current.</td>
+</tr>
+<tr>
+<td><code>PHASE_B_CURRENT</code></td>
+<td style="text-align: right;"><code>71</code></td>
+<td>Phase-B current.</td>
+</tr>
+<tr>
+<td><code>PHASE_C_CURRENT</code></td>
+<td style="text-align: right;"><code>72</code></td>
+<td>Phase-C current.</td>
+</tr>
+<tr>
+<td><code>TORQUE_SENSOR_MEASUREMENT</code></td>
+<td style="text-align: right;"><code>73</code></td>
+<td>Calibrated torque-sensor measurement.</td>
+</tr>
+<tr>
+<td><code>TORQUE_SENSOR_RAW</code></td>
+<td style="text-align: right;"><code>74</code></td>
+<td>Raw torque-sensor value.</td>
+</tr>
+<tr>
+<td><code>POSITION_COMMANDED</code></td>
+<td style="text-align: right;"><code>75</code></td>
+<td>Position reference reported by control.</td>
+</tr>
+<tr>
+<td><code>POSITION</code></td>
+<td style="text-align: right;"><code>76</code></td>
+<td>Measured output position.</td>
+</tr>
+<tr>
+<td><code>VELOCITY_COMMANDED</code></td>
+<td style="text-align: right;"><code>77</code></td>
+<td>Velocity reference reported by control.</td>
+</tr>
+<tr>
+<td><code>D_AXIS_CURRENT_COMMANDED</code></td>
+<td style="text-align: right;"><code>79</code></td>
+<td>Commanded d-axis current.</td>
+</tr>
+<tr>
+<td><code>D_AXIS_CURRENT_ACTUAL</code></td>
+<td style="text-align: right;"><code>80</code></td>
+<td>Measured d-axis current.</td>
+</tr>
+<tr>
+<td><code>Q_AXIS_CURRENT_COMMANDED</code></td>
+<td style="text-align: right;"><code>81</code></td>
+<td>Commanded q-axis current.</td>
+</tr>
+<tr>
+<td><code>Q_AXIS_CURRENT_ACTUAL</code></td>
+<td style="text-align: right;"><code>82</code></td>
+<td>Measured q-axis current.</td>
+</tr>
+<tr>
+<td><code>D_AXIS_VOLTAGE_COMMANDED</code></td>
+<td style="text-align: right;"><code>83</code></td>
+<td>Commanded d-axis voltage.</td>
+</tr>
+<tr>
+<td><code>Q_AXIS_VOLTAGE_COMMANDED</code></td>
+<td style="text-align: right;"><code>84</code></td>
+<td>Commanded q-axis voltage.</td>
+</tr>
+<tr>
+<td><code>TORQUE_COMMANDED</code></td>
+<td style="text-align: right;"><code>85</code></td>
+<td>Torque reference reported by control.</td>
+</tr>
+<tr>
+<td><code>TORQUE_ESTIMATE</code></td>
+<td style="text-align: right;"><code>86</code></td>
+<td>Estimated actuator torque.</td>
+</tr>
+<tr>
+<td><code>PHASE_A_VOLTAGE_COMMANDED</code></td>
+<td style="text-align: right;"><code>87</code></td>
+<td>Commanded phase-A voltage.</td>
+</tr>
+<tr>
+<td><code>PHASE_B_VOLTAGE_COMMANDED</code></td>
+<td style="text-align: right;"><code>88</code></td>
+<td>Commanded phase-B voltage.</td>
+</tr>
+<tr>
+<td><code>PHASE_C_VOLTAGE_COMMANDED</code></td>
+<td style="text-align: right;"><code>89</code></td>
+<td>Commanded phase-C voltage.</td>
+</tr>
+<tr>
+<td><code>BUS_POWER</code></td>
+<td style="text-align: right;"><code>90</code></td>
+<td>DC bus power.</td>
+</tr>
+<tr>
+<td><code>BUS_CURRENT</code></td>
+<td style="text-align: right;"><code>91</code></td>
+<td>DC bus current.</td>
+</tr>
+<tr>
+<td><code>THREE_PHASE_ELECTRICAL_POWER</code></td>
+<td style="text-align: right;"><code>92</code></td>
+<td>Three-phase electrical power.</td>
+</tr>
+<tr>
+<td><code>MECHANICAL_POWER</code></td>
+<td style="text-align: right;"><code>93</code></td>
+<td>Mechanical output power.</td>
+</tr>
+<tr>
+<td><code>INVERTER_EFFICIENCY</code></td>
+<td style="text-align: right;"><code>94</code></td>
+<td>Inverter efficiency.</td>
+</tr>
+<tr>
+<td><code>MOTOR_EFFICIENCY</code></td>
+<td style="text-align: right;"><code>95</code></td>
+<td>Motor efficiency.</td>
+</tr>
+<tr>
+<td><code>INTERNAL_ENCODER_ERROR_COUNT</code></td>
+<td style="text-align: right;"><code>96</code></td>
+<td>Internal encoder error counter.</td>
+</tr>
+<tr>
+<td><code>EXTERNAL_ENCODER_ERROR_COUNT</code></td>
+<td style="text-align: right;"><code>97</code></td>
+<td>External encoder error counter.</td>
+</tr>
+<tr>
+<td><code>CONTROL_OVERRUN_COUNT</code></td>
+<td style="text-align: right;"><code>98</code></td>
+<td>Control-loop overrun counter.</td>
+</tr>
+<tr>
+<td><code>DIAGNOSTIC_FLAGS</code></td>
+<td style="text-align: right;"><code>99</code></td>
+<td>Firmware diagnostic bitfield.</td>
+</tr>
+<tr>
+<td><code>TIMESTAMP_MS</code></td>
+<td style="text-align: right;"><code>103</code></td>
+<td>Device telemetry timestamp in ms.</td>
+</tr>
+<tr>
+<td><code>PERIODIC_MESSAGE_COUNT</code></td>
+<td style="text-align: right;"><code>104</code></td>
+<td>Periodic telemetry message counter.</td>
+</tr>
+<tr>
+<td><code>BUS_VOLTAGE</code></td>
+<td style="text-align: right;"><code>112</code></td>
+<td>DC bus voltage.</td>
+</tr>
+<tr>
+<td><code>PCB_TEMPERATURE</code></td>
+<td style="text-align: right;"><code>113</code></td>
+<td>PCB temperature.</td>
+</tr>
+<tr>
+<td><code>MOTOR_TEMPERATURE</code></td>
+<td style="text-align: right;"><code>114</code></td>
+<td>Motor temperature.</td>
+</tr>
+<tr>
+<td><code>INTERNAL_POSITION_ACTUAL</code></td>
+<td style="text-align: right;"><code>115</code></td>
+<td>Internal control position.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="controlparams"><code>ControlParams</code></h3>
+<p>Every selected command mapping requires <code>COMMAND</code>. Other fields are valid only in the modes listed below.</p>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Allowed modes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COMMAND</code></td>
+<td style="text-align: right;"><code>4</code></td>
+<td>all modes</td>
+</tr>
+<tr>
+<td><code>D_AXIS_CURRENT_KP</code></td>
+<td style="text-align: right;"><code>193</code></td>
+<td><code>TORQUE</code></td>
+</tr>
+<tr>
+<td><code>D_AXIS_CURRENT_KI</code></td>
+<td style="text-align: right;"><code>195</code></td>
+<td><code>TORQUE</code></td>
+</tr>
+<tr>
+<td><code>Q_AXIS_CURRENT_KP</code></td>
+<td style="text-align: right;"><code>194</code></td>
+<td><code>TORQUE</code></td>
+</tr>
+<tr>
+<td><code>Q_AXIS_CURRENT_KI</code></td>
+<td style="text-align: right;"><code>196</code></td>
+<td><code>TORQUE</code></td>
+</tr>
+<tr>
+<td><code>FEEDFORWARD_GAIN</code></td>
+<td style="text-align: right;"><code>197</code></td>
+<td><code>VELOCITY</code>, <code>POSITION</code>, <code>IMPEDANCE</code></td>
+</tr>
+<tr>
+<td><code>VELOCITY_KI</code></td>
+<td style="text-align: right;"><code>198</code></td>
+<td><code>VELOCITY</code>, <code>POSITION</code></td>
+</tr>
+<tr>
+<td><code>VELOCITY_KP</code></td>
+<td style="text-align: right;"><code>199</code></td>
+<td><code>VELOCITY</code>, <code>POSITION</code></td>
+</tr>
+<tr>
+<td><code>TORQUE_FEEDFORWARD</code></td>
+<td style="text-align: right;"><code>200</code></td>
+<td><code>VELOCITY</code>, <code>POSITION</code>, <code>IMPEDANCE</code></td>
+</tr>
+<tr>
+<td><code>POSITION_KP</code></td>
+<td style="text-align: right;"><code>201</code></td>
+<td><code>POSITION</code></td>
+</tr>
+<tr>
+<td><code>IMPEDANCE_STIFFNESS</code></td>
+<td style="text-align: right;"><code>202</code></td>
+<td><code>IMPEDANCE</code></td>
+</tr>
+<tr>
+<td><code>IMPEDANCE_DAMPING</code></td>
+<td style="text-align: right;"><code>203</code></td>
+<td><code>IMPEDANCE</code></td>
+</tr>
+<tr>
+<td><code>IMPEDANCE_INERTIA</code></td>
+<td style="text-align: right;"><code>204</code></td>
+<td><code>IMPEDANCE</code></td>
+</tr>
+<tr>
+<td><code>IMPEDANCE_VELOCITY_COMMANDED</code></td>
+<td style="text-align: right;"><code>205</code></td>
+<td><code>IMPEDANCE</code></td>
+</tr>
+<tr>
+<td><code>IMPEDANCE_ACCELERATION_COMMANDED</code></td>
+<td style="text-align: right;"><code>206</code></td>
+<td><code>IMPEDANCE</code></td>
+</tr>
+</tbody>
+</table>
+<p>Virtual models expose shared d/q current gains. Supplying different finite d-axis and q-axis values in one command raises <code>ValueError</code>.</p>
+<h3 id="capability"><code>Capability</code></h3>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th style="text-align: right;">Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NONE</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>No optional capabilities.</td>
+</tr>
+<tr>
+<td><code>IDENTIFY</code></td>
+<td style="text-align: right;"><code>1 &lt;&lt; 0</code></td>
+<td>Physical identify action.</td>
+</tr>
+<tr>
+<td><code>PERSIST_PARAMETERS</code></td>
+<td style="text-align: right;"><code>1 &lt;&lt; 1</code></td>
+<td>Parameter persistence.</td>
+</tr>
+<tr>
+<td><code>BOOTLOADER</code></td>
+<td style="text-align: right;"><code>1 &lt;&lt; 2</code></td>
+<td>Bootloader entry.</td>
+</tr>
+<tr>
+<td><code>EXPLICIT_STEP</code></td>
+<td style="text-align: right;"><code>1 &lt;&lt; 3</code></td>
+<td>Explicit simulation stepping.</td>
+</tr>
+<tr>
+<td><code>EXTERNAL_LOAD</code></td>
+<td style="text-align: right;"><code>1 &lt;&lt; 4</code></td>
+<td>External load input.</td>
+</tr>
+<tr>
+<td><code>DISCOVERY</code></td>
+<td style="text-align: right;"><code>1 &lt;&lt; 5</code></td>
+<td>Backend discovery.</td>
+</tr>
+<tr>
+<td><code>ADDRESS_CHANGE</code></td>
+<td style="text-align: right;"><code>1 &lt;&lt; 9</code></td>
+<td>CAN address change.</td>
+</tr>
+<tr>
+<td><code>CAN_BRS</code></td>
+<td style="text-align: right;"><code>1 &lt;&lt; 10</code></td>
+<td>CAN bit-rate switching.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exceptions">Exceptions</h2>
+<ul>
+<li><code>SdkError</code> — Base class for SDK runtime errors.</li>
+<li><code>ConnectionFailedError</code> — A connect, disconnect, aggregate transition, rollback, or safe shutdown did not complete fully.</li>
+<li><code>InvalidLifecycleError</code> — Operation is invalid in the current lifecycle state.</li>
+<li><code>ResourceBusyError</code> — Shared resource or callback is currently in use.</li>
+<li><code>ControllerFaultError</code> — A retained controller or host fault blocks the requested operation.</li>
+<li><code>CommandTransmissionError(message: str, successful_members: tuple[str, ...] = ())</code> — A sequential direct command batch failed. <code>successful_members</code> lists completed writes.</li>
+<li><code>UnsupportedOperationError</code> — Backend or model does not support the operation.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../examples/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Examples">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Examples
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../pulsar_rust_sdk/" class="md-footer__link md-footer__link--next" aria-label="Next: Index">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Index
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 PULSAR HRI
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/PulsarHRI" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.footer", "navigation.indexes", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../assets/javascripts/external-links.js"></script>
+      
+        <script src="../../assets/javascripts/bus-utilization.js"></script>
+      
+        <script src="../../assets/javascripts/docs-version-label.js"></script>
+      
+    
+  </body>
+</html>

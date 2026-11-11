@@ -1,0 +1,4447 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Hardware, software, control, and simulation documentation for PULSAR HRI PULSE actuators.">
+      
+      
+      
+        <link rel="canonical" href="https://pulsarhri.github.io/3.0.0/assets/license/acl_adl/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../icons/icon.ico">
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.8.1">
+    
+    
+      
+        <title>Acl adl - PULSAR HRI Developer Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat+medium:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Montserrat medium";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/pulsar.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#augur-digital-twin-software-license-agreement" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="PULSAR HRI Developer Hub" class="md-header__button md-logo" aria-label="PULSAR HRI Developer Hub" data-md-component="logo">
+      
+  <img src="../../icons/P_Logo_white_svg.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PULSAR HRI Developer Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Acl adl
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="deep-orange"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/PulsarHRI/pulsarhri.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PulsarHRI/pulsarhri.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="PULSAR HRI Developer Hub" class="md-nav__button md-logo" aria-label="PULSAR HRI Developer Hub" data-md-component="logo">
+      
+  <img src="../../icons/P_Logo_white_svg.png" alt="logo">
+
+    </a>
+    PULSAR HRI Developer Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/PulsarHRI/pulsarhri.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PulsarHRI/pulsarhri.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../quickstart/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quickstart
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quickstart/pulsar_app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One physical actuator · direct USB · Pulsar App (browser)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quickstart/sdk_usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One physical actuator · direct USB · Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quickstart/sdk_can/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiple physical actuators · CAN FD · Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quickstart/sdk_virtual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtual actuators · Python SDK
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../hardware/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/safety/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Safety and prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/mechanical_interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanical interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/electrical_interfaces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrical interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/regenerative_energy_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regenerative energy management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/actuator_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actuator setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../hardware/connectivity/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connectivity
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Connectivity
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/connectivity/usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/connectivity/can/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAN FD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/connectivity/can_bus_utilization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAN bus utilization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/connectivity/ethercat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EtherCAT status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../hardware/led/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LED status indicators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../firmware/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Firmware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../control_architectures/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Control
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../control_architectures/parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control parameters by mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../augur/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AUGUR Digital Twin
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AUGUR Digital Twin
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../augur/co_sim_coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Co-simulation coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../augur/robot_modelling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot modelling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../augur/license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Interfaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software Interfaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../pulsar_app/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pulsar App
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pulsar App
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pulsar_app/browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Browser app
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pulsar_app/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pulsar App quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../sdk/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pulsar Python SDK
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pulsar Python SDK
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/install/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/core_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core concepts and workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../sdk/physical/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physical actuators
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_2_5" id="__nav_7_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physical actuators
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/physical/usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Direct USB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/physical/can/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/virtual_actuators/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtual actuators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/groups_platforms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Groups and platforms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/commands_parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands and parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/telemetry_callbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telemetry and callbacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/lifecycle_recovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lifecycle and recovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sdk/api_reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../pulsar_rust_sdk/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pulsar Rust SDK
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pulsar Rust SDK
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Downloads and Resources
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Downloads and Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/pulsar_app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PULSAR Desktop App package
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/cad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanical CAD and printable fixtures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/robot_assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Robot model assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../resources/datasheets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Datasheets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq_issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ and Support
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#important-notice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IMPORTANT NOTICE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Definitions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Definitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 "Agreement"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-adl-or-augur-development-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 "ADL" or "AUGUR Development License"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-acl-or-augur-commercial-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 "ACL" or "AUGUR Commercial License"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-augur-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 "AUGUR Materials"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-authorized-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 "Authorized Users"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-commercial-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 "Commercial Agreement"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-commercial-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.7 "Commercial Use"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#18-development-purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.8 "Development Purpose"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.8 &#34;Development Purpose&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#19-derivative-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.9 "Derivative Work"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#110-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.10 "Documentation"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#111-fees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.11 "Fees"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-licensee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.12 "Licensee"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-licensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.13 "Licensor"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-pulsar-hri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.14 "PULSAR HRI"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.16 "Output"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#117-third-party-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.17 "Third-Party Components"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#118-production-environment-or-operational-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.18 "Production Environment" or “Operational Environment"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#119-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.19 "Deployment"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#120-redistribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20 “Redistribution"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ownership-and-reservation-of-rights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ownership and Reservation of Rights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Ownership and Reservation of Rights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ownership" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Ownership
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-no-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 No Transfer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-reservation-of-rights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Reservation of Rights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Reservation of Rights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#25-intellectual-property-rights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Intellectual Property Rights
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-augur-development-license-adl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AUGUR Development License - ADL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. AUGUR Development License - ADL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-grant-of-adl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Grant of ADL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-permitted-development-uses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Permitted Development Uses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-no-per-seat-or-per-site-restrictions-for-adl-development-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 No Per-Seat or Per-Site Restrictions for ADL Development Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-internal-redistribution-for-development-purposes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Internal Redistribution for Development Purposes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-contractors-and-external-ci-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Contractors and External CI Providers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-no-commercial-use-under-adl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 No Commercial Use Under ADL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-augur-commercial-license-acl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. AUGUR Commercial License - ACL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. AUGUR Commercial License - ACL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-no-automatic-commercial-license" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 No Automatic Commercial License
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-grant-of-acl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Grant of ACL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-fees-and-economic-consideration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Fees and Economic Consideration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-scope-of-acl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Scope of ACL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#45-order-of-precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Order of Precedence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#47-records-and-audit-for-commercial-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7 Records and Audit for Commercial Use
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-licensee-obligations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Licensee Obligations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Licensee Obligations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-unauthorized-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a. Unauthorized use:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-reverse-engineering-and-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b. Reverse Engineering and Extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ai-related-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c. AI related use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-competitive-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d. Competitive use
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-integrity-and-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e. Integrity and Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-public-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f. Public Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#51-mandatory-legal-exceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Mandatory Legal Exceptions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-source-code-object-code-and-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Source Code, Object Code and Models
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Source Code, Object Code and Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-object-code-and-binary-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Object Code and Binary Materials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-no-source-code-rights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 No Source Code Rights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-models-and-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Models and Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-updates-releases-and-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Updates, Releases and Availability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Updates, Releases and Availability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-applicable-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Applicable Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-no-obligation-to-maintain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 No Obligation to Maintain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-changes-and-discontinuation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Changes and Discontinuation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-third-party-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Third-Party Components
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Third-Party Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#82-no-modification-of-third-party-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 No Modification of Third-Party Terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Compliance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 Compliance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#84-changes-withdrawal-and-third-party-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 Changes, Withdrawal and Third-Party Restrictions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-no-representation-or-warranty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 No Representation or Warranty
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-notices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6 Notices
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-output-and-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Output and Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Output and Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-licensee-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Licensee Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-sensitive-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Sensitive Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95-telemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5 Telemetry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5 Telemetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#96-publication-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.6 Publication Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-confidentiality-and-proprietary-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Confidentiality and Proprietary Information
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Confidentiality and Proprietary Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#102-confidential-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Confidential Materials
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-obligations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Obligations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-exclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Exclusions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105-compelled-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5 Compelled Disclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Feedback
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-compliance-with-laws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Compliance with Laws
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-safety-critical-and-regulated-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Safety-Critical and Regulated Use
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Safety-Critical and Regulated Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-no-sole-reliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1 No Sole Reliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-no-safety-certification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2 No Safety Certification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-live-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3 Live Control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#134-licensee-responsibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.4 Licensee Responsibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Term
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Term">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151-adl-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1 ADL Term
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152-acl-term" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2 ACL Term
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-termination-and-suspension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Termination and Suspension.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Termination and Suspension.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-termination-by-licensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.1 Termination by Licensor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-termination-by-licensee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.2 Termination by Licensee
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#163-effect-of-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.3 Effect of Termination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#164-survival" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16..4 Survival
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sections-relating-to-ownership-restrictions-confidentiality-feedback-fees-audit-disclaimers-limitation-of-liability-indemnity-termination-effects-governing-law-and-any-other-provisions-that-by-their-nature-should-survive-shall-survive-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sections relating to ownership, restrictions, confidentiality, feedback, fees, audit, disclaimers, limitation of liability, indemnity, termination effects, governing law and any other provisions that by their nature should survive shall survive termination.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#165-suspension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16.5 Suspension
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-fees-taxes-and-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Fees, Taxes and Payment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="18. Fees, Taxes and Payment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#181-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.1 Payment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#182-taxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.2 Taxes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#183-late-payment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.3 Late Payment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#184-no-refunds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18.4 No Refunds
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-warranty-disclaimer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Warranty Disclaimer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-limitation-of-liability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Limitation of Liability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-indemnity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. Indemnity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21. Indemnity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-licensee-indemnity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.1 Licensee Indemnity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-commercial-indemnity-by-licensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.2 Commercial Indemnity by Licensor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23. Assignment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-notices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24. Notices
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-governing-law-and-jurisdiction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25. Governing Law and Jurisdiction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-injunctive-relief" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26. Injunctive Relief
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="26. Injunctive Relief">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#27-general-provisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        27. General Provisions:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#271-entire-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        27.1 Entire Agreement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#272-modifications-and-updated-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        27.2 Modifications and Updated terms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#273-no-waiver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        27.3 No Waiver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#274-severability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        27.4 Severability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-summary-of-license-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        32. Summary of License Modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-acceptance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33. Acceptance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p>AUGUR Digital Twin Software License Agreement </p>
+<h1 id="augur-digital-twin-software-license-agreement"><strong>AUGUR Digital Twin Software License Agreement</strong></h1>
+<p><em>Dual licensing framework: AUGUR Development License (ADL) and AUGUR Commercial License (ACL)</em> </p>
+<p>Licensor: ARQUIMEA GROUP, SA </p>
+<p>PULSAR HRI status: brand, project, ecosystem, product line or business designation of ARQUIMEA; not a separate licensor or legal rights holder for purposes of this Agreement. </p>
+<table>
+<thead>
+<tr>
+<th><strong>Version</strong></th>
+<th>1.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Effective Date</strong></td>
+<td>On the date Licensee first downloads, installs, accesses or<br>uses the AUGUR Materials</td>
+</tr>
+<tr>
+<td><strong>Licensor</strong></td>
+<td>ARQUIMEA<br>GROUP,<br>S.A.<br>Avenida<br>Premios<br>Nobel,<br>53<br>E-28850 Torrejón de Ardoz, Madrid (hereinafter,<br>“ARQUIMEA”)</td>
+</tr>
+<tr>
+<td><strong>Product</strong></td>
+<td>AUGUR Digital Twin</td>
+</tr>
+<tr>
+<td><strong>Repository / Distribution Site</strong></td>
+<td>https://pulsarhri.github.io/,<br>https://prefix.dev/channels/@pulsarhri/pulsar-forge</td>
+</tr>
+<tr>
+<td><strong>Contact</strong></td>
+<td>hello@pulsarhri.com</td>
+</tr>
+</tbody>
+</table>
+<p>Copyright (c) [2026] ARQUIMEA GROUP, SA. All rights reserved. </p>
+<h2 id="important-notice"><strong>IMPORTANT NOTICE</strong></h2>
+<p><strong>PLEASE READ THIS AUGUR DIGITAL TWIN SOFTWARE LICENSE AGREEMENT CAREFULLY BEFORE DOWNLOADING, INSTALLING, COPYING, ACCESSING, EXECUTING OR USING THE AUGUR DIGITAL TWIN SOFTWARE, LIBRARIES, MODELS, DIGITAL ASSETS, DOCUMENTATION OR ANY RELATED MATERIALS MADE AVAILABLE THROUGH ANY REPOSITORY, PACKAGE PAGE, DOCUMENTATION SITE OR DOWNLOAD PORTAL.</strong> </p>
+<p><strong>BY DOWNLOADING, INSTALLING, COPYING, ACCESSING, EXECUTING OR USING ANY PART OF THE AUGUR MATERIALS FROM ANY REPOSITORY, PACKAGE PAGE, DOCUMENTATION SITE OR DOWNLOAD PORTAL, YOU ACCEPT AND AGREE TO BE BOUND BY THIS AGREEMENT.</strong> </p>
+<p><strong>IF YOU ARE ACCEPTING THIS AGREEMENT ON BEHALF OF A COMPANY, UNIVERSITY, RESEARCH ORGANIZATION, PUBLIC BODY OR OTHER LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE AUTHORITY TO BIND THAT ENTITY. IN THAT CASE, "LICENSEE" MEANS THAT ENTITY.</strong> </p>
+<p><strong>IF YOU DO NOT AGREE TO THIS AGREEMENT, DO NOT DOWNLOAD, INSTALL, COPY, ACCESS, EXECUTE OR USE THE AUGUR MATERIALS.</strong> </p>
+<p><strong>THIS AGREEMENT PROVIDES TWO LICENSING MODES:</strong> </p>
+<ol>
+<li>
+<p><strong>AUGUR Development License ("ADL")</strong> , which permits internal development, integration, testing, evaluation, validation and CI/CD use under the conditions set out below; and </p>
+</li>
+<li>
+<p><strong>AUGUR Commercial License ("ACL")</strong> , which is required for any Commercial Use and is only granted under a separate written commercial agreement, or other written instrument signed or otherwise expressly accepted by Licensor. </p>
+</li>
+</ol>
+<p><strong>UNLESS AND UNTIL A VALID ACL IS IN FORCE, LICENSEE'S RIGHTS ARE LIMITED TO THE ADL.</strong> </p>
+<h2 id="1-definitions"><strong>1. Definitions</strong></h2>
+<p>For purposes of this Agreement, the following terms have the meanings set out below. </p>
+<h3 id="11-agreement"><strong>1.1 "Agreement"</strong></h3>
+<p>"Agreement" means this AUGUR Digital Twin Software License Agreement, including any notices, schedules, appendices or additional terms expressly incorporated by reference. </p>
+<h3 id="12-adl-or-augur-development-license"><strong>1.2 "ADL" or "AUGUR Development License"</strong></h3>
+<p>"ADL" means the limited development license granted under Section 3 of this Agreement. </p>
+<h3 id="13-acl-or-augur-commercial-license"><strong>1.3 "ACL" or "AUGUR Commercial License"</strong></h3>
+<p>"ACL" means the commercial license described in Section 4 of this Agreement and granted only under a separate Commercial Agreement. </p>
+<h3 id="14-augur-materials"><strong>1.4 "AUGUR Materials"</strong></h3>
+<p>"AUGUR Materials" means, collectively, all materials made available by or on behalf of Licensor under the name "AUGUR", "AUGUR Digital Twin", "AUGUR DTwin" or similar designation, including without limitation: </p>
+<ul>
+<li>
+<p>a) software, binaries, libraries, SDKs, APIs, plugins, tools, scripts, packages, containers and executable files; </p>
+</li>
+<li>
+<p>b) digital twin models, virtual actuator models, simulation models, physics models, control models, configuration files, calibration files, model parameters and related runtime components; </p>
+</li>
+<li>
+<p>c) 3D assets, virtual environments, meshes, textures, scenes, geometry, data files, metadata, example files, sample configurations and test assets; </p>
+</li>
+<li>
+<p>d) downloadable packages, archives, container images, build artifacts and dependency packages; </p>
+</li>
+<li>
+<p>e) documentation, tutorials, examples, release notes, integration guides and API references; and </p>
+</li>
+<li>
+<p>f) updates, upgrades, patches, bug fixes, replacements or modified versions made available by Licensor. </p>
+</li>
+</ul>
+<h3 id="15-authorized-users"><strong>1.5 "Authorized Users"</strong></h3>
+<p>"Authorized Users" are Licensee's employees, officers, directors, contractors, consultants, researchers, students, agents or other personnel who require access to the AUGUR Materials for Licensee's permitted use under this Agreement and who are bound by confidentiality, use restriction and intellectual property obligations no less protective than those set out in this Agreement. </p>
+<h3 id="16-commercial-agreement"><strong>1.6 "Commercial Agreement"</strong></h3>
+<p>"Commercial Agreement" means a separate written agreement, purchase order accepted by Licensor, statement of work, collaboration agreement, framework agreement or other written instrument that expressly grants Licensee commercial rights to use the AUGUR Materials. </p>
+<h3 id="17-commercial-use"><strong>1.7 "Commercial Use"</strong></h3>
+<p>"Commercial Use" means any use of the AUGUR Materials, directly or indirectly, for commercial exploitation, revenue generation, paid services, production operations or commercial product or service delivery, including without limitation: </p>
+<ul>
+<li>
+<p>a) using the AUGUR Materials in, with or as part of a product, service, platform, system or solution offered, licensed, sold, leased, hosted, supplied or otherwise made available to third parties; </p>
+</li>
+<li>
+<p>b) using the AUGUR Materials to provide paid engineering, simulation, validation, certification, testing, consultancy, SaaS, cloud, managed service, support, maintenance, training or integration services; </p>
+</li>
+<li>
+<p>c) deploying the AUGUR Materials in a production, customer-facing, revenue-generating or operational environment; </p>
+</li>
+<li>
+<p>d) redistributing, sublicensing, embedding, bundling, hosting or otherwise making the AUGUR Materials available to any third party </p>
+</li>
+<li>
+<p>e) using the AUGUR Materials as part of an acceptance, certification, qualification or validation service delivered to a customer for compensation; </p>
+</li>
+<li>
+<p>f) deploying, distributing, licensing, hosting, supplying or otherwise making available to a third party any commercial digital twin product, simulator, model, dataset, validation platform, robot control stack, actuator control product or competing product or service that incorporates, embeds or uses the AUGUR Materials; or </p>
+</li>
+<li>
+<p>g) otherwise using the AUGUR Materials in a manner that creates direct or indirect commercial benefit beyond internal development, integration, testing, evaluation or validation permitted under the ADL. </p>
+</li>
+</ul>
+<h3 id="18-development-purpose"><strong>1.8 "Development Purpose"</strong></h3>
+<p>"Development Purpose" means the use of the AUGUR Materials for internal development, such as integration, testing, evaluation, debugging, interoperability testing, compatibility testing, quality assurance, automated validation, research, proof-of-concept work, benchmarking for internal purposes, training of Authorized Users and non-production engineering activities. </p>
+<p>Development Purpose does not include Commercial Use. </p>
+<h4 id="19-derivative-work"><strong>1.9 "Derivative Work"</strong></h4>
+<p>"Derivative Work" means any modification, adaptation, translation, port, enhancement, extension or other work based on or derived from the AUGUR Materials. </p>
+<p>In this scenario, “AUGUR Derivative Work” is work that incorporates, reproduces, modifies, adapts, translates or is based on the AUGUR Materials. This includes, without limitation, modified versions of AUGUR source code, models, simulation logic, control logic, assets, documentation, files or other components and any extension, plugin, wrapper, adapter or other work to the extent that it contains, copies, modifies, derives from, embeds or makes use of any protected elements. </p>
+<p>For purposes of this Agreement, software, scripts, applications, test suites, interfaces or tools developed independently by Licensee that merely communicate with the AUGUR Materials through documented APIs, documented file formats or documented interfaces shall not be considered Derivative Works, provided they do not contain, reproduce, extract or disclose any proprietary portion of the AUGUR Materials. </p>
+<h3 id="110-documentation"><strong>1.10 "Documentation"</strong></h3>
+<p>"Documentation" means user manuals, technical specifications, API references, integration guides, tutorials, examples, release notes and other written materials provided by Licensor in connection with the AUGUR Materials. </p>
+<h3 id="111-fees"><strong>1.11 "Fees"</strong></h3>
+<p>"Fees" means license fees, subscription fees, royalties, support fees, maintenance fees, professional service fees or other economic consideration payable to Licensor under a Commercial Agreement. </p>
+<h3 id="112-licensee"><strong>1.12 "Licensee"</strong></h3>
+<p>"Licensee"  is the individual or legal entity downloading, installing, accessing, executing or using the AUGUR Materials. </p>
+<h3 id="113-licensor"><strong>1.13 "Licensor"</strong></h3>
+<p>The "Licensor"  is ARQUIMEA, the legal entity that makes the AUGUR Materials available and is identified as licensor in the applicable repository, package page, download portal, distribution site, legal notice or Commercial Agreement. For purposes of this Agreement, ARQUIMEA is the legal rights holder and contracting entity, unless another ARQUIMEA group legal entity is expressly identified as licensor in a Commercial Agreement. </p>
+<h3 id="114-pulsar-hri"><strong>1.14 "PULSAR HRI"</strong></h3>
+<p>"PULSAR HRI" means a brand, project, ecosystem, product line or business designation used by or in connection with ARQUIMEA. Unless and until PULSAR HRI is incorporated as a separate legal entity and expressly identified as a licensor or rights holder in a Commercial Agreement, PULSAR HRI is not a separate contracting party, licensor or legal rights holder under this Agreement. </p>
+<h3 id="116-output"><strong>1.16 "Output"</strong></h3>
+<p>"Output" means data, logs, test results, simulation results, reports, plots, measurements, screenshots or other information generated through use of the AUGUR Materials. </p>
+<h3 id="117-third-party-components"><strong>1.17 "Third-Party Components"</strong></h3>
+<p>"Third-Party Components" means third-party software, libraries, packages, assets, tools, models, datasets or other components included in, distributed with or required by the AUGUR Materials and licensed under separate terms. </p>
+<h3 id="118-production-environment-or-operational-environment"><strong>1.18 "Production Environment" or “Operational Environment"</strong></h3>
+<p>"Production Environment" or "Operational Environment" means an environment in which the AUGUR Materials are used to perform or support actual manufacturing, industrial or other business operations, including without limitation the monitoring, diagnostics, failure prediction or maintenance of equipment in operational service. It does not include an environment used solely for Development Purposes, including monitoring performed solely as part of development, research, testing, or engineering activities. Classification depends on the actual use of AUGUR, not on whether the surrounding software is described as released, stable, deployed or production-ready. </p>
+<h3 id="119-deployment"><strong>1.19 "Deployment"</strong></h3>
+<p>"Deployment" means putting the AUGUR Materials into actual operational use in a Production Environment or Operational Environment, or incorporating them as a runtime component of a product or service supplied to third parties. Merely downloading, installing, integrating or executing the AUGUR Materials solely for Development Purposes, including automated verification, simulation, testing and CI/CD, does not constitute Deployment. </p>
+<h3 id="120-redistribution"><strong>1.20 “Redistribution"</strong></h3>
+<p>"Redistribution" means supplying or making copies of the AUGUR Materials available to third parties, whether separately or included in another package, repository, container, product or service. Publication or distribution of independently developed Licensee Developments that merely reference or interact with AUGUR through documented interfaces does not, by itself, constitute Redistribution or Deployment, provided that no AUGUR Materials are included and no hosted access to or execution of AUGUR Materials is supplied to third parties. </p>
+<h2 id="2-ownership-and-reservation-of-rights"><strong>2. Ownership and Reservation of Rights</strong></h2>
+<h3 id="21-ownership"><strong>2.1 Ownership</strong></h3>
+<p>The AUGUR Materials are licensed, neither sold nor transferred. Except for Third-Party Components and any third-party rights expressly identified by Licensor, <strong>ARQUIMEA</strong> , <strong>, owns and retains all rights, title</strong> </p>
+<p><strong>and interests in and to the AUGUR Materials</strong> , including all intellectual property and proprietary rights such as copyrights, patents, trade secrets, database rights, design rights, know-how, trademarks and others. </p>
+<p>References to PULSAR HRI in this Agreement, the Documentation or related materials designate a brand, project, ecosystem, product line or business designation of ARQUIMEA. In this context, PULSAR HRI is not a separate legal entity, licensor, rights holder or contracting party unless expressly stated in a Commercial Agreement.</p>
+<h3 id="22-no-transfer"><strong>2.2 No Transfer</strong></h3>
+<p>No ownership rights are transferred to Licensee under this Agreement. Licensee receives only the limited rights expressly granted in this Agreement or in a valid Commercial Agreement that it be expressly signed and accepted.</p>
+<p>2.3 Derivative Works, Modifications and Improvements(a) <strong>ARQUIMEA exclusively owns all rights, title and interest in AUGUR Derivative Works</strong> , including all related intellectual-property rights. To the extent that ownership does not automatically vest in ARQUIMEA, Licensee hereby irrevocably assigns such rights to ARQUIMEA and shall procure equivalent written assignments from its Authorized Users and contractors before they contribute to an AUGUR Derivative Work. </p>
+<p>(b) Licensee Developments. “Licensee Developments” means software, applications, interfaces, tools, scripts, workflows, test suites, configurations, documentation or other materials independently developed by or for Licensee that interact with the unmodified AUGUR Materials solely through documented APIs, documented interfaces, documented file formats, documented configuration mechanisms or ordinary runtime execution. </p>
+<p>Licensee retains all right, title and interest in its Licensee Developments, provided that they do not incorporate, reproduce, modify, extract, reveal or disclose any protected portion of the AUGUR Materials. For clarity, a Licensee Development does not become an AUGUR Derivative Work merely because it interoperates with AUGUR, is designed to work with AUGUR, or provides functionality that is similar to or compatible with AUGUR. </p>
+<p>If any Licensee Developments are distributed to a third party together with the AUGUR Materials, such distribution shall require ARQUIMEA’s prior written authorization and a valid Commercial Agreement with ARQUIMEA. </p>
+<p>(d) Commercial use and external availability. Licensee may not distribute, publish, sublicense, host, provide as a service or otherwise make available to any third party any AUGUR Materials or AUGUR Derivative Work except as expressly authorised in a valid Commercial Agreement with ARQUIMEA <strong>. Any Commercial Use of the AUGUR Materials, any AUGUR Derivative Work, or any Licensee Development that embeds or uses the AUGUR Materials requires a valid ACL.</strong> </p>
+<p>(e) No automatic license in Licensee Developments. Nothing in this Section transfers ownership of a Licensee Development to ARQUIMEA or grants ARQUIMEA any right to use it, except to the extent that it includes an AUGUR Derivative Work or as otherwise expressly agreed in writing. </p>
+<h3 id="24-reservation-of-rights"><strong>2.4 Reservation of Rights</strong></h3>
+<p>All rights not expressly granted under this Agreement are reserved by Licensor. No rights are granted by implication, exhaustion, estoppel, public availability or otherwise. </p>
+<h4 id="25-intellectual-property-rights"><strong>2.5 Intellectual Property Rights</strong></h4>
+<p>Except for the limited rights expressly granted under this Agreement, no licence or other right is granted to Licensee in respect of any copyright, patent, trade secret, database right, trademark or other intellectual property right relating to the AUGUR Materials. No such right shall arise by implication, estoppel, exhaustion, public availability or otherwise. </p>
+<p>This Agreement does not grant Licensee any right to use the names, trademarks, logos, trade names, service marks or other branding of ARQUIMEA, AUGUR, PULSAR HRI or any affiliated entity, except as strictly necessary to retain copyright, attribution and licence notices included in the AUGUR Materials. </p>
+<p>Licensee shall not remove, alter or conceal any proprietary, copyright, trademark, or other notice included in the AUGUR Materials. </p>
+<p>Licensee shall promptly notify ARQUIMEA of any actual or suspected infringement, unauthorised use or misappropriation of the AUGUR Materials of which it becomes aware and shall take reasonable measures to ensure compliance with this Agreement by its Authorized Users, employees and contractors. </p>
+<p>Licensee shall not directly or indirectly challenge, contest or assist any third party in challenging the ownership, validity or enforceability of Licensor's intellectual property rights relating to the AUGUR Materials. </p>
+<h2 id="3-augur-development-license-adl"><strong>3. AUGUR Development License - ADL</strong></h2>
+<h3 id="31-grant-of-adl"><strong>3.1 Grant of ADL</strong></h3>
+<p>Subject to Licensee's compliance with this Agreement, Licensor grants Licensee a limited, non-exclusive, non-transferable, non-sublicensable, revocable, royalty-free license worldwide to download, install, copy, execute and use the AUGUR Materials <strong>solely for Development Purposes</strong> . </p>
+<h3 id="32-permitted-development-uses"><strong>3.2 Permitted Development Uses</strong></h3>
+<p>Under the ADL, Licensee may: </p>
+<ul>
+<li>
+<p>a) download the AUGUR Materials manually or automatically through build systems, dependency managers, package managers, artifact repositories or similar development tools; </p>
+</li>
+<li>
+<p>b) install the AUGUR Materials on developer workstations, engineering machines, research machines, laboratory machines and similar non-production environments; </p>
+</li>
+<li>
+<p>c) install the AUGUR Materials on machines that are not centrally administered, provided that access is limited to Authorized Users and Licensee remains responsible for compliance with this Agreement; </p>
+</li>
+<li>
+<p>d) execute the AUGUR Materials in headless environments; </p>
+</li>
+<li>
+<p>e) execute the AUGUR Materials in automated testing environments, including per-commit validation, regression testing, integration testing, compatibility testing and continuous integration workflows; </p>
+</li>
+<li>
+<p>f) execute the AUGUR Materials in CI/CD systems, including without limitation GitHub Actions, GitLab CI, Jenkins, Azure DevOps, Bitbucket Pipelines, self-hosted runners, cloud runners, ephemeral runners and comparable automation environments; </p>
+</li>
+<li>
+<p>g) cache, mirror or store copies of the AUGUR Materials in internal artifact repositories, package caches, container registries or build caches solely for Development Purposes; </p>
+</li>
+<li>
+<p>h) containerize the AUGUR Materials for internal Development Purposes; </p>
+</li>
+<li>
+<p>i) execute multiple simultaneous instances of the AUGUR Materials for testing, simulation, debugging, validation or development workflows; </p>
+</li>
+</ul>
+<p>AUGUR Digital Twin Software License Agreement </p>
+<ul>
+<li>
+<p>j) integrate the AUGUR Materials with Licensee's internal development tools, test frameworks, simulation pipelines, robotics software, actuator control software, build scripts and validation systems through documented interfaces; </p>
+</li>
+<li>
+<p>k) create configuration files, test scripts, wrappers, adapters, bindings, examples, templates, logs and internal documentation necessary to use the AUGUR Materials for Development Purposes; </p>
+</li>
+<li>
+<p>l) permit Authorized Users to access and use the AUGUR Materials for Development Purposes; and </p>
+</li>
+<li>
+<p>m) use Output internally for Development Purposes, subject to Section 9. </p>
+</li>
+</ul>
+<h3 id="33-no-per-seat-or-per-site-restrictions-for-adl-development-use"><strong>3.3 No Per-Seat or Per-Site Restrictions for ADL Development Use</strong></h3>
+<p>The ADL does not impose per-seat, per-user, per-machine, per-site or per-runner limits for Development Purposes. </p>
+<p>Accordingly, Licensee may allow any number of Authorized Users to use the AUGUR Materials for Development Purposes, and the Licensee may run any number of development, test, CI/CD or validation instances, provided that such use remains within the scope of the ADL and does not constitute Commercial Use. </p>
+<h3 id="34-internal-redistribution-for-development-purposes"><strong>3.4 Internal Redistribution for Development Purposes</strong></h3>
+<p>The Licensee  is authorized to internally reproduce and distribute copies of the AUGUR Materials to Authorized Users <strong>solely as necessary for Development Purposes.</strong> </p>
+<p>Any internal copy must include all copyright, proprietary, attribution and license notices included by Licensor. </p>
+<h3 id="35-contractors-and-external-ci-providers"><strong>3.5 Contractors and External CI Providers</strong></h3>
+<p>Licensee may allow contractors, consultants and external CI/CD, cloud, hosting or development service providers to access or process the AUGUR Materials solely on Licensee's behalf and solely for Development Purposes, provided that: </p>
+<p>a. such access is strictly necessary for Licensee's permitted use; </p>
+<ul>
+<li>b. the relevant person or provider is  bound by written confidentiality and use restrictions no less protective than this Agreement; </li>
+</ul>
+<p>c. the AUGUR Materials are not made generally available to the provider's other customers or users; and </p>
+<p>d. Licensee remains fully liable and responsible for all acts and omissions of such persons and providers. </p>
+<h3 id="36-no-commercial-use-under-adl"><strong>3.6 No Commercial Use Under ADL</strong></h3>
+<p>The ADL does not authorize Commercial Use. </p>
+<p>Any Commercial Use requires a valid ACL under Section 4. </p>
+<h2 id="4-augur-commercial-license-acl"><strong>4. AUGUR Commercial License - ACL</strong></h2>
+<h3 id="41-no-automatic-commercial-license"><strong>4.1 No Automatic Commercial License</strong></h3>
+<p>No Commercial Use is permitted unless Licensee has entered into a valid Commercial Agreement with Licensor. </p>
+<p>Downloading, installing, accessing, executing or using the AUGUR Materials does not grant any commercial rights. </p>
+<p>Publication of the AUGUR Materials in a public repository, documentation website, package registry or download portal does not grant any commercial rights. </p>
+<h3 id="42-grant-of-acl"><strong>4.2 Grant of ACL</strong></h3>
+<p>Subject to Licensee's compliance with this Agreement and the applicable Commercial Agreement, Licensor grants Licensee the commercial rights expressly set out in the Commercial Agreement. </p>
+<p>The ACL may include, as specified in the Commercial Agreement, rights to: </p>
+<ul>
+<li>
+<p>a. use the AUGUR Materials for Commercial Use; </p>
+</li>
+<li>
+<p>b. deploy the AUGUR Materials in production or operational environments; </p>
+</li>
+<li>
+<p>c. use the AUGUR Materials to provide paid services; </p>
+</li>
+<li>
+<p>d. use the AUGUR Materials in connection with commercial products or platforms; </p>
+</li>
+<li>
+<p>e. redistribute, embed, host or otherwise make available certain AUGUR Materials to third parties; </p>
+</li>
+<li>
+<p>f. obtain support, maintenance, updates or service-level commitments; or </p>
+</li>
+<li>
+<p>g. receive additional commercial rights expressly agreed by Licensor. </p>
+</li>
+</ul>
+<p>No ACL rights are granted unless expressly stated in the Commercial Agreement. </p>
+<h3 id="43-fees-and-economic-consideration"><strong>4.3 Fees and Economic Consideration</strong></h3>
+<p>Commercial Use is subject to the payment of Fees. </p>
+<p>Unless expressly waived by Licensor in a Commercial Agreement, Licensee shall not use the AUGUR Materials for Commercial Use without paying the applicable Fees. </p>
+<p>Fees may be structured as fixed fees, subscription fees, usage-based fees, project fees, support fees, royalties, revenue share, milestone payments or any other economic consideration agreed by the parties. </p>
+<h3 id="44-scope-of-acl"><strong>4.4 Scope of ACL</strong></h3>
+<p>The scope of the ACL shall be limited to the scope expressly set out in the Commercial Agreement, including any limitations relating to: </p>
+<ul>
+<li>
+<p>a. permitted products, services, projects or use cases; </p>
+</li>
+<li>
+<p>b. deployment environments; </p>
+</li>
+<li>
+<p>c. territory; </p>
+</li>
+<li>
+<p>d. term; </p>
+</li>
+<li>
+<p>e. number of production instances; </p>
+</li>
+<li>
+<p>f. number of end customers; </p>
+</li>
+<li>
+<p>g. redistribution rights; </p>
+</li>
+<li>
+<p>h. support or maintenance level; </p>
+</li>
+<li>
+<p>i. permitted affiliates; </p>
+</li>
+<li>
+<p>j. field of use; </p>
+</li>
+<li>
+<p>k. confidentiality or security requirements; and </p>
+</li>
+<li>
+<p>l. payment obligations. </p>
+</li>
+</ul>
+<p>Any use outside the scope of the Commercial Agreement is prohibited unless separately authorized in writing by Licensor. </p>
+<h3 id="45-order-of-precedence"><strong>4.5 Order of Precedence</strong></h3>
+<p>In the event of conflict between this Agreement and a Commercial Agreement, the Commercial Agreement shall prevail solely with respect to the specific subject matter of that conflict. </p>
+<p>All provisions of this Agreement not expressly modified by the Commercial Agreement shall remain in full force and effect. </p>
+<h3 id="47-records-and-audit-for-commercial-use"><strong>4.7 Records and Audit for Commercial Use</strong></h3>
+<p>If Licensee is granted an ACL, Licensee shall maintain accurate records reasonably necessary to verify compliance with the Commercial Agreement, including without limitation, usage, deployment and Feerelated records where applicable. </p>
+<p>Upon reasonable prior notice and no more than once per calendar year, Licensor may audit Licensee's compliance with the ACL, provided that any audit shall be conducted during normal business hours, in a manner that does not unreasonably disrupt Licensee's operations, and subject to reasonable confidentiality obligations. </p>
+<p>If an audit reveals underpayment or unauthorized Commercial Use, Licensee shall promptly pay all unpaid Fees and reasonable audit costs, without prejudice to any other rights or remedies available to Licensor. </p>
+<h2 id="5-licensee-obligations"><strong>5.  Licensee Obligations</strong></h2>
+<p>During the term of this Agreement the Licensee <strong>shall not, and shall not permit</strong> any Authorized user and third party to, directly or indirectly: </p>
+<h4 id="a-unauthorized-use"><strong>a. Unauthorized use:</strong></h4>
+<ul>
+<li>i. . use the AUGUR Materials for any purpose other than as expressly authorized under this Agreement or a valid Commercial Agreement; </li>
+</ul>
+<h4 id="b">b</h4>
+<ul>
+<li>
+<p>ii. sell, rent, lease, lend, sublicense, distribute, publish, host, outsource, provide as a service, or otherwise make the AUGUR Materials available to any third party, except as expressly permitted under this Agreement or a Commercial Agreement; </p>
+</li>
+<li>
+<p>iii. combine the AUGUR Materials with software, data or materials subject to license terms that would require the AUGUR Materials to be disclosed, licensed, distributed or made available under opensource, copyleft, source-available or other third-party terms, unless expressly authorized in writing by Licensor; or </p>
+</li>
+</ul>
+<h4 id="b-reverse-engineering-and-extraction"><strong>b. Reverse Engineering and Extraction</strong></h4>
+<ul>
+<li>
+<p>i. .  reverse engineer, decompile, disassemble, translate, reconstruct, derive, extract or otherwise attempt to discover the source code, object code structure, architecture, algorithms, models, simulation parameters, calibration data, physics models, control logic, datasets, internal interfaces or underlying implementation  onthe AUGUR Materials </p>
+</li>
+<li>
+<p>ii. . derive, infer, reconstruct, reproduce, extract or approximate any proprietary data, model, parameter, algorithm, asset, dataset, know-how or implementation of Licensor; </p>
+</li>
+<li>
+<p>iii.  extract, scrape, harvest, export or systematically collect embedded data, model parameters, scene data, virtual assets, simulation assets, calibration values or other proprietary information from the AUGUR Materials, except to the extent strictly necessary to generate ordinary Output for permitted use; </p>
+</li>
+</ul>
+<h4 id="c-ai-related-use"><strong>c. AI related use</strong></h4>
+<ul>
+<li>i. use the AUGUR Materials, AUGUR Derivative Work or Output to train, fine-tune, validate, benchmark, distill, evaluate or improve any machine learning, artificial intelligence, simulation, robotics, actuator, physics, control or digital twin model intended to emulate, replace, reproduce or compete with the AUGUR Materials or any product or service of Licensor; </li>
+</ul>
+<h4 id="d-competitive-use"><strong>d. Competitive use</strong></h4>
+<ul>
+<li>
+<p>i. access or use the AUGUR Materials for the purpose of monitoring their availability, performance or functionality for competitive purposes; </p>
+</li>
+<li>
+<p>ii. create, train, develop, validate, commercialize or distribute any substitute, competing or functionally equivalent digital twin, simulator, actuator model, control model, dataset, validation platform or related technology using the AUGUR Materials or AUGUR Derivative Work; </p>
+</li>
+</ul>
+<h4 id="e-integrity-and-security"><strong>e. Integrity and Security</strong></h4>
+<ul>
+<li>
+<p>i. remove, alter, obscure or fail to reproduce copyright, attribution, proprietary, license, confidentiality or other notices included in the AUGUR Materials; </p>
+</li>
+<li>
+<p>ii. bypass, disable, circumvent, interfere with or defeat any technical protection, access control, telemetry, license management, watermarking, integrity verification or security mechanism included in or used by the AUGUR Materials; </p>
+</li>
+</ul>
+<h4 id="f-public-disclosure"><strong>f. Public Disclosure</strong></h4>
+<ul>
+<li>
+<p>i. publish benchmarks, performance results, validation reports, comparisons, evaluations or analyses of the AUGUR Materials without Licensor's prior written consent, except for internal use or as expressly permitted in a Commercial Agreement; </p>
+</li>
+<li>
+<p>ii. issue press releases, public announcements, marketing materials, case studies or public statements referring to Licensor, ARQUIMEA, PULSAR HRI, AUGUR or the AUGUR Materials without Licensor's prior written consent, except as required by law or as necessary to reproduce required notices. </p>
+</li>
+<li>
+<p>r. permit any Authorized User or third party to do any of the foregoing. </p>
+</li>
+</ul>
+<h3 id="51-mandatory-legal-exceptions"><strong>5.1 Mandatory Legal Exceptions</strong></h3>
+<p>The restrictions in this Section apply to the maximum extent permitted by applicable law. </p>
+<p>If applicable law grants Licensee a mandatory right to perform acts otherwise restricted under this Agreement, Licensee shall exercise such right only to the extent strictly required by applicable law and, where legally permissible, only after providing Licensor reasonable prior written notice and an opportunity to provide the necessary information under reasonable terms. </p>
+<h2 id="6-source-code-object-code-and-models"><strong>6. Source Code, Object Code and Models</strong></h2>
+<h3 id="61-object-code-and-binary-materials"><strong>6.1 Object Code and Binary Materials</strong></h3>
+<p>Unless expressly stated otherwise by Licensor, the AUGUR Materials are provided in object code, binary, packaged, compiled, containerized or model form only. </p>
+<h3 id="62-no-source-code-rights"><strong>6.2 No Source Code Rights</strong></h3>
+<p>The Licensee nor the Authorized Users have no right to receive, access, modify, compile or use source code is granted unless Licensor expressly provides source code and expressly grants source code rights in writing. </p>
+<h3 id="63-models-and-parameters"><strong>6.3 Models and Parameters</strong></h3>
+<p>All digital twin models, simulation models, virtual actuator models, physics models, control models, calibration files, parameters, weights, configuration values, runtime assets and related data are proprietary to Licensor. </p>
+<p>Licensee may use them only as part of the AUGUR Materials and only within the scope of this Agreement or a Commercial Agreement. </p>
+<h2 id="7-updates-releases-and-availability"><strong>7. Updates, Releases and Availability</strong></h2>
+<h3 id="71-updates"><strong>7.1 Updates</strong></h3>
+<p>Licensor may, but is not obligated to, provide updates, upgrades, patches, bug fixes, replacements or new versions of the AUGUR Materials. </p>
+<h3 id="72-applicable-terms"><strong>7.2 Applicable Terms</strong></h3>
+<p>Any update or new version of the AUGUR Materials  is subject to this Agreement unless Licensor provides different terms with that update or version. </p>
+<h3 id="73-no-obligation-to-maintain"><strong>7.3 No Obligation to Maintain</strong></h3>
+<p>Under the ADL, Licensor has no obligation to provide support, maintenance, compatibility updates, security patches, service levels or continued availability. </p>
+<p>Any support, maintenance or service-level commitment must be expressly set out in a Commercial Agreement. </p>
+<h3 id="74-changes-and-discontinuation"><strong>7.4 Changes and Discontinuation</strong></h3>
+<p>Licensor may modify, suspend, restrict, remove or discontinue access to the AUGUR Materials, downloads, repositories, documentation, packages, assets or services at any time, subject to any contrary obligation expressly stated in a Commercial Agreement. </p>
+<h2 id="8-third-party-components"><strong>8. Third-Party Components</strong></h2>
+<p>8.1 Separate TermsAUGUR Materials include Third-Party Components. Certain portions incorporate or depend upon software, libraries or tools licensed by third parties. </p>
+<p>Third-Party Components are not licensed under this Agreement and remain subject to  their respective third-party license terms, conditions and restrictions. </p>
+<h3 id="82-no-modification-of-third-party-terms"><strong>8.2 No Modification of Third-Party Terms</strong></h3>
+<p>This Agreement does not limit Licensee's rights under, or grant rights inconsistent with, any applicable third-party license. </p>
+<h3 id="83-compliance"><strong>8.3 Compliance</strong></h3>
+<p>Licensee is solely responsible for complying with all applicable Third-Party Component licenses incorporated on AUGUR Materials. </p>
+<h4 id="84-changes-withdrawal-and-third-party-restrictions"><strong>8.4 Changes, Withdrawal and Third-Party Restrictions</strong></h4>
+<p>Licensor is not liable for any modification, discontinuation, withdrawal, suspension, licence change, access restriction or other action taken by any third-party provider affecting any Third-Party Component. </p>
+<p>Any resulting impact on Licensee's use of the AUGUR Materials shall not constitute a breach of this Agreement by Licensor. </p>
+<h4 id="85-no-representation-or-warranty"><strong>8.5 No Representation or Warranty</strong></h4>
+<p>Licensor makes no representation, warranty or undertaking of any kind regarding any Third-Party Components, including their functionality, availability, security, performance, compatibility, maintenance, support, non-infringement or continued availability. </p>
+<h3 id="86-notices"><strong>8.6 Notices</strong></h3>
+<p>Where required, third-party notices, acknowledgements or license texts may be provided in separate files, documentation, repositories, package metadata or accompanying materials. </p>
+<h2 id="9-output-and-data"><strong>9. Output and Data</strong></h2>
+<h3 id="91-licensee-output"><strong>9.1 Licensee Output</strong></h3>
+<p>As between Licensor and Licensee, and subject to the terms of this Agreement, Licensee owns the Output generated through its permitted use of the AUGUR Materials </p>
+<p>Notwithstanding the above, Licensor retains all right, title and interest in the AUGUR Materials, Licensor’s proprietary information and any Third-Party Components that are incorporated in, reproduced in or disclosed by such Output. Under the ADL, Licensee may use Output internally for Development Purposes. </p>
+<p>Licensee  is not authorized to commercialize, sell, license, publish, distribute or provide Output to third parties if doing so would constitute Commercial Use or disclose proprietary elements of the AUGUR Materials, unless authorized under a Commercial Agreement. </p>
+<p>Licensee shall not use Output to reverse engineer, reconstruct, infer, approximate, replicate or substitute the AUGUR Materials or Licensor's proprietary data, models, algorithms, simulation parameters, control logic or know-how. </p>
+<h3 id="94-sensitive-data"><strong>9.4 Sensitive Data</strong></h3>
+<p>Licensee shall not input personal data, confidential third-party data, export-controlled data, classified data, regulated data or safety-critical operational data into the AUGUR Materials unless Licensee has all necessary rights, consents, permissions and authorizations and such use is permitted by this Agreement or a Commercial Agreement. </p>
+<p>Licensee shall comply with all applicable data protection and privacy laws and shall process any personal data only for authorized purposes and in accordance with the rights of the relevant data subjects. </p>
+<h3 id="95-telemetry"><strong>9.5 Telemetry</strong></h3>
+<p>If the AUGUR Materials include telemetry, diagnostics, crash reports, usage metrics or license verification mechanisms, such mechanisms shall operate as described in the Documentation or applicable Commercial Agreement. </p>
+<p>Licensee shall not disable or circumvent telemetry, diagnostics, license verification or integrity mechanisms unless expressly permitted by Licensor. </p>
+<p>Where any mechanism described in this Section processes personal data, Licensor shall provide the applicable privacy information before the processing begins, identifying the controller, the categories of personal data, purposes and legal bases, recipients, retention periods or criteria, any international transfers and the means of exercising applicable data protection rights. Acceptance of this Agreement does not itself constitute consent to every processing activity or relieve either party of its obligations under applicable data protection law. </p>
+<h4 id="96-publication-results"><strong>9.6 Publication Results</strong></h4>
+<p>Licensee shall not publish Outputs, benchmarks, performance analyses or comparative studies relating to the AUGUR Materials without Licensor's prior written consent if such publication may disclose proprietary information or permit reconstruction of the AUGUR Materials. </p>
+<h2 id="10-confidentiality-and-proprietary-information"><strong>10. Confidentiality and Proprietary Information</strong></h2>
+<h3 id="102-confidential-materials"><strong>10.2 Confidential Materials</strong></h3>
+<p>All non-public information disclosed or made available by Licensor to Licensee in connection with AUGUR Materials, whether in written, oral, electronic or other form, including without limitation the AUGUR Materials, access credentials, license keys, software, technical information, documentation and any other information that is marked as confidential or that a reasonable person would understand to be confidential given its nature and the circumstances of disclosure. </p>
+<h3 id="103-obligations"><strong>10.3 Obligations</strong></h3>
+<p>Licensee shall: </p>
+<ul>
+<li>
+<p>a. use Licensor's Confidential Information solely to exercise its rights and perform its obligations </p>
+</li>
+<li>
+<p>b. protect Licensor's Confidential Information using at least the same degree of care it uses to protect its own confidential information, and in no event less than reasonable care. </p>
+</li>
+<li>
+<p>c. not disclose Licensor's Confidential Information to any third party except to Authorized Users who need access for permitted use and are bound by confidentiality obligations no less protective than this Agreement. </p>
+</li>
+<li>
+<p>d. ensure that Authorized Users, employees, officers, directors, contractors and advisors who have access to Licensor's Confidential Information comply with the confidentiality obligations set out in this Agreement and will remain liable for any breach of such obligations. </p>
+</li>
+</ul>
+<h3 id="104-exclusions"><strong>10.4 Exclusions</strong></h3>
+<p>Confidential Information does not include information that Licensee can demonstrate: </p>
+<ul>
+<li>
+<p>a. s or becomes publicly available without breach of this Agreement; </p>
+</li>
+<li>
+<p>b. was lawfully known by Licensee before disclosure by Licensor; </p>
+</li>
+<li>
+<p>c. was independently developed by Licensee without access or use of Licensor's Confidential Information; or </p>
+</li>
+<li>
+<p>d. was lawfully received from a third party without confidentiality restrictions. </p>
+</li>
+</ul>
+<h3 id="105-compelled-disclosure"><strong>10.5 Compelled Disclosure</strong></h3>
+<p>If Licensee is legally required to disclose Licensor's Confidential Information, Licensee shall, to the extent legally permitted, provide Licensor prompt written notice and reasonable cooperation to seek protective treatment. </p>
+<h2 id="11-feedback"><strong>11. Feedback</strong></h2>
+<p>If Licensee provides Feedback, understood without limitation as suggestions, ideas, comments, bug reports, performance information, improvement proposals, feature requests or other feedback relating to </p>
+<p>the AUGUR Materials Licensor may use, reproduce, modify, disclose, distribute and exploit such Feedback without restriction or compensation. </p>
+<p>Licensee grants Licensor a worldwide, perpetual, irrevocable, sublicensable, transferable, royalty-free license to use the Feedback for any purpose. </p>
+<p>Licensor is not required to use any Feedback. </p>
+<h2 id="12-compliance-with-laws"><strong>12. Compliance with Laws</strong></h2>
+<p>Licensee must not use the AUGUR Materials in any unlawful manner, </p>
+<p>Licensee shall comply with all applicable laws, regulations and governmental requirements in connection with its access and use of the AUGUR Materials, including without limitation, those related to export controls, sanctions, cybersecurity, data protection, privacy, intellectual property, artificial intelligence, robotics, product safety and competition. </p>
+<p>Licensee represents and warrants that it is not located in, organized under the laws of, or ordinarily resident in any country or territory subject to comprehensive sanctions, and is not listed on any restricted party list applicable to the AUGUR Materials. </p>
+<p>Licensee shall not use the AUGUR Materials for prohibited military, nuclear, missile, chemical, biological, surveillance, human rights abuse or other restricted end uses unless expressly authorized by applicable law and by Licensor in writing. </p>
+<h2 id="13-safety-critical-and-regulated-use"><strong>13. Safety-Critical and Regulated Use</strong></h2>
+<h3 id="131-no-sole-reliance"><strong>13.1 No Sole Reliance</strong></h3>
+<p>The AUGUR Materials are development and simulation tools. They are not a substitute for physical testing, engineering judgement, independent verification, safety analysis, regulatory assessment or certification. </p>
+<h3 id="132-no-safety-certification"><strong>13.2 No Safety Certification</strong></h3>
+<p>Unless expressly stated in a Commercial Agreement, the AUGUR Materials are not certified for use in safety-critical, mission-critical, life-critical, medical, aviation, automotive, railway, nuclear, military, emergency response or other regulated systems. </p>
+<h3 id="133-live-control"><strong>13.3 Live Control</strong></h3>
+<p>Licensee shall not use the AUGUR Materials to directly or indirectly control live hardware, robots, actuators, machinery or production systems in a manner that could cause physical harm, property damage or regulatory non-compliance unless expressly authorized under a Commercial Agreement and subject to appropriate safety controls. </p>
+<h3 id="134-licensee-responsibility"><strong>13.4 Licensee Responsibility</strong></h3>
+<p>Licensee is solely responsible for validating, testing and certifying its own products, systems, software, hardware, integrations, assumptions, outputs and deployment decisions. </p>
+<h2 id="14-security"><strong>14. Security</strong></h2>
+<p>Licensee shall implement reasonable technical and organizational measures to protect the AUGUR Materials from unauthorized access, use, disclosure, copying, distribution or modification. </p>
+<p>Licensee shall promptly notify Licensor if it becomes aware of unauthorized access to or use of the AUGUR Materials, or of any vulnerability that could materially affect the security or integrity of the AUGUR Materials. </p>
+<p>Licensee shall not publicly disclose vulnerabilities in the AUGUR Materials without first providing Licensor a reasonable opportunity to investigate and remediate them, unless otherwise required by law. </p>
+<h2 id="15-term"><strong>15. Term</strong></h2>
+<h3 id="151-adl-term"><strong>15.1 ADL Term</strong></h3>
+<p>The ADL begins when Licensee first downloads, installs, accesses, executes or uses the AUGUR Materials and continues until terminated under this Agreement. </p>
+<h3 id="152-acl-term"><strong>15.2 ACL Term</strong></h3>
+<p>The ACL begins and ends according to the applicable Commercial Agreement. </p>
+<p>If no term is specified in the Commercial Agreement, the ACL remains in effect only for the period for which the applicable Fees, established in the ACL, have been paid. </p>
+<h2 id="16-termination-and-suspension"><strong>16. Termination and Suspension.</strong></h2>
+<h3 id="161-termination-by-licensor"><strong>16.1 Termination  by Licensor</strong></h3>
+<p>Licensor may terminate this Agreement and any license granted under it immediately upon written notice if Licensee breaches this Agreement or any Commercial Agreement.The Licensor can terminate this Agreement <strong>automatically</strong> if the Licensee: </p>
+<ul>
+<li>
+<p>a. fails to comply with the terms, conditions and obligations of this Agreement </p>
+</li>
+<li>
+<p>b. uses the AUGUR Materials for Commercial Use without a valid ACL; </p>
+</li>
+<li>
+<p>c. fails to pay Fees due under a Commercial Agreement; </p>
+</li>
+<li>
+<p>d. brings or threatens to bring an intellectual property claim alleging that the AUGUR Materials infringe Licensee's rights, except for claims based on a breach of an express written agreement by Licensor </p>
+</li>
+</ul>
+<h3 id="162-termination-by-licensee"><strong>16.2 Termination by Licensee</strong></h3>
+<p>Licensee may terminate the ADL at any time by ceasing all use of the AUGUR Materials and deleting or destroying all copies under its control. </p>
+<h3 id="163-effect-of-termination"><strong>16.3 Effect of Termination</strong></h3>
+<p>Upon termination, Licensee shall immediately: </p>
+<p>a. cease <strong>all use</strong> of the AUGUR Materials; </p>
+<p>b. delete or destroy all copies of the AUGUR Materials in its possession or control; </p>
+<p>c. remove the AUGUR Materials from development systems, CI/CD systems, caches, containers, artifact repositories and workstations; </p>
+<p><mark>d. and</mark> </p>
+<p><mark>e. upon request, certify in writing that it has complied with this Section.</mark> </p>
+<h3 id="164-survival"><strong>16..4 Survival</strong></h3>
+<h3 id="sections-relating-to-ownership-restrictions-confidentiality-feedback-fees-audit-disclaimers-limitation-of-liability-indemnity-termination-effects-governing-law-and-any-other-provisions-that-by-their-nature-should-survive-shall-survive-termination"><strong>Sections relating to ownership, restrictions, confidentiality, feedback, fees, audit, disclaimers, limitation of liability, indemnity, termination effects, governing law and any other provisions that by their nature should survive shall survive termination.</strong></h3>
+<h3 id="165-suspension"><strong>16.5 Suspension</strong></h3>
+<p>Licensor may immediately suspend Licensee's access to or use of all or any part of the AUGUR Materials, without liability and without prejudice to Licensor's termination rights, upon suspected breach of this Agreement or any Commercial Agreement, unauthorized Commercial Use, any security or integrity risk, any export control or sanctions issue, or non-payment of Fees or other amounts due under any Commercial Agreement. </p>
+<p>Following investigation, if a breach is confirmed, Licensor may terminate this Agreement; otherwise, Licensee's access to and use of the AUGUR Materials shall be promptly reinstated by the Licensor. </p>
+<h2 id="18-fees-taxes-and-payment"><strong>18. Fees, Taxes and Payment</strong></h2>
+<p>This Section applies only where Licensee has entered into a Commercial Agreement. </p>
+<h3 id="181-payment"><strong>18.1 Payment</strong></h3>
+<p>Licensee shall pay all Fees in accordance with the applicable Commercial Agreement. </p>
+<h3 id="182-taxes"><strong>18.2 Taxes</strong></h3>
+<p>Fees are exclusive of taxes unless expressly stated otherwise. </p>
+<p>Licensee is responsible for all taxes, duties, levies, withholdings and governmental charges arising from the Commercial Agreement, except taxes based on Licensor's net income. </p>
+<h3 id="183-late-payment"><strong>18.3 Late Payment</strong></h3>
+<p>If Licensee fails to pay undisputed Fees when due, Licensor may suspend or terminate the ACL, withhold support or updates, charge interest to the maximum extent permitted by law, and recover reasonable collection costs. </p>
+<h3 id="184-no-refunds"><strong>18.4 No Refunds</strong></h3>
+<p>Fees are non-refundable unless expressly stated otherwise in the Commercial Agreement or required by applicable law. </p>
+<h2 id="19-warranty-disclaimer"><strong>19. Warranty Disclaimer</strong></h2>
+<p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE AUGUR MATERIALS ARE PROVIDED "AS IS" AND "AS AVAILABLE", WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND.</strong> </p>
+<p><strong>LICENSOR DISCLAIMS ALL WARRANTIES, CONDITIONS, REPRESENTATIONS AND GUARANTEES, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE,</strong> </p>
+<p><strong>LICENSOR DOES NOT WARRANT THAT THE AUGUR MATERIALS WILL MEET LICENSEE'S REQUIREMENTS, OPERATE WITHOUT INTERRUPTION, BE ERROR-FREE, BE SECURE, PRODUCE ACCURATE OR COMPLETE RESULTS, OR BE COMPATIBLE WITH ANY PARTICULAR HARDWARE, SOFTWARE, SYSTEM, PRODUCT, WORKFLOW, CI/CD ENVIRONMENT OR DEVELOPMENT TOOL.</strong> </p>
+<p><strong>ANY WARRANTIES, SERVICE LEVELS, SUPPORT COMMITMENTS OR REMEDIES APPLICABLE TO COMMERCIAL USE MUST BE EXPRESSLY SET OUT IN A COMMERCIAL AGREEMENT.</strong> </p>
+<h2 id="20-limitation-of-liability"><strong>20. Limitation of Liability</strong></h2>
+<p><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, LICENSOR SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE OR CONSEQUENTIAL DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, BUSINESS, GOODWILL, DATA, USE, PRODUCTION, CONTRACTS, SAVINGS, OPPORTUNITY OR REPUTATION, OR FOR BUSINESS INTERRUPTION, SYSTEM FAILURE, COMPUTER DAMAGE, COST OF SUBSTITUTE GOODS OR SERVICES, OR LOSS ARISING FROM PRODUCT FAILURE, SAFETY INCIDENTS, REGULATORY NON-COMPLIANCE OR THIRD-PARTY CLAIMS.</strong> </p>
+<p><strong>UNDER THE ADL, LICENSOR'S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATING TO THIS AGREEMENT OR THE AUGUR MATERIALS SHALL NOT EXCEED ONE HUNDRED EUROS (EUR 100).</strong> </p>
+<p><strong>UNDER THE ACL, UNLESS THE COMMERCIAL AGREEMENT STATES OTHERWISE, LICENSOR'S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATING TO THE COMMERCIAL AGREEMENT, THIS AGREEMENT OR THE AUGUR MATERIALS SHALL NOT EXCEED THE FEES ACTUALLY PAID BY LICENSEE TO LICENSOR FOR THE AUGUR MATERIALS DURING THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY.</strong> </p>
+<p><strong>THE LIMITATIONS IN THIS SECTION APPLY REGARDLESS OF THE LEGAL THEORY, WHETHER IN CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY, PRODUCT LIABILITY, STATUTE OR OTHERWISE, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</strong> </p>
+<p>Nothing in this Agreement limits liability to the extent such limitation is prohibited by applicable law. </p>
+<h2 id="21-indemnity"><strong>21. Indemnity</strong></h2>
+<h3 id="211-licensee-indemnity"><strong>21.1 Licensee Indemnity</strong></h3>
+<p>Licensee shall defend, indemnify and hold harmless Licensor, its affiliates, directors, officers, employees, contractors and licensors from and against any claims, damages, liabilities, losses, costs and expenses, including reasonable attorneys' fees, arising out of or relating to: </p>
+<ul>
+<li>
+<p>a. Licensee's use of the AUGUR Materials in breach of this Agreement or a Commercial Agreement; </p>
+</li>
+<li>
+<p>b. unauthorized Commercial Use; </p>
+</li>
+<li>
+<p>c. unauthorized redistribution or disclosure of the AUGUR Materials; </p>
+</li>
+<li>
+<p>d. Licensee's products, services, systems, integrations, data, Output, deployments, decisions, safety incidents, regulatory findings, product recalls, bodily injury, death, property damage, cybersecurity incidents, or any third-party reliance on the AUGUR Materials, any Output or any results generated through Licensee's use or deployment of the AUGUR Materials; </p>
+</li>
+<li>
+<p>e. use of the AUGUR Materials in safety-critical, regulated, production or live-control environments without authorization; </p>
+</li>
+<li>
+<p>f. violation of applicable law by Licensee; or </p>
+</li>
+<li>
+<p>g. infringement or misappropriation of third-party rights caused by Licensee's data, software, systems, modifications, integrations or use cases. </p>
+</li>
+</ul>
+<h3 id="212-commercial-indemnity-by-licensor"><strong>21.2 Commercial Indemnity by Licensor</strong></h3>
+<p>Any indemnity by Licensor, including intellectual property indemnity, shall apply only if expressly set out in a Commercial Agreement. </p>
+<h2 id="23-assignment"><strong>23. Assignment</strong></h2>
+<p>Licensee may not assign, transfer, delegate or novate this Agreement, any Commercial Agreement or any rights or obligations under them without Licensor's prior written consent. </p>
+<p>Any attempted assignment in violation of this Section is void. </p>
+<p>Licensor may assign this Agreement to an affiliate or in connection with a merger, reorganization, sale of assets, financing, corporate restructuring or transfer of the AUGUR Materials or related business. </p>
+<h2 id="24-notices"><strong>24. Notices</strong></h2>
+<p>Notices to Licensor shall be sent only to the following contact details, or to any other contact details or legal notice designated by Licensor </p>
+<p>ARQUIMEA GROUP, S.A. Avenida Premios Nobel, 53 E-28850 Torrejón de Ardoz, Madrid Email: hello@pulsarhri.com </p>
+<p>Licensor may provide notices to Licensee by email, repository notice, website notice, package page notice, documentation site notice or any other reasonable means, and any such operational notice shall be effective when given. </p>
+<h2 id="25-governing-law-and-jurisdiction"><strong>25. Governing Law and Jurisdiction</strong></h2>
+<p>This Agreement shall be governed by the laws of Spain, excluding its conflict of law rules. The Parties will seek to resolve by mutual agreement any dispute, disagreement or difference arising in connection with the interpretation, performance or application of this Agreement. </p>
+<p>If the Parties are unable to reach an amicable resolution, and unless a Commercial Agreement states otherwise, the courts of Madrid, Spain shall have exclusive jurisdiction over any dispute arising out of or relating to this Agreement, the AUGUR Materials or any permitted or unauthorized use of them except for the special industrial property tribunals with jurisdiction over the specific matters. </p>
+<p>The United Nations Convention on Contracts for the International Sale of Goods shall not apply. </p>
+<h2 id="26-injunctive-relief"><strong>26. Injunctive Relief</strong></h2>
+<p>Licensee acknowledges that any breach of the restrictions, confidentiality obligations, intellectual property provisions or unauthorized Commercial Use may cause irreparable harm to Licensor for which monetary damages may be inadequate. </p>
+<p>Licensor may seek injunctive, equitable or interim relief without the need to post bond or prove actual damages, in addition to any other rights or remedies available. </p>
+<h4 id="27-general-provisions"><strong>27. General Provisions:</strong></h4>
+<h4 id="271-entire-agreement"><strong>27.1 Entire Agreement</strong></h4>
+<p>This Agreement constitutes the entire agreement between Licensor and Licensee with respect to the ADL and supersedes all prior and contemporaneous proposals, negotiations, discussions, understandings and agreements relating to its subject matter. </p>
+<p>For Commercial Use, this Agreement together with the applicable Commercial Agreement constitutes the entire agreement between the Parties with respect to the ACL. </p>
+<p>No purchase order, procurement terms, online terms, standard conditions or other document issued by Licensee shall modify, supplement or prevail over this Agreement unless expressly accepted in writing by Licensor. </p>
+<h4 id="272-modifications-and-updated-terms"><strong>27.2 Modifications and Updated terms</strong></h4>
+<p>Licensor may update this Agreement from time to time. </p>
+<p>New versions of the AUGUR Materials may be distributed subject to updated terms made available with such versions or published through the applicable repository, package page, documentation site or download portal. </p>
+<p>Unless otherwise expressly provided in a Commercial Agreement, Licensee's continued download, installation, access, execution or use of a new version of the AUGUR Materials after such updated terms have been made available shall constitute acceptance of those updated terms with respect to that version. A Commercial Agreement may specify whether, and to what extent, updated terms apply to commercial deployments. </p>
+<h4 id="273-no-waiver"><strong>27.3 No Waiver</strong></h4>
+<p>No failure, delay or omission by Licensor in exercising any right, power or remedy under this Agreement shall operate as a waiver thereof, nor shall any single or partial exercise of any right, power or remedy preclude any further exercise thereof. </p>
+<p>Any waiver shall be effective only if made expressly in writing and shall apply solely to the specific circumstance for which it is granted. </p>
+<h4 id="274-severability"><strong>27.4 Severability</strong></h4>
+<p>If any provision of this Agreement is declared null, invalid or unenforceable, such provision shall be deemed excluded from this Agreement without affecting the validity of the remaining provisions. In such event, the Parties shall use reasonable efforts to agree upon a valid and enforceable provision that most closely reflects the original intent and economic effect of the invalid, illegal or unenforceable provision. </p>
+<h2 id="32-summary-of-license-modes"><strong>32. Summary of License Modes</strong></h2>
+<p>This Section is provided for convenience only. In case of conflict, the full terms above control. </p>
+<table>
+<thead>
+<tr>
+<th><strong>Use case</strong></th>
+<th><strong>ADL</strong></th>
+<th><strong>ACL required</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Internal development</td>
+<td>Permitted</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>Internal evaluation</td>
+<td>Permitted</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>Internal research</td>
+<td>Permitted</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>Automated build download</td>
+<td>Permitted</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>CI/CD execution</td>
+<td>Permitted</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>Headless CI runners</td>
+<td>Permitted</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>Per-commit validation</td>
+<td>Permitted</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>Developer workstations</td>
+<td>Permitted</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>Non-centrally administered developer machines</td>
+<td>Permitted</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>Internal artifact caching</td>
+<td>Permitted</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>Internal containerized testing</td>
+<td>Permitted</td>
+<td>Not required</td>
+</tr>
+<tr>
+<td>Production deployment</td>
+<td>Not permitted</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>Paid services</td>
+<td>Not permitted</td>
+<td>Required</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><strong>Use case</strong></th>
+<th><strong>ADL</strong></th>
+<th><strong>ACL requir</strong></th>
+<th><strong>ed</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SaaS or hosted access</td>
+<td>Not permitted</td>
+<td>Required</td>
+<td></td>
+</tr>
+<tr>
+<td>Redistribution to third parties</td>
+<td>Not permitted</td>
+<td>Required</td>
+<td></td>
+</tr>
+<tr>
+<td>Bundling in a commercial product</td>
+<td>Not permitted</td>
+<td>Required</td>
+<td></td>
+</tr>
+<tr>
+<td>Customer-facing validation service</td>
+<td>Not permitted</td>
+<td>Required</td>
+<td></td>
+</tr>
+<tr>
+<td>Reverse engineering</td>
+<td>Prohibited</td>
+<td>Prohibited<br>authorized</td>
+<td>unless expressly</td>
+</tr>
+<tr>
+<td>Decompilation</td>
+<td>Prohibited</td>
+<td>Prohibited<br>authorized</td>
+<td>unless expressly</td>
+</tr>
+<tr>
+<td>Deriving or reproducing proprietary data/models</td>
+<td>Prohibited</td>
+<td>Prohibited<br>authorized</td>
+<td>unless expressly</td>
+</tr>
+<tr>
+<td>Training a competing model or digital twin</td>
+<td>Prohibited</td>
+<td>Prohibited<br>authorized</td>
+<td>unless expressly</td>
+</tr>
+</tbody>
+</table>
+<h2 id="33-acceptance"><strong>33. Acceptance</strong></h2>
+<p>By downloading, installing, copying, accessing, executing or using the AUGUR Materials from any repository, package page, documentation site or download portal, Licensee acknowledges that it has read, understands and agrees to be bound by the terms of this Agreement, </p>
+<p>If Licensee does not agree, Licensee must not download, install, copy, access, execute or use the AUGUR Materials. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 PULSAR HRI
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/PulsarHRI" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.footer", "navigation.indexes", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../javascripts/external-links.js"></script>
+      
+        <script src="../../javascripts/bus-utilization.js"></script>
+      
+        <script src="../../javascripts/docs-version-label.js"></script>
+      
+    
+  </body>
+</html>
