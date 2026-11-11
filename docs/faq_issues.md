@@ -50,9 +50,8 @@ The Pulsar Rust SDK is coming soon. Its section will be expanded when the crate,
 The following issues are currently tracked for Pulsar Python SDK and will be fixed in a future release:
 
 - **#1 — Reconnect isolation:** queued transport-loss handling affects a newly reconnected actuator session.
-- **#2 — Physical-domain validation:** `PulsarActuatorReal` must doesn't reject `VirtualWorld` as a domain.
+- **#2 — Physical-domain validation:** `PulsarActuatorReal` doesn't reject `VirtualWorld` as a domain.
 - **#3 — Stale telemetry recovery:** enable() is allowed to recover the actuators to operational state without clearing the faults first.
-- **#4 — CAN bit-rate switching:** BRS is applied to high frequency items such as commands and feedback, other parameters run at the standard 1Mbps speed.
-- **#5 — Co-simulation ergonomics:** a future bulk exchange helper should return elapsed ticks and telemetry while retaining the low-level `step()` API.
+- **#4 — Co-simulation ergonomics:** a future bulk exchange helper should return elapsed ticks and telemetry while retaining the low-level `step()` API.
 
 For help with a current application, use [Support](#support) or open an issue in the [Developer Hub repository](https://github.com/PulsarHRI/pulsarhri.github.io/issues).
