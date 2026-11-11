@@ -1,3 +1,16 @@
+# Core Concepts
+####### TODO: explain domains, groups, platforms, virtual, real, etc. use the user_contract.md
+
+# Object model
+
+![Pulsar Python SDK class model](assets/diagrams/class-model.png)
+
+- An actuator belongs to one execution domain.
+- An `ActuatorGroup` contains named actuators from one domain and one control mode.
+- A `Platform` coordinates named groups across one or more domains.
+- `PcpOverUsb`, `PcpOverCan`, and `VirtualWorld` own communication or simulation timing.
+
+
 # Core workflow
 
 Pulsar Python SDK separates object construction, connection, configuration, output enable, commands, and shutdown.

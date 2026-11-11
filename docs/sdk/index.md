@@ -20,15 +20,6 @@ macOS is not currently supported.
 4. Add [groups and platforms](groups_platforms.md) when the application contains several actuators.
 5. Read [lifecycle and recovery](lifecycle_recovery.md) before deploying a controller.
 
-## Object model
-
-![Pulsar Python SDK class model](assets/diagrams/class-model.png)
-
-- An actuator belongs to one execution domain.
-- An `ActuatorGroup` contains named actuators from one domain and one control mode.
-- A `Platform` coordinates named groups across one or more domains.
-- `PcpOverUsb`, `PcpOverCan`, and `VirtualWorld` own communication or simulation timing.
-
 ## Reference
 
 - [Commands and parameters](commands_parameters.md)

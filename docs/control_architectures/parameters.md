@@ -11,7 +11,6 @@ Every command mapping requires `ControlParams.COMMAND`.
 | `COMMAND` | ✓ | ✓ | ✓ | ✓ |
 | `D_AXIS_CURRENT_KP`, `D_AXIS_CURRENT_KI` | ✓ |  |  |  |
 | `Q_AXIS_CURRENT_KP`, `Q_AXIS_CURRENT_KI` | ✓ |  |  |  |
-| `FEEDFORWARD_GAIN` |  | ✓ | ✓ | ✓ |
 | `VELOCITY_KP`, `VELOCITY_KI` |  | ✓ | ✓ |  |
 | `TORQUE_FEEDFORWARD` |  | ✓ | ✓ | ✓ |
 | `POSITION_KP` |  |  | ✓ |  |
@@ -24,30 +23,17 @@ Optional command fields may be `NaN` to retain the current value. Virtual models
 
 ## Stored parameters
 
-Common writable `Parameters` include:
+Common writable control `Parameters` include:
 
-- torque, position, velocity, profile-velocity, and profile-acceleration limits;
+- torque, position, velocity;
+- velocity-profile and acceleration-profile limits;
 - impedance stiffness and damping;
 - velocity and position loop gains;
 - direction inversion;
-- feedforward gain;
-- velocity and current filter cutoffs;
-- CAN bit-rate switching.
-
-Writes are allowed only while drive output is inactive.
-
-Use dedicated methods instead of parameter writes for:
-
-- mode;
-- runtime commands;
-- torque and velocity gain presets;
-- actuator address;
-- periodic telemetry rate;
-- persistence.
 
 ## Presets
 
-`TorqueGainPreset` and `VelocityGainPreset` provide `AGGRESSIVE`, `BALANCED`, and `SOFT` choices.
+`TorqueGainPreset` and `VelocityGainPreset` provide `AGGRESSIVE`, `BALANCED`, and `SOFT` choices that are pre-tuned by Pulsar for different application requirements.
 
 ## Limits
 

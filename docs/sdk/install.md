@@ -52,7 +52,7 @@ AUGUR Digital Twin assets are distributed separately as `pulsar-assets`; Pixi is
 
 ## Verify hardware compatibility
 
-Physical actuators require firmware **2.0.4 or newer**. If an older actuator needs an update, [contact support](../support.md).
+Physical actuators require firmware **2.0.4 or newer**. If an older actuator needs an update, visit the [Firmware page](../firmware/index.md).
 
 ## Next steps
 
