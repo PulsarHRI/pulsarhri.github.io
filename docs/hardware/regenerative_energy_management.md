@@ -7,7 +7,7 @@ Hardware
 >
 > PULSAR actuators can return energy to the DC bus during braking. Provide an appropriate way to absorb this energy when designing the power system, and monitor bus voltage during operation.
 >
-> A conventional 48 V Power Supply Unit (PSU) is not necessarily able to absorb returned energy but should be enable to start running conservative tests at a minimum. Any initial testing must be assessed for the complete system: start with small, slow movements, monitor bus voltage, and increase dynamics gradually. 
+> A conventional 48 V Power Supply Unit (PSU) is not necessarily able to absorb returned energy but should be enable to start running conservative tests at a minimum. Any initial testing must be assessed for the complete system: start with small, slow movements, monitor bus voltage, and increase dynamics gradually.
 > The specific research tests documented below completed on a 4dof with conventional PSU without any observed damage, including for very high dynamics as shown; this is not assurance for other setups.
 
 PULSAR QDD actuators operate from a nominal 48 V DC supply. In a multi-actuator system, they are often connected to a shared DC bus, depending on the system power architecture.
@@ -99,13 +99,13 @@ The high-level controller **streams a precomputed joint-position trajectory at 1
 | J3 | `PULSE98-30G` | 16.0 | 0.2 | 6.4 |
 | J4 | `PULSE98-30G` | 16.0 | 0.4 | 6.4 |
 
-The gains are the values used for this experiment; suitable gains depend on the actuator, load, and system dynamics.
+The gains are the values used for this experiment; suitable gains depend on the actuator model, payload, and system dynamics.
 
-The 100 Hz stream sends joint position commands from a central computing unit, a standard laptop in this case. Each actuator runs its local POSITION control mode at 20 kHz.
+The 100 Hz CAN stream sends joint position commands from the central computing unit (a standard laptop), while each actuator executes its local cascaded position and FOC current loops at 20 kHz (POSITION control mode). For an overview of control modes available on the actuators, see [Control](../control_architectures/index.md).
 
-Positive power in the joint plot indicates consumption; negative power indicates regeneration according to that plot's sign convention. The plotted joint traces are aggregate per-joint power, **not raw phase-voltage or phase-current waveforms**.
+In the joint power plots, positive power indicates electrical consumption (motoring), while negative power indicates electrical regeneration (braking). The plotted joint traces represent the **instantaneous aggregate electrical power per actuator** (`Pelec = 3/2 (v_d i_d + v_q i_q)`, computed onboard at 20 kHz from measured shunt currents and commanded `dq` voltages, then streamed at 100 Hz as `BUS_POWER`). They do **not** represent individual raw AC phase waveforms.
 
-The underlying phase-by-phase measurement or calculation method is not provided, so the traces should not be used as a phase-resolved electrical measurement. The PSU plot measures the supply side and spans a different time window; do not equate its total energy with the joint-plot window.
+Total energy from the joint plots should not be directly equated with external bench PSU measurements. Joint telemetry captures motor electromechanical conversion and excludes the ~3–5 W per-actuator baseline electronics consumption. The PSU is sampled at a lower rate (10 Hz vs. 100 Hz), and its logging window spans the entire run rather than the segmented trajectory window.
 
 ### Results
 

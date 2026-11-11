@@ -131,9 +131,10 @@ nav:
   - Hardware:
       - hardware/index.md
       - Safety and prerequisites: hardware/safety.md
-      - Actuator setup: hardware/actuator_setup.md
       - Mechanical interfaces: hardware/mechanical_interfaces.md
       - Electrical interfaces: hardware/electrical_interfaces.md
+      - Regenerative energy management: hardware/regenerative_energy_management.md
+      - Actuator setup: hardware/actuator_setup.md
       - Connectivity:
           - hardware/connectivity/index.md
           - USB: hardware/connectivity/usb.md
@@ -141,7 +142,6 @@ nav:
           - CAN bus utilization: hardware/connectivity/can_bus_utilization.md
           - EtherCAT status: hardware/connectivity/ethercat.md
       - LED status indicators: hardware/led.md
-      - Regenerative energy management: hardware/regenerative_energy_management.md
   - Firmware:
       - firmware/index.md
   - Control:
