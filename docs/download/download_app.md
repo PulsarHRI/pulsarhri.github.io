@@ -15,4 +15,4 @@ If you do not want to install the desktop package, use the browser app at [https
 
 ---
 
-If you have any questions, please [contact our team](../support.md).
+If you have any questions, please [contact our team](../faq_issues.md#support).

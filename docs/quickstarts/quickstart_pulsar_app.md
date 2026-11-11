@@ -65,4 +65,4 @@ This page walks you through how to run a real actuator connected via USB without
     - If you're interested in **simulating PULSAR actuators** without needing hardware, explore [how to create virtual actuators with the AUGUR Digital Twin](../set_up/set_up_virtual.md). The first public DTwin beta asset release is available for Linux x86_64 and Windows x86_64.
 
 !!! question
-    Need help or something doesn’t work? Head over to the [Support page](../support.md): we’ve got your back.
+    Need help or something doesn’t work? Head over to the [Support page](../faq_issues.md#support): we’ve got your back.

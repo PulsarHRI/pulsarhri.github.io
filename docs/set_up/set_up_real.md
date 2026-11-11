@@ -36,4 +36,4 @@ Usually **not** provided by PULSAR HRI:
     Your actuator is now powered and mounted correctly. You’re ready to move on to the next step: [Communicate with Real Actuators](../communicate/communicate_real/index.md) to establish a connection for sending commands and reading telemetry!
 
 !!! question
-    Need help or something doesn’t work? Head over to the [Support page](../support.md): we’ve got your back.
+    Need help or something doesn’t work? Head over to the [Support page](../faq_issues.md#support): we’ve got your back.

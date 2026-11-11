@@ -363,4 +363,4 @@ Once the C++ API is installed, you can:
 - Build and test the [provided examples](example_single_actuator.md).
 - Integrate the C++ API into your own CMake projects.
 - Use the generated headers under `include/pcp_api/` as the main API reference.
-- Contact the [PULSAR HRI support team](../../support.md) if you encounter installation or hardware communication issues.
+- Contact the [PULSAR HRI support team](../../faq_issues.md#support) if you encounter installation or hardware communication issues.

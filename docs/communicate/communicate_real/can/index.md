@@ -17,7 +17,7 @@ For a single-actuator CAN network, you need:
 - [A CAN adapter](../../../set_up/hardware_interfaces/electrical_interfaces.md#can-communication-adapter), such as the PULSAR USB-to-CAN adapter.
 - A USB-A to USB-C cable for the adapter.
 - [A 3-pin Molex PicoBlade CAN bus cable](../../../set_up/hardware_interfaces/electrical_interfaces.md#can-bus-cables).
-- [Two 120 Ω termination resistors](../../../set_up/hardware_interfaces/electrical_interfaces.md#can-bus-termination-resistors-tr), one at each end of the bus.
+- [Two CAN-Terminators](../../../set_up/hardware_interfaces/electrical_interfaces.md#can-bus-termination-resistors-tr), one at each end of the bus.
 
 ![CAN components](../../../assets/images/CAN_components.jpeg)
 
@@ -27,13 +27,13 @@ For a single-actuator CAN network, you need:
 ## 2. Wire the bus
 
 1. Connect the CAN adapter to your computer with a USB-A to USB-C cable. Its LED should light up.
-2. Connect one termination resistor to one CAN adapter port.
+2. Connect one CAN-Terminator to one CAN adapter port.
 3. Connect the CAN cable to the adapter's other port and to a CAN port on the actuator.
-4. Connect the second termination resistor to the actuator's remaining CAN port.
+4. Connect the second CAN-Terminator to the actuator's remaining CAN port.
 
 ![Single actuator CAN connection](../../../assets/images/CAN_single_actuator.jpeg)
 
-Both termination resistors must be at the two physical ends of the bus.
+Both CAN-Terminators must be at the two physical ends of the bus.
 
 ## 3. Discover the actuator address
 
@@ -62,20 +62,20 @@ If the scan reports `No serial ports found`, `Serial port not connected`, or `Fo
 
 - The adapter is plugged in and its LED is on.
 - You have tried reconnecting the USB cable or using another USB port or cable.
-- You have [contacted support](../../../support.md) if the problem persists.
+- You have [contacted support](../../../faq_issues.md#support) if the problem persists.
 
 ### No actuator found
 
 If the adapter is detected but the scan reports `Found 0 addresses: []`, check that:
 
 - The actuator is powered on.
-- All CAN cables and termination resistors are correctly connected.
+- All CAN cables and CAN-Terminators are correctly connected.
 - You have tried replacing the CAN cable and reconnecting the adapter.
-- You have [contacted support](../../../support.md) if the problem persists.
+- You have [contacted support](../../../faq_issues.md#support) if the problem persists.
 
 ## Multiple actuators
 
-To add actuators, daisy-chain CAN cables between them. Keep termination resistors only at the two physical ends of the bus. A scan should report each actuator with its distinct address, for example:
+To add actuators, daisy-chain CAN cables between them. Keep CAN-Terminators only at the two physical ends of the bus. A scan should report each actuator with its distinct address, for example:
 
 ```text
 Device found: address 0x1D (29) model PULSE98_V1   firmware version 21

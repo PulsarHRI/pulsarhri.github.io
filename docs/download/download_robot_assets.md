@@ -24,4 +24,4 @@ Robot model asset packages provide simulation models, meshes, textures, and traj
 
 To install and use robot model assets with the Python API, follow the [Python API Examples](../control/python_api/examples.md) page. The examples repository README is the source of truth for setup, run commands, and the current robot asset installer workflow.
 
-For support, [contact our team](../support.md).
+For support, [contact our team](../faq_issues.md#support).

@@ -13,6 +13,197 @@
   margin: 0 auto;
 }
 
+/* Homepage hooks live on Markdown headings, not on raw HTML containers. */
+/* Keep Material's slate/black palette from substituting blue homepage links. */
+[data-md-color-scheme="slate"] .md-typeset :is(.pulsar-home-eyebrow, .pulsar-home-paths + *, .pulsar-home-areas + ul) {
+  --md-typeset-a-color: var(--pulsar-copper-bright);
+}
+
+.md-typeset .pulsar-home-eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--md-typeset-a-color);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.md-typeset .pulsar-home-title {
+  margin: 0 0 0.8rem;
+  color: var(--md-default-fg-color);
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.md-typeset .pulsar-home-intro {
+  max-width: 65ch;
+  margin: 0 0 2rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.md-typeset :is(.pulsar-home-paths, .pulsar-home-areas) {
+  margin: 2rem 0 0.85rem;
+  color: var(--md-default-fg-color);
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+/* Support both static Markdown tables and Material's runtime scroll wrapper. */
+.md-typeset .pulsar-home-paths + .md-typeset__scrollwrap {
+  margin-top: 0;
+}
+
+.md-typeset .pulsar-home-paths + .md-typeset__scrollwrap .md-typeset__table {
+  display: block;
+}
+
+.md-typeset .pulsar-home-paths + table,
+.md-typeset .pulsar-home-paths + .md-typeset__scrollwrap table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 0.05rem solid var(--md-typeset-table-color);
+  border-radius: 0.4rem;
+  font-size: 0.75rem;
+  overflow: hidden;
+}
+
+.md-typeset .pulsar-home-paths + :is(table, .md-typeset__scrollwrap) :is(th, td) {
+  min-width: 0;
+  padding: 0.75rem 0.85rem;
+}
+
+.md-typeset .pulsar-home-paths + :is(table, .md-typeset__scrollwrap) th {
+  color: var(--md-default-fg-color);
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset .pulsar-home-paths + :is(table, .md-typeset__scrollwrap) :is(th, td):first-child {
+  width: 60%;
+  font-weight: 600;
+}
+
+.md-typeset .pulsar-home-paths + :is(table, .md-typeset__scrollwrap) :is(th, td):last-child {
+  width: 40%;
+  overflow-wrap: anywhere;
+}
+
+.md-typeset .pulsar-home-animation {
+  display: block;
+  width: min(100%, 48rem);
+  height: auto;
+  margin: 2rem auto;
+}
+
+.md-typeset .pulsar-home-ecosystem {
+  display: block;
+  width: min(100%, 58rem);
+  height: auto;
+  margin: 1.5rem auto 2rem;
+}
+
+.md-typeset .pulsar-home-paths + :is(table, .md-typeset__scrollwrap) a {
+  color: var(--md-typeset-a-color);
+  text-decoration: underline;
+}
+
+.md-typeset .pulsar-home-paths + :is(table, .md-typeset__scrollwrap) a:focus-visible {
+  border-radius: 0.1rem;
+  outline: 0.12rem solid var(--md-typeset-a-color);
+  outline-offset: 0.15rem;
+}
+
+/* A normal Markdown list remains readable even without the card styling. */
+.md-typeset .pulsar-home-areas + ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 40rem) {
+  .md-typeset .pulsar-home-areas + ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+.md-typeset .pulsar-home-areas + ul > li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  padding: 1rem;
+  border: 0.05rem solid var(--md-typeset-table-color);
+  border-top: 0.12rem solid var(--md-accent-fg-color);
+  border-radius: 0.4rem;
+  background: var(--md-default-bg-color);
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.md-typeset .pulsar-home-areas + ul > li:is(:hover, :focus-within) {
+  border-color: var(--md-accent-fg-color);
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset .pulsar-home-areas + ul h3 {
+  margin: 0 0 0.5rem;
+  color: var(--md-default-fg-color);
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.md-typeset .pulsar-home-areas + ul p {
+  margin: 0 0 1rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.75rem;
+  line-height: 1.65;
+}
+
+.md-typeset .pulsar-home-areas + ul p:last-child {
+  margin: auto 0 0;
+}
+
+.md-typeset .pulsar-home-areas + ul a {
+  color: var(--md-typeset-a-color);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* One descriptive link per card; its hit area and focus ring cover the card. */
+.md-typeset .pulsar-home-areas + ul a::after {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.4rem;
+  content: "";
+}
+
+.md-typeset .pulsar-home-areas + ul a:focus-visible {
+  outline: none;
+}
+
+.md-typeset .pulsar-home-areas + ul a:focus-visible::after {
+  outline: 0.12rem solid var(--md-typeset-a-color);
+  outline-offset: 0.15rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .pulsar-home-areas + ul > li {
+    transition: none;
+  }
+}
+
 .pulsar-theme-image {
   display: block;
   margin: 0 auto;
@@ -178,6 +369,22 @@
 .md-header,
 .md-tabs {
   background-color: #000000;
+}
+
+.md-version-label {
+  align-self: center;
+  margin-inline-end: 0.35rem;
+  transform: translate(1rem, 0.1rem);
+  color: var(--md-primary-bg-color);
+  font-size: 0.62rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 40rem) {
+  .md-version-label {
+    font-size: 0.55rem;
+  }
 }
 
 .md-typeset a {
