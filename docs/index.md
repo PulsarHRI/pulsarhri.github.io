@@ -1,11 +1,11 @@
-PULSAR HRI Developer Hub
+Build with
 { .pulsar-home-eyebrow }
 
-# Build with PULSAR HRI { .pulsar-home-title }
+# PULSAR HRI's ECOSYSTEM { .pulsar-home-title }
 
-The [PULSAR HRI](https://pulsarhri.com/) Developer Hub brings together the hardware, software, control, and simulation information needed to build robotics systems with PULSE actuators.
+The PULSAR HRI Developer Hub brings together the whole ecosystem of hardware, software, control, and simulation information enabling Developers to build highly dynamic robotics systems for human-robot interaction.
 
-See full catalogue and more at [pulsarhri.com](https://pulsarhri.com/)
+See full catalogue of products and more at [pulsarhri.com](https://pulsarhri.com/)
 { .pulsar-home-intro }
 
 ## Choose your path { .pulsar-home-paths }
@@ -76,6 +76,6 @@ See full catalogue and more at [pulsarhri.com](https://pulsarhri.com/)
 - macOS is not currently supported.
 - The Pulsar App controls one physical actuator at a time.
 
-Need help? Visit [Support](support.md) or [FAQ and Issues](faq_issues.md).
+Need help? Visit [Support](faq_issues.md#support) or [FAQ and Support](faq_issues.md).
 
 ![pulse98 actuators with virtual glow.](assets/images/actuators_digital_twin_transition_5loops.gif){ .pulsar-home-animation loading="lazy" }

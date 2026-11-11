@@ -75,4 +75,4 @@ Continue with the [CAN FD quickstart](../../quickstart/sdk_can.md) or the [Pulsa
 - try a smaller scan range around known addresses;
 - replace worn-out cables.
 
-If the problem persists, [contact support](../../support.md).
+If the problem persists, [contact support](../../faq_issues.md#support).

@@ -34,4 +34,4 @@ Usually **not** provided by PULSAR HRI:
     Your actuator is now connected! Move to the next [Quickstart Tutorial: No-Code GUI for a Real Actuator](../quickstarts/quickstart_pulsar_app.md) to get it running in minutes!
 
 !!! question
-    Need help, or is something not working? Head over to the [Support page](../support.md): we’ve got your back.
+    Need help, or is something not working? Head over to the [Support page](../faq_issues.md#support): we’ve got your back.

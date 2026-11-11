@@ -62,7 +62,7 @@ If the scan reports `No serial ports found`, `Serial port not connected`, or `Fo
 
 - The adapter is plugged in and its LED is on.
 - You have tried reconnecting the USB cable or using another USB port or cable.
-- You have [contacted support](../../../support.md) if the problem persists.
+- You have [contacted support](../../../faq_issues.md#support) if the problem persists.
 
 ### No actuator found
 
@@ -71,7 +71,7 @@ If the adapter is detected but the scan reports `Found 0 addresses: []`, check t
 - The actuator is powered on.
 - All CAN cables and CAN-Terminators are correctly connected.
 - You have tried replacing the CAN cable and reconnecting the adapter.
-- You have [contacted support](../../../support.md) if the problem persists.
+- You have [contacted support](../../../faq_issues.md#support) if the problem persists.
 
 ## Multiple actuators
 

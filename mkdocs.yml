@@ -68,6 +68,7 @@ plugins:
         download/download_technical_reports.md: resources/datasheets.md
         download/download_dtwin.md: sdk/install.md
         faq.md: faq_issues.md
+        support.md: faq_issues.md
 
 exclude_docs: |
   quickstarts/
@@ -147,41 +148,41 @@ nav:
   - Control:
       - control_architectures/index.md
       - Control parameters by mode: control_architectures/parameters.md
-  - Pulsar App:
-      - pulsar_app/index.md
-      - Browser app: pulsar_app/browser.md
-      # - PULSAR Desktop App: pulsar_app/desktop.md
-      - Pulsar App quickstart: pulsar_app/quickstart.md
-  - Pulsar Python SDK:
-      - sdk/index.md
-      - Install: sdk/install.md
-      - CLI: sdk/cli.md
-      - Core concepts and workflow: sdk/core_workflow.md
-      - Physical actuators:
-          - sdk/physical/index.md
-          - Direct USB: sdk/physical/usb.md
-          - CAN: sdk/physical/can.md
-      - Virtual actuators: sdk/virtual_actuators.md
-      - Groups and platforms: sdk/groups_platforms.md
-      - Commands and parameters: sdk/commands_parameters.md
-      - Telemetry and callbacks: sdk/telemetry_callbacks.md
-      - Lifecycle and recovery: sdk/lifecycle_recovery.md
-      - Examples: sdk/examples.md
-      - API reference: sdk/api_reference.md
-  - Pulsar Rust SDK:
-      - pulsar_rust_sdk/index.md
   - AUGUR Digital Twin:
       - augur/index.md
       - Co-simulation coupling: augur/co_sim_coupling.md
       - Robot modelling: augur/robot_modelling.md
       - License: augur/license.md
+  - Software Interfaces:
+      - Pulsar App:
+          - pulsar_app/index.md
+          - Browser app: pulsar_app/browser.md
+          # - PULSAR Desktop App: pulsar_app/desktop.md
+          - Pulsar App quickstart: pulsar_app/quickstart.md
+      - Pulsar Python SDK:
+          - sdk/index.md
+          - Install: sdk/install.md
+          - CLI: sdk/cli.md
+          - Core concepts and workflow: sdk/core_workflow.md
+          - Physical actuators:
+              - sdk/physical/index.md
+              - Direct USB: sdk/physical/usb.md
+              - CAN: sdk/physical/can.md
+          - Virtual actuators: sdk/virtual_actuators.md
+          - Groups and platforms: sdk/groups_platforms.md
+          - Commands and parameters: sdk/commands_parameters.md
+          - Telemetry and callbacks: sdk/telemetry_callbacks.md
+          - Lifecycle and recovery: sdk/lifecycle_recovery.md
+          - Examples: sdk/examples.md
+          - API reference: sdk/api_reference.md
+      - Pulsar Rust SDK:
+          - pulsar_rust_sdk/index.md
   - Downloads and Resources:
       - resources/index.md
       - PULSAR Desktop App package: resources/pulsar_app.md
       - Mechanical CAD and printable fixtures: resources/cad.md
       - Robot model assets: resources/robot_assets.md
       - Datasheets: resources/datasheets.md
-  - FAQ and Issues: faq_issues.md
-  - Support: support.md
+  - FAQ and Support: faq_issues.md
 
 copyright: Copyright &copy; 2026 PULSAR HRI

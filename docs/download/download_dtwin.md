@@ -14,4 +14,4 @@ A first beta release is now available for Linux x86_64 and Windows x86_64. It is
 
 To install and use DTwin assets with the Python API, follow the [Python API Examples](../control/python_api/examples.md) page. The examples repository README is the source of truth for setup, run commands, and the current DTwin asset installer workflow.
 
-For support, [contact our team](../support.md).
+For support, [contact our team](../faq_issues.md#support).
