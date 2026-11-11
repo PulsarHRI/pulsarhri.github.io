@@ -103,6 +103,13 @@
   margin: 2rem auto;
 }
 
+.md-typeset .pulsar-home-ecosystem {
+  display: block;
+  width: min(100%, 58rem);
+  height: auto;
+  margin: 1.5rem auto 2rem;
+}
+
 .md-typeset .pulsar-home-paths + :is(table, .md-typeset__scrollwrap) a {
   color: var(--md-typeset-a-color);
   text-decoration: underline;
@@ -117,11 +124,17 @@
 /* A normal Markdown list remains readable even without the card styling. */
 .md-typeset .pulsar-home-areas + ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
   margin: 0 0 1.5rem;
   padding: 0;
   list-style: none;
+}
+
+@media (max-width: 40rem) {
+  .md-typeset .pulsar-home-areas + ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 .md-typeset .pulsar-home-areas + ul > li {

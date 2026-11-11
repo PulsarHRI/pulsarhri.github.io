@@ -3,7 +3,9 @@ PULSAR HRI Developer Hub
 
 # Build with PULSAR HRI { .pulsar-home-title }
 
-The PULSAR HRI Developer Hub brings together the hardware, software, control, and simulation information needed to build robotics systems with PULSE actuators.
+The [PULSAR HRI](https://pulsarhri.com/) Developer Hub brings together the hardware, software, control, and simulation information needed to build robotics systems with PULSE actuators.
+
+See full catalogue and more at [pulsarhri.com](https://pulsarhri.com/)
 { .pulsar-home-intro }
 
 ## Choose your path { .pulsar-home-paths }
@@ -16,13 +18,23 @@ The PULSAR HRI Developer Hub brings together the hardware, software, control, an
 | Develop with a virtual actuator | [Pulsar Python SDK · virtual actuators](quickstart/sdk_virtual.md) |
 | Design a robotic platform | [Hardware](hardware/index.md) and [AUGUR Digital Twin](augur/index.md) |
 
-## Main areas { .pulsar-home-areas }
+### Ecosystem Map { .pulsar-home-areas }
 
--   ### Hardware
+![PULSAR HRI SDK ecosystem map showing the hardware, software, control, and simulation components and how they connect.](assets/images/pulsar_docs_sdk_3_0_ecosystem_map.png){ .pulsar-home-ecosystem loading="lazy" }
+
+### Actuators and Logic { .pulsar-home-areas }
+
+-   ### Hardware (Real)
 
     Mount and power an actuator, understand its interfaces, and connect by USB or CAN FD.
 
     [Explore hardware](hardware/index.md)
+
+-   ### AUGUR Digital Twin (Virtual)
+
+    Run validated virtual actuator models and couple them to external robot simulators.
+
+    [Explore AUGUR Digital Twin](augur/index.md)
 
 -   ### Firmware
 
@@ -35,6 +47,8 @@ The PULSAR HRI Developer Hub brings together the hardware, software, control, an
     The physical firmware and AUGUR Digital Twin models run the same low-level control algorithms at 20 kHz.
 
     [Explore Control](control_architectures/index.md)
+
+## Software Interfaces { .pulsar-home-areas }
 
 -   ### Pulsar App
 
@@ -54,12 +68,6 @@ The PULSAR HRI Developer Hub brings together the hardware, software, control, an
 
     [Explore Pulsar Rust SDK](pulsar_rust_sdk/index.md)
 
--   ### AUGUR Digital Twin
-
-    Run validated virtual actuator models and couple them to external robot simulators.
-
-    [Explore AUGUR Digital Twin](augur/index.md)
-
 ## Compatibility at a glance
 
 - Physical SDK firmware requirement: **2.0.4 or newer**.
@@ -70,4 +78,4 @@ The PULSAR HRI Developer Hub brings together the hardware, software, control, an
 
 Need help? Visit [Support](support.md) or [FAQ and Issues](faq_issues.md).
 
-![Blue digital-twin overlays appear on two of five actuators.](assets/images/actuators_digital_twin_transition_5loops.gif){ .pulsar-home-animation loading="lazy" }
+![pulse98 actuators with virtual glow.](assets/images/actuators_digital_twin_transition_5loops.gif){ .pulsar-home-animation loading="lazy" }
