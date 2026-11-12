@@ -2457,7 +2457,7 @@
 </span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>    <span class="n">arm</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
 </span></code></pre></div>
-<p><code>PcpOverCan()</code> automatically selects the port when exactly one Pulsar device is connected. With several devices, use <code>PcpOverCan.list_ports()</code> and construct the domain as <code>PcpOverCan(chosen_port)</code>.</p>
+<p><code>PcpOverCan()</code> automatically selects the port when only one Pulsar CAN Adapter is connected. With several adapters, use <code>PcpOverCan.list_ports()</code> and construct the domain as <code>PcpOverCan(chosen_port)</code>.</p>
 <p>The SDK validates the complete selected batch before the first write. Member writes are still sequential, so a later transport failure can occur after an earlier actuator was updated.</p>
 <h2 id="next-steps">Next steps</h2>
 <ul>
