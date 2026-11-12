@@ -2341,8 +2341,9 @@ The software interfaces are designed to let PULSAR HRI Virtual and Real actuator
 <li><code>pulsar-assets</code> installs prebuilt model libraries.</li>
 <li><code>VirtualWorld</code> owns one deterministic simulation clock.</li>
 <li><code>PulsarActuatorVirtual</code> exposes the same lifecycle, modes, commands, grouping, status, and safety concepts as a physical actuator.</li>
-<li>An external simulator such as MuJoCo owns robot links, contacts, constraints, and other coupled dynamics.</li>
 </ul>
+<p>In addition if you have a platform and you want to simulate it directly without managing the dynamics/load calculations, then: 
+- An <code>external multibody simulator</code> like MuJoCo, Newton, Gensis-World, or Gazebo own robot links, contacts, constraints, and other coupled dynamics, check <a href="co_sim_coupling/">co-simulation</a>.</p>
 <h2 id="supported-actuator-models">Supported actuator models</h2>
 <ul>
 <li>P90</li>

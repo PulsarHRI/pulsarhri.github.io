@@ -1242,10 +1242,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ownership-boundary" class="md-nav__link">
+  <a href="#model-one-actuator-driven-joint" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ownership boundary
+        Model one actuator-driven joint
       
     </span>
   </a>
@@ -1253,10 +1253,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-scope" class="md-nav__link">
+  <a href="#divide-the-physical-properties-correctly" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported scope
+        Divide the physical properties correctly
       
     </span>
   </a>
@@ -1264,10 +1264,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#validation-expectations" class="md-nav__link">
+  <a href="#build-a-multi-joint-robot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Validation expectations
+        Build a multi-joint robot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-model-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common model checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-the-model-before-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify the model before coupling
       
     </span>
   </a>
@@ -2320,10 +2342,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ownership-boundary" class="md-nav__link">
+  <a href="#model-one-actuator-driven-joint" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ownership boundary
+        Model one actuator-driven joint
       
     </span>
   </a>
@@ -2331,10 +2353,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-scope" class="md-nav__link">
+  <a href="#divide-the-physical-properties-correctly" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported scope
+        Divide the physical properties correctly
       
     </span>
   </a>
@@ -2342,10 +2364,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#validation-expectations" class="md-nav__link">
+  <a href="#build-a-multi-joint-robot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Validation expectations
+        Build a multi-joint robot
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-model-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common model checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-the-model-before-coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify the model before coupling
       
     </span>
   </a>
@@ -2374,27 +2418,229 @@
 
 <p class="pulsar-home-eyebrow">AUGUR Digital Twin</p>
 <h1 id="robot-modelling">Robot modelling</h1>
-<p>Use AUGUR Digital Twin actuator models with an external robot simulator when the application needs link inertia, gravity, contacts, constraints, or multi-body dynamics.</p>
-<h2 id="ownership-boundary">Ownership boundary</h2>
+<p>This page describes how to build external robot models for co-simulation use between rigid-body simulators and AUGUR virtual actuators. Read the <a href="../co_sim_coupling/">co-simulation coupling</a> first for more information; the models described here supplies the robot dynamics used to calculate each actuator's load.</p>
+<h2 id="model-one-actuator-driven-joint">Model one actuator-driven joint</h2>
+<p>Represent each PULSE actuator as one revolute robot joint between a parent link and a child link:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>parent link ── revolute joint ── child link
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                    │
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>                    └── one PulsarActuatorVirtual
+</span></code></pre></div>
+<p>The joint coordinate must describe the actuator output shaft directly:</p>
 <ul>
-<li><code>VirtualWorld</code> owns the PULSE actuator model and its output-shaft state.</li>
-<li>The external simulator owns robot links, geometry, gravity, contacts, constraints, and applied forces.</li>
-<li>The supported MuJoCo scheme uses inverse dynamics to calculate the load for DTwin-owned joint coordinates.</li>
+<li>angle in radians;</li>
+<li>angular velocity in radians per second;</li>
+<li>joint effort in N·m;</li>
+<li>double check the joint axis and positive direction matching the AUGUR actuator;</li>
+<li>gear ratio of 1 at the coupling boundary, because AUGUR already reports output-shaft state and accounts internally for transmission and its effects.</li>
 </ul>
-<p>Do not forward-integrate a DTwin-owned coordinate in MuJoCo and do not apply DTwin output torque to a MuJoCo actuator on the same coordinate. Either approach integrates the same mechanics twice.</p>
-<h2 id="supported-scope">Supported scope</h2>
-<p>The validated coupling currently covers fixed-base models whose independently integrated actuated coordinates are DTwin-owned. Floating-base robots, mixed coordinate ownership, stiff impacts, and arbitrary compliant transmissions require additional model-specific validation.</p>
-<h2 id="validation-expectations">Validation expectations</h2>
-<p>A production robot model should be checked for:</p>
+<p>Give every coupled joint a stable name and map it to one virtual actuator address in the integration code.</p>
+<h2 id="divide-the-physical-properties-correctly">Divide the physical properties correctly</h2>
+<p>The external model should -depending on the format- include:</p>
 <ul>
-<li>no-load agreement with standalone actuator models;</li>
-<li>load sign and magnitude;</li>
-<li>convergence as exchange rate increases;</li>
-<li>bounded energy and contact behavior;</li>
-<li>joint limits and collision behavior;</li>
-<li>cross-joint inertial effects.</li>
+<li>the mass, center of mass, and inertia of every robot link;</li>
+<li>actuator housing and structural mass assigned to the link that carries it;</li>
+<li>downstream brackets, output flanges, tools, and payloads assigned to the appropriate link;</li>
+<li>any mechanism-level damping, springs, or friction not represented by AUGUR, like external bearings, belt drive, linkages, etc;</li>
+<li>visual and collision geometry;</li>
+<li>environmental contacts and constraints.</li>
 </ul>
-<p>Read the exact <a href="../co_sim_coupling/">Co-simulation coupling</a> contract before implementing an exchange loop.</p>
+<p>Do not add duplicate motor or transmission model to an AUGUR-owned joint. In particular, do not duplicate:</p>
+<ul>
+<li>motor rotor inertia;</li>
+<li>reflected gearbox inertia;</li>
+<li>drivetrain friction;</li>
+<li>a torque, position, velocity, or impedance drive;</li>
+<li>simulator armature added for the virtual actuator.</li>
+</ul>
+<h2 id="build-a-multi-joint-robot">Build a multi-joint robot</h2>
+<p>For a serial robot, repeat the same pattern for each degree of freedom:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>base ─ joint_1 ─ link_1 ─ joint_2 ─ link_2 ─ ... ─ joint_n ─ link_n
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>          │                    │                              │
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>       AUGUR 1              AUGUR 2                        AUGUR n
+</span></code></pre></div>
+<p>Each independently actuated revolute joint needs:</p>
+<ol>
+<li>one joint coordinate in the robot model;</li>
+<li>one <code>PulsarActuatorVirtual</code> in the shared <code>VirtualWorld</code>;</li>
+<li>one joint-name-to-actuator-address mapping;</li>
+<li>the same zero position and positive direction in both systems.</li>
+</ol>
+<p>Dependent joints, mimic joints, tendons, closed loops, and compliant transmissions need an explicit constraint or transmission model. Do not assign an independent AUGUR virtual actuator to a dependent coordinate unless the physical robot actually has one there, which is very unlikely, but for example an AUGUR actuator connected to a rod that is also actuated by a linear motor, both will see the dependant motion as load and will result in undefined behavior.</p>
+<h2 id="common-model-checklist">Common model checklist</h2>
+<p>Before choosing a file format, define:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>What to provide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Link frames</td>
+<td>A consistent parent-to-child frame convention</td>
+</tr>
+<tr>
+<td>Joint origin</td>
+<td>Position and orientation of the output shaft relative to the parent link</td>
+</tr>
+<tr>
+<td>Joint axis</td>
+<td>Unit axis with the same positive direction as AUGUR</td>
+</tr>
+<tr>
+<td>Joint limits</td>
+<td>Physical lower, upper, velocity, and effort limits where supported</td>
+</tr>
+<tr>
+<td>Link inertia</td>
+<td>Mass, center of mass, and a valid positive-definite inertia tensor</td>
+</tr>
+<tr>
+<td>Collision geometry</td>
+<td>Simple, stable shapes where possible</td>
+</tr>
+<tr>
+<td>Visual geometry</td>
+<td>Optional detailed meshes, separate from collision meshes</td>
+</tr>
+<tr>
+<td>Passive mechanics</td>
+<td>Only effects outside the AUGUR drivetrain model</td>
+</tr>
+<tr>
+<td>Simulator drive</td>
+<td>None on an AUGUR-owned joint</td>
+</tr>
+</tbody>
+</table>
+<p>Start with a single joint and no contact. Add the remaining links, then gravity, and contacts only after the basic joint mapping is correct.</p>
+<table>
+<thead>
+<tr>
+<th>Simulator</th>
+<th>Typical input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MuJoCo</td>
+<td>MJCF; URDF can be imported and inspected</td>
+</tr>
+<tr>
+<td>Gazebo</td>
+<td>SDF or URDF</td>
+</tr>
+<tr>
+<td>Newton</td>
+<td>URDF, MJCF, or OpenUSD</td>
+</tr>
+<tr>
+<td>Other simulators</td>
+<td>Their native format or a verified URDF/MJCF/OpenUSD importer</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">MuJoCo</label><label for="__tabbed_1_2">Gazebo</label><label for="__tabbed_1_3">Newton</label><label for="__tabbed_1_4">Other Simulators</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>MuJoCo's default format is MJCF, but also accepts import and translation of URDF and OpenUSD (experimental).
+MJCF represents a robot through nested bodies. A minimal hinge joint has this structure:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;mujoco</span><span class="w"> </span><span class="na">model=</span><span class="s">"augur_robot"</span><span class="nt">&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&lt;compiler</span><span class="w"> </span><span class="na">angle=</span><span class="s">"radian"</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">&lt;worldbody&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;body</span><span class="w"> </span><span class="na">name=</span><span class="s">"base"</span><span class="nt">&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="nt">&lt;body</span><span class="w"> </span><span class="na">name=</span><span class="s">"link_1"</span><span class="w"> </span><span class="na">pos=</span><span class="s">"0 0 0"</span><span class="nt">&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="nt">&lt;joint</span><span class="w"> </span><span class="na">name=</span><span class="s">"joint_1"</span><span class="w"> </span><span class="na">type=</span><span class="s">"hinge"</span><span class="w"> </span><span class="na">axis=</span><span class="s">"0 0 1"</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">               </span><span class="na">range=</span><span class="s">"-1.57 1.57"</span><span class="w"> </span><span class="na">armature=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="nt">&lt;inertial</span><span class="w"> </span><span class="na">pos=</span><span class="s">"0 0 0.1"</span><span class="w"> </span><span class="na">mass=</span><span class="s">"2.0"</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">                  </span><span class="na">diaginertia=</span><span class="s">"0.02 0.02 0.01"</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="nt">&lt;geom</span><span class="w"> </span><span class="na">type=</span><span class="s">"mesh"</span><span class="w"> </span><span class="na">mesh=</span><span class="s">"link_1_visual"</span><span class="w"> </span><span class="na">contype=</span><span class="s">"0"</span><span class="w"> </span><span class="na">conaffinity=</span><span class="s">"0"</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="nt">&lt;geom</span><span class="w"> </span><span class="na">type=</span><span class="s">"capsule"</span><span class="w"> </span><span class="na">size=</span><span class="s">"0.04 0.2"</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="nt">&lt;/body&gt;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">&lt;/body&gt;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="nt">&lt;/worldbody&gt;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="nt">&lt;/mujoco&gt;</span>
+</span></code></pre></div>
+<p>For an AUGUR-owned joint:</p>
+<ul>
+<li>use a hinge joint whose axis and reference position match AUGUR, or invert the direction inside <code>PulsarActuatorVirtual</code>;</li>
+<li>keep <code>armature="0"</code> unless it represents mechanism inertia not already in AUGUR;</li>
+<li>omit an entry for that joint from the MJCF <code>&lt;actuator&gt;</code> section;</li>
+<li>use joint damping, friction loss, and springs only for passive mechanism effects outside the actuator model;</li>
+<li>keep detailed visual meshes separate from simpler collision geometry where practical.</li>
+</ul>
+<p>URDF import can provide an initial MuJoCo model, but inspect the converted inertias, joint ranges, mesh scales, and any generated actuator or armature settings before using it for co-simulation. MuJoCo had previously had issues with importing inertias correctly from URDF especially if they use diagnoal not the full inertia values, its worth a double check if you're seeing unexpected behavior.</p>
+</div>
+<div class="tabbed-block">
+<p>Gazebo work primarily with URDF and SDF formats.
+URDF represents a robot as links connected by joints. A minimal actuator-driven revolute joint has this structure:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;link</span><span class="w"> </span><span class="na">name=</span><span class="s">"base"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">&lt;link</span><span class="w"> </span><span class="na">name=</span><span class="s">"link_1"</span><span class="nt">&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&lt;inertial&gt;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">"0 0 0.1"</span><span class="w"> </span><span class="na">rpy=</span><span class="s">"0 0 0"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">&lt;mass</span><span class="w"> </span><span class="na">value=</span><span class="s">"2.0"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nt">&lt;inertia</span><span class="w"> </span><span class="na">ixx=</span><span class="s">"0.02"</span><span class="w"> </span><span class="na">ixy=</span><span class="s">"0"</span><span class="w"> </span><span class="na">ixz=</span><span class="s">"0"</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">             </span><span class="na">iyy=</span><span class="s">"0.02"</span><span class="w"> </span><span class="na">iyz=</span><span class="s">"0"</span><span class="w"> </span><span class="na">izz=</span><span class="s">"0.01"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">&lt;/inertial&gt;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="nt">&lt;visual&gt;</span>...<span class="nt">&lt;/visual&gt;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span><span class="nt">&lt;collision&gt;</span>...<span class="nt">&lt;/collision&gt;</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nt">&lt;/link&gt;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="nt">&lt;joint</span><span class="w"> </span><span class="na">name=</span><span class="s">"joint_1"</span><span class="w"> </span><span class="na">type=</span><span class="s">"revolute"</span><span class="nt">&gt;</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">  </span><span class="nt">&lt;parent</span><span class="w"> </span><span class="na">link=</span><span class="s">"base"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">  </span><span class="nt">&lt;child</span><span class="w"> </span><span class="na">link=</span><span class="s">"link_1"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">  </span><span class="nt">&lt;origin</span><span class="w"> </span><span class="na">xyz=</span><span class="s">"0 0 0"</span><span class="w"> </span><span class="na">rpy=</span><span class="s">"0 0 0"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">  </span><span class="nt">&lt;axis</span><span class="w"> </span><span class="na">xyz=</span><span class="s">"0 0 1"</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="nt">&lt;/joint&gt;</span>
+</span></code></pre></div>
+<p>For an AUGUR-owned joint:</p>
+<ul>
+<li>use <code>revolute</code> for a limited joint or <code>continuous</code> for an unlimited rotary joint;</li>
+<li>make the URDF axis match the actuator's positive output direction or you can simply invert the direction in the <code>PulsarActuatorVirtual</code> class;</li>
+<li>omit transmissions and controller plugins that apply effort to that joint;</li>
+<li>avoid joint damping or friction values that duplicate actuator drivetrain losses. you can add them if you physcially have extra mechanisms that physically add this behavior in addition to the actuator internals, such as bearings, springs, belt drives, etc.</li>
+</ul>
+<p>Gazebo can consume URDF or SDF. In SDF, create the equivalent <code>model</code>, <code>link</code>, and <code>joint</code> elements and leave the coupled joint without a competing drive plugin. Use Gazebo-specific sensors, contact parameters, and environment definitions only for effects that belong to the robot or world model.</p>
+</div>
+<div class="tabbed-block">
+<p>Newton can work with several formats since it has many internal solvers (including MuJoCo for rigid body), so it can support MJCF, but it is recommended to use OpenUSD to work seamlessly with the other solvers.</p>
+<p>In OpenUSD, represent the robot as a rigid-body articulation:</p>
+<ol>
+<li>create one rigid body for each link;</li>
+<li>assign mass properties and collision geometry to each body;</li>
+<li>connect parent and child bodies with a revolute physics joint;</li>
+<li>set the joint frames, axis, and limits to match the actuator output shaft;</li>
+<li>apply the articulation schema expected by the target simulator;</li>
+<li>do not apply a joint drive schema to an AUGUR-owned joint.</li>
+</ol>
+<p>Newton can build a model from URDF, MJCF, or OpenUSD. Whichever source is used, verify the resulting articulation, joint axes, inertias, collision shapes, units, and drive settings after import. Prefer a native OpenUSD representation when an importer cannot preserve those properties reliably.</p>
+</div>
+<div class="tabbed-block">
+<p>The same model structure applies to another simulator or native format:</p>
+<ul>
+<li>rigid links carry mass and inertia;</li>
+<li>revolute joints define the AUGUR output coordinates;</li>
+<li>the environment supplies gravity, contacts, and constraints;</li>
+<li>no second actuator drives an AUGUR-owned joint.</li>
+</ul>
+<p>A file format being accepted by a simulator does not guarantee that the simulator exposes the state-imposition and inverse-dynamics operations required by the coupling. Confirm those capabilities before investing in a detailed model.</p>
+</div>
+</div>
+</div>
+<h2 id="verify-the-model-before-coupling">Verify the model before coupling</h2>
+<p>Check the robot model independently:</p>
+<ol>
+<li>link masses and centers of mass match the intended mechanism;</li>
+<li>inertia tensors are valid and expressed in the correct frames;</li>
+<li>joint axes, zeros, limits, and mesh scales are correct;</li>
+<li>collision shapes do not begin in penetration;</li>
+<li>gravity produces the expected joint-load direction and approximate magnitude;</li>
+<li>no hidden drive, transmission, armature, or duplicated drivetrain loss remains, including the default values of each simulator since some inject base damping values to stabelize their solvers;</li>
+<li>a single-joint inverse-dynamics test agrees with expected result or a hand calculation.</li>
+</ol>
+<p>Then apply the convergence, energy, multi-joint, limit, and contact tips from <a href="../co_sim_coupling/#validation">Co-simulation coupling</a>.</p>
 
 
 
