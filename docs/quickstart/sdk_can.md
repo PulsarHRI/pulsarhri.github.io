@@ -76,7 +76,7 @@ with arm:
     arm.disable()
 ```
 
-`PcpOverCan()` automatically selects the port when exactly one Pulsar device is connected. With several devices, use `PcpOverCan.list_ports()` and construct the domain as `PcpOverCan(chosen_port)`.
+`PcpOverCan()` automatically selects the port when only one Pulsar CAN Adapter is connected. With several adapters, use `PcpOverCan.list_ports()` and construct the domain as `PcpOverCan(chosen_port)`.
 
 The SDK validates the complete selected batch before the first write. Member writes are still sequential, so a later transport failure can occur after an earlier actuator was updated.
 

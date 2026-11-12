@@ -12,9 +12,11 @@ The RGB LED gives a quick indication of device state.
 
 ## Actuator
 
-- **Orange:** powered up and initialized.
-- **Purple:** direct USB connection established and waiting for commands.
-- **Green:** drive is active.
+- **White:** booting up.
+- **Orange:** initialized and waiting for commands over CAN.
+- **Purple:** USB connected; listening for commands over USB instead of CAN.
+- **Blue:** peripherals initialized. Drive not energized.
+- **Green:** drive active.
 - **Red:** an error requires attention.
 - **Off:** firmware update mode or no power.
 
