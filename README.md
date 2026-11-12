@@ -18,6 +18,7 @@ The published site uses `mike` to keep both documentation generations available:
 - `3.0.0` — current Developer Hub and Pulsar Python SDK documentation;
 - `2.0.4` — preserved legacy API documentation and downloads.
 
+
 Use the version selector in the site header to switch versions.
 
 ## Serve locally with Pixi
