@@ -19,7 +19,9 @@ The remaining differences reflect how virtual and physical actuators operate:
 - `pulsar-assets` installs prebuilt model libraries.
 - `VirtualWorld` owns one deterministic simulation clock.
 - `PulsarActuatorVirtual` exposes the same lifecycle, modes, commands, grouping, status, and safety concepts as a physical actuator.
-- An external simulator such as MuJoCo owns robot links, contacts, constraints, and other coupled dynamics.
+
+In addition if you have a platform and you want to simulate it directly without managing the dynamics/load calculations, then: 
+- An `external multibody simulator` like MuJoCo, Newton, Gensis-World, or Gazebo own robot links, contacts, constraints, and other coupled dynamics, check [co-simulation](co_sim_coupling.md).
 
 ## Supported actuator models
 

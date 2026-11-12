@@ -97,4 +97,4 @@ Position reset occurs on one world-owned 50 µs tick. Every connected actuator a
 
 Each actuator instance loads an isolated copy of its generated model library because generated models contain process-global state.
 
-For robot dynamics and MuJoCo ownership, read [Co-simulation coupling](../augur/co_sim_coupling.md).
+For robot dynamics and simulator ownership, read [Co-simulation coupling](../augur/co_sim_coupling.md).

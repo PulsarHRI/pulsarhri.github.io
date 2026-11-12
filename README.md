@@ -7,7 +7,7 @@ The current documentation covers:
 - PULSE actuator hardware, setup, USB, and CAN FD;
 - Pulsar App browser and desktop workflows;
 - Pulsar Python SDK for physical and virtual actuators;
-- AUGUR Digital Twin and MuJoCo co-simulation;
+- AUGUR Digital Twin and co-simulation;
 - actuator control architectures;
 - CAD, datasheets, support, and known issues.
 
